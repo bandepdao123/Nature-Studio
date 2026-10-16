@@ -1,4 +1,4 @@
-# Nature Studio v1.1
+# Nature Studio v1.2
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
@@ -8,7 +8,7 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.1**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.2**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
@@ -72,3 +72,9 @@ Gửi `/dongvideo UF-0001` để [tổng kết phiên](.agents/skills/dongvideo/
 [Memory](05-Memory/INDEX.md) tách `projects/<slug>/` và `shared/`. /chayvideo đọc active phù hợp ở cả hai nơi, ghi lesson ID/version vào INPUTS. /dongvideo tự lưu candidate; chỉ tự active phương pháp kiểm khách quan khi đạt đủ [gate](00-Standards/memory-policy.md). Kiểm cấu trúc bằng `python scripts/validate_memory.py` không chứng minh bài học đúng hay video tốt hơn.
 
 Nâng cấp từ v1.0 theo [UPDATE.md — migration](UPDATE.md#nâng-từ-v10-lên-v11). Giữ dữ liệu riêng, phân loại lesson theo phạm vi, không chép đè cả thư mục và không đẩy production đang làm lên public chỉ vì nâng framework. GitHub main mang phiên bản workspace, không tự có GitHub Release/tag.
+
+## Mã video — Nature Studio v1.2
+
+Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
+
+Gói ZIP phân phối loại `.nature-studio/` để không phát tán prefix local. Muốn di chuyển workspace cá nhân đang làm, sao lưu registry riêng khi không có tác vụ cấp mã; ZIP phân phối không thay bản sao lưu danh tính Project.

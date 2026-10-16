@@ -2,6 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.2 — 2026-10-16
+
+- Chuẩn mã video mới XXX-yyyyy, prefix ba chữ sinh riêng Project trên local, số từ 00001; revision giữ mã và tăng attempt.
+- Thêm script SQLite stdlib init/reserve, UUID nội bộ và IDENTITY.json; kiểm trùng, không tái sử dụng số, dừng khi hết 99999.
+- Registry .nature-studio/ không vào Git/gói mẫu; hướng dẫn backup và tiếp tục Project trên máy khác. Mã legacy UF-0001 giữ nguyên.
+- Cập nhật hai skill, mẫu Project, quy trình sản xuất và UPDATE.md. Không thay format hoặc đẩy production đang làm lên repo.
+
 ## v1.1 — 2026-10-16
 
 - Thêm skill /dongvideo: tổng kết production thực, luôn xét bài học Project và đóng góp shared; ghi SESSION-REVIEW, tránh trùng khi gọi lại.

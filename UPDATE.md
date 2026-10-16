@@ -110,3 +110,17 @@ Hai lệnh dùng Python stdlib, không cần API/token/model và không render. 
 ### Nếu cần quay lại v1.0
 
 Giữ bản khôi phục và diff migration. Không chép v1.0 đè lên production mới. Khôi phục nguồn hệ thống từ baseline/bản sao đã xác minh, giữ riêng lesson/sessions phát sinh sau v1.1 rồi lập mapping trước khi đưa về cấu trúc cũ. Không dùng reset --hard/clean hoặc xóa dữ liệu mới để rollback. v1.0 chưa biết namespace mới nên không nhận rollback hoàn tất chỉ bằng sửa VERSION.
+
+## Nâng từ v1.1 lên v1.2
+
+Tiếp tục so commit/baseline/local, tạo bản khôi phục gồm tracked/untracked trước khi ghi. Giữ nguyên production, attempts, ledger, Memory và registry `.nature-studio/` nếu đã có; không dùng registry từ repo mẫu hoặc máy khác ghi đè. Các bản v1.0 phải thực hiện migration bộ nhớ v1.1 trước rồi bước này.
+
+1. Nhận nguồn hệ thống v1.2 đã phân giải xung đột: scripts/video_ids.py, quy tắc video-identifiers.md, templates, hai skill và packaging exclusion.
+2. PROJECT.md thay prefix sản xuất cố định bằng local-generated; ghi prefix cũ ở legacy, không đổi ID Project, tên folder/production/attempt cũ hoặc lịch sử INPUTS.
+3. Chạy `python scripts/video_ids.py init <slug>` cho Project muốn thiết lập trên local (hoặc để /chayvideo gọi trước video mới đầu tiên). Không chạy reserve chỉ để nâng cấp; không tạo video giả. Không copy prefix minh họa vào mọi Project.
+4. Nếu đã có registry thì init trả lại cấu hình hiện hành. Khi tiếp tục cùng Project trên máy khác, chuyển nguyên registry cùng production khi không còn phiên ghi. Clone sạch không mang danh tính local; tạo độc lập được prefix mới. Mất registry thì ưu tiên khôi phục bản sao, không tự nhận UUID cũ.
+5. Kiểm `python -m unittest discover -s scripts/tests`, `python scripts/validate_memory.py`, đối chiếu hash dữ liệu riêng và diff trước–sau. Chốt VERSION 1.2 sau khi hoàn tất. Test allocator dùng workspace tạm, không gọi reserve trong production thật.
+
+Registry `.nature-studio/video-ids.sqlite3` bị Git ignore và bị loại khỏi ZIP phân phối. Backup cá nhân phải kèm registry riêng sau khi các tác vụ ghi kết thúc; không chỉ sao chép database trong lúc transaction đang chạy. Khi import nhiều nguồn, mã giống nhau nhưng UUID khác là xung đột thật: giữ cả hai, xử lý mapping trước khi gộp. Công cụ không hỗ trợ tự gộp hay bảo đảm prefix duy nhất toàn cầu.
+
+Rollback: giữ bản sao registry và IDENTITY/production mới; không xóa để trở về v1.1. v1.1 chưa biết bộ cấp mã nên chỉ khôi phục source sau khi bảo toàn dữ liệu và lập mapping, không coi sửa VERSION là rollback hoàn tất.

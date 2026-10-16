@@ -19,3 +19,6 @@ node_modules/
 *.log
 Thumbs.db
 .DS_Store
+
+# Local Project/video identity registry; back up separately
+/.nature-studio/

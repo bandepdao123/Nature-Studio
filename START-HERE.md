@@ -2,7 +2,7 @@
 
 Kho sản xuất nội dung thiên nhiên, lưu trên máy; khởi tạo 15/10/2026 (Asia/Saigon).
 
-Phiên bản toàn hệ thống: **Nature Studio v1.1**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
+Phiên bản toàn hệ thống: **Nature Studio v1.2**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
 
 ## Lệnh tạo bộ nội dung
 
@@ -42,3 +42,7 @@ Tên repo cố định là Nature-Studio; nâng VERSION không đổi URL. [REPO
 Gửi `/dongvideo UF-0001` hoặc yêu cầu đóng phiên video cụ thể. Đọc [skill dongvideo](.agents/skills/dongvideo/SKILL.md): tổng kết dữ liệu thực, luôn xét bài học Project và shared; tự lưu candidate, chỉ tự kích hoạt phương pháp đã kiểm khách quan theo [policy](00-Standards/memory-policy.md). Kết luận rộng còn chờ kiểm/duyệt được gom trong báo cáo tiếng Việt. Đóng phiên không tự duyệt video hoặc đẩy GitHub. Gọi lại với cùng dữ liệu không tạo mục trùng.
 
 Nâng từ v1.0: đọc phần migration trong [UPDATE.md](UPDATE.md); bảo toàn production/lesson/chỉnh sửa riêng trước khi chuyển cấu trúc. Chạy `python scripts/validate_memory.py` sau cập nhật.
+
+## Mã video — Nature Studio v1.2
+
+Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
