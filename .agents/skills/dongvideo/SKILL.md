@@ -5,7 +5,7 @@ description: Tổng kết phiên video Nature Studio khi gọi /dongvideo hoặc
 
 # /dongvideo
 
-Version: 1.0 | Updated: 2026-10-16
+Version: 1.1 | Updated: 2026-10-16
 
 Nhận lệnh trong tin nhắn, không giả định giao diện đã đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Đầu ra tiếng Việt. Đóng phiên là chốt ghi nhận hiện tại, không cấm tiếp tục sửa video.
 
@@ -41,3 +41,5 @@ Tạo/cập nhật SESSION-REVIEW.md theo mẫu, entry mới khi có bằng ch�
 Chạy `python scripts/validate_memory.py`, kiểm diff/link/ID, quyền đổi trạng thái và phạm vi. Validator không thay đánh giá nội dung. Không ghi suy luận nội bộ. Nếu ghi dở/lỗi, báo phần chưa xong, không nhận đã đóng đủ.
 
 Trả ngắn bằng tiếng Việt: production/phạm vi tổng kết; kết quả; bộ nhớ Project; đóng góp shared (hoặc không có); active mới kèm căn cứ/candidate chờ; file thay đổi và việc tiếp theo. Không nhận video đã duyệt vì đã tổng kết. Không tự commit/push/publish hay tạo media từ lệnh này.
+
+Nhận cả mã XXX-yyyyy mới và mã legacy như UF-0001. Đọc IDENTITY.json khi có để đối chiếu Project/video UUID; không cấp lại mã khi tổng kết, không yêu cầu đổi mã cũ và không đoán Project chỉ từ ba chữ.
