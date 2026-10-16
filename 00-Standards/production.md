@@ -1,4 +1,4 @@
-# Quy trình sản xuất — v1.2
+# Quy trình sản xuất — v1.3
 
 ## Trước sản xuất
 
@@ -9,7 +9,7 @@
 
 ## Hồ sơ và ID
 
-- Mỗi dự án có prefix tại PROJECT.md. Tra toàn bộ ID hiện có dưới thư mục dự án sản xuất và idea-ledger trước khi cấp số tiếp theo. Không tái dùng ID; nếu nhiều phiên cùng ghi, tạo thư mục giữ chỗ độc quyền rồi mới làm. Có thể dùng hậu tố thời gian để tránh va chạm khi cần và ghi rõ.
+- Video mới theo [quy tắc mã](video-identifiers.md): XXX-yyyyy, ba chữ riêng Project local và số từ 00001. Dùng scripts/video_ids.py init/reserve, registry local và IDENTITY.json; không tự thêm hậu tố thời gian hoặc đoán mã. Revision dùng mã cũ và attempt mới; giữ nguyên ID legacy.
 - Mỗi production có brief/research/concept/feedback/performance/SUMMARY theo template; mỗi attempt A01, A02... giữ inputs, prompt, settings, review và media thực sự có.
 - INPUTS ghi đường dẫn và phiên bản, ảnh input chính xác và hash nếu công cụ có; ghi model/giao diện/thông số thực sự dùng. Không đoán seed hoặc setting ẩn.
 - Viết prompt không đồng nghĩa sinh ảnh/video. Chỉ lưu file media khi thật sự có; không tạo file rỗng giả render. Không tạo clip hoặc lượt trả phí ngoài phạm vi giao việc.
@@ -21,7 +21,7 @@
 - Cập nhật SUMMARY và idea-ledger bằng thông tin cần tra nhanh, liên kết bài học thay vì sao chép.
 - Chỉ cập nhật quy chuẩn/bộ nhớ theo memory-policy; số view không thay thế QA kỹ thuật.
 
-Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PROJECT.md để ghi `04-Productions/<slug>/`. Không suy thư mục từ ID ổn định sau đổi tên. Prefix/production ID cũ tiếp tục dùng, không cấp lại vì dự án đổi tên.
+Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PROJECT.md để ghi `04-Productions/<slug>/`. Không suy thư mục từ ID ổn định sau đổi tên. Production ID cũ tiếp tục dùng cho lịch sử/revision; video mới theo chuẩn XXX-yyyyy và prefix local, không đổi mã vì đổi tên dự án.
 
 ## Tổng kết phiên và vòng học — v1.2, 2026-10-16
 
