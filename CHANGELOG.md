@@ -2,6 +2,18 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.1 — 2026-10-16
+
+- Thêm skill /dongvideo: tổng kết production thực, luôn xét bài học Project và đóng góp shared; ghi SESSION-REVIEW, tránh trùng khi gọi lại.
+- Bộ nhớ tách projects/<slug>/ và shared/; chỉ áp active đúng điều kiện, một bản gốc/ID ổn định. Bản nguồn trước chuyển có 0 lesson, không tự tạo lesson từ lịch sử chat.
+- /chayvideo v1.5 đọc hai cấp, ghi ID/version/cách dùng vào INPUTS; giữ hợp đồng đầu ra và sáng tạo mở.
+- Policy v2.0 cho /dongvideo quyền tự active procedural lesson khi có phép kiểm khách quan, hồi quy/ngoại lệ, bằng chứng và không đổi chính sách. Kết luận sáng tạo/hiệu quả model/khán giả chưa kiểm giữ candidate.
+- Thêm metadata lesson, mẫu tổng kết, validator stdlib và fixture tests. Validator không thay QA nội dung hoặc chứng minh cải thiện media.
+- UPDATE.md có mapping v1.0 → v1.1, bảo toàn dữ liệu riêng, hướng dẫn Git/ZIP và rollback. Tên/URL repo giữ nguyên.
+- Phạm vi phát hành là framework. Những thay đổi production có sẵn ở local được bảo toàn và không tự đẩy vào commit nâng cấp.
+
+Giới hạn: chưa chạy /dongvideo trên production thật, chưa kiểm hành vi skill bằng một lượt AI độc lập, chưa chứng minh hiệu quả render/retention hoặc chất lượng sáng tạo cải thiện. Kết quả kiểm thực được ghi tại 06-Evaluation/results/v1.1-implementation-2026-10-16.md.
+
 ## v1.0 — 2026-10-16
 
 Bản đầu tiên được đặt phiên bản toàn hệ thống theo yêu cầu người dùng. Các thay đổi trước ngày này được gom vào nền v1.0, không suy ra rằng workspace từng phát hành v1.1/v1.2 từ số phiên bản module.

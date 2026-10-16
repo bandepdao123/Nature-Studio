@@ -1,4 +1,4 @@
-# Nature Studio v1.0
+# Nature Studio v1.1
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
@@ -8,15 +8,15 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành được đặt tên **Nature Studio v1.0**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.1**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
 [Underwater](03-Projects/underwater/PROJECT.md): Reel camera dưới nước hướng người câu cá Mỹ. Video mục tiêu 10s, 9:16, một shot; quy chuẩn cụ thể nằm trong hồ sơ dự án. Tên cũ Under Fish US / Under Fishing US chỉ là alias; ID nội bộ và prefix UF được giữ để truy vết.
 
-Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md) với lịch sử đến A04: video A03 được review chưa đạt; A04 có ảnh/prompt sửa, video mới chưa render. Đọc SUMMARY/review để biết đúng mức kiểm từng attempt. Các ca đánh giá khởi tạo và hai ca sáng tạo mở mới chưa chạy.
+Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md). Đọc SUMMARY và review thực để biết đúng lịch sử/mức kiểm; bản trên GitHub và production đang làm ở local có thể khác nhau. Nâng framework không đồng nghĩa đã QA hoặc duyệt video.
 
-## Hướng dẫn sáng tạo cho AI trong v1.0
+## Hướng dẫn sáng tạo cho AI
 
 Khi được giao tạo mới, đọc [nguyên tắc sáng tạo chung](00-Standards/creativity.md), rồi hướng dẫn riêng của dự án; Underwater dùng [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Luồng làm việc: **brief/dữ kiện → rà lịch sử → tiền đề độc lập → kiểm tính đúng → chọn chuyện → bố trí nhịp → kiểm độ mới → prompt/caption**.
 
@@ -41,7 +41,7 @@ Skill [chayvideo](.agents/skills/chayvideo/SKILL.md) tự tìm dự án phù h�
 | 02-Models | Hướng dẫn model và giới hạn đã biết |
 | 03-Projects | Hồ sơ, quy chuẩn và lịch sử ý tưởng từng dự án |
 | 04-Productions | Brief, các lần thử, prompt, review và media thực |
-| 05-Memory | Bài học candidate / active / retired |
+| 05-Memory | Bộ nhớ riêng Project và shared, mỗi nơi có candidate / active / retired |
 | 06-Evaluation | Tiêu chí, ca kiểm và kết quả thực |
 | 07-Releases | Baseline, manifest và snapshot lịch sử |
 
@@ -63,4 +63,12 @@ Repo không chứa API key hoặc cấu hình đăng nhập. Nguồn bên ngoài
 
 ## Tên repository cố định, phiên bản nằm trong nội dung
 
-Repository luôn là [Nature-Studio](https://github.com/bandepdao123/Nature-Studio); không đổi tên khi nâng phiên bản. Tên hiển thị trong README, VERSION, CHANGELOG và gói ZIP thể hiện bản đang dùng, ví dụ Nature Studio v1.0. Khi chốt bản mới, cập nhật các nội dung đó; có thể tạo tag/release v1.1 khi được yêu cầu, giữ nguyên URL repo. [REPOSITORY.json](REPOSITORY.json) ghi danh tính nguồn ổn định.
+Repository luôn là [Nature-Studio](https://github.com/bandepdao123/Nature-Studio); không đổi tên khi nâng phiên bản. Tên hiển thị trong README, VERSION, CHANGELOG và gói ZIP thể hiện bản đang dùng, ví dụ Nature Studio v1.1. Khi chốt bản mới, cập nhật các nội dung đó; có thể tạo tag/release v1.1 khi được yêu cầu, giữ nguyên URL repo. [REPOSITORY.json](REPOSITORY.json) ghi danh tính nguồn ổn định.
+
+## /dongvideo và bộ nhớ hai cấp — mới trong v1.1
+
+Gửi `/dongvideo UF-0001` để [tổng kết phiên](.agents/skills/dongvideo/SKILL.md). Skill rà attempt/phản hồi thực, xét bài học riêng Project **và** đóng góp phương pháp/kinh nghiệm cho bộ nhớ chung. Không ép mỗi phiên có lesson; chạy lại không nhân đôi dữ liệu. Báo cáo bằng tiếng Việt, không tự render, duyệt video hay push.
+
+[Memory](05-Memory/INDEX.md) tách `projects/<slug>/` và `shared/`. /chayvideo đọc active phù hợp ở cả hai nơi, ghi lesson ID/version vào INPUTS. /dongvideo tự lưu candidate; chỉ tự active phương pháp kiểm khách quan khi đạt đủ [gate](00-Standards/memory-policy.md). Kiểm cấu trúc bằng `python scripts/validate_memory.py` không chứng minh bài học đúng hay video tốt hơn.
+
+Nâng cấp từ v1.0 theo [UPDATE.md — migration](UPDATE.md#nâng-từ-v10-lên-v11). Giữ dữ liệu riêng, phân loại lesson theo phạm vi, không chép đè cả thư mục và không đẩy production đang làm lên public chỉ vì nâng framework. GitHub main mang phiên bản workspace, không tự có GitHub Release/tag.

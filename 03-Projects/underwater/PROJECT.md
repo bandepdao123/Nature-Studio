@@ -1,6 +1,6 @@
 # Underwater
 
-ID: under-fishing-us | Version: 1.4 | Status: configured | Updated: 2026-10-16
+ID: under-fishing-us | Version: 1.5 | Status: configured | Updated: 2026-10-16
 Slug: underwater
 Production prefix: UF
 Legacy names: Under Fish US; Under Fishing US; Under Fishing
@@ -47,3 +47,7 @@ Nền người dùng chốt: v1.9 chỉnh từ v1.7, không v1.8. Bản phát h�
 2026-10-16: v1.2 điều chỉnh ngôn ngữ và nhận diện theo đặc trưng; giữ rà lịch sử và format kỹ thuật.
 
 2026-10-16: v1.3 chuyển cấu trúc Channel sang Project và đổi tên dự án thành Underwater; xem UF-D013. Mục tiêu, format, lựa chọn loài, model và hợp đồng đầu ra giữ nguyên.
+
+## Bộ nhớ và tổng kết — v1.1 workspace
+
+Đọc [Memory Underwater](../../05-Memory/projects/underwater/INDEX.md) và [shared](../../05-Memory/shared/INDEX.md), lọc theo điều kiện. ID under-fishing-us giữ ổn định. /dongvideo tổng kết production cụ thể và xét đóng góp cho cả hai cấp theo policy; không đưa đặc tính loài hay format Underwater thành quy tắc chung. /chayvideo ghi ID/version/cách dùng lesson vào INPUTS. Đây là thay đổi đường đọc bộ nhớ, không đổi format hay quyết định sáng tạo.

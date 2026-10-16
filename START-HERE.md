@@ -2,7 +2,7 @@
 
 Kho sản xuất nội dung thiên nhiên, lưu trên máy; khởi tạo 15/10/2026 (Asia/Saigon).
 
-Phiên bản toàn hệ thống: **Nature Studio v1.0**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
+Phiên bản toàn hệ thống: **Nature Studio v1.1**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
 
 ## Lệnh tạo bộ nội dung
 
@@ -18,7 +18,7 @@ Giao file này cùng yêu cầu và quyền đọc thư mục Nature-Studio. N�
 2. Tra [danh mục dự án](03-Projects/INDEX.md), xác định dự án; đọc PROJECT.md của đúng dự án. Dự án đã cấu hình: [Underwater](03-Projects/underwater/PROJECT.md). Thiếu dự án và không suy được từ yêu cầu thì hỏi một câu ngắn.
 3. Đọc format, đối tượng/giọng và hợp đồng đầu ra của dự án; sau đó lấy đúng hướng dẫn nhiệm vụ từ [Standards](00-Standards/INDEX.md). Khi tạo ý tưởng mới, bắt buộc đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và tài liệu sáng tạo mà PROJECT.md dẫn tới; Underwater có [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Khi sửa clip, giữ trọng tâm đã chốt.
 4. Tra [Knowledge](01-Knowledge/INDEX.md) theo loài, môi trường, tương tác/dụng cụ; tra [Models](02-Models/INDEX.md) khi cần thông tin model/giao diện.
-5. Tra [Memory](05-Memory/INDEX.md): chỉ áp dụng bài học active đúng phạm vi; đọc idea-ledger của dự án để tránh lặp. Tra trạng thái hiện hành trong chỉ mục và ledger; hiện đã có hồ sơ UF-0001, chưa có bài học active.
+5. Tra [Memory](05-Memory/INDEX.md): đọc INDEX riêng Project và shared, mở bản gốc rồi chỉ áp active đúng điều kiện. Ghi ID/version/cách dùng vào INPUTS; không tự áp lesson Project khác. Đọc idea-ledger và hồ sơ thực để tránh lặp.
 6. Khi sản xuất, tạo hồ sơ bằng mẫu trong 00-Standards/templates/. Ghi phiên bản tài liệu/đầu vào đã dùng; mỗi lần thử là một thư mục mới. Không tạo/render nếu yêu cầu chỉ viết prompt.
 7. Review sản phẩm thực tế khi có; ghi phản hồi, chỉ đưa kết luận đủ cơ sở vào bộ nhớ theo memory-policy.md. Khi chỉ có prompt thì chỉ kiểm được prompt.
 
@@ -36,3 +36,9 @@ Không đọc toàn bộ kho mỗi lượt. Nếu không tìm thấy thông tin,
 Workspace tổ chức theo Project. Dự án hiện hành: [Underwater](03-Projects/underwater/PROJECT.md), tên cũ Under Fish US / Under Fishing US. Quy chuẩn đã chuyển sang 03-Projects/underwater; hồ sơ sản xuất sang 04-Productions/underwater; mẫu dự án là 00-Standards/templates/project.md. Không có dự án mới được tạo từ lần đổi tên này.
 
 Tên repo cố định là Nature-Studio; nâng VERSION không đổi URL. [REPOSITORY.json](REPOSITORY.json) ghi danh tính nguồn; UPDATE.md hướng dẫn đối chiếu bản đang dùng và bản mới.
+
+## Tổng kết và học sau phiên — v1.1
+
+Gửi `/dongvideo UF-0001` hoặc yêu cầu đóng phiên video cụ thể. Đọc [skill dongvideo](.agents/skills/dongvideo/SKILL.md): tổng kết dữ liệu thực, luôn xét bài học Project và shared; tự lưu candidate, chỉ tự kích hoạt phương pháp đã kiểm khách quan theo [policy](00-Standards/memory-policy.md). Kết luận rộng còn chờ kiểm/duyệt được gom trong báo cáo tiếng Việt. Đóng phiên không tự duyệt video hoặc đẩy GitHub. Gọi lại với cùng dữ liệu không tạo mục trùng.
+
+Nâng từ v1.0: đọc phần migration trong [UPDATE.md](UPDATE.md); bảo toàn production/lesson/chỉnh sửa riêng trước khi chuyển cấu trúc. Chạy `python scripts/validate_memory.py` sau cập nhật.
