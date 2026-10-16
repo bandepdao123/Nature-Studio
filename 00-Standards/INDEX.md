@@ -11,3 +11,5 @@
 Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thiên nhiên.
 
 - [Mã video và Project local](video-identifiers.md) — XXX-yyyyy từ 00001, cấp bằng script.
+
+- [Xuất bản hệ thống và bài học](publication.md) — giữ production/ledger riêng; kiểm cây public trước push/API.

@@ -19,7 +19,7 @@ Khi chạy `/chayvideo`, áp dụng hợp đồng riêng tại đầu output-con
 1. [Format hiện hành](format.md)
 2. [Khán giả và caption](audience-and-caption.md)
 3. [Hợp đồng đầu ra](output-contract.md)
-4. [Quyết định](decisions.md), [Lịch sử ý tưởng](idea-ledger.md)
+4. [Quyết định](decisions.md), Lịch sử ý tưởng local `idea-ledger.md` (khởi tạo từ mẫu khi cần)
 5. Theo cảnh: Knowledge về loài, môi trường, tackle; model profile; Memory active phù hợp.
 
 Trước khi phát triển concept mới, bắt buộc đọc [Sáng tạo mở](creative-direction.md): ví dụ không giới hạn loại câu chuyện; phát triển tiền đề độc lập rồi kiểm độ mới ở hành vi và nhân quả. Revision giữ chuyện đã chốt. Đây là hướng dẫn sáng tạo bổ sung theo UF-D014, không thay format kỹ thuật.
@@ -57,3 +57,7 @@ Mã mới: đọc [quy tắc](../../00-Standards/video-identifiers.md), chạy i
 Caption hiện hành theo UF-D015 tại audience-and-caption.md v1.6: học phong cách ngắn/trực tiếp/đa dạng kiểu câu của Underfishing, giữ Anh Mỹ và 3–5 hashtag; đây là quyết định biên tập của người dùng, không là chứng minh performance.
 
 UF-D016: Caption mới không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh. Caption/attempt lịch sử không tự sửa; khi revision caption thì theo quy chuẩn hiện hành.
+
+## Dữ liệu local và bài học chia sẻ — v1.4
+
+Lịch sử ý tưởng tại idea-ledger.md là file local không có trong repo; khi thiếu thì tạo theo ../../00-Standards/templates/idea-ledger.md sau khi rà production thật. Đây không phải dự án không có lịch sử. Các bài học công khai được tra từ Memory; publish theo ../../00-Standards/publication.md, không đẩy production/ledger hoặc dùng template như video đã làm.

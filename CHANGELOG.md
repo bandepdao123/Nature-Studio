@@ -2,6 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.4 — 2026-10-16
+
+- Bỏ production UF-0001/A01–A04 và ledger khỏi cây Git hiện hành; giữ nguyên file local. Không rewrite các commit cũ.
+- Cập nhật hệ thống giữ runtime ở local; bài học public đã làm sạch ở Project/shared vẫn được phân phối, không đổi candidate thành active.
+- Thêm publication policy, validator cây Git, CI Public tree guard và template ledger; packager bỏ runtime/private lessons, kiểm evidence/index công khai.
+- UPDATE.md hướng dẫn nhận deletion upstream mà giữ dữ liệu local. Các công việc local chưa được giao publish không gộp vào lần này.
+
 ## v1.3 — 2026-10-16
 
 - Underwater UF-D015: chốt phong cách caption học từ Underfishing, ít chữ/trực tiếp/đa dạng kiểu câu, độ dài linh hoạt; giữ tiếng Anh Mỹ và 3–5 hashtag. Quyết định biên tập không là kết luận performance. Phát hành cùng UF-D016: không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh.

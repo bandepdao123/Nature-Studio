@@ -12,6 +12,7 @@
     "under-fishing-us"
   ],
   "production_ids": [],
+  "publication": {"visibility": "public", "reviewed": true},
   "conditions": {
     "tasks": [
       "caption-writing",

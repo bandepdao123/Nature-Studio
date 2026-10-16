@@ -1,0 +1,161 @@
+{
+  "workspace_version": "1.4",
+  "date": "2026-10-16",
+  "base_commit": "bafedefe4f4b6cec5172571b985f89a4dcd65194",
+  "change": "Remove runtime from current public tree; preserve local history and include reviewed public lessons",
+  "sources": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "626c383b5f44617a8c0d542172f06622d6090c6f20a1aa8855b26c74e819ad0a"
+    },
+    {
+      "path": ".agents/skills/dongvideo/SKILL.md",
+      "sha256": "071ae526b29a2aecddc57fd7148c6f5f7805712dc7b84b2cf651c4983ad59f63"
+    },
+    {
+      "path": ".github/workflows/public-tree.yml",
+      "sha256": "6b2a8da0d40ae766f756dd7becb73a59f5d8ccf4125f6a5aa41a77d7c69c243a"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "51216891daec4cd0ef21a03500ed966b67e05a834dd4bd6f03f2495833530126"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "57f58d519d3a51fc8d7979b0c15a60959002f16d431a47bebce018c6d80817d9"
+    },
+    {
+      "path": "00-Standards/memory-policy.md",
+      "sha256": "4a936597601ff4066bd9d10658fea3988d8b2b75e5dbcd470be6028f83a52df4"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "b99b50caa8147e133c7818c3288e0164688c6a3795d79bbf570d2df697f98d0e"
+    },
+    {
+      "path": "00-Standards/publication.md",
+      "sha256": "19717139c86f131ebd69a98bf231a3ef76f7c2df77aea4f102132515cf96418e"
+    },
+    {
+      "path": "00-Standards/templates/idea-ledger.md",
+      "sha256": "91dfadede87d8ad9865816ee4df2a67d8a2e0d9244f69b65228035f3d70ed2e7"
+    },
+    {
+      "path": "00-Standards/templates/lesson.md",
+      "sha256": "273114e30353978d5540a37382f81562f236c5bbf7a47acf454e26c545573e1c"
+    },
+    {
+      "path": "03-Projects/INDEX.md",
+      "sha256": "4cb2d4f7d3826f0b5dcd2f146b570b38a3bb3d4322f379e70eb3443b6b49c95a"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "dcc36fc5853eec3e781df0dd470580a9261441fad294ae395b8cbd49e5fdd15f"
+    },
+    {
+      "path": "04-Productions/README.md",
+      "sha256": "bec549c6d67ff8a0571d6c9aee8ed22cba50d26705a868817e1568f0044287d3"
+    },
+    {
+      "path": "05-Memory/projects/underwater/candidates/L-b4aef9fe-019f-4172-8adb-f00d13dfa22c.md",
+      "sha256": "37c5ce4c23e28c24fd9ca6c7dc72955c69b995a0a2a3f9e1335895bf6ed34e83"
+    },
+    {
+      "path": "06-Evaluation/results/v1.4-publication-2026-10-16.md",
+      "sha256": "72355c5bfa2c79d0c2125d5c2734caa595a3c41a88c4877e60e2fd814a5fbc75"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "c10537ea5e42d3f664aff22c50473c51f8da6a83158d44ebfe19a3f6bc89d615"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "73a18a1cb8fe0c46dcdb619790a4c94dbb2641ea0466acf8cf338e5cf63155c1"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0a8e2cbfce6f995ed049d4188a910ad6b34bea6b7ee9945dab939b02f95e6088"
+    },
+    {
+      "path": "README.md",
+      "sha256": "5ff01e5b9157e6e2d3d6303bd630312481781d7adefb0c2293795c34daaff114"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "11422320805de6f15adea863c33faf509624a71da63ed525cfa51ed5eea76a27"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "065283b3ebff12fbedc13cf799c58d9a44eab23d369a6bb0ff5df2f098a602b5"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "2c1a29e33eeae03327afa4026ec4312d116b6a123e67a80493131e8db985f7ad"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "9d2bf356d838faba1759efd3e9de32647bd68e9da8c92878074b392872e9f04e"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "sha256": "8a920fe599eb2c6e3d38e21072c0a18e57c34a4647a56cdb783c35b0b2f21d77"
+    },
+    {
+      "path": "scripts/tests/test_publication.py",
+      "sha256": "dd04a5f9b887341d08f1cd605f9fabf15237fec946579ce3135a368ca5b08072"
+    },
+    {
+      "path": "scripts/validate_publication.py",
+      "sha256": "7ec3883c2ac0ab7a2efcda4f06b252f9fb11a118eb221d9098a93875143b6c5b"
+    }
+  ],
+  "removed_from_tracking_only": [
+    "03-Projects/underwater/idea-ledger.md",
+    "04-Productions/underwater/README.md",
+    "04-Productions/underwater/UF-0001/A01/INPUTS.md",
+    "04-Productions/underwater/UF-0001/A01/caption.txt",
+    "04-Productions/underwater/UF-0001/A01/first-frame-prompt.txt",
+    "04-Productions/underwater/UF-0001/A01/review.md",
+    "04-Productions/underwater/UF-0001/A01/settings.md",
+    "04-Productions/underwater/UF-0001/A01/video-prompt.txt",
+    "04-Productions/underwater/UF-0001/A02/INPUTS.md",
+    "04-Productions/underwater/UF-0001/A02/first-frame.png",
+    "04-Productions/underwater/UF-0001/A02/generation-prompt.txt",
+    "04-Productions/underwater/UF-0001/A02/review.md",
+    "04-Productions/underwater/UF-0001/A02/settings.md",
+    "04-Productions/underwater/UF-0001/A03/INPUTS.md",
+    "04-Productions/underwater/UF-0001/A03/audio-measurement.txt",
+    "04-Productions/underwater/UF-0001/A03/contact-01.jpg",
+    "04-Productions/underwater/UF-0001/A03/contact-02.jpg",
+    "04-Productions/underwater/UF-0001/A03/ffprobe.json",
+    "04-Productions/underwater/UF-0001/A03/frame-0.png",
+    "04-Productions/underwater/UF-0001/A03/frame-1.png",
+    "04-Productions/underwater/UF-0001/A03/frame-2.png",
+    "04-Productions/underwater/UF-0001/A03/key-frames.jpg",
+    "04-Productions/underwater/UF-0001/A03/review.md",
+    "04-Productions/underwater/UF-0001/A03/source-video.mp4",
+    "04-Productions/underwater/UF-0001/A04/INPUTS.md",
+    "04-Productions/underwater/UF-0001/A04/caption.txt",
+    "04-Productions/underwater/UF-0001/A04/concept-revision.md",
+    "04-Productions/underwater/UF-0001/A04/first-frame-prompt.txt",
+    "04-Productions/underwater/UF-0001/A04/first-frame.png",
+    "04-Productions/underwater/UF-0001/A04/review.md",
+    "04-Productions/underwater/UF-0001/A04/settings.md",
+    "04-Productions/underwater/UF-0001/A04/video-prompt.txt",
+    "04-Productions/underwater/UF-0001/SUMMARY.md",
+    "04-Productions/underwater/UF-0001/brief.md",
+    "04-Productions/underwater/UF-0001/concept.md",
+    "04-Productions/underwater/UF-0001/feedback.md",
+    "04-Productions/underwater/UF-0001/performance.md",
+    "04-Productions/underwater/UF-0001/research.md",
+    "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/idea-ledger.md",
+    "07-Releases/snapshots/before-project-migration-2026-10-16/04-Productions/under-fishing-us/README.md"
+  ],
+  "public_lesson_count": 1,
+  "checks": "42 tests, both skill validators, memory validator, full-tree publication guard, exported ZIP integrity and runtime exclusion",
+  "verification_report": "06-Evaluation/results/v1.4-publication-2026-10-16.md",
+  "history_rewrite": false,
+  "local_data_preserved": true,
+  "excluded": "unrelated local story work, runtime, registry, private evidence",
+  "limits": "CI run not yet observed; no branch protection; old Git commits still contain prior data"
+}

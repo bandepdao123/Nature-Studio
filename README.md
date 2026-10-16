@@ -1,4 +1,4 @@
-# Nature Studio v1.3
+# Nature Studio v1.4
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
@@ -8,13 +8,13 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.3**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.4**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
 [Underwater](03-Projects/underwater/PROJECT.md): Reel camera dưới nước hướng người câu cá Mỹ. Video mục tiêu 10s, 9:16, một shot; quy chuẩn cụ thể nằm trong hồ sơ dự án. Tên cũ Under Fish US / Under Fishing US chỉ là alias; ID nội bộ và prefix UF được giữ để truy vết.
 
-Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md). Đọc SUMMARY và review thực để biết đúng lịch sử/mức kiểm; bản trên GitHub và production đang làm ở local có thể khác nhau. Nâng framework không đồng nghĩa đã QA hoặc duyệt video.
+Repo hệ thống không chứa lịch sử video người dùng. Production và ledger được tạo/giữ ở local; dữ liệu đã có trên máy không bị xóa khi nâng cấp. Bài học cải thiện được chia sẻ riêng sau khi làm sạch theo publication.md.
 
 ## Hướng dẫn sáng tạo cho AI
 
@@ -40,7 +40,7 @@ Skill [chayvideo](.agents/skills/chayvideo/SKILL.md) tự tìm dự án phù h�
 | 01-Knowledge | Kiến thức, nguồn và phạm vi kiểm chứng |
 | 02-Models | Hướng dẫn model và giới hạn đã biết |
 | 03-Projects | Hồ sơ, quy chuẩn và lịch sử ý tưởng từng dự án |
-| 04-Productions | Brief, các lần thử, prompt, review và media thực |
+| 04-Productions | Chỉ hướng dẫn trong repo; hồ sơ video/media thật ở local |
 | 05-Memory | Bộ nhớ riêng Project và shared, mỗi nơi có candidate / active / retired |
 | 06-Evaluation | Tiêu chí, ca kiểm và kết quả thực |
 | 07-Releases | Baseline, manifest và snapshot lịch sử |
@@ -51,7 +51,7 @@ Danh mục [dự án](03-Projects/INDEX.md) và [mẫu dự án](00-Standards/te
 
 Clone/tải toàn bộ repo vào một thư mục, mở thư mục đó làm workspace rồi đọc START-HERE.md. Không cần giữ đường dẫn ổ E:. Đường dẫn tuyệt đối trong một số hồ sơ cũ là provenance tại thời điểm tạo; các nguồn hiện hành dùng liên kết tương đối. Snapshot giữ tên Channel/đường dẫn cũ để truy lịch sử; không dùng làm cấu trúc hiện hành.
 
-Tạo ZIP đầy đủ, gồm cả `.agents`, media hiện có và snapshot:
+Tạo ZIP hệ thống, gồm `.agents` và nguồn được phép chia sẻ; production, ledger, registry và bài học private được loại:
 
 ```text
 python scripts/package_workspace.py
@@ -82,3 +82,7 @@ Gói ZIP phân phối loại `.nature-studio/` để không phát tán prefix lo
 ## Caption Underwater — v1.3
 
 Phong cách theo benchmark Underfishing: ít chữ, trực tiếp, một điểm đáng xem; linh hoạt câu hỏi/nhận xét/phản ứng/chỉ dẫn, tiếng Anh Mỹ tự nhiên. Giữ 3–5 hashtag khác đúng cảnh, **không dùng #Underwater**. Đọc [quy chuẩn](03-Projects/underwater/audience-and-caption.md) và [nghiên cứu 40 caption](01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md). Đây là lựa chọn biên tập, chưa chứng minh hiệu quả nền tảng. Ảnh UI nghiên cứu chỉ lưu local, không có trong repo/gói phân phối.
+
+## Xuất bản hệ thống và bộ nhớ — v1.4
+
+Đọc [publication.md](00-Standards/publication.md) trước khi commit/push hoặc cập nhật GitHub bằng API. Production/attempt/media/ledger/registry giữ local; không đưa vào cây repo hoặc gói hệ thống. Bài học cải thiện ở Project/shared vẫn đi cùng cập nhật sau khi làm sạch và đánh dấu public/reviewed; không tự active. Chạy `python scripts/validate_publication.py` trên cây index trước publish; CI kiểm lại. Không xóa dữ liệu local theo các deletion runtime từ upstream. Commit cũ vẫn có thể chứa dữ liệu đã từng công khai; lần cập nhật này không rewrite lịch sử.

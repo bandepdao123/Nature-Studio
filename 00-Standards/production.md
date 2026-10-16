@@ -26,3 +26,7 @@ Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PR
 ## Tổng kết phiên và vòng học — v1.2, 2026-10-16
 
 /dongvideo dùng SESSION-REVIEW.md theo mẫu để tổng kết phần dữ liệu đã truy cập; luôn đánh giá riêng Project và shared. Không tự đóng từ /chayvideo, không nhầm đóng phiên với selected/QA pass. INPUTS ghi ID/version/cách áp dụng lesson để lần sau đối chiếu kết quả. Thẩm quyền đổi trạng thái chỉ theo memory-policy, không biến giả thuyết thành quy chuẩn.
+
+## Riêng tư khi cập nhật hệ thống
+
+Production, attempt, SESSION-REVIEW và idea-ledger giữ local theo publication.md. Repo chỉ phân phối mẫu ledger. /chayvideo vẫn rà lịch sử local và ghi đầy đủ; tách bài học tái sử dụng sang Memory, không dùng việc đồng bộ hệ thống để tự upload toàn bộ lịch sử.

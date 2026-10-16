@@ -10,6 +10,7 @@
   "project_id": "<stable-project-id>",
   "origin_project_ids": ["<stable-project-id>"],
   "production_ids": [],
+  "publication": {"visibility": "private", "reviewed": false},
   "conditions": {"tasks": [], "models": [], "interfaces": [], "formats": []},
   "evidence": [],
   "validation": {

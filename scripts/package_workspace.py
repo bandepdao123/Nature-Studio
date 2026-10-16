@@ -6,13 +6,21 @@ import json
 import re
 import subprocess
 import zipfile
+import importlib.util
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRS = {'.nature-studio', '.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'}
+_GUARD_SPEC = importlib.util.spec_from_file_location('publication_guard', ROOT / 'scripts' / 'validate_publication.py')
+_GUARD = importlib.util.module_from_spec(_GUARD_SPEC)
+_GUARD_SPEC.loader.exec_module(_GUARD)
 
 
 def included(path):
     rel = path.relative_to(ROOT)
+    if _GUARD.forbidden(rel.as_posix()):
+        return False
+    if _GUARD.is_lesson(rel.as_posix()) and not _GUARD.shareable(path.read_text(encoding='utf-8-sig')):
+        return False
     if rel.as_posix() == 'PACKAGE-MANIFEST.json':
         return False  # Replace an extracted package's old manifest with a fresh one.
     if any(part in EXCLUDED_DIRS for part in rel.parts):
@@ -60,6 +68,10 @@ def build():
     if repository.get('name_policy') != 'stable' or repository['url'] != expected_url:
         raise ValueError('REPOSITORY.json must describe the stable repository URL.')
     files = sorted(p for p in ROOT.rglob('*') if p.is_file() and included(p))
+    by_path = {p.relative_to(ROOT).as_posix(): p for p in files}
+    public_check = _GUARD.validate_files(by_path, lambda rel: by_path[rel].read_bytes())
+    if not public_check['valid']:
+        raise ValueError('Public package rejected: ' + '; '.join(public_check['errors']))
     if any(p.is_symlink() for p in files):
         raise RuntimeError('Resolve symlinks explicitly before packaging.')
     records = [{'path': p.relative_to(ROOT).as_posix(), 'size': p.stat().st_size,

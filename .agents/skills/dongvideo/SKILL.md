@@ -43,3 +43,7 @@ Chạy `python scripts/validate_memory.py`, kiểm diff/link/ID, quyền đổi 
 Trả ngắn bằng tiếng Việt: production/phạm vi tổng kết; kết quả; bộ nhớ Project; đóng góp shared (hoặc không có); active mới kèm căn cứ/candidate chờ; file thay đổi và việc tiếp theo. Không nhận video đã duyệt vì đã tổng kết. Không tự commit/push/publish hay tạo media từ lệnh này.
 
 Nhận cả mã XXX-yyyyy mới và mã legacy như UF-0001. Đọc IDENTITY.json khi có để đối chiếu Project/video UUID; không cấp lại mã khi tổng kết, không yêu cầu đổi mã cũ và không đoán Project chỉ từ ba chữ.
+
+## Phân biệt ghi nhớ local và chia sẻ
+
+Đọc 00-Standards/publication.md. Lesson mới mặc định publication.visibility=private, reviewed=false. Trong báo cáo, tách bài học có thể đóng góp bản cập nhật hệ thống khỏi nguồn production riêng; không tự gửi lên GitHub hoặc coi nhãn public là active. Khi được giao publish, rà/làm sạch bài học theo policy, giữ bằng chứng riêng local và chỉ xuất căn cứ được chia sẻ. Không lược bỏ hết lessons khỏi bản cập nhật chỉ vì không xuất production.

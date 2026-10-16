@@ -27,3 +27,11 @@ Thumbs.db
 /01-Knowledge/benchmarks/*/evidence/
 /01-Knowledge/benchmarks/*/evidence-manifest.json
 /01-Knowledge/benchmarks/*/captions-raw.json
+
+# Runtime stays local, including historical snapshots of runtime folders
+**/04-Productions/**
+!04-Productions/README.md
+**/idea-ledger.md
+!00-Standards/templates/idea-ledger.md
+# New lessons default private; explicitly force-add only public/reviewed exports
+/05-Memory/**/L-*.md
