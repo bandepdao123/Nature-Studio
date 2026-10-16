@@ -12,4 +12,8 @@ Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thi�
 
 - [Mã video và Project local](video-identifiers.md) — XXX-yyyyy từ 00001, cấp bằng script.
 
+- [Phát triển câu chuyện](story-development.md) — phương pháp chung có nguồn, áp theo Project; không bảo đảm viral.
+
 - [Xuất bản hệ thống và bài học](publication.md) — giữ production/ledger riêng; kiểm cây public trước push/API.
+
+- [Tạo first frame và QA](first-frame.md) — /taoanh, QA ảnh thật, tối đa 5 call; tiêu chí riêng lấy từ Project.

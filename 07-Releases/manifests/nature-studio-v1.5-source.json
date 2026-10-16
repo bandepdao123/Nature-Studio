@@ -1,0 +1,200 @@
+{
+  "version": "1.5",
+  "date": "2026-10-16",
+  "scope": [
+    "taoanh",
+    "story-development"
+  ],
+  "tests": {
+    "unit_tests": 52,
+    "memory_validation": "pass",
+    "independent_media_or_audience_tests": "not_run",
+    "skill_validation": [
+      "taoanh: pass",
+      "chayvideo: pass"
+    ],
+    "public_tree_validation": "pass"
+  },
+  "files": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "796e2af54c3530302b8ee6c0d209ef72bdc5408d242aee30809eb94d8c1a2c1c"
+    },
+    {
+      "path": ".agents/skills/taoanh/SKILL.md",
+      "sha256": "0412d0e48020a5dce4b17a9925d5c438e00277101536751f1304c8a438a9c2c4"
+    },
+    {
+      "path": ".agents/skills/taoanh/agents/openai.yaml",
+      "sha256": "ef5f90d828e27d1a1842b1a3e83d9edc3a0b32b2776d5228a58bdc223647905d"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "dec1f227183e4b5afffdf6d3cd0f4573d9d32afc419a45d8db37aae0b07bd06f"
+    },
+    {
+      "path": "00-Standards/creativity.md",
+      "sha256": "3e59ebebe7483b68fced700a7662b802e1c3a4f714ea17174ba5dc4654b60ad7"
+    },
+    {
+      "path": "00-Standards/first-frame.md",
+      "sha256": "9615be95c8b1716044c1ed0bfd2adc01397439b84531af06f26492064d0e43ae"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "a9ea7f60cbd8647d57eda590c9fb8e3f9f1cf4d8c6ee37bf341ba1fb1b7dd502"
+    },
+    {
+      "path": "00-Standards/quality-review.md",
+      "sha256": "ad84c75ceff54837a265001c1d49dbb6815db4bee66a64d7d9695e98e4e603b0"
+    },
+    {
+      "path": "00-Standards/story-development.md",
+      "sha256": "dc4bc54d9270d8098e79e12f6ead00969a9f5f31e88bb224304a65e69ab9eb4c"
+    },
+    {
+      "path": "00-Standards/templates/README.md",
+      "sha256": "5da14e39a8d124ae7592f155adcd888f0185a0db8ef7d3489c62f1e2c5bea942"
+    },
+    {
+      "path": "00-Standards/templates/concept.md",
+      "sha256": "19983e6e66c00b37a48fc7d1938bc140ed5dc3c4361c7b61e9ef3615ede56de9"
+    },
+    {
+      "path": "00-Standards/templates/first-frame-handoff.json",
+      "sha256": "8b18bf95546c8f6c04c923c400383e9ec684d192b9df09b1913e31efbe88981f"
+    },
+    {
+      "path": "00-Standards/templates/first-frame-review.md",
+      "sha256": "bf5e80f814b5336f1bb953c6612d33d143a24ecc4470fc522b38248ca12b8cf7"
+    },
+    {
+      "path": "00-Standards/templates/project.md",
+      "sha256": "c1e4f17395bbd4daa9e88d50b76cb6bb752ef19a0ce6bf809b12c9a328114288"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "sha256": "53c47d704ada3b3a26fa780cfdc6704448c4e78db00577e03d51c23475d50d90"
+    },
+    {
+      "path": "01-Knowledge/sources/story-development-research-2026-10-16.md",
+      "sha256": "890f75b96fcaa0185fda5eaf726c4767bee5272a1a1dcace9a03a593136433d6"
+    },
+    {
+      "path": "02-Models/INDEX.md",
+      "sha256": "9cc4c80e27eb4b36a19ba5446e0f9c33d0fb2ecdf01bef0c24efbea9ec181e66"
+    },
+    {
+      "path": "02-Models/model-profiles/sunburst-imagegen.md",
+      "sha256": "eebe4d33c9d29cfbed0fbb904136dfcf72a8c91dae74f6add571c6dbe69e29ea"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "afd555c04e4e94c14fe79eaf995bd1aef90ad366b05342d384c55e4dec058630"
+    },
+    {
+      "path": "03-Projects/underwater/creative-direction.md",
+      "sha256": "8e67651297d715d3bacc5a0a980162a38826838111c3a9a2f1984933af572f4f"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "sha256": "bfa00ba4e84b6b27af43d739d77b30a2f4e8698174a78ab3297d4d351ad6cdb7"
+    },
+    {
+      "path": "03-Projects/underwater/first-frame-qa.md",
+      "sha256": "148dcf1ac77029c61daa4c51fdb6fdb672d374f4eb1e3242a741e3f405240f5b"
+    },
+    {
+      "path": "03-Projects/underwater/story-development.md",
+      "sha256": "c050ec272b8ba5930bf52d167c0562d8e632f63c086b251fd332d529b899f37c"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-IMAGE-01.md",
+      "sha256": "02468fce8c6367807908a6af7f34ea15af8e5a54abca2c51ed3d598581b94a09"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-01.md",
+      "sha256": "a916d1bb00406f4d258cf2af4afec0683bfc1c3ab561532d539d51362153a2b7"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-02.md",
+      "sha256": "2131c9f8024638e6bbba3d4af6b6d4e9b554cafd381043b5d197eedb3bcf4b8d"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-03.md",
+      "sha256": "accbec7e9c523459530b6cebd0412cfec1f2d6b59a4e029cd34440a611d0189a"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-04.md",
+      "sha256": "e89ac9356ee6aceacb3d256b714c97bae46849348b35b71e791382028abe86e1"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-05.md",
+      "sha256": "40b7dfe7478d0f2eff0335e740d81550ca2c5370457ea6fc976357dfaaf8898b"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-06.md",
+      "sha256": "19ef17cef4870cc689d04562323c8ab6536c75aff8e47a25dd9dcde5e38678c8"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-07.md",
+      "sha256": "b8972a84d7489bcd5c154e4c8f2cd1a6e94d11ef8779b64b180faba9765d2cdb"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-STORY-08.md",
+      "sha256": "5467316f41ca4fd93ff2c64c80b002551b324f81e1387592f9c0b8967cff67ce"
+    },
+    {
+      "path": "06-Evaluation/criteria/story-quality.md",
+      "sha256": "5129cd696dd733d480ee14c97d3a791fb4c4ea84327eaf8fd8f739bf65fc7ddc"
+    },
+    {
+      "path": "06-Evaluation/results/story-development-implementation-2026-10-16.md",
+      "sha256": "36e3b03a08352793bcead6250c1d950f7b3d8ea75aa4dace89da34c39ccf749d"
+    },
+    {
+      "path": "06-Evaluation/results/taoanh-implementation-2026-10-16.md",
+      "sha256": "c9b40b2720365c29e85a5d4db2ca27314e379243856f80c17fa92eb86d845980"
+    },
+    {
+      "path": "06-Evaluation/results/v1.5-publication-checks-2026-10-16.md",
+      "sha256": "565acab2d2c30d02e7f58d924e3f5ab0759086378c83b1d3d529fc0418077148"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "98974201e7bed691bbc40aa9d835d27a7a498d3194c92925c58fed08dc79a5bd"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "dcc5809e89b9cc785d213939b8357400d85224271338d5de89f5c8e91322fb75"
+    },
+    {
+      "path": "README.md",
+      "sha256": "80dffcc7d4376c98220db3a80f1d53d77dc69111df10be3e510d3d38d998e81d"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "fb126f99caf93bccc5a5d0e223bf1f7fa2a5a42ae4019559128ce17359ede0a9"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "dfeaa9b396c2914b88d9f177b49f0fc070be24bc0feccd62858a08f5c4e64202"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "814d8acf23e8102d07ad03dc00e489efa4f7345a57609cc20e8621cffec1aa33"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "03c76d47c407b24353b3121bd96490373bd6c5de05f6b3d32bd420c4810f1160"
+    },
+    {
+      "path": "scripts/image_budget.py",
+      "sha256": "9c8418586c0a14596fad37584e59bc7a1ac63ca89705a1f9f69d2314c56814f4"
+    },
+    {
+      "path": "scripts/tests/test_image_budget.py",
+      "sha256": "aeb476e435d20bccb4e8f7478aa5584f2ccb58111d225cf91bce917b746df84b"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "production_id": null,
+  "project_id": null,
+  "attempt_id": null,
+  "cycle_id": null,
+  "qa_status": "qa_incomplete",
+  "image_path": null,
+  "sha256": null,
+  "measured_width": null,
+  "measured_height": null,
+  "review_path": null,
+  "brief_version": null,
+  "concept_version": null,
+  "requested_model": "gpt-image-2.5-sunburst",
+  "actual_model": "unknown",
+  "model_verified": false,
+  "selection_mode": null,
+  "model_evidence_path": null,
+  "user_approved": false,
+  "user_approval_path": null,
+  "limitations": []
+}

@@ -25,3 +25,7 @@ Bỏ tên riêng, loài, màu và địa điểm khỏi tóm tắt: câu hỏi m
 Giữ đúng hợp đồng đầu ra và chỉ giao số phương án người dùng yêu cầu. Trong hồ sơ, ghi tiền đề được chọn, căn cứ, giả định và kết quả kiểm có thể truy nguyên; không ghi chuỗi suy luận nội bộ.
 
 Nếu nhiệm vụ là sửa/tiếp tục một clip, giữ câu chuyện đã chọn và chỉ sửa phạm vi được giao; quy trình tạo mới không ép đổi ý tưởng. Ghi feedback đúng phạm vi theo memory-policy, chỉ áp bài học active phù hợp. Không hứa mọi đầu ra đều độc nhất hoặc sáng tạo tốt; đánh giá qua sản phẩm thực và bổ sung ca kiểm khi có lỗi lặp.
+
+## Phát triển và kiểm câu chuyện — 2026-10-16
+
+Khi tạo concept mới, đọc [story-development.md](story-development.md): chuyển tiền đề thành hook/câu hỏi quan sát, tiến triển nhân quả, key và hậu quả; kiểm giả thuyết audience riêng với tính đúng của cảnh. Dùng phương pháp theo format Project, không biến thành khuôn tình huống hay điểm số dự đoán viral. Revision chỉ áp phần liên quan, giữ chuyện đã chốt. Nguồn/giới hạn được ghi trong nghiên cứu SRC-STORY-20261016; chưa kiểm hiệu quả trên audience.

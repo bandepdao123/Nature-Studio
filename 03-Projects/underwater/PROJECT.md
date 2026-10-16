@@ -58,6 +58,12 @@ Caption hiện hành theo UF-D015 tại audience-and-caption.md v1.6: học phon
 
 UF-D016: Caption mới không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh. Caption/attempt lịch sử không tự sửa; khi revision caption thì theo quy chuẩn hiện hành.
 
+UF-D017 (2026-10-16): khi tạo concept mới, bắt buộc đọc [Story Development](story-development.md) cùng creativity/creative-direction. Phương pháp chung có nguồn tại 00-Standards/story-development.md; không đổi key >5s, output-contract hoặc caption hiện hành. Nghiên cứu cơ chế không là xác nhận hiệu quả Reel của dự án.
+
 ## Dữ liệu local và bài học chia sẻ — v1.4
 
 Lịch sử ý tưởng tại idea-ledger.md là file local không có trong repo; khi thiếu thì tạo theo ../../00-Standards/templates/idea-ledger.md sau khi rà production thật. Đây không phải dự án không có lịch sử. Các bài học công khai được tra từ Memory; publish theo ../../00-Standards/publication.md, không đẩy production/ledger hoặc dùng template như video đã làm.
+
+## First frame — UF-D018
+
+Khi tạo ảnh thật bằng /taoanh, đọc [QA riêng](first-frame-qa.md) và [gate chung](../../00-Standards/first-frame.md). Tối đa 5 call sinh/sửa, chưa đạt xin thêm; không sửa chuyện/loài để lách QA. Ưu tiên Sunburst qua image_gen; không tìm được thì dùng model mặc định không hỏi lại, model không là tiêu chí QA. Ảnh QA pass không thay QA video hoặc user approval.
