@@ -19,3 +19,7 @@ Video mới: đọc [video-identifiers.md](00-Standards/video-identifiers.md); d
 ## Xuất bản hệ thống và bộ nhớ — v1.4
 
 Đọc [publication.md](00-Standards/publication.md) trước khi commit/push hoặc cập nhật GitHub bằng API. Production/attempt/media/ledger/registry giữ local; không đưa vào cây repo hoặc gói hệ thống. Bài học cải thiện ở Project/shared vẫn đi cùng cập nhật sau khi làm sạch và đánh dấu public/reviewed; không tự active. Chạy `python scripts/validate_publication.py` trên cây index trước publish; CI kiểm lại. Không xóa dữ liệu local theo các deletion runtime từ upstream. Commit cũ vẫn có thể chứa dữ liệu đã từng công khai; lần cập nhật này không rewrite lịch sử.
+
+## /taoanh — tạo ảnh và QA
+
+Khi người dùng gọi `/taoanh`, “tạo ảnh”, “tạo first frame” với ý định tạo/sửa ảnh trong Project, đọc [.agents/skills/taoanh/SKILL.md](.agents/skills/taoanh/SKILL.md). Không kích hoạt từ câu hỏi, trích dẫn, yêu cầu chỉ viết prompt hoặc sửa skill. Ảnh ngoài Project dùng luồng tạo ảnh thông thường, không ép vào Underwater. First frame QA theo [first-frame.md](00-Standards/first-frame.md) và Project. Tối đa 5 lượt sinh/sửa/call đã gửi, lưu budget local, hết lượt chưa đạt thì dừng và xin thêm số lượt cụ thể. image_gen là tuyến thực thi; ưu tiên Sunburst nếu chọn được, nếu không thì dùng model mặc định và tiếp tục không hỏi lại. Danh tính model không phải tiêu chí QA; không nhận đã dùng Sunburst khi chưa có căn cứ hoặc tự chuyển CLI/API. Không sinh ảnh chỉ vì yêu cầu xây skill.

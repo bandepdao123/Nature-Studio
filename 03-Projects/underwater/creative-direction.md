@@ -21,3 +21,7 @@ Giữ các ràng buộc thực của dự án: khán giả câu cá Mỹ, loài/
 Trong concept, ghi ngắn gọn tiền đề cuối cùng, cơ chế tạo tò mò, cơ sở/giả định, trường hợp gần nhất và khác biệt nhân quả có thể chỉ ra. Ghi kết luận có thể kiểm tra, không ghi chuỗi suy luận nội bộ hoặc toàn bộ quá trình brainstorm. Không thêm báo cáo dài vào bốn mục đầu ra.
 
 Nếu người dùng nhận xét các ý tưởng đang giống nhau, tra lại concept của cả chuỗi gần đây để tìm cơ chế lặp; điều chỉnh cách phát triển ý tưởng, thay vì chỉ thêm một ví dụ mới vào danh sách. Độ mới và chất lượng phải được đánh giá qua đầu ra thực; thay hướng dẫn chỉ là biện pháp cải thiện, chưa chứng minh hiệu quả.
+
+## Phương pháp kể chuyện có nguồn — UF-D017
+
+Khi tạo mới, áp dụng [Story Development riêng Underwater](story-development.md) và [phương pháp chung](../../00-Standards/story-development.md). Không thay thế quy tắc sáng tạo mở bằng danh sách tình huống viral. Đọc nguồn khi cần kiểm lập luận; không cần đọc lại toàn bộ nghiên cứu mỗi lần. Giữ key sau 5s, các quy chuẩn kỹ thuật/caption hiện hành và quyền thực thi của output-contract.

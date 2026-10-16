@@ -2,7 +2,7 @@
 
 Version: 1.6 | Updated: 2026-10-16 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.4; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.5; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -59,3 +59,7 @@ Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, s�
 ## Xuất bản hệ thống và bộ nhớ — v1.4
 
 Đọc [publication.md](00-Standards/publication.md) trước khi commit/push hoặc cập nhật GitHub bằng API. Production/attempt/media/ledger/registry giữ local; không đưa vào cây repo hoặc gói hệ thống. Bài học cải thiện ở Project/shared vẫn đi cùng cập nhật sau khi làm sạch và đánh dấu public/reviewed; không tự active. Chạy `python scripts/validate_publication.py` trên cây index trước publish; CI kiểm lại. Không xóa dữ liệu local theo các deletion runtime từ upstream. Commit cũ vẫn có thể chứa dữ liệu đã từng công khai; lần cập nhật này không rewrite lịch sử.
+
+## Ảnh first frame — v1.5
+
+/taoanh theo skill và first-frame.md: tối đa 5 call image_gen mỗi cycle, mỗi call đã gửi kể cả lỗi tính lượt; không reset khi đổi chat. Hết chưa đạt dừng xin thêm lượt, chỉ grant sau chấp thuận thật. Ưu tiên Sunburst; không tìm được hoặc không có selector thì dùng model mặc định image_gen, không hỏi lại. Ghi actual unknown nếu tool không công bố; danh tính model không chặn QA hoặc sinh ảnh. QA chỉ pass sau xem/đo ảnh thực và mọi tiêu chí bắt buộc pass; không tự duyệt người dùng hoặc tạo video. Bộ đếm .image-qa.sqlite3 nằm trong production local, không vào bản public.

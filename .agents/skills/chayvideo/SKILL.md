@@ -77,3 +77,5 @@ Lỗi/phản hồi mới được ghi đúng hồ sơ, bài học mới theo mem
 Sau phiên, người dùng có thể gọi `/dongvideo <production-id>` để tổng kết và xét đóng góp bộ nhớ Project/shared theo skill dongvideo. Không tự đóng phiên từ lệnh tạo nội dung; /chayvideo không tự kích hoạt lesson.
 
 Repo mới không có ledger video người dùng. Nếu thiếu idea-ledger.md, kiểm production/chat thực trước; khi có nội dung thật thì khởi tạo ledger local theo 00-Standards/templates/idea-ledger.md. Không yêu cầu lịch sử mẫu trên GitHub và không tự tải lịch sử local khi cập nhật hệ thống.
+
+Người dùng muốn tạo/sửa ảnh thật từ bộ nội dung thì chuyển sang /taoanh theo skill taoanh; không tự gọi chỉ vì đã viết FIRST FRAME PROMPT. Ảnh từ /taoanh có FIRST-FRAME.json trỏ file/hash/review; kiểm brief/concept và ảnh trước khi tiếp nối video, không coi QA ảnh là QA chuyển động.

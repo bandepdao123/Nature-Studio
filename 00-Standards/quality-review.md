@@ -19,3 +19,11 @@ Mỗi phát hiện: ID → timecode/frame → điều quan sát được → ti�
 2. Hiệu quả nội dung: impressions/reach/view theo định nghĩa nền tảng, thời gian xem, retention, xem lại/tương tác nếu có; lưu tuổi bài và ngày đo. Thiếu chỉ số thì để unavailable, không điền 0.
 
 Không suy nhân quả từ một clip hoặc một biến thể nhiều thay đổi; không chấm đạt chỉ vì prompt chứa từ khóa. Review có thể bị sửa khi có bằng chứng mới.
+
+## Review câu chuyện — 2026-10-16
+
+Dùng checklist tại [story-development.md](story-development.md). Tách tính đọc được của hook, tiến triển và giá trị key/hậu quả khỏi sở thích người review; phân biệt tự kiểm của AI, kiểm hiểu với người thật và analytics. Ghi unknown/not checked cho phần chưa quan sát. Không coi tổng điểm story là xác suất viral hoặc tự kết luận xem lại đồng nghĩa thích.
+
+## Gate first frame
+
+Theo [first-frame.md](first-frame.md) và hướng dẫn Project. Xem ảnh output thật, kiểm chi tiết và đo pixel/tỷ lệ; mọi tiêu chí bắt buộc pass, không lỗi chặn hoặc not_checked bắt buộc mới qa_pass. Model verification, image QA và user approval là ba trạng thái riêng. Không dùng giới hạn 5 lượt để hạ chuẩn. Chỉ kiểm ảnh không chứng minh timeline/chuyển động/audio của video.

@@ -1,4 +1,4 @@
-# Nature Studio v1.4
+# Nature Studio v1.5
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
@@ -8,7 +8,7 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.4**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.5**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
@@ -86,3 +86,9 @@ Phong cách theo benchmark Underfishing: ít chữ, trực tiếp, một điểm
 ## Xuất bản hệ thống và bộ nhớ — v1.4
 
 Đọc [publication.md](00-Standards/publication.md) trước khi commit/push hoặc cập nhật GitHub bằng API. Production/attempt/media/ledger/registry giữ local; không đưa vào cây repo hoặc gói hệ thống. Bài học cải thiện ở Project/shared vẫn đi cùng cập nhật sau khi làm sạch và đánh dấu public/reviewed; không tự active. Chạy `python scripts/validate_publication.py` trên cây index trước publish; CI kiểm lại. Không xóa dữ liệu local theo các deletion runtime từ upstream. Commit cũ vẫn có thể chứa dữ liệu đã từng công khai; lần cập nhật này không rewrite lịch sử.
+
+## Tạo first frame — /taoanh
+
+Dùng `/taoanh <mã video>`, “tạo ảnh” hoặc “tạo first frame” khi thực sự cần ảnh cho Project. [Skill](.agents/skills/taoanh/SKILL.md) tự QA ảnh thật, sửa có mục tiêu và giữ ý định; tối đa 5 lượt sinh/sửa, xin thêm khi chưa đạt. /chayvideo vẫn chỉ tạo văn bản; /dongvideo tổng kết bài học.
+
+Model ưu tiên là GPT Image 2.5 Sunburst qua built-in image_gen. [Profile thực thi](02-Models/model-profiles/sunburst-imagegen.md) ghi rõ tool hiện không có selector; không bảo đảm/nhận đã dùng Sunburst khi backend chưa xác minh. Không tìm được Sunburst thì dùng model mặc định và tiếp tục không hỏi lại; danh tính model không là tiêu chí QA. Ảnh, QA, bộ đếm và lịch sử giữ local theo publication.md.

@@ -27,6 +27,14 @@ Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PR
 
 /dongvideo dùng SESSION-REVIEW.md theo mẫu để tổng kết phần dữ liệu đã truy cập; luôn đánh giá riêng Project và shared. Không tự đóng từ /chayvideo, không nhầm đóng phiên với selected/QA pass. INPUTS ghi ID/version/cách áp dụng lesson để lần sau đối chiếu kết quả. Thẩm quyền đổi trạng thái chỉ theo memory-policy, không biến giả thuyết thành quy chuẩn.
 
+## Story Development — 2026-10-16
+
+Trước khi chọn concept mới, thực hiện [story-development.md](story-development.md) cùng creativity và phần áp dụng Project nếu có. Ghi story card vào concept hiện có; không đổi số mục đầu ra. Sau render kiểm hình/âm thật, sau đăng mới kiểm giả thuyết khán giả. Không tự tạo production hoặc cấp mã khi chỉ sửa phương pháp hệ thống.
+
 ## Riêng tư khi cập nhật hệ thống
 
 Production, attempt, SESSION-REVIEW và idea-ledger giữ local theo publication.md. Repo chỉ phân phối mẫu ledger. /chayvideo vẫn rà lịch sử local và ghi đầy đủ; tách bài học tái sử dụng sang Memory, không dùng việc đồng bộ hệ thống để tự upload toàn bộ lịch sử.
+
+## Sinh ảnh theo /taoanh
+
+Khi được giao tạo ảnh thật, theo first-frame.md và skill taoanh; không khởi chạy từ /chayvideo. Một video giữ ID qua các attempt, quota ảnh theo cycle riêng. Mỗi call ghi prompt/settings/input/output/hash/QA, dùng image_budget.py reserve trước gửi; call lỗi cũng tính. FIRST-FRAME.json chỉ trỏ ảnh QA pass, không sửa provenance các attempt video cũ. Dữ liệu vòng ảnh và quota giữ local, tách lesson theo policy.

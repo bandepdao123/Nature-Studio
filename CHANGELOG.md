@@ -2,6 +2,18 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.5 — 2026-10-16
+
+- Triển khai story-development v1.0 dùng chung và phần áp dụng Underwater UF-D017; bảy nguồn được phân loại, có giới hạn ngoại suy.
+- Đồng bộ đường đọc qua creativity/production/START-HERE/PROJECT, mẫu concept và tiêu chí/ca đánh giá. Riêng Story Development không đổi skills/output-contract/format/caption; routing /taoanh được bổ sung riêng bên dưới. Bộ nhớ và production cũ giữ nguyên.
+- Đồng bộ VERSION 1.5 cho bản nguồn; chưa chạy audience/model test. Các báo cáo triển khai giữ trạng thái kiểm tại thời điểm ghi; xuất bản không chứng minh hiệu quả nội dung.
+
+### /taoanh
+
+- Thêm skill tạo/sửa first frame qua image_gen; QA ảnh thực và bộ đếm 5 call lưu qua phiên, hết chưa đạt phải xin thêm.
+- Ưu tiên Sunburst; không có lựa chọn phù hợp thì dùng model mặc định image_gen, không hỏi lại. QA chỉ kiểm chất lượng ảnh; danh tính model ghi theo công bố thực, không tự dùng API/CLI.
+- Thêm gate chung, QA Underwater, template review/handoff và script budget stdlib; không sinh media hoặc publish trong lần xây skill.
+
 ## v1.4 — 2026-10-16
 
 - Bỏ production UF-0001/A01–A04 và ledger khỏi cây Git hiện hành; giữ nguyên file local. Không rewrite các commit cũ.
