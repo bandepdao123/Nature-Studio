@@ -1,0 +1,91 @@
+{
+  "release_id": "NS-CHAYVIDEO-1.1-2026-10-16",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "release_type": "workspace-skill-integration",
+  "skill_version": "1.1",
+  "channel_contract_version": "1.2",
+  "supersedes": "NS-CHAYVIDEO-1.0-2026-10-16 (release preserved)",
+  "changes": [
+    "Idea remains Vietnamese; FIRST FRAME PROMPT and VIDEO PROMPT in English, each one paragraph; CAPTION in natural American English with relevant hashtags.",
+    "Infer project from creative intent and current channel characteristics, without requiring command or channel name; ask only on ambiguity/no match; knowledge questions excluded.",
+    "Google Omni Flash prompt guidance checked against official documentation; deployed interface still unverified.",
+    "History-based novelty review and production/ledger recording preserved; UF-D011 supersedes UF-D009."
+  ],
+  "sources_accessed": [
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/omni.md",
+      "accessed": "2026-10-16"
+    },
+    {
+      "url": "https://developers.openai.com/plugins/concepts/skills",
+      "accessed": "2026-10-16"
+    }
+  ],
+  "checks": {
+    "bundled_quick_validate": "pass",
+    "changed_file_local_markdown_links": "pass",
+    "utf8_nonempty": "pass",
+    "baseline_sha256_unchanged": "pass",
+    "manual_review": "Output language, scoped precedence, project routing, knowledge-only exclusion and revision/history preservation inspected."
+  },
+  "not_tested": [
+    "End-to-end skill activation in a fresh session or native slash menu.",
+    "Automatic project choice against multiple real projects; currently one configured channel.",
+    "Model/API execution, generated media/audio and audience performance."
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "442ed44ebdd75bc128411101be5b440470428a0b8f8e6dd8c9aa9cc9fad4b1af"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "86d61d68abbe16ca48355f32bf8c44d68869e97a6b5c5a642608c7a4f412c738"
+    },
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "21ff3da693692b4f624064c032d0de9d55b13238156db86fbf79c88086449c97"
+    },
+    {
+      "path": ".agents/skills/chayvideo/agents/openai.yaml",
+      "sha256": "8a713b9fdcdcd15ce73c080a56aa452ad56cd574a04dcc7e826cf5dd8f1102e0"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/CHANNEL.md",
+      "sha256": "1f1062766d7f744791a4b5183628c5638e584cdfa1fbc3a7f1cccd41cd0ec10e"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/output-contract.md",
+      "sha256": "f4539e1fb769ea91eaf08bd34bff920876d44b5888fa70fd7d1243aef64c8ee9"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/audience-and-caption.md",
+      "sha256": "7db51c3cfc60819abcdb02c5762f03a4601a07f47eca329314ae295daa89d6da"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/format.md",
+      "sha256": "d84e486f07e886df86a7a4f71aa01676bb5653a35f1f97c6c45f4a46ab64e1d6"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/decisions.md",
+      "sha256": "7460e38734e308c25482e853681c402b8fb885a26e80b0712c8e041a71f69829"
+    },
+    {
+      "path": "02-Models/model-profiles/omni-flash.md",
+      "sha256": "a8b49e0ba3b8edd0d25ad090b8c6ef2f51351305a8492667a6e7d6303a5bfbb0"
+    },
+    {
+      "path": "01-Knowledge/sources/google-omni-2026-10-16.md",
+      "sha256": "853f6b268b55da859210ef38adadd4e15a776dd574dcc7370189dfd8e6050687"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "sha256": "ef5e7b0c1522c89fa8e8ae8d01596dd0f79b5120244e0c3ad34fa64b076bbc7c"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "95d1490f4b373db5fc0d0c7dfadb1e3c36172072d33ec05f4be1bd5f321d0ba2"
+    }
+  ]
+}

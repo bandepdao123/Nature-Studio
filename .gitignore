@@ -1,0 +1,20 @@
+# Credentials / local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+
+# Generated packages and caches
+/07-Releases/packages/
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.pytest_cache/
+*.tmp
+*.log
+Thumbs.db
+.DS_Store

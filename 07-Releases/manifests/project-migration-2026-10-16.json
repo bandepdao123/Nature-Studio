@@ -1,0 +1,283 @@
+{
+  "release_id": "NS-PROJECT-MIGRATION-2026-10-16",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "type": "workspace-structure-migration",
+  "display_name": {
+    "before": "Under Fishing US (also referred to as Under Fish US)",
+    "after": "Underwater"
+  },
+  "stable_project_id": "under-fishing-us",
+  "slug": "underwater",
+  "production_prefix": "UF",
+  "skill_version": "1.2",
+  "project_document_version": "1.3",
+  "path_mapping": {
+    "03-Channels": "03-Projects",
+    "03-Channels/under-fishing-us": "03-Projects/underwater",
+    "03-Channels/under-fishing-us/CHANNEL.md": "03-Projects/underwater/PROJECT.md",
+    "04-Productions/under-fishing-us": "04-Productions/underwater",
+    "00-Standards/templates/channel.md": "00-Standards/templates/project.md"
+  },
+  "previous_sources_snapshot": "07-Releases/snapshots/before-project-migration-2026-10-16",
+  "previous_sources_count": 60,
+  "checks": {
+    "skill_quick_validate": "pass",
+    "all_active_local_markdown_links": "pass",
+    "no_obsolete_structural_paths_in_active_sources": "pass",
+    "old_source_paths_absent_new_paths_exist": "pass",
+    "stable_id_and_prefix_retained": "pass",
+    "baseline_hash_unchanged": "pass",
+    "snapshot_hashes_match_previous_release_files": 12
+  },
+  "not_tested": [
+    "Fresh-session implicit skill activation or native slash menu.",
+    "Media generation and published performance; no production created."
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/chayvideo/agents/openai.yaml",
+      "sha256": "8a713b9fdcdcd15ce73c080a56aa452ad56cd574a04dcc7e826cf5dd8f1102e0"
+    },
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "f9a77902f488246efce4dfaa053417fdb4ac42da0c2ae9c401bd6db5bd565faa"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "643b7fbcab2b6f7cce0cd33d368602578d59c9431993f4fd53fe20a01a40f39e"
+    },
+    {
+      "path": "00-Standards/memory-policy.md",
+      "sha256": "f08f2a0cbf3e8342f0a4585db676fb545187e2dd7355f544ded0e87e8c1486cb"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "f0e96d25f984445f721b07fec20cd12f33f5d6f7cd6dc70f30e1a3951e459a05"
+    },
+    {
+      "path": "00-Standards/quality-review.md",
+      "sha256": "b07af0130f25bc1c95a3fb8d14975eed72697076b3c134d01a75dd6730c4936f"
+    },
+    {
+      "path": "00-Standards/research.md",
+      "sha256": "6a1bace2ffd6c0c82e73cc6ed207ef7922235bd2b721ebd857b290dc7af0c6d0"
+    },
+    {
+      "path": "00-Standards/templates/attempt-inputs.md",
+      "sha256": "1a4f28a1805b29ec23ec13bc9811c515ddb709cb647f9afb8cd15672b19d553b"
+    },
+    {
+      "path": "00-Standards/templates/brief.md",
+      "sha256": "eb437053327fada6bc0d48f10c2dc8ced91b4287879795e4b8034fc67e489ea2"
+    },
+    {
+      "path": "00-Standards/templates/concept.md",
+      "sha256": "0ed462d13d3d48c717168e2717f3478d3b36eb8dbe1970f822d292c4a5ffaf4c"
+    },
+    {
+      "path": "00-Standards/templates/episode-summary.md",
+      "sha256": "bcb9bf62ffe142f22c212b32a06c27c57fedb6a1098f1809bdb50644e3136dff"
+    },
+    {
+      "path": "00-Standards/templates/evaluation-case.md",
+      "sha256": "6c8d9a5de4af87044ed784b9e7d1182b0990223e06b133079fc42b1117eaf192"
+    },
+    {
+      "path": "00-Standards/templates/feedback.md",
+      "sha256": "1a5815d66af339bd1ed869891ff4a9100d802112fca9a65d56741d0927b1dded"
+    },
+    {
+      "path": "00-Standards/templates/lesson.md",
+      "sha256": "3b69805754556021875c5b0df9e09efe48f04755aeab5eb0ec76dccfeba957c1"
+    },
+    {
+      "path": "00-Standards/templates/performance.md",
+      "sha256": "5116af48a03a3a1604a2027cf323655a320ebab672645576b548e29b59e09a9e"
+    },
+    {
+      "path": "00-Standards/templates/project.md",
+      "sha256": "c9d87a8614b267239bd19496250515df139c67eff39759b8ec11e56740086be7"
+    },
+    {
+      "path": "00-Standards/templates/README.md",
+      "sha256": "305b4fcb6339a3d124a9568004f226c053dbf17f32c59849edaf876e2ce16fc5"
+    },
+    {
+      "path": "00-Standards/templates/release-manifest.md",
+      "sha256": "47d5f5bb9cba1390c273cdac35e0ba4d45ae6f80d01dfc5afe0940c8ab5b8ffa"
+    },
+    {
+      "path": "00-Standards/templates/research.md",
+      "sha256": "cfe18d2e2762957d667870b482ca2db9cde71a4a1bb69fdf6ff6b166f9538537"
+    },
+    {
+      "path": "00-Standards/templates/review.md",
+      "sha256": "0b195f60b5949c14fd7d2122cb7368f6c165f5bd56be7d363e086b0e5282d89c"
+    },
+    {
+      "path": "00-Standards/templates/settings.md",
+      "sha256": "ee032aaadde8a49e9fd12cba4df65b4e1101c225d960d1c2265f0613cce2ae3e"
+    },
+    {
+      "path": "00-Standards/templates/source.md",
+      "sha256": "e7e1a544cc13da8c28c067dcc87eb4c66ef422e194e3a779ad89a6204846fbe7"
+    },
+    {
+      "path": "01-Knowledge/equipment/us-angling-tackle.md",
+      "sha256": "d92aab9dd09b0fa2bdc97b0f8f139d74eaf3d3379c4a1297d829a6bebe3bd2e1"
+    },
+    {
+      "path": "01-Knowledge/habitats/underwater-realism.md",
+      "sha256": "4ccdce5880b92808b509978b0a5ce40fddf91fa816fb779ce9f64883ad0333ac"
+    },
+    {
+      "path": "01-Knowledge/INDEX.md",
+      "sha256": "80f007f2b2f28845839d23e47d4c45758200a74ffd9570003b8a46fbdd5e1db5"
+    },
+    {
+      "path": "01-Knowledge/interactions/fish-prey-and-lure.md",
+      "sha256": "a39eafdcbd472998bced53468e181a438fb61f3312e4d4c26d11b8190230ad60"
+    },
+    {
+      "path": "01-Knowledge/sources/google-omni-2026-10-16.md",
+      "sha256": "853f6b268b55da859210ef38adadd4e15a776dd574dcc7370189dfd8e6050687"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "sha256": "ef5e7b0c1522c89fa8e8ae8d01596dd0f79b5120244e0c3ad34fa64b076bbc7c"
+    },
+    {
+      "path": "01-Knowledge/species/muskie.md",
+      "sha256": "e00dd9284b5b5a8aadc858293089c16fd5c9cf00444e661e64ecda42c0fe2f2d"
+    },
+    {
+      "path": "01-Knowledge/species/redfish.md",
+      "sha256": "6f4c34c8f9629c2ba5be0ef55e30207cee83b5cf1f6f5e6b6d6f2d505d4604b3"
+    },
+    {
+      "path": "01-Knowledge/species/walleye.md",
+      "sha256": "bf9aaa92b438464bd77bfcf21c076e212dded781b35e2a3df0ebfb744691cea1"
+    },
+    {
+      "path": "02-Models/INDEX.md",
+      "sha256": "25cddb3a6bda4a9b075709c57524647530e64f0501924a9e18aa026d12a4621a"
+    },
+    {
+      "path": "02-Models/model-profiles/omni-flash.md",
+      "sha256": "b5bc739bede9a24cae065d8ea6bc65634c0a2d8fc5c0a950898453d6bad42969"
+    },
+    {
+      "path": "03-Projects/INDEX.md",
+      "sha256": "6276913c03cffd48f76eb10f7890fe400fe9e53f51fa6480234789e9ef56b767"
+    },
+    {
+      "path": "03-Projects/underwater/audience-and-caption.md",
+      "sha256": "de2d9dca9870408e1fdaf032a85ee0ce639879a09c38edf4a1c1814603a6fc47"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "sha256": "a7e45f11346d1082694142c26713b2b3d48d295652a60466411ab3ec330c73aa"
+    },
+    {
+      "path": "03-Projects/underwater/format.md",
+      "sha256": "18325eaf6616bc9a191c8db39f0b254db21d3c05de7c49852217c7a1fa671b6b"
+    },
+    {
+      "path": "03-Projects/underwater/idea-ledger.md",
+      "sha256": "dd125e1958c8ae7058170a7d487084017dec2e960f2b7d7f743bb56e91f87d6b"
+    },
+    {
+      "path": "03-Projects/underwater/output-contract.md",
+      "sha256": "fdbaab8b38a1a5dd23139d3cb5c8d684ff7bb7db03b6b8dda6b1d8f0fdab7a4d"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "24e5df1eca5412b5b1d9cbf01f1f2bc087e03d2006c0678265666ee40f6bc4e5"
+    },
+    {
+      "path": "03-Projects/underwater/references/README.md",
+      "sha256": "4d3566ca087f9493983c299b2e411662e51826ca82a58285f0d534c2aa5cb18b"
+    },
+    {
+      "path": "04-Productions/underwater/README.md",
+      "sha256": "3d84fdb3844e4cf25a370aaa0b24ff4b20f2840c6df5e90162fb2895dbdf12b4"
+    },
+    {
+      "path": "05-Memory/active/README.md",
+      "sha256": "adc1b5cbeb7eb6ca5bf0ea933bd22672214e4b5ae70d1ac2f686bd1408e0b3e5"
+    },
+    {
+      "path": "05-Memory/candidates/README.md",
+      "sha256": "a3f0e63c42be385187ed10fae363b8010f2bf36c37695852afc5b12b15247530"
+    },
+    {
+      "path": "05-Memory/INDEX.md",
+      "sha256": "f66a90488d83a1ced353410acf9ba1c01f45e9e04d45aa0456f50d2a03d6ed86"
+    },
+    {
+      "path": "05-Memory/retired/README.md",
+      "sha256": "17ea223c818446d3bb60aae48b494b3033b1b63f817107396150510a23b47c98"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-001.md",
+      "sha256": "b0de5e92f539fd0b056e8ae32074f75b11fb10a9805d5e683dad5e3dcc461da3"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-002.md",
+      "sha256": "75032def347cb152120d1a99604590a004d41e3ae956e865e850275abac53f60"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-003.md",
+      "sha256": "ee47e9f5decf7580b31503485ac245c83bd85bab8ce437bc19e6aa6faeae5fe9"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-001.md",
+      "sha256": "432995b314251a57f6387fc9633b27cec3fb75650035b038e38cded705f8b19e"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-002.md",
+      "sha256": "422e5f5671439dd506138cf2ad758b4cef338c2668ebccfb8ba9e48a723713e4"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-003.md",
+      "sha256": "a190e473d04159da81f07bd38dddcb7c9cf3aac701156f979fb90a03692e2b1a"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-004.md",
+      "sha256": "e963792a38f3b23e2805681d5162c8813beeb25f149679db5922c78fce0803ce"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-005.md",
+      "sha256": "ed7f2cd536d35cdcc08d69c779a6ea93c10a46515da320dae370a797bd85d38e"
+    },
+    {
+      "path": "06-Evaluation/criteria/production-quality.md",
+      "sha256": "e4f91e0f7765176385f2e718f32d9e057f53e4b1920f332cb7b846059a51dde8"
+    },
+    {
+      "path": "06-Evaluation/README.md",
+      "sha256": "a93a6ea4e365b9a36a050bb2032a3eecce769811a6bc2dfd6f92fe5c089acbf6"
+    },
+    {
+      "path": "06-Evaluation/results/README.md",
+      "sha256": "de5d667cd6d248394420031c074376a3bc00d7a3d3418985666da2e7eb6e4599"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "352264bc747ae86de2a9fa2499dd09cd3c3895503b4f2ad456c6d3d4e4979350"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "a492a0263287b11992e6c30930266f80831a866ad9b1a58e9a6b9caea1b55701"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "ee6c87556f1862792574b2c84a13f6778b697ec65db19c2538343e6919f7c41d"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "deb17fb4798c3996ff4f131bacad041931d125e81f92dd0297f91052ef4fa451"
+    }
+  ]
+}

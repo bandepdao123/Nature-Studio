@@ -1,0 +1,70 @@
+{
+  "release_id": "NS-CHAYVIDEO-1.0-2026-10-16",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "release_type": "workspace-skill-integration",
+  "skill_version": "1.0",
+  "channel_contract_version": "1.1",
+  "scope": "/chayvideo: Vietnamese text output, four deliverables, single-paragraph prompts, history-based novelty review; no media execution",
+  "changes": [
+    "Add workspace AGENTS routing for /chayvideo message convention and discoverable local skill.",
+    "Require review of ledger and actual history including drafts, rejected concepts and available chat; record comparison and history limitations.",
+    "Require four Vietnamese sections and one paragraph per prompt; save drafted production and update ledger.",
+    "Add scoped Under Fishing contract override while preserving baseline and other production requirements."
+  ],
+  "checks": {
+    "bundled_quick_validate": "pass (Python UTF-8; PyYAML installed in temporary validation dependency directory)",
+    "changed_file_local_markdown_links": "pass",
+    "changed_files_utf8_nonempty": "pass",
+    "initial_baseline_sha256_unchanged": "pass",
+    "manual_instruction_review": "project selection, missing species wait, empty/stale ledger, revision preservation, scoped language override, no media execution reviewed"
+  },
+  "not_tested": [
+    "Fresh-session skill discovery or native slash-menu registration; /chayvideo is a chat-message convention routed by AGENTS.md.",
+    "End-to-end skill invocation and generated production quality.",
+    "Model, media generation, listening, timing or publishing performance."
+  ],
+  "supersedes": "No prior chayvideo release. Scoped contract updates UF-D008 through UF-D010; imported v1.9 baseline unchanged.",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "1acbde247028558e0b444e353e131ed9c697c931462f59ed64398d46988bc6d7"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "8155b1abae26c2534cdfdec4a4700800c3f991d6bf116a1689500fa4ee2145ed"
+    },
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "ea4fe4d0bf757fdc40042edaac05dbd95e26f8cce8a6312e25c0eebb84800851"
+    },
+    {
+      "path": ".agents/skills/chayvideo/agents/openai.yaml",
+      "sha256": "798fc80716001f604415211c10e6ef540fef2342101919acbcf45d34a7a12087"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/CHANNEL.md",
+      "sha256": "e58504db7e2c0e702c55d9884cfb2528769c4653734cce7677a508cb09b720d0"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/output-contract.md",
+      "sha256": "43b06098dd876880866f630b66929717409b00d9703385d5cc1f8b06e962670e"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/audience-and-caption.md",
+      "sha256": "3ac8773ba8124c974e69bf0d4edb9b4a74c4dd5cb87b7d404e30331ced6606a8"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/format.md",
+      "sha256": "bcae2a7f640c9cddb78bc3546f62156d79ff8d4d36040b6bf0eb00eb677eb152"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/decisions.md",
+      "sha256": "0bd29092d69199a19e0baa67ef025f93f45f19203945c30ee23f6db03b3af5de"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "c5f771de5fb6f76020210c6e493e5c9ec288c6f191625197b25bd70ed1e03fe0"
+    }
+  ]
+}
