@@ -5,7 +5,7 @@ description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /ch
 
 # /chayvideo
 
-Version: 1.5 | Updated: 2026-10-16
+Version: 1.6 | Updated: 2026-10-16
 
 Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên dự án, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
 
@@ -14,7 +14,7 @@ Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm
 1. Đọc `START-HERE.md`, `SYSTEM.md` và `00-Standards/INDEX.md`; đọc tiêu chuẩn research, production, quality-review, memory-policy liên quan. Khi tạo concept mới, bắt buộc đọc `00-Standards/creativity.md`, kết hợp hướng dẫn riêng của dự án. Tôn trọng yêu cầu hiện hành của người dùng.
 2. Xác định dự án từ ý định tạo bộ nội dung và các đặc trưng, không bắt buộc người dùng nhớ tên dự án hoặc gõ /chayvideo. Liệt kê và đọc mô tả/nhận diện trong mọi `03-Projects/*/PROJECT.md`; nếu thiếu metadata, tra format, đối tượng và output-contract tương ứng. Ưu tiên tên/ID người dùng nêu rõ, sau đó tổ hợp chủ đề, loài, môi trường, thị trường, format và ngữ cảnh hiện hành. Không chọn chỉ bằng một từ chung như “cá”, “Mỹ” hoặc “Omni”. Khi một dự án khớp rõ, tự chọn và ghi tên dự án vào brief/nhãn Ý TƯỞNG, không hỏi xác nhận lại. Khi nhiều dự án cùng khớp mà chưa phân biệt được, hỏi một câu ngắn; khi không dự án nào phù hợp thì hỏi dự án cần dùng, không ép vào dự án duy nhất. Nếu thiếu mọi dấu hiệu và chỉ có một dự án configured, có thể dùng dự án đó. Câu hỏi kiến thức về loài hoặc thảo luận/sửa skill không phải lệnh sản xuất.
 
-   Dùng Slug/thư mục hiện hành trong PROJECT.md cho đường dẫn sản xuất; ID ổn định có thể khác slug sau đổi tên. Underwater dùng `03-Projects/underwater/PROJECT.md` và `04-Productions/underwater/`, giữ ID `under-fishing-us`/prefix UF để nối lịch sử. Tên cũ chỉ là alias của cùng dự án, không tạo dự án mới.
+   Dùng Slug/thư mục hiện hành trong PROJECT.md cho đường dẫn sản xuất; ID ổn định có thể khác slug sau đổi tên. Underwater dùng `03-Projects/underwater/PROJECT.md` và `04-Productions/underwater/`, giữ ID `under-fishing-us` và mã UF cũ để nối lịch sử; video mới dùng prefix local ba chữ theo 00-Standards/video-identifiers.md. Tên cũ chỉ là alias của cùng dự án, không tạo dự án mới.
 
    Ví dụ với kho hiện tại: “Làm một bộ Walleye theo jig rồi quay đi” hoặc “/chayvideo red drum ở lạch triều Texas” → Underwater, không hỏi tên dự án. “Muskie sống ở đâu?” → trả lời kiến thức, không tạo production. Khi thêm dự án mới, đọc lại metadata hiện hành thay vì coi các ví dụ này là bảng định tuyến cố định.
 3. Đọc toàn bộ `PROJECT.md`, `format.md`, `audience-and-caption.md`, `output-contract.md`, `decisions.md` và `idea-ledger.md` của đúng dự án. Đọc tài liệu tham chiếu bắt buộc được các file đó dẫn, bao gồm creative-direction nếu dự án có chỉ định; dùng baseline khi cần tìm ràng buộc còn thiếu. Tài liệu phát hành cũ là lịch sử, không ghi đè quyết định mới.
@@ -68,7 +68,7 @@ Kiểm trước khi giao:
 
 ## Lưu để lần sau tra lại
 
-Khi đã đủ đầu vào và có bộ nội dung thật, tạo production/attempt theo `00-Standards/production.md` và các template; tra ID trước khi cấp mới, không ghi đè lần cũ. Lưu brief, research, concept, SUMMARY, feedback/performance theo trạng thái thực; attempt có INPUTS, hai prompt, caption, settings, review. Settings ghi chưa thực thi/unknown đúng nghĩa, review ở mức prompt-only, performance chưa đăng. Không tạo file media giả.
+Khi đã đủ đầu vào và có bộ nội dung thật, tạo production/attempt theo `00-Standards/production.md` và các template; đọc `00-Standards/video-identifiers.md`; video mới dùng `python scripts/video_ids.py reserve <slug>` để tự init prefix local nếu cần, cấp XXX-yyyyy từ 00001 và lưu IDENTITY.json. Không reserve khi sửa production cũ hoặc chưa đủ brief; không ghi đè lần cũ. Lưu brief, research, concept, SUMMARY, feedback/performance theo trạng thái thực; attempt có INPUTS, hai prompt, caption, settings, review. Settings ghi chưa thực thi/unknown đúng nghĩa, review ở mức prompt-only, performance chưa đăng. Không tạo file media giả.
 
 Trong concept lưu kết quả rà trùng; trong INPUTS lưu phiên bản/đường dẫn nguồn và ID + version + đường dẫn + cách áp dụng của lesson active thực sự dùng; candidate được thử ghi riêng. Cập nhật `idea-ledger.md` với ID, cơ chế/key/kết cục và liên kết SUMMARY ngay khi đã giao bản drafted để lần sau tra được, không chờ render/đăng. Revision thêm attempt hoặc version trong hồ sơ hiện có. Không coi drafted là selected/approved/published.
 
