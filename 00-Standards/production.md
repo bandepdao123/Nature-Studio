@@ -1,4 +1,4 @@
-# Quy trình sản xuất — v1.1
+# Quy trình sản xuất — v1.2
 
 ## Trước sản xuất
 
@@ -22,3 +22,7 @@
 - Chỉ cập nhật quy chuẩn/bộ nhớ theo memory-policy; số view không thay thế QA kỹ thuật.
 
 Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PROJECT.md để ghi `04-Productions/<slug>/`. Không suy thư mục từ ID ổn định sau đổi tên. Prefix/production ID cũ tiếp tục dùng, không cấp lại vì dự án đổi tên.
+
+## Tổng kết phiên và vòng học — v1.2, 2026-10-16
+
+/dongvideo dùng SESSION-REVIEW.md theo mẫu để tổng kết phần dữ liệu đã truy cập; luôn đánh giá riêng Project và shared. Không tự đóng từ /chayvideo, không nhầm đóng phiên với selected/QA pass. INPUTS ghi ID/version/cách áp dụng lesson để lần sau đối chiếu kết quả. Thẩm quyền đổi trạng thái chỉ theo memory-policy, không biến giả thuyết thành quy chuẩn.

@@ -1,6 +1,6 @@
 # Cập nhật Nature Studio từ GitHub
 
-Version của quy trình: 1.0 | Updated: 2026-10-16
+Version của quy trình: 1.1 | Updated: 2026-10-16
 
 Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio). Phiên bản workspace: [VERSION](VERSION); lịch sử: [CHANGELOG.md](CHANGELOG.md). Không giả định nguồn luôn mới hơn local hoặc mọi bản cùng VERSION có nội dung giống nhau.
 
@@ -56,7 +56,7 @@ Kiểm file đầu vào và VERSION/CHANGELOG, liên kết tương đối, khả
 
 Ghi bản trước, commit đích, file đã cập nhật, chỉnh sửa local được giữ, kiểm đã chạy và giới hạn. Khi dùng Git, kiểm diff/status cuối; khi dùng ZIP, tạo manifest sau cập nhật cho chính trạng thái mới. Chỉ gọi là khớp hoàn toàn khi đã so nội dung/hash thực. Workspace đã merge chỉnh sửa riêng có thể đúng bản nền mới nhưng không byte-identical với upstream; phải nói rõ.
 
-Không tự render, tiêu tiền hay đăng nội dung để kiểm việc cập nhật. Chỉ tạo gói/release hoặc đẩy lên GitHub theo phạm vi được giao. VERSION v1.0 là phiên bản toàn Nature Studio; các số phiên bản skill/project/guide là độc lập.
+Không tự render, tiêu tiền hay đăng nội dung để kiểm việc cập nhật. Chỉ tạo gói/release hoặc đẩy lên GitHub theo phạm vi được giao. VERSION là phiên bản toàn Nature Studio; các số phiên bản skill/project/guide là độc lập.
 
 ## Mẫu yêu cầu dùng với AI bất kỳ
 
@@ -67,3 +67,46 @@ Không tự render, tiêu tiền hay đăng nội dung để kiểm việc cập
 Giữ nguyên repository `bandepdao123/Nature-Studio`, ID GitHub 1421542100; không đổi tên repo hoặc remote vì nâng VERSION. Phiên bản thể hiện trong README, VERSION, CHANGELOG, manifest, tên gói ZIP và tag/release nếu được tạo. Số phiên bản không phải một phần URL repo.
 
 REPOSITORY.json ghi danh tính nguồn, không nhân bản VERSION. Với bản cũ mang tên thử Nature-Studio-v1.0, phân giải URL hoặc tra repository_id trên GitHub để xác minh đúng nguồn trước khi cập nhật remote về URL ổn định; không chọn repo khác chỉ vì trùng tên. Quy tắc này thay đề xuất đổi tên repo theo phiên bản trước đó. Giữ các manifest/gói đã đóng để truy vết, không sửa URL provenance trong chúng.
+
+## Nâng từ v1.0 lên v1.1
+
+v1.1 thêm /dongvideo, bộ nhớ Project/shared, metadata lesson có thể kiểm và quyền kích hoạt có gate. Không đổi tên repo, ID dự án, format, production hoặc trạng thái duyệt video.
+
+### Đường đi cho người dùng
+
+1. Giao AI link repo và workspace đang dùng; yêu cầu: “Nâng Nature Studio lên v1.1 theo UPDATE.md, giữ production và bài học riêng; kiểm chênh lệch trước khi ghi.” Với ZIP, giải nén bản mới sang thư mục riêng, không chép đè workspace.
+2. AI đọc VERSION/commit/hash thực và chốt commit đích. Kiểm Git status gồm cả untracked/attempt/media. Tạo bản khôi phục gồm thay đổi local và manifest hash; không tự đưa bản sao lên public. Repo mẫu có 0 lesson không chứng minh máy người dùng cũng có 0.
+3. So ba phía và cập nhật nguồn hệ thống đã phân giải: AGENTS/START-HERE/SYSTEM/README, Standards/templates, hai skill, validator/tests và hướng dẫn này. Giữ chỉnh sửa riêng; không ghi đè PROJECT.md, decisions, ledger, SUMMARY hoặc production đang làm để lấy bản mẫu.
+4. Phân loại và chuyển bộ nhớ theo mapping bên dưới, sửa liên kết hiện hành và chỉ mục; giữ ID, trạng thái, lịch sử và bằng chứng. Không áp gate mới để tự nâng candidate cũ thành active.
+5. Thêm đường đọc Memory của từng Project vào PROJECT.md. Tạo namespace cho mọi Project thực có trong local, không chỉ Underwater. Giữ ID ổn định, dùng slug hiện hành làm thư mục.
+6. Kiểm số production/attempt/media, ID và hash dữ liệu riêng trước–sau. Chạy validator và tests; kiểm hai skill bằng validator skill-creator nếu host có. Ghi rõ các ca cần media/AI thực chưa chạy. Chỉ chốt VERSION 1.1 khi phần migration đã hoàn tất; nếu còn xung đột ghi pending, không giả đồng bộ.
+7. Báo bản nền/commit đích, thay đổi giữ lại, mapping, kết quả kiểm và trạng thái local. GitHub push hoặc xuất gói theo yêu cầu riêng đã được giao; dữ liệu sản xuất local không tự thành dữ liệu public khi nâng framework.
+
+### Mapping bộ nhớ cũ
+
+| v1.0 | v1.1 | Điều kiện |
+|---|---|---|
+| 05-Memory/candidates/<lesson>.md | 05-Memory/projects/<slug>/candidates/ hoặc shared/candidates/ | Phân loại theo nội dung/phạm vi; không tự active |
+| 05-Memory/active/<lesson>.md | 05-Memory/projects/<slug>/active/ hoặc shared/active/ | Chỉ giữ active khi căn cứ/phạm vi cũ còn hợp lệ; thiếu bằng chứng thì ghi rõ để xử lý, không bịa validation |
+| 05-Memory/retired/<lesson>.md | 05-Memory/projects/<slug>/retired/ hoặc shared/retired/ | Giữ lý do/trạng thái/ID thay thế |
+| Metadata lesson dạng văn bản | JSON frontmatter theo templates/lesson.md | Giữ phần thân và lịch sử; bổ sung unknown trong nội dung, không tự nhận đã kiểm |
+| Project không có namespace | projects/<slug>/INDEX.md + ba thư mục trạng thái | Đăng ký ở INDEX gốc, thêm liên kết trong PROJECT.md |
+
+Bài học đa Project thực sự có phương pháp dùng chung → shared với điều kiện. Nếu chưa xác định được phạm vi, giữ file cũ trong bản khôi phục và workspace, ghi danh sách pending; không tự chọn shared, không xóa. Validator sẽ báo phần chưa chuyển thay vì bỏ qua. Nếu lesson active cũ không có hồ sơ kích hoạt có thể truy nguyên, ghi đúng dữ liệu thiếu và xin quyết định cần thiết; không tạo lại một phê duyệt giả hoặc coi việc nâng cấp là duyệt lesson.
+
+Không đổi ID đã cấp. Với ID trùng từ nhiều nguồn, giữ cả bản gốc trong backup, xác định đó là cùng bài học hay hai bài học khác trước khi gộp/cấp ID mới, ghi mapping. Không cập nhật snapshot/manifest/release cũ hoặc sửa INPUTS lịch sử để giả đã dùng phiên bản mới; liên kết lịch sử cần đổi đường dẫn thì giữ ID và ghi mapping.
+
+Kho nguồn lần chuyển này có 0 lesson nên chỉ thay README rỗng tại ba thư mục cũ. Đây không phải lệnh xóa ba thư mục khi áp cho workspace người khác.
+
+### Kiểm sau nâng cấp
+
+```text
+python scripts/validate_memory.py
+python -m unittest discover -s scripts/tests
+```
+
+Hai lệnh dùng Python stdlib, không cần API/token/model và không render. Validator chỉ kiểm metadata/phạm vi/liên kết/gate có thể kiểm bằng cấu trúc, không chứng minh bài học đúng. Dùng /chayvideo hoặc /dongvideo khi có nhiệm vụ thực tương ứng; không tạo lesson/video giả để “test xong”. Xem 06-Evaluation/cases/EV-SYS-004.md cho các ca hành vi chưa được kiểm tự động.
+
+### Nếu cần quay lại v1.0
+
+Giữ bản khôi phục và diff migration. Không chép v1.0 đè lên production mới. Khôi phục nguồn hệ thống từ baseline/bản sao đã xác minh, giữ riêng lesson/sessions phát sinh sau v1.1 rồi lập mapping trước khi đưa về cấu trúc cũ. Không dùng reset --hard/clean hoặc xóa dữ liệu mới để rollback. v1.0 chưa biết namespace mới nên không nhận rollback hoàn tất chỉ bằng sửa VERSION.

@@ -1,8 +1,8 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.4 | Updated: 2026-10-16 | Scope: toàn kho
+Version: 1.5 | Updated: 2026-10-16 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Từ 2026-10-16, workspace hiện hành được đặt tên Nature Studio v1.0; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.1; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -45,3 +45,9 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 ## Tên repo ổn định — 2026-10-16
 
 Giữ repository Nature-Studio và URL nguồn cố định khi tăng VERSION. Đọc REPOSITORY.json cho danh tính nguồn; số phiên bản chỉ nằm trong nội dung, gói và tag/release nếu có. Không tự đổi tên repo/remote trong quy trình nâng cấp; bản thử tên Nature-Studio-v1.0 chỉ là lịch sử.
+
+## Bộ nhớ hai cấp và đóng phiên — Nature Studio v1.1
+
+Nguồn quyền/trạng thái là [memory-policy v2.0](00-Standards/memory-policy.md). Bộ nhớ riêng tại 05-Memory/projects/<slug>/; bộ nhớ chung tại 05-Memory/shared/. Dùng ID Project ổn định và lọc điều kiện khi áp dụng. Shared không cao hơn quy chuẩn Project; không tự áp lesson của Project khác.
+
+/dongvideo được ghi tổng kết, đề xuất ở cả hai cấp và tự kích hoạt procedural lesson có phép kiểm khách quan khi đạt mọi gate trong policy. Đây không phải quyền nâng hypothesis, kết luận sáng tạo/khán giả/hiệu quả model chưa kiểm thành active. Quyền này không áp cho /chayvideo. Đóng phiên không đồng nghĩa QA pass, selected, approved hay published; không tự render/chi tiền/push. Không sửa Standards/format từ lesson; yêu cầu rõ của người dùng vẫn được xử lý như quyết định đúng phạm vi.

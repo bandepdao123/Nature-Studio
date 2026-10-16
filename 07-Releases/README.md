@@ -34,3 +34,7 @@ Phiên bản toàn hệ thống đầu tiên: [VERSION](../VERSION), [CHANGELOG]
 ## Giữ URL nguồn ổn định — 2026-10-16
 
 Repository hiện hành: [Nature-Studio](https://github.com/bandepdao123/Nature-Studio). Quyết định giữ tên repo, quản lý phiên bản trong nội dung thay chính sách đổi tên thử; xem [manifest khôi phục](manifests/stable-repository-name-2026-10-16.json). [Manifest đổi tên thử](manifests/repository-version-name-2026-10-16.json) giữ như lịch sử, không áp dụng làm quy tắc hiện hành.
+
+## Nature Studio v1.1 — 2026-10-16
+
+Thêm /dongvideo, bộ nhớ Project/shared, quyền kích hoạt có gate và validator. [Hướng dẫn migration](../UPDATE.md#nâng-từ-v10-lên-v11). [Manifest v1.1](manifests/nature-studio-v1.1-2026-10-16.json) ghi nguồn/hash và [kết quả kiểm](../06-Evaluation/results/v1.1-implementation-2026-10-16.md), không sửa snapshot/manifest cũ. Dữ liệu production đang thay đổi ở local được giữ riêng, không tự đưa vào commit framework.

@@ -5,7 +5,7 @@ description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /ch
 
 # /chayvideo
 
-Version: 1.4 | Updated: 2026-10-16
+Version: 1.5 | Updated: 2026-10-16
 
 Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên dự án, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
 
@@ -19,7 +19,7 @@ Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm
    Ví dụ với kho hiện tại: “Làm một bộ Walleye theo jig rồi quay đi” hoặc “/chayvideo red drum ở lạch triều Texas” → Underwater, không hỏi tên dự án. “Muskie sống ở đâu?” → trả lời kiến thức, không tạo production. Khi thêm dự án mới, đọc lại metadata hiện hành thay vì coi các ví dụ này là bảng định tuyến cố định.
 3. Đọc toàn bộ `PROJECT.md`, `format.md`, `audience-and-caption.md`, `output-contract.md`, `decisions.md` và `idea-ledger.md` của đúng dự án. Đọc tài liệu tham chiếu bắt buộc được các file đó dẫn, bao gồm creative-direction nếu dự án có chỉ định; dùng baseline khi cần tìm ràng buộc còn thiếu. Tài liệu phát hành cũ là lịch sử, không ghi đè quyết định mới.
 4. Tra `01-Knowledge/INDEX.md` và các hồ sơ loài, môi trường, tương tác, dụng cụ thực sự liên quan; tra `02-Models/INDEX.md` và model profile đúng dự án. Mở nguồn bên ngoài khi cần kiểm dữ kiện mới/hiện hành, ghi đúng việc đã truy cập. Thiếu nguồn bắt buộc để chốt chi tiết thì xử lý giới hạn trước khi giao, không bịa nguồn hoặc thông số.
-5. Đọc `05-Memory/INDEX.md`; tìm file thực nếu index thiếu/cũ. Chỉ áp bài học active đúng phạm vi; candidates là giả thuyết, retired là lịch sử. Đọc lỗi/feedback production liên quan dù chưa thành active lesson; không nâng một lỗi cục bộ thành quy chuẩn chung.
+5. Đọc `05-Memory/INDEX.md`, `05-Memory/projects/<slug>/INDEX.md` và `05-Memory/shared/INDEX.md`; tìm file thực nếu chỉ mục thiếu/cũ. Mở lesson gốc, chỉ áp active khớp Project ID ổn định và điều kiện nhiệm vụ/model/giao diện/format; shared không áp mặc định mọi nơi. Không tự áp bộ nhớ Project khác. Candidates chỉ gợi ý thử, retired là lịch sử; đọc lỗi/feedback production liên quan dù chưa active, không nâng lỗi cục bộ thành quy chuẩn chung. Gặp mâu thuẫn với brief/quy chuẩn thì nêu vấn đề, không dùng lesson ghi đè.
 
 Với Underwater, giữ bước chọn loài tại PROJECT.md: nếu chưa có loài hoặc quyền chọn, hỏi Redfish / Muskie / Walleye / loài cá được câu bất kỳ ở Mỹ và chờ. Đã có lựa chọn hoặc quyền chọn thì không hỏi lại. Chưa đủ đầu vào không tạo hồ sơ/ý tưởng giả để lấp chỗ trống.
 
@@ -70,6 +70,8 @@ Kiểm trước khi giao:
 
 Khi đã đủ đầu vào và có bộ nội dung thật, tạo production/attempt theo `00-Standards/production.md` và các template; tra ID trước khi cấp mới, không ghi đè lần cũ. Lưu brief, research, concept, SUMMARY, feedback/performance theo trạng thái thực; attempt có INPUTS, hai prompt, caption, settings, review. Settings ghi chưa thực thi/unknown đúng nghĩa, review ở mức prompt-only, performance chưa đăng. Không tạo file media giả.
 
-Trong concept lưu kết quả rà trùng; trong INPUTS lưu phiên bản/đường dẫn nguồn và bài học đã dùng. Cập nhật `idea-ledger.md` với ID, cơ chế/key/kết cục và liên kết SUMMARY ngay khi đã giao bản drafted để lần sau tra được, không chờ render/đăng. Revision thêm attempt hoặc version trong hồ sơ hiện có. Không coi drafted là selected/approved/published.
+Trong concept lưu kết quả rà trùng; trong INPUTS lưu phiên bản/đường dẫn nguồn và ID + version + đường dẫn + cách áp dụng của lesson active thực sự dùng; candidate được thử ghi riêng. Cập nhật `idea-ledger.md` với ID, cơ chế/key/kết cục và liên kết SUMMARY ngay khi đã giao bản drafted để lần sau tra được, không chờ render/đăng. Revision thêm attempt hoặc version trong hồ sơ hiện có. Không coi drafted là selected/approved/published.
 
 Lỗi/phản hồi mới được ghi đúng hồ sơ, bài học mới theo memory-policy; không tự nâng candidate thành active. Lệnh `/chayvideo` chỉ tạo văn bản và hồ sơ local; tạo media, chi tiền hay đăng bài cần yêu cầu tương ứng của người dùng.
+
+Sau phiên, người dùng có thể gọi `/dongvideo <production-id>` để tổng kết và xét đóng góp bộ nhớ Project/shared theo skill dongvideo. Không tự đóng phiên từ lệnh tạo nội dung; /chayvideo không tự kích hoạt lesson.

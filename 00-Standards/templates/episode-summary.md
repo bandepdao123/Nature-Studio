@@ -9,3 +9,5 @@ Observed quality / remaining issues:
 Performance evidence:
 Related lesson/decision IDs:
 Next action if any:
+
+Session review link / latest reviewed scope (independent of production approval/status):

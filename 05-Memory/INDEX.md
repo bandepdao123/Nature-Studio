@@ -1,8 +1,12 @@
-# Bộ nhớ tái sử dụng
+# Bộ nhớ Nature Studio
 
-Khởi tạo 2026-10-15. Active lessons: 0. Candidates: 0. Retired: 0.
+Version: 2.0 | Updated: 2026-10-16 | Active: 0 | Candidates: 0 | Retired: 0
 
-| ID | Status | Summary | Project/topic/species/model/task tags | Path |
-|---|---|---|---|---|
+- [Bộ nhớ chung](shared/INDEX.md): phương pháp dùng ngoài Project nguồn, có điều kiện.
+- [Underwater](projects/underwater/INDEX.md): ID ổn định under-fishing-us.
 
-Chưa chuyển nhận xét trong chat thành bài học đã xác nhận. Kho chỉ lưu bài học có bằng chứng và điều kiện theo memory-policy. Candidate không phải chỉ thị; retired không áp dụng mặc định. Thư mục dự án không giữ bản sao lesson.
+Đọc [chính sách](../00-Standards/memory-policy.md). Đường dẫn shared không biến lesson thành quy tắc toàn hệ thống; chỉ áp active đúng điều kiện. Không áp bộ nhớ Project khác mặc định. INDEX không thay bản gốc; tra file thực nếu thiếu/cũ.
+
+Khi tạo Project mới, tạo namespace bộ nhớ và ba thư mục trạng thái, cập nhật cả INDEX này và PROJECT.md. Chưa chuyển nhận xét trong chat thành lesson, chưa chạy /dongvideo cho production nào từ lần nâng cấp này.
+
+Migration v1.0 → v1.1: active/candidates/retired tại gốc được thay bằng shared/ hoặc projects/<slug>/ theo phạm vi thực, không chuyển hàng loạt vào shared; xem UPDATE.md. Kho nguồn tại thời điểm chuyển có 0 lesson.
