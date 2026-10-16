@@ -1,11 +1,11 @@
 # Underwater
 
-ID: under-fishing-us | Version: 1.5 | Status: configured | Updated: 2026-10-16
+ID: under-fishing-us | Version: 1.6 | Status: configured | Updated: 2026-10-16
 Slug: underwater
-Production prefix: UF
+Production prefix: local-generated (XXX); legacy prefix: UF
 Legacy names: Under Fish US; Under Fishing US; Under Fishing
 
-Tên hiện hành: **Underwater**. ID nội bộ `under-fishing-us` và prefix `UF` được giữ để bảo toàn liên kết/ID cũ; thư mục hiện hành dùng slug `underwater`. Đây là cùng một dự án được đổi tên, không phải dự án mới.
+Tên hiện hành: **Underwater**. ID nội bộ `under-fishing-us` và các mã UF lịch sử giữ nguyên; prefix video mới được sinh trên local theo chuẩn XXX-yyyyy; thư mục hiện hành dùng slug `underwater`. Đây là cùng một dự án được đổi tên, không phải dự án mới.
 
 
 ## Mục tiêu
@@ -51,3 +51,5 @@ Nền người dùng chốt: v1.9 chỉnh từ v1.7, không v1.8. Bản phát h�
 ## Bộ nhớ và tổng kết — v1.1 workspace
 
 Đọc [Memory Underwater](../../05-Memory/projects/underwater/INDEX.md) và [shared](../../05-Memory/shared/INDEX.md), lọc theo điều kiện. ID under-fishing-us giữ ổn định. /dongvideo tổng kết production cụ thể và xét đóng góp cho cả hai cấp theo policy; không đưa đặc tính loài hay format Underwater thành quy tắc chung. /chayvideo ghi ID/version/cách dùng lesson vào INPUTS. Đây là thay đổi đường đọc bộ nhớ, không đổi format hay quyết định sáng tạo.
+
+Mã mới: đọc [quy tắc](../../00-Standards/video-identifiers.md), chạy init/reserve với slug underwater; prefix local không ghi cứng vào repo. UF-0001 tiếp tục revision bình thường. Bắt đầu 00001 trong prefix mới, không đổi mã cũ.
