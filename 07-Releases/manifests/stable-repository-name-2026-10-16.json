@@ -1,0 +1,50 @@
+{
+  "release_id": "NS-STABLE-REPOSITORY-NAME-2026-10-16",
+  "workspace_version": "1.0",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "repository_id": 1421542100,
+  "canonical_name": "Nature-Studio",
+  "canonical_url": "https://github.com/bandepdao123/Nature-Studio",
+  "supersedes_policy": "repository-version-name-2026-10-16; trial manifest retained as history",
+  "change": "Keep repository name and URL stable. Workspace versions are recorded in documentation, VERSION, changelog, manifests, packages and optional tags/releases.",
+  "checks": {
+    "active_links": "pass",
+    "package_future_version_same_url": "pass with temporary v1.1 workspace",
+    "version_current": "1.0"
+  },
+  "files": [
+    {
+      "path": "REPOSITORY.json",
+      "sha256": "1a7882cc51017aeccafc638c14022f6053387d8b1cd09f507e42366ff6a678f8"
+    },
+    {
+      "path": "README.md",
+      "sha256": "17af88d49cb47f695d8092d90a2768f7e35c690bc5cd217beec174c14ddb5cb2"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "9373c89ac10baae1b27c3726e503dcfac7055b79515f0201ac286c0d4817a177"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "aba932e9e6449c65b32158367256ca78339c0b48fb1840a7488138cb095541ec"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "22ef5a843eab279a9c4368f52d547b6fad0df20c7e83a58501e7c148581f85a2"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "af180fbb1be7388d71f4a5de9e0ac6e34abb9009c1d42f7e3e2c62ededd6b679"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "sha256": "98056ed23a05fcd9df42806512f80f6dabc2ffa48ae44b0943ed127dde3551a4"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "9a92f3be7a79bef44eeb497e20f8669922cf2da731e2c427de1c232616ea6864"
+    }
+  ]
+}

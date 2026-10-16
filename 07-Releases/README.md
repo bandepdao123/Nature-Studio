@@ -31,6 +31,6 @@ Skill chayvideo v1.3 và quy chuẩn Underwater v1.4 bổ sung [creative-directi
 
 Phiên bản toàn hệ thống đầu tiên: [VERSION](../VERSION), [CHANGELOG](../CHANGELOG.md), [UPDATE](../UPDATE.md). [Manifest v1.0](manifests/nature-studio-v1.0-2026-10-16.json) ghi nội dung thực của workspace và phạm vi kiểm. Script đóng gói tạo ZIP có phiên bản cùng commit nguồn/trạng thái local; Git tag/GitHub Release là bước riêng, không tự có từ VERSION.
 
-## Tên repository theo phiên bản — 2026-10-16
+## Giữ URL nguồn ổn định — 2026-10-16
 
-Repository hiện hành [Nature-Studio-v1.0](https://github.com/bandepdao123/Nature-Studio-v1.0), giữ ID 1421542100 và lịch sử. Xem REPOSITORY.json/UPDATE.md và [manifest đổi tên](manifests/repository-version-name-2026-10-16.json). Các bản phát hành trước giữ URL cũ như provenance.
+Repository hiện hành: [Nature-Studio](https://github.com/bandepdao123/Nature-Studio). Quyết định giữ tên repo, quản lý phiên bản trong nội dung thay chính sách đổi tên thử; xem [manifest khôi phục](manifests/stable-repository-name-2026-10-16.json). [Manifest đổi tên thử](manifests/repository-version-name-2026-10-16.json) giữ như lịch sử, không áp dụng làm quy tắc hiện hành.

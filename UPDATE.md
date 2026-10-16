@@ -2,11 +2,11 @@
 
 Version của quy trình: 1.0 | Updated: 2026-10-16
 
-Repository nguồn hiện hành: [bandepdao123/Nature-Studio-v1.0](https://github.com/bandepdao123/Nature-Studio-v1.0). Phiên bản workspace: [VERSION](VERSION); lịch sử: [CHANGELOG.md](CHANGELOG.md). Không giả định nguồn luôn mới hơn local hoặc mọi bản cùng VERSION có nội dung giống nhau.
+Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio). Phiên bản workspace: [VERSION](VERSION); lịch sử: [CHANGELOG.md](CHANGELOG.md). Không giả định nguồn luôn mới hơn local hoặc mọi bản cùng VERSION có nội dung giống nhau.
 
 ## Điểm vào cho AI nhận link repository
 
-Đọc theo thứ tự: README.md → VERSION → REPOSITORY.json → CHANGELOG.md → START-HERE.md → SYSTEM.md → AGENTS.md → UPDATE.md. Sau đó tra 03-Projects/INDEX.md và PROJECT.md liên quan; chỉ đọc thêm nội dung cần cho nhiệm vụ. AGENTS.md là điểm vào cho host có hỗ trợ, còn README/START-HERE là đường đọc cho AI khác.
+Đọc theo thứ tự: README.md → VERSION → REPOSITORY.json (nếu có) → CHANGELOG.md → START-HERE.md → SYSTEM.md → AGENTS.md → UPDATE.md. Sau đó tra 03-Projects/INDEX.md và PROJECT.md liên quan; chỉ đọc thêm nội dung cần cho nhiệm vụ. AGENTS.md là điểm vào cho host có hỗ trợ, còn README/START-HERE là đường đọc cho AI khác.
 
 Link repository chỉ cho biết dữ liệu trên GitHub. Muốn xác định máy người dùng cần cập nhật gì, phải đọc được workspace local hoặc gói ZIP/manifest của bản họ đang dùng. Nếu thiếu, vẫn giải thích được hệ thống và bản đích, nhưng phải ghi phần chênh lệch local là chưa xác định; không nhận đã đồng bộ hoặc bảo toàn dữ liệu chưa thấy.
 
@@ -15,7 +15,6 @@ Link repository chỉ cho biết dữ liệu trên GitHub. Muốn xác định m
 - Local: đọc VERSION; nếu có Git, ghi HEAD, branch, remote, trạng thái tracked/untracked và staged/unstaged. Nếu dùng ZIP, đọc PACKAGE-MANIFEST.json và đối chiếu hash file thực; manifest cũ không chứng minh file chưa bị sửa. Thiếu VERSION không suy ra v0.0: tra manifest/lịch sử hoặc ghi unknown.
 - GitHub: nếu người dùng chỉ định commit/tag/release, dùng đúng bản đó. Nếu họ muốn bản phát hành ổn định, đọc GitHub Releases, bỏ draft/prerelease trừ khi được yêu cầu. Nếu chưa có release, dùng VERSION tại main và ghi rõ đây là bản trên nhánh main, không gọi là GitHub Release.
 - Nếu yêu cầu là bản mới nhất trên GitHub, đối chiếu main hiện tại cùng VERSION/CHANGELOG; chỉ ra nếu main còn thay đổi chưa nằm trong release ổn định. Không chọn file có số phiên bản lớn nhất trong 07-Releases làm bản đích.
-- Tên repo thay đổi theo phiên bản. Đọc REPOSITORY.json: repository_id 1421542100 là danh tính ổn định của repo gốc, tên hiện tại theo mẫu Nature-Studio-v{version}. Khi nhận link cũ, phân giải URL qua GitHub hoặc tra repo bằng ID để tìm tên hiện hành; xác nhận đúng owner/ID trước khi cập nhật remote. Không lấy tên suffix lớn nhất từ các repo tìm được làm bằng chứng bản mới nhất; không theo repo khác chỉ vì trùng tên. Bản local cũ có thể chưa có REPOSITORY.json, khi đó xác minh danh tính qua nguồn GitHub đã biết trước khi thay remote.
 - Chốt một commit SHA cụ thể của bản đích và dùng cùng SHA khi đọc mọi file. Kiểm remote đúng repository trước khi fetch; không dùng nhầm fork. Nếu không truy cập được nguồn, nói rõ và không đoán nội dung bản mới.
 - Báo cả `workspace version + commit + local modifications`, không chỉ VERSION. Một bản ZIP tạo lúc working tree dirty không hoàn toàn tương ứng với source commit; dùng hash các file trong gói để biết nội dung thật.
 
@@ -61,10 +60,10 @@ Không tự render, tiêu tiền hay đăng nội dung để kiểm việc cập
 
 ## Mẫu yêu cầu dùng với AI bất kỳ
 
-> Đây là Nature Studio: https://github.com/bandepdao123/Nature-Studio-v1.0. Đọc README.md và UPDATE.md ở bản nguồn, kiểm VERSION/CHANGELOG và đối chiếu với workspace tôi cung cấp. Cho biết cần cập nhật gì; khi thực hiện, giữ chỉnh sửa riêng, dữ liệu sản xuất, bài học và lịch sử. Nếu thiếu quyền đọc local hoặc không biết baseline, nêu rõ thay vì đoán.
+> Đây là Nature Studio: https://github.com/bandepdao123/Nature-Studio. Đọc README.md và UPDATE.md ở bản nguồn, kiểm VERSION/CHANGELOG và đối chiếu với workspace tôi cung cấp. Cho biết cần cập nhật gì; khi thực hiện, giữ chỉnh sửa riêng, dữ liệu sản xuất, bài học và lịch sử. Nếu thiếu quyền đọc local hoặc không biết baseline, nêu rõ thay vì đoán.
 
-## Quy tắc đặt tên repo theo phiên bản — 2026-10-16
+## Tên repository ổn định — quyết định hiện hành 2026-10-16
 
-Theo yêu cầu người dùng, mỗi lần chốt phát hành bản cập nhật mới phải tăng VERSION, ghi CHANGELOG và đổi tên chính repository theo `Nature-Studio-v{version}`; ví dụ v1.0 → v1.1 thì repo thành Nature-Studio-v1.1. Các chỉnh sửa đang làm có thể chưa phát hành; trước khi công bố phải đồng bộ phiên bản và tên repo, không tự tiếp tục công bố bản mới dưới cùng tên/số cũ.
+Giữ nguyên repository `bandepdao123/Nature-Studio`, ID GitHub 1421542100; không đổi tên repo hoặc remote vì nâng VERSION. Phiên bản thể hiện trong README, VERSION, CHANGELOG, manifest, tên gói ZIP và tag/release nếu được tạo. Số phiên bản không phải một phần URL repo.
 
-Đổi tên trên cùng repository, giữ repository_id và lịch sử; không tự tạo một repo rời cho mỗi phiên bản. Xác minh tên mới và ID, cập nhật REPOSITORY.json, URL trong tài liệu đầu vào và remote Git, rồi kiểm link, commit và gói ZIP. Chỉ thay remote khi danh tính đã được xác minh. Giữ manifest/gói/snapshot cũ và các URL provenance trong đó; mỗi bản được nhận diện thêm bằng commit/tag để phân biệt lịch sử. Nếu không có quyền đổi tên hoặc tên đích đã thuộc repo khác, dừng bước phát hành và báo tình trạng; không giả đã đổi tên.
+REPOSITORY.json ghi danh tính nguồn, không nhân bản VERSION. Với bản cũ mang tên thử Nature-Studio-v1.0, phân giải URL hoặc tra repository_id trên GitHub để xác minh đúng nguồn trước khi cập nhật remote về URL ổn định; không chọn repo khác chỉ vì trùng tên. Quy tắc này thay đề xuất đổi tên repo theo phiên bản trước đó. Giữ các manifest/gói đã đóng để truy vết, không sửa URL provenance trong chúng.

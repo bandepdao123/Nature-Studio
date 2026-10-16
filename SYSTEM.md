@@ -42,6 +42,6 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 
 Đã khởi tạo Git local trên nhánh main để quản lý phiên bản; việc này không đồng nghĩa đã push lên GitHub hoặc có sao lưu tự động. Gói ZIP dùng scripts/package_workspace.py, giữ cả .agents, media và lịch sử; bỏ .git, cache, file credential và các gói cũ. README.md là điểm vào khi clone/tải repo.
 
-## Tên repository và bản phát hành — 2026-10-16
+## Tên repo ổn định — 2026-10-16
 
-Tên GitHub theo `Nature-Studio-v{VERSION}`, hiện là Nature-Studio-v1.0. Mỗi lần chốt bản cập nhật mới, tăng VERSION và đổi tên cùng repository; giữ ID/lịch sử, cập nhật REPOSITORY.json, remote và link nguồn theo UPDATE.md. Không chỉnh URL lịch sử trong các bản phát hành đã đóng; không tự tạo repo mới cho mỗi phiên bản.
+Giữ repository Nature-Studio và URL nguồn cố định khi tăng VERSION. Đọc REPOSITORY.json cho danh tính nguồn; số phiên bản chỉ nằm trong nội dung, gói và tag/release nếu có. Không tự đổi tên repo/remote trong quy trình nâng cấp; bản thử tên Nature-Studio-v1.0 chỉ là lịch sử.
