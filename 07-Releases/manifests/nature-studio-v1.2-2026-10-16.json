@@ -1,0 +1,107 @@
+{
+  "workspace": "Nature-Studio",
+  "workspace_version": "1.2",
+  "date": "2026-10-16",
+  "base_commit": "bede1836da20bf492824cdddbed0d6d3fa64af2b",
+  "source_repository": "https://github.com/bandepdao123/Nature-Studio",
+  "change": "local Project prefixes, XXX-yyyyy from 00001, atomic reservations and UUIDs",
+  "sources": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "c0f7b2c2e6e8407d6b4fc666565a60c39b78887f4a7bae39daaf412308a8784d"
+    },
+    {
+      "path": ".agents/skills/dongvideo/SKILL.md",
+      "sha256": "d29a2060a6afd82886b192bce9d0d49f8a15c51c036cdc3660121becac3e47d9"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "28f6f756dd0084c5739b2c6661f71498555405a54b9e63b2a860ee1b8c372fe2"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "af5b1317b99b59c5a9ae26f2dab0bb86cbdf2f9148ec844314ebaffa3117ccd8"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "fb15e629c1fa6eb3f4c3d340409e383e54307f1d28c08ea86aa31c70f3c5b5c8"
+    },
+    {
+      "path": "00-Standards/templates/brief.md",
+      "sha256": "001a93ec619365a8a305f5a29e483e25e191196a3a997088e3b1d063fcd04212"
+    },
+    {
+      "path": "00-Standards/templates/episode-summary.md",
+      "sha256": "50715aa950df3ed338dd8bd65c204c5fa09accb59214a40b2387c24101993a51"
+    },
+    {
+      "path": "00-Standards/templates/project.md",
+      "sha256": "b6890ead6deedaebba02844a484c138e06f68f2fecfdf2adfbf44b32b2039eef"
+    },
+    {
+      "path": "00-Standards/video-identifiers.md",
+      "sha256": "d6a3311548cef722122a73b480616b571efe2f0d4bb21575f6436626e0603837"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "8a994258cd2d4e0e0a1e6581032f39fcc9651f44cef38117e3171121b9cedd77"
+    },
+    {
+      "path": "06-Evaluation/results/v1.2-identifiers-2026-10-16.md",
+      "sha256": "3f96747a0a1abeb5c69f64853879782be1fd41ebdb4d1edb3b944718ce40739d"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "6e4681fa6c945c6672576017e35b01f2ce85d46d239063799d2b7f1713fb05ff"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "8fa1f57ba5a9ccce1054392882531d1c1f68bcfccc5a73bf96c95901012b88b9"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "12b132e62f2b63118d865e1f8411c60f6257aa0b925097d8be29bfc95db794cd"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e902641657ed7b83b1469f497d4eb69164502bd3878d20f9325275db3b2a45da"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "54127cca94a44d99bb85750fa8766b832e650387b4b3bc2746a56348f5ec5ede"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "355461f56a6dca42ebebfcac0795f8362a4e6fdd395daac4dc5e5e80a75098bd"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "0fe4405faa34a66d707b7d6eee3e8251991dac05df3790b130980f86fdee3393"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "44804414f85bef9588f60086587fd6e8871b39123c831ec129624f4d81a95fea"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "sha256": "a415a823f414bfb4eb7d533b201d7f6482a0a598d8a0c2cee6a496850b007fc9"
+    },
+    {
+      "path": "scripts/tests/test_video_ids.py",
+      "sha256": "b84e9d19a11de665c941594ecad0e05d2cfc09a9fbbede868a110488683abf13"
+    },
+    {
+      "path": "scripts/video_ids.py",
+      "sha256": "ed55ef8be07d6c73a9fc5b5e70b1f10c9d2bbffec7e9f831c91a2934692a694e"
+    }
+  ],
+  "verification_report": "06-Evaluation/results/v1.2-identifiers-2026-10-16.md",
+  "tests": "32/32 pass",
+  "local_registry": "excluded from Git/distribution; preserve separately",
+  "legacy": "unchanged",
+  "not_tested": [
+    "AI/media end-to-end",
+    "multi-machine import",
+    "network filesystem"
+  ]
+}
