@@ -52,6 +52,12 @@ def build():
     version = (ROOT / 'VERSION').read_text(encoding='utf-8').strip()
     if not re.fullmatch(r'\d+\.\d+(?:\.\d+)?', version):
         raise ValueError('VERSION must contain a numeric workspace version such as 1.0.')
+    repository = json.loads((ROOT / 'REPOSITORY.json').read_text(encoding='utf-8'))
+    expected_name = repository['name_template'].format(version=version)
+    expected_url = f"https://github.com/{repository['owner']}/{expected_name}"
+    if (repository['name'] != expected_name or repository['url'] != expected_url
+            or repository['workspace_version'] != version):
+        raise ValueError('VERSION and REPOSITORY.json must use the same repository version.')
     files = sorted(p for p in ROOT.rglob('*') if p.is_file() and included(p))
     if any(p.is_symlink() for p in files):
         raise RuntimeError('Resolve symlinks explicitly before packaging.')
@@ -59,7 +65,8 @@ def build():
                 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
     manifest = {'format_version': 2, 'workspace': 'Nature-Studio',
                 'workspace_version': version,
-                'source_repository': 'https://github.com/bandepdao123/Nature-Studio',
+                'source_repository': repository['url'],
+                'source_repository_id': repository['repository_id'],
                 'source_git': source_git(),
                 'created_at_utc': datetime.now(timezone.utc).isoformat(),
                 'file_count': len(records), 'files': records}

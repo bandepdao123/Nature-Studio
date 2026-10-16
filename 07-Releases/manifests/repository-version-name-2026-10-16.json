@@ -1,0 +1,54 @@
+{
+  "release_id": "NS-REPOSITORY-VERSION-NAME-2026-10-16",
+  "workspace_version": "1.0",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "repository_id": 1421542100,
+  "old_name": "Nature-Studio",
+  "new_name": "Nature-Studio-v1.0",
+  "new_url": "https://github.com/bandepdao123/Nature-Studio-v1.0",
+  "base_commit": "7f9240bf2b51686da998c77868103d1684e3387c",
+  "policy": "Each newly finalized update increments VERSION and renames the same repository; synchronize metadata, source links and local remote; retain historical releases.",
+  "checks": {
+    "github_identity_verified": "same numeric repository ID after rename",
+    "local_remote_updated": "pass",
+    "changed_links": "pass",
+    "metadata_matches_version": "pass",
+    "package_smoke": "pass before final manifest",
+    "mismatched_version_rejected": "pass; no package written"
+  },
+  "files": [
+    {
+      "path": "REPOSITORY.json",
+      "sha256": "d72a382aab1bf808e594fc4d664e0b7788e2b6551f510f238169245b595f9b10"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f2e691cbafc833e0a619d169346ec5f1cb417c7ac9809fcea7ec8e9468fb634c"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "5734b06b333634c096b2d1c9e6699b14e1a439dddd0cf15f017245bae510e94c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "3a0098e9d7e6d243df613463fb19db44f2145ca678cfb2c440fd43ec1bfe1e30"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "9b279e1587eb268b73c3b3e5b7a6cdf48a8bc5c2921ec765adda67baa339fa70"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "4b610ea7ecdb45dc74ad3693d5dc72a480c8f7ac6a947f1b5cf66daa357721da"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "sha256": "9973d650084cab5a0f9faab952a0a42ee45f29b4bc5ca91c28dc2d8b842d9f59"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "4a9ced1354eac671864b46b2899a3f78dc7d2283fe606069bc27a50b992ed483"
+    }
+  ]
+}

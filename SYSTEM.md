@@ -1,6 +1,6 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.3 | Updated: 2026-10-16 | Scope: toàn kho
+Version: 1.4 | Updated: 2026-10-16 | Scope: toàn kho
 
 Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Từ 2026-10-16, workspace hiện hành được đặt tên Nature Studio v1.0; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
@@ -41,3 +41,7 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 ## Đóng gói và Git — 2026-10-16
 
 Đã khởi tạo Git local trên nhánh main để quản lý phiên bản; việc này không đồng nghĩa đã push lên GitHub hoặc có sao lưu tự động. Gói ZIP dùng scripts/package_workspace.py, giữ cả .agents, media và lịch sử; bỏ .git, cache, file credential và các gói cũ. README.md là điểm vào khi clone/tải repo.
+
+## Tên repository và bản phát hành — 2026-10-16
+
+Tên GitHub theo `Nature-Studio-v{VERSION}`, hiện là Nature-Studio-v1.0. Mỗi lần chốt bản cập nhật mới, tăng VERSION và đổi tên cùng repository; giữ ID/lịch sử, cập nhật REPOSITORY.json, remote và link nguồn theo UPDATE.md. Không chỉnh URL lịch sử trong các bản phát hành đã đóng; không tự tạo repo mới cho mỗi phiên bản.

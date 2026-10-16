@@ -8,7 +8,7 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành được đặt tên **Nature Studio v1.0**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành được đặt tên **Nature Studio v1.0**. Skill/project có số phiên bản riêng. [REPOSITORY.json](REPOSITORY.json) ghi tên/URL hiện hành và ID GitHub ổn định. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio-v1.0](https://github.com/bandepdao123/Nature-Studio-v1.0).
 
 ## Dự án hiện tại
 
@@ -60,3 +60,7 @@ python scripts/package_workspace.py
 Gói nằm trong `07-Releases/packages/`, kèm manifest SHA256 từng file, phiên bản workspace, commit nguồn và trạng thái thay đổi local. Gói không chứa `.git`, file bí mật, cache hoặc chính các gói ZIP cũ. ZIP và manifest gói được bỏ qua khi commit để tránh lưu lặp nội dung. Khi dùng ZIP, giữ PACKAGE-MANIFEST.json làm baseline để lần cập nhật sau đối chiếu; tên file gói có phiên bản nhưng không thay việc kiểm hash.
 
 Repo không chứa API key hoặc cấu hình đăng nhập. Nguồn bên ngoài và quyền sử dụng được ghi trong hồ sơ khi biết; việc đóng gói không cấp lại quyền cho tài liệu hoặc tài sản tham chiếu. Không có lịch sao lưu, render hoặc đăng bài tự động được cài trong bản này.
+
+## Tên repository theo phiên bản
+
+Tên hiện tại: **Nature-Studio-v1.0**, tương ứng Nature Studio v1.0. Mỗi lần chốt phát hành cập nhật, tăng VERSION và đổi tên cùng repository theo mẫu Nature-Studio-v{version} (ví dụ Nature-Studio-v1.1); đồng bộ REPOSITORY.json, link nguồn và remote. Repo giữ ID và lịch sử. Tên cũ/URL trong manifest và gói cũ là provenance, không sửa ngược; AI theo UPDATE.md để xác định tên hiện hành khi nhận link cũ.
