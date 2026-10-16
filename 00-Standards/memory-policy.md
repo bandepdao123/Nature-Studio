@@ -48,3 +48,7 @@ Quy chuẩn hiện hành ưu tiên hơn memory; gặp mâu thuẫn nêu vấn đ
 INDEX là bản đồ. Nếu thiếu/cũ, tìm file thực và sửa chỉ mục. Dùng [mẫu lesson](templates/lesson.md), metadata JSON trong frontmatter cũng là YAML hợp lệ, đọc bằng stdlib Python. Chạy `python scripts/validate_memory.py`: chỉ kiểm cấu trúc/liên kết, không xác nhận nội dung hay hiệu quả.
 
 Không ghi chuỗi suy luận nội bộ; chỉ lưu kết luận, hành động, căn cứ kiểm tra được. Không tự publish/push, tiêu tiền, render hoặc sửa release đã đóng từ lệnh tổng kết.
+
+## Chia sẻ lesson khi cập nhật hệ thống — v1.4
+
+Theo [publication.md](publication.md), /dongvideo tạo lesson mặc định private, reviewed=false. Khi publish đã được giao, rà bài học cải thiện ở cả Project/shared để đưa bản làm sạch lên hệ thống; không tự upload production làm bằng chứng. Public/reviewed độc lập candidate/active/retired, giữ phạm vi và sự thật. Lesson chưa thể chia sẻ ở lại local, nêu rõ thay vì loại hết bộ nhớ hoặc tự active. Chỉ mục public chỉ liệt kê mục đã xuất.

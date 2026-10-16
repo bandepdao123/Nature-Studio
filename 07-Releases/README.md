@@ -46,3 +46,7 @@ Mã video mới XXX-yyyyy từ 00001, prefix local từng Project. [Quy tắc](.
 ## Nature Studio v1.3 — 2026-10-16
 
 Underwater UF-D015/016: caption ngắn/trực tiếp theo phong cách tham chiếu, vẫn 3–5 hashtag và không #Underwater. [Quy chuẩn](../03-Projects/underwater/audience-and-caption.md), [nghiên cứu](../01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md), [kiểm](../06-Evaluation/results/v1.3-caption-policy-2026-10-16.md), [manifest](manifests/nature-studio-v1.3-2026-10-16.json). UPDATE.md có hướng dẫn nâng v1.2. Không phát tán ảnh UI hoặc production local trong cập nhật này.
+
+## Nature Studio v1.4 — 2026-10-16
+
+Repo/gói hệ thống giữ lịch sử video ở local và mang theo lesson đã rà public. [Policy](../00-Standards/publication.md), [kiểm](../06-Evaluation/results/v1.4-publication-2026-10-16.md), [manifest](manifests/nature-studio-v1.4-2026-10-16.json). UPDATE.md hướng dẫn giữ file local khi upstream bỏ tracking. Commit cũ còn dữ liệu lịch sử; không rewrite trong lần này.

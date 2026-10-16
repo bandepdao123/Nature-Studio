@@ -1,0 +1,34 @@
+# Cập nhật hệ thống công khai, giữ lịch sử sản xuất ở local
+
+Version: 1.0 | Updated: 2026-10-16 | Nature Studio v1.4
+
+## Phân định
+
+GitHub/gói phân phối: framework, skills, quy chuẩn, templates, kiến thức được phép chia sẻ và bài học cải thiện đã rà để công khai. Không đưa hồ sơ video, brief/concept/prompt/caption/feedback riêng, attempts, media, session-review, performance, ledger hoặc registry local vào cập nhật hệ thống. Project giữ quy chuẩn công khai, không có nghĩa mọi dữ liệu Project đều công khai.
+
+Local vẫn giữ đầy đủ `04-Productions/<slug>/`, `03-Projects/<slug>/idea-ledger.md`, registry và bằng chứng. Repo mới chỉ có mẫu ledger, AI tạo ledger local khi cần; thiếu ledger không chứng minh chưa có lịch sử, vẫn rà file production thật.
+
+## Bài học đi cùng cải tiến
+
+Không tự loại hết Memory khỏi cập nhật. /dongvideo vẫn ghi bài học Project và shared ở local. Mặc định lesson có `publication.visibility=private`, `reviewed=false`; trạng thái chia sẻ độc lập với candidate/active/retired. Bài học public có thể là candidate, không tự active vì được chia sẻ.
+
+Trước khi gửi hệ thống lên GitHub, rà từng bài học mới/thay đổi. Bài học có ích để tái sử dụng được làm sạch: bỏ mã video/UUID/đường dẫn máy, feedback người dùng nguyên văn, prompt/concept riêng và thông tin tài khoản; giữ hành động, Project hoặc shared scope, điều kiện/ngoại lệ, mức chắc chắn và trạng thái thực. Không suy rộng scope để bỏ dấu dự án. Giữ private bằng chứng gốc; bản diễn giải công khai phải có căn cứ công khai kèm theo, ví dụ ghi chép kiểm phương pháp đã làm sạch tại 06-Evaluation/public-evidence/, không chép raw footage/lịch sử vào đó.
+
+Nếu có thể làm sạch ngay trong bản gốc mà không mất căn cứ, giữ ID và ghi lịch sử chỉnh sửa, đặt visibility public/reviewed true. Nếu cần giữ nguyên bản lesson riêng, tạo bản xuất từ nguồn trong staging/worktree tạm, giữ ID + mapping hash riêng; không tạo hai nguồn runtime mâu thuẫn. Giữ bằng chứng gốc local, bản public dẫn tới ghi chép kiểm được phép chia sẻ. Thiếu cơ sở để công khai thì để private và báo mục chưa đưa lên, không bịa validation hoặc đổi active để lách kiểm. Việc user đồng ý cơ chế này cho phép rà/làm sạch bài học trong lần publish đã được giao, không cấp quyền tự push từ /dongvideo.
+
+Chỉ mục public chỉ liệt kê lesson đã xuất, dựng lại counts/links; không công khai ID hay tóm tắt lesson private. Với bản xuất thiếu bằng chứng cần để xác nhận, giữ giới hạn và candidate; không coi link local bị mất là đã giữ truy nguyên. Người cập nhật từ repo merge lesson theo ID/version/scope, không xóa hoặc ghi đè lesson riêng.
+
+## Bắt buộc trước khi publish
+
+1. So Git status/remote và giữ bản khôi phục tracked + untracked; không dùng add -A/push để gộp mọi việc local.
+2. Bỏ tracked runtime bằng `git rm --cached` đúng file sau khi backup; không xóa file trên đĩa. Ignore chỉ không đủ cho file đã tracked. Ledger local không commit; dùng template để khởi tạo.
+3. Mặc định lesson mới bị ignore theo tên L-*.md; sau khi làm sạch và có metadata public, stage đúng file bằng `git add -f -- <lesson>`, đồng bộ index công khai.
+4. Chạy memory validator phù hợp workspace, rồi `python scripts/validate_publication.py` trên **toàn bộ cây index**, không chỉ diff. Phải pass trước mọi Git push hoặc GitHub create_tree/update_ref/API. Nếu dùng export worktree, chạy tại worktree xuất.
+5. So diff/schema, xác minh file thực, rà bằng tay nội dung lesson/indices/knowledge để không nhúng history vào nơi khác. Validator chặn đường dẫn/metadata/liên kết, không hiểu hết nội dung riêng tư.
+6. Sau publish, fetch và đối chiếu tree/hash; xác nhận production/ledger/registry local nguyên vẹn. CI `Public tree guard` kiểm lại cả push và PR. CI phát hiện sau push không thay kiểm trước publish; chưa cấu hình branch protection hoặc pre-push hook tự chạy trên mọi máy.
+
+Packager mặc định tạo gói hệ thống công khai, bỏ production/ledger/private lesson/browser UI/registry và kiểm tập file xuất. Đây không phải backup cá nhân đầy đủ. Backup local phải có dữ liệu runtime và registry, lưu ngoài repo công khai.
+
+## Dữ liệu đã từng lên GitHub
+
+v1.4 xóa runtime khỏi cây main hiện hành bằng commit thông thường, giữ bản local. Dữ liệu ở commit cũ vẫn có thể truy cập; ignore/CI không xóa lịch sử Git. Muốn xóa toàn bộ lịch sử cần quy trình rewrite/force-push phối hợp với người dùng, không tự thực hiện trong cập nhật hệ thống thường lệ.

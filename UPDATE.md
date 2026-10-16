@@ -132,3 +132,11 @@ Theo quy trình so commit/baseline/local ở trên; giữ nguyên registry, prod
 Nhận benchmark/corpus văn bản và đường đọc tương ứng. Candidate nhập từ nguồn giữ trạng thái chưa kiểm; so ID/nội dung trước khi nhận, không ghi đè bộ nhớ local hoặc tự active. INDEX có thể dựng lại theo lesson thực; không lấy số đếm từ repo đè lên workspace có nhiều lesson.
 
 Cập nhật .gitignore và packager để ảnh giao diện/evidence nghiên cứu ở local không lên public; không xóa ảnh local. Kiểm liên kết, validator bộ nhớ và hai skill, sau đó chốt VERSION 1.3. Giữ các gói/manifest lịch sử. Không áp phong cách hoặc danh sách tag của Underwater cho Project khác.
+
+## Nâng từ v1.3 lên v1.4 — ngừng phân phối lịch sử video
+
+v1.4 xóa 04-Productions runtime và idea-ledger khỏi cây Git hiện hành, giữ bài học public đã rà. Nếu Git báo deletion trùng dữ liệu của máy đang dùng, **không xóa file local**: backup toàn bộ tracked/untracked/registry; ngừng tracking đúng file bằng git rm --cached hoặc dùng worktree xuất, rồi áp thay đổi hệ thống. Không dùng pull/checkout/giải nén đè để xóa production theo upstream. Giữ lesson private và bằng chứng gốc local, chỉ merge lesson public theo ID/version/scope.
+
+Đọc 00-Standards/publication.md. Sau migration chạy memory validator trên local, publication validator trên cây index/worktree xuất. Không mặc định mọi lesson active là public; candidate có thể công khai nếu đã làm sạch và vẫn ghi chưa kiểm. Thêm publication vào metadata: private/reviewed=false mặc định; public/reviewed=true sau rà. Nếu lesson public cần evidence ở production local, giữ nguồn riêng và tạo căn cứ công khai đã làm sạch; thiếu cơ sở thì không xuất hoặc hạ mức kết luận trong bản xuất đúng sự thật, không bịa validation.
+
+Public index dựng từ lesson thực đã xuất, không copy index có mục private. ZIP hệ thống loại runtime/private lessons và kiểm tập file xuất; backup cá nhân là việc riêng cần đủ production/ledger/registry. Rollback không được xóa dữ liệu mới hoặc tự push production trở lại. Việc xóa main không xóa dữ liệu trong commit cũ; rewrite lịch sử cần yêu cầu và quy trình riêng.

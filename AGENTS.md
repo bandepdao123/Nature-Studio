@@ -15,3 +15,7 @@ Version: 1.6 | Updated: 2026-10-16 | Reason: Nature Studio v1.1, /dongvideo và 
 Khi người dùng gọi `/dongvideo` hoặc yêu cầu tổng kết/đóng phiên video và rút bài học, đọc [.agents/skills/dongvideo/SKILL.md](.agents/skills/dongvideo/SKILL.md). Không kích hoạt từ trích dẫn, câu hỏi hay sửa skill. Lệnh tổng kết tiếng Việt, luôn xét Project và shared, không tự render/push hay duyệt video. Bộ nhớ theo [memory-policy](00-Standards/memory-policy.md): /chayvideo chỉ áp active đúng điều kiện; /dongvideo có quyền tự kích hoạt phương pháp khách quan khi đạt đủ gate đã duyệt, không tự thay chính sách sáng tạo.
 
 Video mới: đọc [video-identifiers.md](00-Standards/video-identifiers.md); dùng scripts/video_ids.py cấp prefix ba chữ trên local và số từ 00001. Không gán prefix repo cố định; giữ nguyên video legacy khi sửa/tổng kết. Registry .nature-studio/ là dữ liệu local cần bảo toàn khi nâng cấp.
+
+## Xuất bản hệ thống và bộ nhớ — v1.4
+
+Đọc [publication.md](00-Standards/publication.md) trước khi commit/push hoặc cập nhật GitHub bằng API. Production/attempt/media/ledger/registry giữ local; không đưa vào cây repo hoặc gói hệ thống. Bài học cải thiện ở Project/shared vẫn đi cùng cập nhật sau khi làm sạch và đánh dấu public/reviewed; không tự active. Chạy `python scripts/validate_publication.py` trên cây index trước publish; CI kiểm lại. Không xóa dữ liệu local theo các deletion runtime từ upstream. Commit cũ vẫn có thể chứa dữ liệu đã từng công khai; lần cập nhật này không rewrite lịch sử.
