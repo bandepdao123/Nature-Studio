@@ -8,7 +8,7 @@ import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_DIRS = {'.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'}
+EXCLUDED_DIRS = {'.nature-studio', '.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'}
 
 
 def included(path):
