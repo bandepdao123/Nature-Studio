@@ -11,3 +11,5 @@ Related lesson/decision IDs:
 Next action if any:
 
 Session review link / latest reviewed scope (independent of production approval/status):
+
+Video identity: IDENTITY.json for new IDs; keep legacy IDs unchanged.

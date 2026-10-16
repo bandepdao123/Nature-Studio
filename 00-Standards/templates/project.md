@@ -3,9 +3,10 @@ ID: <project-id>
 Slug: <project-slug>
 Aliases / đặc trưng nhận diện:
 Status: draft
-Version: 0.3
+Version: 0.4
 Updated: <date>
-Prefix sản xuất: <prefix>
+Prefix sản xuất: local-generated, chưa cấp trong repo; init bằng scripts/video_ids.py sau khi tạo Project local.
+Legacy prefixes nếu có:
 Mục tiêu / chủ đề / khán giả / thị trường:
 Nguồn quy chuẩn hiện hành: format.md; audience-and-caption.md; output-contract.md
 Yêu cầu lấy đầu vào:
