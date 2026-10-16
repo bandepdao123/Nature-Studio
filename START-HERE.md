@@ -16,7 +16,7 @@ Giao file này cùng yêu cầu và quyền đọc thư mục Nature-Studio. N�
 
 1. Đọc [SYSTEM.md](SYSTEM.md); xác định nhiệm vụ: nghiên cứu, ý tưởng, viết prompt, tạo media, review hay cập nhật hệ thống.
 2. Tra [danh mục dự án](03-Projects/INDEX.md), xác định dự án; đọc PROJECT.md của đúng dự án. Dự án đã cấu hình: [Underwater](03-Projects/underwater/PROJECT.md). Thiếu dự án và không suy được từ yêu cầu thì hỏi một câu ngắn.
-3. Đọc format, đối tượng/giọng và hợp đồng đầu ra của dự án; sau đó lấy đúng hướng dẫn nhiệm vụ từ [Standards](00-Standards/INDEX.md).
+3. Đọc format, đối tượng/giọng và hợp đồng đầu ra của dự án; sau đó lấy đúng hướng dẫn nhiệm vụ từ [Standards](00-Standards/INDEX.md). Khi tạo ý tưởng mới, bắt buộc đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và tài liệu sáng tạo mà PROJECT.md dẫn tới; Underwater có [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Khi sửa clip, giữ trọng tâm đã chốt.
 4. Tra [Knowledge](01-Knowledge/INDEX.md) theo loài, môi trường, tương tác/dụng cụ; tra [Models](02-Models/INDEX.md) khi cần thông tin model/giao diện.
 5. Tra [Memory](05-Memory/INDEX.md): chỉ áp dụng bài học active đúng phạm vi; đọc idea-ledger của dự án để tránh lặp. Tra trạng thái hiện hành trong chỉ mục và ledger; hiện đã có hồ sơ UF-0001, chưa có bài học active.
 6. Khi sản xuất, tạo hồ sơ bằng mẫu trong 00-Standards/templates/. Ghi phiên bản tài liệu/đầu vào đã dùng; mỗi lần thử là một thư mục mới. Không tạo/render nếu yêu cầu chỉ viết prompt.

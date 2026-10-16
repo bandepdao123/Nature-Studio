@@ -1,5 +1,9 @@
 # Phát hành độc lập
 
+## Bổ sung cấu trúc sáng tạo vào v1.0 — 2026-10-16
+
+[Hướng dẫn chung](../00-Standards/creativity.md) liên kết với hướng dẫn riêng Underwater, được chỉ định từ README/START-HERE/AGENTS và skill. VERSION giữ 1.0 theo yêu cầu; [manifest bổ sung](manifests/nature-studio-v1.0-creativity-2026-10-16.json) cùng commit phân biệt với gói v1.0 trước. Các manifest/gói cũ giữ nguyên.
+
 ## Bổ sung skill workspace ngày 2026-10-16
 
 Skill `/chayvideo` v1.0 và hợp đồng Under Fishing v1.1 được ghi tại [manifest](manifests/chayvideo-1.0-2026-10-16.json). Đây là phát hành tích hợp trong workspace, cần các nguồn hiện hành mà skill dẫn tới; không phải bản hướng dẫn độc lập mới thay thế baseline v1.9. Kiểm đã chạy và giới hạn kiểm được ghi trong manifest. Baseline nhập ban đầu giữ nguyên.

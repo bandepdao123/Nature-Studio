@@ -16,6 +16,12 @@ Bản đầu tiên được đặt phiên bản toàn hệ thống theo yêu c�
 
 Giới hạn: chưa chạy đánh giá hành vi EV-UF-006/007; chưa chứng minh độ mới/chất lượng media hoặc hiệu quả nền tảng. Không cài tự động pull, render, publish hoặc sao lưu theo lịch. Việc có VERSION không tự tạo Git tag hay GitHub Release.
 
-## Ghi các lần cập nhật tiếp theo
+### Bổ sung vào v1.0 — 2026-10-16
+
+- Đưa cấu trúc hướng dẫn sáng tạo chung vào 00-Standards/creativity.md, dẫn từ README, START-HERE, AGENTS và skill chayvideo v1.4.
+- Giữ hướng dẫn cụ thể của Underwater trong creative-direction.md; không nhân bản thành một danh mục tình huống đóng. Giữ nguyên quy tắc revision và hợp đồng đầu ra.
+- VERSION tiếp tục là 1.0 theo yêu cầu người dùng; commit và manifest bổ sung phân biệt nội dung với bản v1.0 trước đó. Giữ nguyên manifest/gói cũ, không coi các bản cùng VERSION là byte-identical.
+
+## Quy tắc ghi lần cập nhật tiếp theo
 
 Trong quá trình phát triển, ghi mục `Chưa phát hành` ở đầu lịch sử. Khi chốt bản mới, cập nhật VERSION và mục tương ứng, nêu thay đổi/di chuyển dữ liệu, điều người dùng cần làm và giới hạn đã kiểm. Không sửa mô tả bản đã đóng để che lịch sử. Chỉnh dữ liệu sản xuất có thể chỉ cần commit mới, không tự tăng phiên bản toàn hệ thống sau mỗi clip.
