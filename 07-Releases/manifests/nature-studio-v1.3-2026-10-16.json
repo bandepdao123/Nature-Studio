@@ -1,0 +1,129 @@
+{
+  "workspace_version": "1.3",
+  "date": "2026-10-16",
+  "base_commit": "0c1f59f20797cf0e0401766654d648189d01f1f4",
+  "source_repository": "https://github.com/bandepdao123/Nature-Studio",
+  "decisions": [
+    "UF-D015",
+    "UF-D016"
+  ],
+  "sources": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "19e84ee28c238b137855c90ee1f26f00877dcf98cd7f41f87df2776c04b1a29d"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "1f2e4e34aa468604fe243dbe7a547d7b3dc10ef7d1c25217a278e0138df05f21"
+    },
+    {
+      "path": "01-Knowledge/INDEX.md",
+      "sha256": "ee4292785beee31e8e643afe51ce89aedc1b31a8cd3671ace9a9ee7640d0340d"
+    },
+    {
+      "path": "01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md",
+      "sha256": "16527befdee90e2d002b67eadb636244a864344f5917901d8fe90a41951e2f6f"
+    },
+    {
+      "path": "01-Knowledge/benchmarks/underfishing-captions-2026-10-16/corpus.csv",
+      "sha256": "97a53da90ecd69fdc595d4280f78d50bc07418a84ec93208438af346307027e4"
+    },
+    {
+      "path": "01-Knowledge/benchmarks/underfishing-captions-2026-10-16/corpus.json",
+      "sha256": "de4f91ef2113235895d4c5211dc897f0a5a980695482d8992235f312fc76c1b7"
+    },
+    {
+      "path": "01-Knowledge/benchmarks/underfishing-captions-2026-10-16/screened-reels.json",
+      "sha256": "0ab9559a72a5de8a06a1728e6f17fd8b19c2f9c4acfaae767264b486b4fefb2b"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "sha256": "ffa804dcd760e7a7d8f889b919d51ae8a76d83c067255ebf3f54c29f1b7bd38a"
+    },
+    {
+      "path": "01-Knowledge/sources/underfishing-caption-benchmark-2026-10-16.md",
+      "sha256": "4cc81f7c9f0457b7cdce9c57140266aa01bfe17de8741dad05084c0fe5bc6e4f"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "ac4c5a0de1a02714334eb07adf0e453fc8cf02408fb1cdd18c5a53d3f143f484"
+    },
+    {
+      "path": "03-Projects/underwater/audience-and-caption.md",
+      "sha256": "60ba547da2fe851d0d175df740ec1d801cdeb771888ab8a8cb5a7a62438a4d5e"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "sha256": "a89ce03ece16b133d9aa58a391dbdae6c14c0c2ea65c73ae46ebd98d52b5dcc6"
+    },
+    {
+      "path": "03-Projects/underwater/output-contract.md",
+      "sha256": "911fa41d9cf5b932596edf2e8832c24c3b013214d4f92d37c5c834b3e6fe82f3"
+    },
+    {
+      "path": "05-Memory/INDEX.md",
+      "sha256": "5607f2ebc3ec2bedf0bd553c9c84079185fa6a0bcadc560e58609cd99f6d1f15"
+    },
+    {
+      "path": "05-Memory/projects/underwater/INDEX.md",
+      "sha256": "048d6ef66fd8f5458ad205681fdfb3f1cf57861f39e7825cc8a15f5d20b2b999"
+    },
+    {
+      "path": "05-Memory/projects/underwater/candidates/L-b4aef9fe-019f-4172-8adb-f00d13dfa22c.md",
+      "sha256": "65ffba10436a0bd6b30d343f6f67d485383f99ab688ca8166f14f2a6add7c95e"
+    },
+    {
+      "path": "05-Memory/projects/underwater/candidates/README.md",
+      "sha256": "6f18defc484f107feac0f9b62f46ddec3749c1cd6ae5a4225673a7f9be1f2fed"
+    },
+    {
+      "path": "06-Evaluation/results/v1.3-caption-policy-2026-10-16.md",
+      "sha256": "463258d3bdece107223188edb4f071898b315dbc4f48de8d1bbe318215e98d7b"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "38e6eeee6b0270318ff2cfe4dc201137a1f6cf0b63cdb6de822e33a17d4333dc"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "2571f355bf32482415a90ccd9c8d231458a714c5a33f0a9d5a9b210edfbc3a51"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a8f63dc78b0a606663c1635f6b7ba6e8e49601cde416a0abeffb34a59264a8ba"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "2239fe7b3ccee40a04065f2af9d496afbcbb81ec6b3688ace45bdf5c018f6401"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "f7eabc4a2464cc325066f7d13c010cea72429285e48f5650979a04a0797e2b75"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "367bf2ebf03eb99e8c0070e523ac98e8adb61ba12f11dcaada9c51ff537a1e92"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "b6403da9b22abe355ad17208a336e658322c5d1d7ff646ca7b9229237ba4aef4"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "sha256": "26ca78dcc30257143fe95dad11a537d0941f01f3fff4204119e885239b685239"
+    },
+    {
+      "path": "scripts/tests/test_video_ids.py",
+      "sha256": "43e9cdcb0cc2f193de7946798e1cd885968f2ac659833aedb64d1618628840bf"
+    }
+  ],
+  "checks": "32 stdlib tests pass, memory and skill validators pass; Markdown links and affirmative caption examples checked",
+  "verification_report": "06-Evaluation/results/v1.3-caption-policy-2026-10-16.md",
+  "excluded": "ongoing productions, local registry, screenshots/account UI, raw browser extracts, superseded local draft manifest",
+  "not_tested": [
+    "platform/retention improvement",
+    "media generation",
+    "independent AI execution"
+  ],
+  "migration": "UPDATE.md"
+}

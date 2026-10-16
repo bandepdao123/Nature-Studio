@@ -1,6 +1,6 @@
 # Bộ nhớ Nature Studio
 
-Version: 2.0 | Updated: 2026-10-16 | Active: 0 | Candidates: 0 | Retired: 0
+Version: 2.0 | Updated: 2026-10-16 | Active: 0 | Candidates: 1 | Retired: 0
 
 - [Bộ nhớ chung](shared/INDEX.md): phương pháp dùng ngoài Project nguồn, có điều kiện.
 - [Underwater](projects/underwater/INDEX.md): ID ổn định under-fishing-us.

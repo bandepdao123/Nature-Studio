@@ -22,3 +22,8 @@ Thumbs.db
 
 # Local Project/video identity registry; back up separately
 /.nature-studio/
+
+# Local-only browser research evidence; keep account UI out of public repo
+/01-Knowledge/benchmarks/*/evidence/
+/01-Knowledge/benchmarks/*/evidence-manifest.json
+/01-Knowledge/benchmarks/*/captions-raw.json

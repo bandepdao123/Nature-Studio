@@ -12,3 +12,7 @@ Các hồ sơ ban đầu là inherited-reference từ hướng dẫn đã chốt
 | K-INT-FISH-001 | predation, prey, lure, force | [Tương tác](interactions/fish-prey-and-lure.md) |
 
 [Danh mục nguồn](sources/INDEX.md). Với loài/chủ đề mới, tạo hồ sơ có nguồn, không thay tên trong hồ sơ cũ. Chỉ mục có thể xây lại từ ID/thẻ trong file; không coi việc thiếu chỉ mục là thiếu dữ liệu.
+
+## Benchmark đã nghiên cứu
+
+- [K-BM-UF-CAP-20261016: 40 caption Underfishing](benchmarks/underfishing-captions-2026-10-16/REPORT.md): quan sát 2026-10-16, mẫu >1 triệu view hiển thị; không là bằng chứng nhân quả viral hoặc quy chuẩn đã kích hoạt.

@@ -5,7 +5,7 @@ description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /ch
 
 # /chayvideo
 
-Version: 1.6 | Updated: 2026-10-16
+Version: 1.8 | Updated: 2026-10-16
 
 Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên dự án, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
 
@@ -51,7 +51,7 @@ Trả đúng bốn mục sau cho mỗi bộ: ý tưởng tiếng Việt; hai pro
 1. **Ý TƯỞNG**: một đoạn ngắn mô tả câu chuyện, câu hỏi mở đầu, key/kết cục dự kiến và điểm khác thực chất so với dữ liệu cũ khi có.
 2. **FIRST FRAME PROMPT**: một đoạn tiếng Anh duy nhất, tự đủ để sao chép, chỉ mô tả ảnh t=0: chủ thể, môi trường, bố cục, camera, ánh sáng, tỷ lệ và các vật thực sự nhìn thấy. Không có diễn biến tương lai hoặc âm thanh trong prompt ảnh. Ảnh sẽ dùng làm đầu vào mở đầu của Omni Flash, nhưng không tự đổi model tạo ảnh nếu chưa được chỉ định.
 3. **VIDEO PROMPT**: một đoạn tiếng Anh duy nhất, tự đủ và tiếp nối đúng ảnh đầu. Với Google Omni Flash, đọc hướng dẫn tại `02-Models/model-profiles/omni-flash.md`; tổ chức lời prompt theo thứ tự ảnh mở đầu → thời lượng/tỷ lệ/camera → bối cảnh và tính nhất quán → chuyển động/beat/nhân quả → Sound design → loại trừ ngắn. Đây là cách soạn của studio theo hướng dẫn model, không phải schema API bắt buộc. Mốc thời gian/beat đặt ngay trong đoạn, ví dụ `[0.0–1.3s] ...; [1.3–2.6s] ...`; không trình bày timeline thành bảng, danh sách hoặc nhiều đoạn. Tích hợp âm thanh trong cùng đoạn theo quy chuẩn dự án. Chỉ dùng `<FIRST_FRAME>` khi giao diện hỗ trợ; tag không thay thao tác đính kèm ảnh.
-4. **CAPTION**: một đoạn tiếng Anh Mỹ tự nhiên, như người bản xứ nói với nhóm khán giả Mỹ của dự án; không hiểu “American English” thành phong cách của người Mỹ bản địa (Native American). Hook cụ thể, tò mò từ sự kiện dự kiến/thực tế; không dịch sát tiếng Việt, nhồi slang hoặc dùng thuật ngữ sai. Với Underwater, giọng người câu cá Mỹ, hook thường 3–8 từ và 3–5 hashtag liên quan nối cùng đoạn, không nhắc AI; không tuyên bố mắc câu/bắt được khi hình chưa chứng minh.
+4. **CAPTION**: một đoạn tiếng Anh Mỹ tự nhiên, như người bản xứ nói với nhóm khán giả Mỹ của dự án; không hiểu “American English” thành phong cách của người Mỹ bản địa (Native American). Hook cụ thể, tò mò từ sự kiện dự kiến/thực tế; không dịch sát tiếng Việt, nhồi slang hoặc dùng thuật ngữ sai. Với Underwater, đọc phong cách đã chốt UF-D015 trong audience-and-caption.md: giọng người câu cá Mỹ, ít chữ, trực tiếp; chọn một chi tiết, linh hoạt hỏi/nhận xét/phản ứng/chỉ dẫn xem, không bắt luôn hỏi/giấu kết quả. Hook thường 1–8 từ nhưng không giới hạn cứng; giữ 3–5 hashtag liên quan khác nối cùng đoạn, không dùng #Underwater (kể cả biến thể hoa/thường) theo UF-D016, không nhắc AI; không tuyên bố mắc câu/bắt được khi hình chưa chứng minh.
 
 Không chèn CR/LF trong nội dung của từng prompt (giao diện tự ngắt dòng theo chiều rộng vẫn được). Không placeholder, câu “như trên”, ghi chú nghiên cứu hoặc link trong prompt/caption. Nếu người dùng yêu cầu JSON, dùng bốn khóa `idea`, `first_frame_prompt`, `video_prompt`, `caption`; các giá trị là chuỗi, hai prompt và caption không chứa xuống dòng. Chỉ thêm thông báo ngắn ngoài bốn mục khi thiếu dữ liệu quan trọng hoặc cần chỉ rõ giới hạn; đường dẫn hồ sơ có thể gắn ngay nhãn Ý TƯỞNG.
 

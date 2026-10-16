@@ -42,3 +42,7 @@ Thêm /dongvideo, bộ nhớ Project/shared, quyền kích hoạt có gate và v
 ## Nature Studio v1.2 — 2026-10-16
 
 Mã video mới XXX-yyyyy từ 00001, prefix local từng Project. [Quy tắc](../00-Standards/video-identifiers.md), [migration](../UPDATE.md), [kết quả kiểm](../06-Evaluation/results/v1.2-identifiers-2026-10-16.md) và [manifest](manifests/nature-studio-v1.2-2026-10-16.json). Giữ mã legacy và production đang làm. Registry không vào Git/ZIP mẫu; backup cá nhân phải kèm registry riêng.
+
+## Nature Studio v1.3 — 2026-10-16
+
+Underwater UF-D015/016: caption ngắn/trực tiếp theo phong cách tham chiếu, vẫn 3–5 hashtag và không #Underwater. [Quy chuẩn](../03-Projects/underwater/audience-and-caption.md), [nghiên cứu](../01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md), [kiểm](../06-Evaluation/results/v1.3-caption-policy-2026-10-16.md), [manifest](manifests/nature-studio-v1.3-2026-10-16.json). UPDATE.md có hướng dẫn nâng v1.2. Không phát tán ảnh UI hoặc production local trong cập nhật này.
