@@ -16,7 +16,13 @@ Phiên bản hiện hành được đặt tên **Nature Studio v1.0**. Skill/pro
 
 Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md) với lịch sử đến A04: video A03 được review chưa đạt; A04 có ảnh/prompt sửa, video mới chưa render. Đọc SUMMARY/review để biết đúng mức kiểm từng attempt. Các ca đánh giá khởi tạo và hai ca sáng tạo mở mới chưa chạy.
 
-## Sử dụng skill
+## Hướng dẫn sáng tạo cho AI trong v1.0
+
+Khi được giao tạo mới, đọc [nguyên tắc sáng tạo chung](00-Standards/creativity.md), rồi hướng dẫn riêng của dự án; Underwater dùng [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Luồng làm việc: **brief/dữ kiện → rà lịch sử → tiền đề độc lập → kiểm tính đúng → chọn chuyện → bố trí nhịp → kiểm độ mới → prompt/caption**.
+
+Ví dụ không phải danh sách tình huống đóng. Độ mới được kiểm ở hành vi và nhân quả, không chỉ đổi cá/mồi/địa điểm. Revision giữ câu chuyện đã chốt. Đây là phần bắt buộc khi AI phát triển ý tưởng, kể cả khi chỉ nhận link repo và không gọi skill. Hướng dẫn không bảo đảm mọi kết quả sẽ hay hoặc chưa từng có.
+
+## Gọi skill /chayvideo
 
 Trong workspace, gửi `/chayvideo` kèm loài hoặc ý tưởng, hoặc yêu cầu tạo nội dung bằng đặc trưng dự án. Ví dụ:
 

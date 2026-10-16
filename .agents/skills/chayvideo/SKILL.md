@@ -5,13 +5,13 @@ description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /ch
 
 # /chayvideo
 
-Version: 1.3 | Updated: 2026-10-16
+Version: 1.4 | Updated: 2026-10-16
 
 Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên dự án, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
 
 ## Xác định phạm vi và đọc nguồn
 
-1. Đọc `START-HERE.md`, `SYSTEM.md` và `00-Standards/INDEX.md`; đọc tiêu chuẩn research, production, quality-review, memory-policy liên quan. Tôn trọng yêu cầu hiện hành của người dùng.
+1. Đọc `START-HERE.md`, `SYSTEM.md` và `00-Standards/INDEX.md`; đọc tiêu chuẩn research, production, quality-review, memory-policy liên quan. Khi tạo concept mới, bắt buộc đọc `00-Standards/creativity.md`, kết hợp hướng dẫn riêng của dự án. Tôn trọng yêu cầu hiện hành của người dùng.
 2. Xác định dự án từ ý định tạo bộ nội dung và các đặc trưng, không bắt buộc người dùng nhớ tên dự án hoặc gõ /chayvideo. Liệt kê và đọc mô tả/nhận diện trong mọi `03-Projects/*/PROJECT.md`; nếu thiếu metadata, tra format, đối tượng và output-contract tương ứng. Ưu tiên tên/ID người dùng nêu rõ, sau đó tổ hợp chủ đề, loài, môi trường, thị trường, format và ngữ cảnh hiện hành. Không chọn chỉ bằng một từ chung như “cá”, “Mỹ” hoặc “Omni”. Khi một dự án khớp rõ, tự chọn và ghi tên dự án vào brief/nhãn Ý TƯỞNG, không hỏi xác nhận lại. Khi nhiều dự án cùng khớp mà chưa phân biệt được, hỏi một câu ngắn; khi không dự án nào phù hợp thì hỏi dự án cần dùng, không ép vào dự án duy nhất. Nếu thiếu mọi dấu hiệu và chỉ có một dự án configured, có thể dùng dự án đó. Câu hỏi kiến thức về loài hoặc thảo luận/sửa skill không phải lệnh sản xuất.
 
    Dùng Slug/thư mục hiện hành trong PROJECT.md cho đường dẫn sản xuất; ID ổn định có thể khác slug sau đổi tên. Underwater dùng `03-Projects/underwater/PROJECT.md` và `04-Productions/underwater/`, giữ ID `under-fishing-us`/prefix UF để nối lịch sử. Tên cũ chỉ là alias của cùng dự án, không tạo dự án mới.

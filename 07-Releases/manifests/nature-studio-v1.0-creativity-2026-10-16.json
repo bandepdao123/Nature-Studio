@@ -1,0 +1,55 @@
+{
+  "release_id": "NATURE-STUDIO-v1.0-CREATIVITY-2026-10-16",
+  "workspace_version": "1.0",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "base_commit": "e25964bfd40d5e508adcaae5ad85d1e2de8d129e",
+  "type": "v1.0-supplement",
+  "changes": [
+    "Shared AI creativity guidance and explicit required reading links at repository entrypoints.",
+    "Per-project creative direction remains authoritative for specific creative constraints; output format and revision scope unchanged."
+  ],
+  "checks": {
+    "skill_validator": "pass",
+    "changed_links": "pass",
+    "version_kept": "1.0",
+    "production_files_unmodified": "pass"
+  },
+  "not_tested": [
+    "End-to-end creative behavior or media performance."
+  ],
+  "files": [
+    {
+      "path": "00-Standards/creativity.md",
+      "sha256": "0edc89c733805f7f841251b90c7905bd822bfcc81516132e4600546f3dab493c"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "e86a9799bf3521f8e61298404684f17c0a92d2f47f10f89f2bef20fef1725106"
+    },
+    {
+      "path": "README.md",
+      "sha256": "1df7fc7ebc2606d4bd48cedac3c43bda51e1bf8d5491f2addacc58d49c2b74df"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "5db0d68bb47ef6689e1806564feb5c5685fb7b10c132cfd5b1afb60a9cc7400b"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "0fabe9a2a1cdf8d24f30168a03752352b444fee89500f3c0f1a33458cedfe799"
+    },
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "ac1c5d25ed38cb8ea3e632b9d93d70d6131073a63a0f9d37e715120821190484"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "508bed0864f6d6078024422eabfaee69ca8a7d8dfef62b4b8de691d5cbe47c9c"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "cb7b10c02d8a279420940dfb259f1b173d7535ac490772583ea47f77988fc583"
+    }
+  ]
+}

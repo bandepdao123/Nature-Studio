@@ -1,5 +1,7 @@
 # Tiêu chuẩn chung
 
+- [Hướng dẫn sáng tạo cho AI](creativity.md) — đọc trước khi phát triển concept mới; kết hợp hướng dẫn riêng trong PROJECT.md.
+
 - [Nghiên cứu](research.md)
 - [Sản xuất](production.md)
 - [Review](quality-review.md)
