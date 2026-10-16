@@ -2,9 +2,10 @@
   "provider": "github",
   "repository_id": 1421542100,
   "owner": "bandepdao123",
-  "name": "Nature-Studio-v1.0",
-  "name_template": "Nature-Studio-v{version}",
-  "workspace_version": "1.0",
-  "url": "https://github.com/bandepdao123/Nature-Studio-v1.0",
-  "previous_names": ["Nature-Studio"]
+  "name": "Nature-Studio",
+  "url": "https://github.com/bandepdao123/Nature-Studio",
+  "name_policy": "stable",
+  "previous_names": [
+    "Nature-Studio-v1.0"
+  ]
 }

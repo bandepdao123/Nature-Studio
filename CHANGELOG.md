@@ -24,9 +24,9 @@ Giới hạn: chưa chạy đánh giá hành vi EV-UF-006/007; chưa chứng min
 
 ## Quy tắc ghi lần cập nhật tiếp theo
 
-Trong quá trình phát triển, ghi mục `Chưa phát hành` ở đầu lịch sử. Khi chốt bản mới, cập nhật VERSION và mục tương ứng, nêu thay đổi/di chuyển dữ liệu, điều người dùng cần làm và giới hạn đã kiểm. Không sửa mô tả bản đã đóng để che lịch sử. Các chỉnh sửa local/commit phát triển chưa phải phát hành; theo quyết định đặt tên repo bổ sung bên dưới, mỗi lần chốt phát hành cập nhật mới phải tăng phiên bản toàn hệ thống và đổi tên repo tương ứng.
+Trong quá trình phát triển, ghi mục `Chưa phát hành` ở đầu lịch sử. Khi chốt bản mới, cập nhật VERSION và mục tương ứng, nêu thay đổi/di chuyển dữ liệu, điều người dùng cần làm và giới hạn đã kiểm. Không sửa mô tả bản đã đóng để che lịch sử. Chỉnh dữ liệu sản xuất có thể chỉ cần commit mới, không tự tăng phiên bản toàn hệ thống sau mỗi clip.
 
-### Quyết định tên repository — 2026-10-16
+### Quyết định giữ URL repository — 2026-10-16
 
-- Đặt tên repo hiện tại Nature-Studio-v1.0 cho bản v1.0; đây là hoàn tất cách đặt tên bản hiện tại theo yêu cầu, chưa tăng thành v1.1.
-- Các lần chốt phát hành cập nhật tiếp theo phải tăng VERSION và đổi tên cùng repository, đồng bộ metadata/remote/link. REPOSITORY.json giữ ID GitHub ổn định 1421542100 để tìm lại repo sau đổi tên. Quy tắc này thay cách bổ sung công bố dưới cùng số phiên bản đã dùng ở các mục lịch sử phía trên.
+- Giữ tên repo Nature-Studio, đưa tên thử Nature-Studio-v1.0 trở lại tên ổn định; vẫn là cùng repository ID 1421542100 và giữ toàn bộ lịch sử.
+- Phiên bản chỉ ghi trong README/VERSION/CHANGELOG/manifest/gói và tag/release khi được tạo. Không đổi tên repo theo mỗi phiên bản. Quyết định này thay chính sách đổi tên thử trước đó; VERSION hiện vẫn 1.0.

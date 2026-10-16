@@ -35,4 +35,4 @@ Không đọc toàn bộ kho mỗi lượt. Nếu không tìm thấy thông tin,
 
 Workspace tổ chức theo Project. Dự án hiện hành: [Underwater](03-Projects/underwater/PROJECT.md), tên cũ Under Fish US / Under Fishing US. Quy chuẩn đã chuyển sang 03-Projects/underwater; hồ sơ sản xuất sang 04-Productions/underwater; mẫu dự án là 00-Standards/templates/project.md. Không có dự án mới được tạo từ lần đổi tên này.
 
-Repository hiện hành và ID ổn định đọc từ [REPOSITORY.json](REPOSITORY.json). Tên repo đi cùng phiên bản theo Nature-Studio-v{version}; với link cũ, theo UPDATE.md để xác minh repo hiện hành trước khi cập nhật.
+Tên repo cố định là Nature-Studio; nâng VERSION không đổi URL. [REPOSITORY.json](REPOSITORY.json) ghi danh tính nguồn; UPDATE.md hướng dẫn đối chiếu bản đang dùng và bản mới.
