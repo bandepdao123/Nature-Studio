@@ -38,3 +38,7 @@ Repository hiện hành: [Nature-Studio](https://github.com/bandepdao123/Nature-
 ## Nature Studio v1.1 — 2026-10-16
 
 Thêm /dongvideo, bộ nhớ Project/shared, quyền kích hoạt có gate và validator. [Hướng dẫn migration](../UPDATE.md#nâng-từ-v10-lên-v11). [Manifest v1.1](manifests/nature-studio-v1.1-2026-10-16.json) ghi nguồn/hash và [kết quả kiểm](../06-Evaluation/results/v1.1-implementation-2026-10-16.md), không sửa snapshot/manifest cũ. Dữ liệu production đang thay đổi ở local được giữ riêng, không tự đưa vào commit framework.
+
+## Nature Studio v1.2 — 2026-10-16
+
+Mã video mới XXX-yyyyy từ 00001, prefix local từng Project. [Quy tắc](../00-Standards/video-identifiers.md), [migration](../UPDATE.md), [kết quả kiểm](../06-Evaluation/results/v1.2-identifiers-2026-10-16.md) và [manifest](manifests/nature-studio-v1.2-2026-10-16.json). Giữ mã legacy và production đang làm. Registry không vào Git/ZIP mẫu; backup cá nhân phải kèm registry riêng.
