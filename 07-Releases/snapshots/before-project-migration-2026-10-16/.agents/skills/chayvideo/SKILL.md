@@ -1,0 +1,64 @@
+---
+name: chayvideo
+description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /chayvideo hoặc yêu cầu làm video qua đặc trưng dự án như Redfish, Muskie, Walleye, câu cá Mỹ hay camera dưới nước. Tự tra dự án phù hợp, rà lịch sử tránh trùng; ý tưởng tiếng Việt, FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag. Không tự render/đăng; không kích hoạt cho câu hỏi kiến thức hoặc sửa skill.
+---
+
+# /chayvideo
+
+Version: 1.1 | Updated: 2026-10-16
+
+Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên kênh, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
+
+## Xác định phạm vi và đọc nguồn
+
+1. Đọc `START-HERE.md`, `SYSTEM.md` và `00-Standards/INDEX.md`; đọc tiêu chuẩn research, production, quality-review, memory-policy liên quan. Tôn trọng yêu cầu hiện hành của người dùng.
+2. Xác định dự án/kênh từ ý định tạo bộ nội dung và các đặc trưng, không bắt buộc người dùng nhớ tên dự án hoặc gõ /chayvideo. Liệt kê và đọc mô tả/nhận diện trong mọi `03-Channels/*/CHANNEL.md`; nếu thiếu metadata, tra format, đối tượng và output-contract tương ứng. Ưu tiên tên/ID người dùng nêu rõ, sau đó tổ hợp chủ đề, loài, môi trường, thị trường, format và ngữ cảnh hiện hành. Không chọn chỉ bằng một từ chung như “cá”, “Mỹ” hoặc “Omni”. Khi một dự án khớp rõ, tự chọn và ghi tên dự án vào brief/nhãn Ý TƯỞNG, không hỏi xác nhận lại. Khi nhiều dự án cùng khớp mà chưa phân biệt được, hỏi một câu ngắn; khi không dự án nào phù hợp thì hỏi dự án cần dùng, không ép vào kênh duy nhất. Nếu thiếu mọi dấu hiệu và chỉ có một kênh configured, có thể dùng kênh đó. Câu hỏi kiến thức về loài hoặc thảo luận/sửa skill không phải lệnh sản xuất.
+
+   Ví dụ với kho hiện tại: “Làm một bộ Walleye theo jig rồi quay đi” hoặc “/chayvideo red drum ở lạch triều Texas” → Under Fishing US, không hỏi tên kênh. “Muskie sống ở đâu?” → trả lời kiến thức, không tạo production. Khi thêm dự án mới, đọc lại metadata hiện hành thay vì coi các ví dụ này là bảng định tuyến cố định.
+3. Đọc toàn bộ `CHANNEL.md`, `format.md`, `audience-and-caption.md`, `output-contract.md`, `decisions.md` và `idea-ledger.md` của đúng kênh. Đọc tài liệu tham chiếu bắt buộc được các file đó dẫn; dùng baseline khi cần tìm ràng buộc còn thiếu. Tài liệu phát hành cũ là lịch sử, không ghi đè quyết định mới.
+4. Tra `01-Knowledge/INDEX.md` và các hồ sơ loài, môi trường, tương tác, dụng cụ thực sự liên quan; tra `02-Models/INDEX.md` và model profile đúng kênh. Mở nguồn bên ngoài khi cần kiểm dữ kiện mới/hiện hành, ghi đúng việc đã truy cập. Thiếu nguồn bắt buộc để chốt chi tiết thì xử lý giới hạn trước khi giao, không bịa nguồn hoặc thông số.
+5. Đọc `05-Memory/INDEX.md`; tìm file thực nếu index thiếu/cũ. Chỉ áp bài học active đúng phạm vi; candidates là giả thuyết, retired là lịch sử. Đọc lỗi/feedback production liên quan dù chưa thành active lesson; không nâng một lỗi cục bộ thành quy chuẩn chung.
+
+Với Under Fishing, giữ bước chọn loài tại CHANNEL.md: nếu chưa có loài hoặc quyền chọn, hỏi Redfish / Muskie / Walleye / loài cá được câu bất kỳ ở Mỹ và chờ. Đã có lựa chọn hoặc quyền chọn thì không hỏi lại. Chưa đủ đầu vào không tạo hồ sơ/ý tưởng giả để lấp chỗ trống.
+
+## Rà dữ liệu cũ trước khi chọn ý tưởng — bắt buộc
+
+- Kiểm cả lịch sử chat đang truy cập, dữ liệu người dùng đưa, `idea-ledger.md` và file thực dưới `04-Productions/<channel>/`. Liệt kê file trước bằng `rg --files` (hoặc công cụ tương đương); không kết luận không có lịch sử chỉ vì ledger trống.
+- Đọc mọi SUMMARY và concept hiện có của kênh để lập danh sách cơ chế cũ. Tìm thêm trong brief, feedback, review và prompt của các trường hợp gần giống; hồ sơ thiếu SUMMARY/concept phải tra nội dung thực còn lại. Dùng tìm kiếm từ khóa/đồng nghĩa theo loài, prey/bait/lure, rig, hành động, key, kết cục; không chỉ so tiêu đề hoặc chuỗi chữ giống hệt.
+- Tính cả ý tưởng nháp đã giao, bị loại, retired và ví dụ tham chiếu vào danh sách đối chiếu, nhưng ghi đúng trạng thái: ví dụ không phải sản phẩm đã làm. Tra kênh khác khi chung chủ đề/cơ chế để phát hiện việc tái dùng; đánh giá trong phạm vi dự án, không cấm một cơ chế ở mọi thể loại.
+- So sánh theo: câu hỏi mở đầu, kiểu tương tác, mồi/con mồi hoặc dụng cụ, vai trò địa hình, nguyên nhân và hành động key, hậu quả/kết cục. Đổi tên loài, màu, địa danh, thời tiết, caption hoặc thời điểm đơn thuần không tạo ý tưởng mới.
+- Khi tạo mới, cân nhắc vài hướng rồi loại hướng trùng. Với Under Fishing, so với cảnh gần nhất phải có ít nhất hai khác biệt có ý nghĩa, trong đó ít nhất một thuộc key, kiểu tương tác hoặc kết cục; đổi loài đơn thuần không tính. Kênh khác theo tiêu chí riêng, tối thiểu khác cơ chế kể chuyện thực chất. Nếu ràng buộc đã khóa khiến không thể tạo khác biệt, nói rõ và hỏi lựa chọn cần thay đổi.
+- Khi sửa/tiếp tục một production hoặc người dùng yêu cầu lặp lại, giữ ý tưởng/loài đã chọn, ghi là revision/tái dùng có chủ đích; không đổi chuyện để đạt chỉ tiêu mới.
+- Ghi vào concept: đường dẫn/ID đã đối chiếu, trường hợp gần nhất, khác biệt cụ thể và phần lịch sử chưa truy cập. Nếu kho chưa có production, ghi đúng điều đó và vẫn tránh lặp nguyên ví dụ. Không tuyên bố độc nhất hoặc chưa từng làm ngoài dữ liệu đã kiểm. Nếu lịch sử có nhưng không đọc đủ, thông báo giới hạn; không đánh dấu đã rà toàn bộ.
+- Với nhiều bộ trong cùng yêu cầu, đối chiếu chéo các ý tưởng vừa chọn trước khi giao để chúng không trùng nhau.
+
+## Soạn đầu ra và tự kiểm
+
+Mặc định một bộ. Tự giải quyết chi tiết thông thường trong phạm vi brief. Khóa trạng thái t=0, chủ thể, môi trường, kết nối, đường đi, nguồn lực, key và hậu quả trước khi viết prompt.
+
+Trả đúng bốn mục sau cho mỗi bộ: ý tưởng tiếng Việt; hai prompt và caption tiếng Anh. Không kèm bản dịch song ngữ trừ khi được yêu cầu:
+
+1. **Ý TƯỞNG**: một đoạn ngắn mô tả câu chuyện, câu hỏi mở đầu, key/kết cục dự kiến và điểm khác thực chất so với dữ liệu cũ khi có.
+2. **FIRST FRAME PROMPT**: một đoạn tiếng Anh duy nhất, tự đủ để sao chép, chỉ mô tả ảnh t=0: chủ thể, môi trường, bố cục, camera, ánh sáng, tỷ lệ và các vật thực sự nhìn thấy. Không có diễn biến tương lai hoặc âm thanh trong prompt ảnh. Ảnh sẽ dùng làm đầu vào mở đầu của Omni Flash, nhưng không tự đổi model tạo ảnh nếu chưa được chỉ định.
+3. **VIDEO PROMPT**: một đoạn tiếng Anh duy nhất, tự đủ và tiếp nối đúng ảnh đầu. Với Google Omni Flash, đọc hướng dẫn tại `02-Models/model-profiles/omni-flash.md`; tổ chức lời prompt theo thứ tự ảnh mở đầu → thời lượng/tỷ lệ/camera → bối cảnh và tính nhất quán → chuyển động/beat/nhân quả → Sound design → loại trừ ngắn. Đây là cách soạn của studio theo hướng dẫn model, không phải schema API bắt buộc. Mốc thời gian/beat đặt ngay trong đoạn, ví dụ `[0.0–1.3s] ...; [1.3–2.6s] ...`; không trình bày timeline thành bảng, danh sách hoặc nhiều đoạn. Tích hợp âm thanh trong cùng đoạn theo quy chuẩn kênh. Chỉ dùng `<FIRST_FRAME>` khi giao diện hỗ trợ; tag không thay thao tác đính kèm ảnh.
+4. **CAPTION**: một đoạn tiếng Anh Mỹ tự nhiên, như người bản xứ nói với nhóm khán giả Mỹ của dự án; không hiểu “American English” thành phong cách của người Mỹ bản địa (Native American). Hook cụ thể, tò mò từ sự kiện dự kiến/thực tế; không dịch sát tiếng Việt, nhồi slang hoặc dùng thuật ngữ sai. Với Under Fishing, giọng người câu cá Mỹ, hook thường 3–8 từ và 3–5 hashtag liên quan nối cùng đoạn, không nhắc AI; không tuyên bố mắc câu/bắt được khi hình chưa chứng minh.
+
+Không chèn CR/LF trong nội dung của từng prompt (giao diện tự ngắt dòng theo chiều rộng vẫn được). Không placeholder, câu “như trên”, ghi chú nghiên cứu hoặc link trong prompt/caption. Nếu người dùng yêu cầu JSON, dùng bốn khóa `idea`, `first_frame_prompt`, `video_prompt`, `caption`; các giá trị là chuỗi, hai prompt và caption không chứa xuống dòng. Chỉ thêm thông báo ngắn ngoài bốn mục khi thiếu dữ liệu quan trọng hoặc cần chỉ rõ giới hạn; đường dẫn hồ sơ có thể gắn ngay nhãn Ý TƯỞNG.
+
+Đây là hợp đồng v1.1 cho skill, áp dụng cả /chayvideo và lời gọi ngầm theo đặc trưng dự án: thay yêu cầu v1.0 xuất toàn bộ tiếng Việt. Tên mục giữ đúng Ý TƯỞNG, FIRST FRAME PROMPT, VIDEO PROMPT, CAPTION. Ngoài ý tưởng tiếng Việt, ba nội dung còn lại bằng tiếng Anh; yêu cầu trực tiếp mới của người dùng vẫn ưu tiên.
+
+Kiểm trước khi giao:
+
+- Đã xác định đúng kênh, đọc nguồn hiện hành và rà lịch sử thực; độ mới có căn cứ hoặc ghi giới hạn.
+- Ý tưởng, ảnh đầu, video và caption cùng loài, số lượng, vật thể, bố cục mở đầu và kết cục; đúng sinh học/môi trường, không bịa kết nối hay kết quả.
+- Đủ bốn mục với đúng tên; ý tưởng tiếng Việt, hai prompt tiếng Anh, caption tiếng Anh Mỹ tự nhiên; mỗi prompt một đoạn, caption và hashtag cùng một đoạn, dễ sao chép.
+- Under Fishing vẫn giữ 10s, 9:16, một shot camera cố định mặc định, 5–8 beat liên tục, onset key >5.0s, setup có tiến triển và có hậu quả; âm môi trường + hành động lớn/rõ suốt clip, có nguồn, mặc định không nhạc/voice; 3–5 hashtag đúng cảnh, không AI. Cấu trúc prompt cho Omni Flash không làm thay đổi các ràng buộc riêng của kênh.
+- Phân biệt kiểm prompt với kiểm ảnh/video thật. Không hứa model tuân thủ timecode hoặc đã QA media khi chỉ có văn bản. Tìm lỗi rồi sửa bộ nội dung trước khi giao; không tự render để kiểm.
+
+## Lưu để lần sau tra lại
+
+Khi đã đủ đầu vào và có bộ nội dung thật, tạo production/attempt theo `00-Standards/production.md` và các template; tra ID trước khi cấp mới, không ghi đè lần cũ. Lưu brief, research, concept, SUMMARY, feedback/performance theo trạng thái thực; attempt có INPUTS, hai prompt, caption, settings, review. Settings ghi chưa thực thi/unknown đúng nghĩa, review ở mức prompt-only, performance chưa đăng. Không tạo file media giả.
+
+Trong concept lưu kết quả rà trùng; trong INPUTS lưu phiên bản/đường dẫn nguồn và bài học đã dùng. Cập nhật `idea-ledger.md` với ID, cơ chế/key/kết cục và liên kết SUMMARY ngay khi đã giao bản drafted để lần sau tra được, không chờ render/đăng. Revision thêm attempt hoặc version trong hồ sơ hiện có. Không coi drafted là selected/approved/published.
+
+Lỗi/phản hồi mới được ghi đúng hồ sơ, bài học mới theo memory-policy; không tự nâng candidate thành active. Lệnh `/chayvideo` chỉ tạo văn bản và hồ sơ local; tạo media, chi tiền hay đăng bài cần yêu cầu tương ứng của người dùng.

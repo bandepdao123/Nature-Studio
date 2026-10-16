@@ -1,0 +1,271 @@
+{
+  "release_id": "NS-INIT-2026-10-15",
+  "date": "2026-10-15",
+  "timezone": "Asia/Saigon",
+  "root": "E:\\Nature-Studio",
+  "status": "initialized",
+  "baseline": {
+    "type": "imported-baseline",
+    "source": "G:\\My Drive\\2. YouTube và sản xuất nội dung\\2.7 Kênh THẾ GIỚI ĐỘNG VẬT\\1. Wild viral\\Hướng dẫn sản xuất\\Under Fishing\\underwater-ai-realism-prompt-guide-v1.9.md",
+    "version": "1.9",
+    "sha256": "5eb952357362b7a8c669a057db8d9c89c9c4c6aa1a5336b9980bad0f3bbf96c8",
+    "copy": "07-Releases/standalone-guides/underwater-ai-realism-prompt-guide-v1.9.md"
+  },
+  "checks": {
+    "exclusive_creation": true,
+    "utf8_nonempty_text": true,
+    "local_markdown_links_resolve": true,
+    "baseline_byte_identical": true
+  },
+  "not_tested": [
+    "AI workflow behavior",
+    "image/video generation",
+    "audio listening",
+    "platform performance",
+    "model capabilities",
+    "external URLs"
+  ],
+  "initial_counts": {
+    "active_lessons": 0,
+    "candidate_lessons": 0,
+    "productions_imported": 0,
+    "evaluation_cases": 8,
+    "evaluation_runs": 0
+  },
+  "files": [
+    {
+      "path": "START-HERE.md",
+      "sha256": "5fa058d747164e06bcd3005f331c8b0501ef55e4da8a6abb105e040586339c3e"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "8f4f1b7345af89e1f609b6834dde1b4a019aa1ed1a90d0a16a2503930d04070d"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "03835aff4fb69f1deec7be62bfc49e62d12a4ed901567068101b9079c1ccb197"
+    },
+    {
+      "path": "00-Standards/research.md",
+      "sha256": "6a1bace2ffd6c0c82e73cc6ed207ef7922235bd2b721ebd857b290dc7af0c6d0"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "c46fc4da2ddb203f1f9edeeed95898994dd0c1b4f23a11d185da3f1fe974e284"
+    },
+    {
+      "path": "00-Standards/quality-review.md",
+      "sha256": "986a451b766626f0f2edce19c55be9818473ab946d364cfa6492974417ef8b59"
+    },
+    {
+      "path": "00-Standards/memory-policy.md",
+      "sha256": "10ccc40a8bbf6731eb860916b10574e3c76e7263514fb7777846760658346878"
+    },
+    {
+      "path": "00-Standards/templates/README.md",
+      "sha256": "b8bd83f84fb0a8e8dc87b7d693cb3db1c1c9cfd2343224bc04813428c8447fa2"
+    },
+    {
+      "path": "00-Standards/templates/channel.md",
+      "sha256": "bb5310c4df28a6d9c9e12438c6bee75f1704e6560dbfff9350608f4e3146cefb"
+    },
+    {
+      "path": "00-Standards/templates/brief.md",
+      "sha256": "0642a65e03ca54de9def221e92f7dee219402132e20ae3d5f1cdaed63fd353c7"
+    },
+    {
+      "path": "00-Standards/templates/research.md",
+      "sha256": "cfe18d2e2762957d667870b482ca2db9cde71a4a1bb69fdf6ff6b166f9538537"
+    },
+    {
+      "path": "00-Standards/templates/concept.md",
+      "sha256": "574684e11eb51fe9304f8178f07c56b964cc3c6d01decd16509cf737918d6cec"
+    },
+    {
+      "path": "00-Standards/templates/attempt-inputs.md",
+      "sha256": "8ea96e9b85f5da49b8c397be26b094c3d46716e2eb2a884d725b821784b88b87"
+    },
+    {
+      "path": "00-Standards/templates/settings.md",
+      "sha256": "ee032aaadde8a49e9fd12cba4df65b4e1101c225d960d1c2265f0613cce2ae3e"
+    },
+    {
+      "path": "00-Standards/templates/review.md",
+      "sha256": "0b195f60b5949c14fd7d2122cb7368f6c165f5bd56be7d363e086b0e5282d89c"
+    },
+    {
+      "path": "00-Standards/templates/feedback.md",
+      "sha256": "b01e65d39fa1c61e13e862c4f84d164e78495a4413cdf86889b1f16fddd76719"
+    },
+    {
+      "path": "00-Standards/templates/performance.md",
+      "sha256": "5116af48a03a3a1604a2027cf323655a320ebab672645576b548e29b59e09a9e"
+    },
+    {
+      "path": "00-Standards/templates/episode-summary.md",
+      "sha256": "abfc006155bf633a4133d01394526aa864b4f61ba09d70eefa8eebbcb2f1263f"
+    },
+    {
+      "path": "00-Standards/templates/lesson.md",
+      "sha256": "7a1698b82b0f7b7e3559574676685bb9f000660d7d9941facf0b43ecaca275d6"
+    },
+    {
+      "path": "00-Standards/templates/evaluation-case.md",
+      "sha256": "6c8d9a5de4af87044ed784b9e7d1182b0990223e06b133079fc42b1117eaf192"
+    },
+    {
+      "path": "00-Standards/templates/source.md",
+      "sha256": "e7e1a544cc13da8c28c067dcc87eb4c66ef422e194e3a779ad89a6204846fbe7"
+    },
+    {
+      "path": "00-Standards/templates/release-manifest.md",
+      "sha256": "43fce81951aef9255c7c2d4531600bfddfc125788abebf32fe2df6de6bcab4eb"
+    },
+    {
+      "path": "01-Knowledge/habitats/underwater-realism.md",
+      "sha256": "4ccdce5880b92808b509978b0a5ce40fddf91fa816fb779ce9f64883ad0333ac"
+    },
+    {
+      "path": "01-Knowledge/equipment/us-angling-tackle.md",
+      "sha256": "d92aab9dd09b0fa2bdc97b0f8f139d74eaf3d3379c4a1297d829a6bebe3bd2e1"
+    },
+    {
+      "path": "01-Knowledge/interactions/fish-prey-and-lure.md",
+      "sha256": "174729cc494f2a1956a13fee49f1b4aa2e95e6380968043ab0b9929306cec3fa"
+    },
+    {
+      "path": "01-Knowledge/species/redfish.md",
+      "sha256": "6f4c34c8f9629c2ba5be0ef55e30207cee83b5cf1f6f5e6b6d6f2d505d4604b3"
+    },
+    {
+      "path": "01-Knowledge/species/muskie.md",
+      "sha256": "e00dd9284b5b5a8aadc858293089c16fd5c9cf00444e661e64ecda42c0fe2f2d"
+    },
+    {
+      "path": "01-Knowledge/species/walleye.md",
+      "sha256": "bf9aaa92b438464bd77bfcf21c076e212dded781b35e2a3df0ebfb744691cea1"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "sha256": "bab4c28c6039c4d63a9e76eaf0737ff8c07fe3b2f9be3e630fa5e499d004aa73"
+    },
+    {
+      "path": "01-Knowledge/INDEX.md",
+      "sha256": "80f007f2b2f28845839d23e47d4c45758200a74ffd9570003b8a46fbdd5e1db5"
+    },
+    {
+      "path": "02-Models/INDEX.md",
+      "sha256": "25cddb3a6bda4a9b075709c57524647530e64f0501924a9e18aa026d12a4621a"
+    },
+    {
+      "path": "02-Models/model-profiles/omni-flash.md",
+      "sha256": "55019268dd32725b166981ee71cb5bd4ee0543c08f0e2da23b5b0faf8250c82a"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/CHANNEL.md",
+      "sha256": "a21756437a62ac53a8ac38c0ff446a7684fcd716ae2966dc6433afa19e0db5c6"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/format.md",
+      "sha256": "6944dc10f511282f88e32b2b77c8319aec812b6324e128af776ef213b739e347"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/audience-and-caption.md",
+      "sha256": "dd4e6655bbf224a6749e7e8d213ddc05bf14c185efd1ec5e4684534a098997ae"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/output-contract.md",
+      "sha256": "95076495eea736f6c4a13067b39cc9d0270abeea0d98d38eb66fe38784787993"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/decisions.md",
+      "sha256": "2f4180d5f144792220c10836721ff21a2c6bce88e13e8d070657cdf87be939ba"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/idea-ledger.md",
+      "sha256": "dd125e1958c8ae7058170a7d487084017dec2e960f2b7d7f743bb56e91f87d6b"
+    },
+    {
+      "path": "03-Channels/under-fishing-us/references/README.md",
+      "sha256": "47168d92f964b57824c7869e92f38b4855412daa501a4b32e334b84b0341332c"
+    },
+    {
+      "path": "04-Productions/under-fishing-us/README.md",
+      "sha256": "f2279bec9db22954d8e8ea001907652b4d9cb9f5fad345105cf9a9a07603a315"
+    },
+    {
+      "path": "05-Memory/INDEX.md",
+      "sha256": "5f46623c60426ccf1e59527af9bf2ae1b7e929dcb5dc9d43dff11fe0af214034"
+    },
+    {
+      "path": "05-Memory/candidates/README.md",
+      "sha256": "a3f0e63c42be385187ed10fae363b8010f2bf36c37695852afc5b12b15247530"
+    },
+    {
+      "path": "05-Memory/active/README.md",
+      "sha256": "adc1b5cbeb7eb6ca5bf0ea933bd22672214e4b5ae70d1ac2f686bd1408e0b3e5"
+    },
+    {
+      "path": "05-Memory/retired/README.md",
+      "sha256": "17ea223c818446d3bb60aae48b494b3033b1b63f817107396150510a23b47c98"
+    },
+    {
+      "path": "06-Evaluation/README.md",
+      "sha256": "a93a6ea4e365b9a36a050bb2032a3eecce769811a6bc2dfd6f92fe5c089acbf6"
+    },
+    {
+      "path": "06-Evaluation/criteria/production-quality.md",
+      "sha256": "49a050d2688754a50f5121b24b6a7d9cb5764350b69d234907b05b186e10d86f"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-001.md",
+      "sha256": "432995b314251a57f6387fc9633b27cec3fb75650035b038e38cded705f8b19e"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-002.md",
+      "sha256": "422e5f5671439dd506138cf2ad758b4cef338c2668ebccfb8ba9e48a723713e4"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-003.md",
+      "sha256": "a190e473d04159da81f07bd38dddcb7c9cf3aac701156f979fb90a03692e2b1a"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-004.md",
+      "sha256": "e963792a38f3b23e2805681d5162c8813beeb25f149679db5922c78fce0803ce"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-005.md",
+      "sha256": "ed7f2cd536d35cdcc08d69c779a6ea93c10a46515da320dae370a797bd85d38e"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-001.md",
+      "sha256": "7d3de00a5271789bff7f98598df7c1f79cd558ef4cff320ceea044b10f2d1063"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-002.md",
+      "sha256": "75032def347cb152120d1a99604590a004d41e3ae956e865e850275abac53f60"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-003.md",
+      "sha256": "338aa7a3d22f6358a1a590d18148ad0f0fa5ddc20af45accf5545f70bd9265c0"
+    },
+    {
+      "path": "06-Evaluation/results/README.md",
+      "sha256": "f8c717fc185b890360cffbf0632b21539c996edfc3a214e17dbc8b0456d90409"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "2188131ac581e2a6676592b5cf20fad152832cdbcd02e144cc9ea19808e8a913"
+    },
+    {
+      "path": "07-Releases/standalone-guides/underwater-ai-realism-prompt-guide-v1.9.md",
+      "sha256": "5eb952357362b7a8c669a057db8d9c89c9c4c6aa1a5336b9980bad0f3bbf96c8"
+    }
+  ],
+  "notes": [
+    "No existing files overwritten.",
+    "No old production media imported.",
+    "No automatic backup, release build or search service installed.",
+    "No v1.8 used."
+  ]
+}
