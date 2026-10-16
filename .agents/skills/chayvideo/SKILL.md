@@ -5,7 +5,7 @@ description: Tạo bộ ý tưởng và prompt video Nature Studio khi gọi /ch
 
 # /chayvideo
 
-Version: 1.2 | Updated: 2026-10-16
+Version: 1.3 | Updated: 2026-10-16
 
 Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm tên dự án, số bộ, loài, brief hoặc yêu cầu sửa. Dùng workspace chứa file này làm gốc (đi lên ba cấp từ thư mục skill); không phụ thuộc ổ E: hoặc thư mục shell hiện tại. Các đường dẫn dưới đây tính từ gốc workspace.
 
@@ -17,7 +17,7 @@ Nhận `/chayvideo` trong tin nhắn như lời gọi quy trình. Có thể kèm
    Dùng Slug/thư mục hiện hành trong PROJECT.md cho đường dẫn sản xuất; ID ổn định có thể khác slug sau đổi tên. Underwater dùng `03-Projects/underwater/PROJECT.md` và `04-Productions/underwater/`, giữ ID `under-fishing-us`/prefix UF để nối lịch sử. Tên cũ chỉ là alias của cùng dự án, không tạo dự án mới.
 
    Ví dụ với kho hiện tại: “Làm một bộ Walleye theo jig rồi quay đi” hoặc “/chayvideo red drum ở lạch triều Texas” → Underwater, không hỏi tên dự án. “Muskie sống ở đâu?” → trả lời kiến thức, không tạo production. Khi thêm dự án mới, đọc lại metadata hiện hành thay vì coi các ví dụ này là bảng định tuyến cố định.
-3. Đọc toàn bộ `PROJECT.md`, `format.md`, `audience-and-caption.md`, `output-contract.md`, `decisions.md` và `idea-ledger.md` của đúng dự án. Đọc tài liệu tham chiếu bắt buộc được các file đó dẫn; dùng baseline khi cần tìm ràng buộc còn thiếu. Tài liệu phát hành cũ là lịch sử, không ghi đè quyết định mới.
+3. Đọc toàn bộ `PROJECT.md`, `format.md`, `audience-and-caption.md`, `output-contract.md`, `decisions.md` và `idea-ledger.md` của đúng dự án. Đọc tài liệu tham chiếu bắt buộc được các file đó dẫn, bao gồm creative-direction nếu dự án có chỉ định; dùng baseline khi cần tìm ràng buộc còn thiếu. Tài liệu phát hành cũ là lịch sử, không ghi đè quyết định mới.
 4. Tra `01-Knowledge/INDEX.md` và các hồ sơ loài, môi trường, tương tác, dụng cụ thực sự liên quan; tra `02-Models/INDEX.md` và model profile đúng dự án. Mở nguồn bên ngoài khi cần kiểm dữ kiện mới/hiện hành, ghi đúng việc đã truy cập. Thiếu nguồn bắt buộc để chốt chi tiết thì xử lý giới hạn trước khi giao, không bịa nguồn hoặc thông số.
 5. Đọc `05-Memory/INDEX.md`; tìm file thực nếu index thiếu/cũ. Chỉ áp bài học active đúng phạm vi; candidates là giả thuyết, retired là lịch sử. Đọc lỗi/feedback production liên quan dù chưa thành active lesson; không nâng một lỗi cục bộ thành quy chuẩn chung.
 
@@ -33,6 +33,14 @@ Với Underwater, giữ bước chọn loài tại PROJECT.md: nếu chưa có l
 - Khi sửa/tiếp tục một production hoặc người dùng yêu cầu lặp lại, giữ ý tưởng/loài đã chọn, ghi là revision/tái dùng có chủ đích; không đổi chuyện để đạt chỉ tiêu mới.
 - Ghi vào concept: đường dẫn/ID đã đối chiếu, trường hợp gần nhất, khác biệt cụ thể và phần lịch sử chưa truy cập. Nếu kho chưa có production, ghi đúng điều đó và vẫn tránh lặp nguyên ví dụ. Không tuyên bố độc nhất hoặc chưa từng làm ngoài dữ liệu đã kiểm. Nếu lịch sử có nhưng không đọc đủ, thông báo giới hạn; không đánh dấu đã rà toàn bộ.
 - Với nhiều bộ trong cùng yêu cầu, đối chiếu chéo các ý tưởng vừa chọn trước khi giao để chúng không trùng nhau.
+
+## Phát triển câu chuyện độc lập với cảnh mẫu
+
+Sau khi rà lịch sử và trước khi chốt concept, tách yêu cầu bắt buộc khỏi ví dụ. Dùng lịch sử làm dấu vân tay cơ chế để đối chiếu, không làm khuôn kịch bản. Phát triển vài tiền đề có tín hiệu kích hoạt, hành vi và quan hệ nhân quả khác nhau từ brief và dữ kiện; không chỉ sửa chi tiết của một tiền đề. Danh sách tình huống trong tài liệu không phải tập lựa chọn đóng; không bốc thăm thể loại hoặc buộc mỗi ý tưởng thuộc một nhóm định sẵn.
+
+Đối chiếu các hướng ở cấp câu chuyện: bỏ tên loài/màu/địa danh mà chúng vẫn cùng một diễn biến thì cần phát triển thêm trước khi chọn. Ngưỡng hai khác biệt của Underwater là điều kiện tối thiểu, không đủ để gọi là mới nếu hành vi và nhân quả cốt lõi vẫn lặp. Không cấm vĩnh viễn một kết cục chỉ vì từng xuất hiện; sáng tạo không đồng nghĩa thêm cú sốc, thêm chủ thể hoặc sai sinh học.
+
+Với Underwater, đọc và áp dụng `03-Projects/underwater/creative-direction.md`. Chọn điểm đáng quan sát trước rồi xây timeline theo format; nếu khó render, thử đơn giản hóa cách thể hiện mà giữ điểm mới thay vì tự quay lại cảnh quen. Chỉ lưu tiền đề đã chọn, cơ chế tò mò, căn cứ và kết quả đối chiếu ngắn trong concept; không xuất suy luận nội bộ hoặc thêm phương án vào bốn mục khi không được yêu cầu. Revision không kích hoạt yêu cầu thay câu chuyện.
 
 ## Soạn đầu ra và tự kiểm
 
@@ -52,6 +60,7 @@ Không chèn CR/LF trong nội dung của từng prompt (giao diện tự ngắt
 Kiểm trước khi giao:
 
 - Đã xác định đúng dự án, đọc nguồn hiện hành và rà lịch sử thực; độ mới có căn cứ hoặc ghi giới hạn.
+- Đã kiểm cơ chế câu chuyện sau khi bỏ tên loài/bối cảnh; ý tưởng không chỉ là cảnh mẫu đổi chi tiết, không bị giới hạn bởi danh mục ví dụ. Phản hồi chất lượng chỉ là bằng chứng trong phạm vi được quan sát, không bảo đảm mọi đầu ra tương lai sáng tạo.
 - Ý tưởng, ảnh đầu, video và caption cùng loài, số lượng, vật thể, bố cục mở đầu và kết cục; đúng sinh học/môi trường, không bịa kết nối hay kết quả.
 - Đủ bốn mục với đúng tên; ý tưởng tiếng Việt, hai prompt tiếng Anh, caption tiếng Anh Mỹ tự nhiên; mỗi prompt một đoạn, caption và hashtag cùng một đoạn, dễ sao chép.
 - Underwater vẫn giữ 10s, 9:16, một shot camera cố định mặc định, 5–8 beat liên tục, onset key >5.0s, setup có tiến triển và có hậu quả; âm môi trường + hành động lớn/rõ suốt clip, có nguồn, mặc định không nhạc/voice; 3–5 hashtag đúng cảnh, không AI. Cấu trúc prompt cho Omni Flash không làm thay đổi các ràng buộc riêng của dự án.

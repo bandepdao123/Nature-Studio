@@ -9,6 +9,7 @@ secrets*.json
 
 # Generated packages and caches
 /07-Releases/packages/
+/PACKAGE-MANIFEST.json
 __pycache__/
 *.py[cod]
 .venv/

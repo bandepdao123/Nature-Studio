@@ -1,0 +1,912 @@
+{
+  "release_id": "NATURE-STUDIO-v1.0",
+  "workspace_version": "1.0",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "source_repository": "https://github.com/bandepdao123/Nature-Studio",
+  "scope": "Current workspace including creative direction and production attempts through A04; individual module versions independent.",
+  "self_excluded": "07-Releases/manifests/nature-studio-v1.0-2026-10-16.json",
+  "checks": {
+    "active_markdown_links": "pass",
+    "version_changelog_entrypoints": "pass",
+    "baseline_unchanged": "pass",
+    "selected_credential_patterns": "no matches",
+    "package_smoke_run": "ZIP integrity and every file SHA256 passed; pre-final manifest bundle"
+  },
+  "not_tested": [
+    "End-to-end update/merge on another users workspace.",
+    "Behavioral/model/media quality or audience performance."
+  ],
+  "files": [
+    {
+      "path": ".agents/skills/chayvideo/agents/openai.yaml",
+      "size": 128,
+      "sha256": "8a713b9fdcdcd15ce73c080a56aa452ad56cd574a04dcc7e826cf5dd8f1102e0"
+    },
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "size": 15711,
+      "sha256": "4d2cfb48161210a58d4adece28f5ce2495527f199dfbf8dcc3c7a30e332fb67d"
+    },
+    {
+      "path": ".gitattributes",
+      "size": 163,
+      "sha256": "70a77e44f91540826eef973325f7a325ffa60f8eb186ebb16c00af315b80c976"
+    },
+    {
+      "path": ".gitignore",
+      "size": 276,
+      "sha256": "c2ef3069da350d569b86bd5c54da84a125d113c570a451a87d04982453cf1d1b"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "size": 303,
+      "sha256": "643b7fbcab2b6f7cce0cd33d368602578d59c9431993f4fd53fe20a01a40f39e"
+    },
+    {
+      "path": "00-Standards/memory-policy.md",
+      "size": 2126,
+      "sha256": "f08f2a0cbf3e8342f0a4585db676fb545187e2dd7355f544ded0e87e8c1486cb"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "size": 2575,
+      "sha256": "f0e96d25f984445f721b07fec20cd12f33f5d6f7cd6dc70f30e1a3951e459a05"
+    },
+    {
+      "path": "00-Standards/quality-review.md",
+      "size": 1828,
+      "sha256": "b07af0130f25bc1c95a3fb8d14975eed72697076b3c134d01a75dd6730c4936f"
+    },
+    {
+      "path": "00-Standards/research.md",
+      "size": 1670,
+      "sha256": "6a1bace2ffd6c0c82e73cc6ed207ef7922235bd2b721ebd857b290dc7af0c6d0"
+    },
+    {
+      "path": "00-Standards/templates/attempt-inputs.md",
+      "size": 293,
+      "sha256": "1a4f28a1805b29ec23ec13bc9811c515ddb709cb647f9afb8cd15672b19d553b"
+    },
+    {
+      "path": "00-Standards/templates/brief.md",
+      "size": 251,
+      "sha256": "eb437053327fada6bc0d48f10c2dc8ced91b4287879795e4b8034fc67e489ea2"
+    },
+    {
+      "path": "00-Standards/templates/concept.md",
+      "size": 331,
+      "sha256": "0ed462d13d3d48c717168e2717f3478d3b36eb8dbe1970f822d292c4a5ffaf4c"
+    },
+    {
+      "path": "00-Standards/templates/episode-summary.md",
+      "size": 381,
+      "sha256": "bcb9bf62ffe142f22c212b32a06c27c57fedb6a1098f1809bdb50644e3136dff"
+    },
+    {
+      "path": "00-Standards/templates/evaluation-case.md",
+      "size": 427,
+      "sha256": "6c8d9a5de4af87044ed784b9e7d1182b0990223e06b133079fc42b1117eaf192"
+    },
+    {
+      "path": "00-Standards/templates/feedback.md",
+      "size": 363,
+      "sha256": "1a5815d66af339bd1ed869891ff4a9100d802112fca9a65d56741d0927b1dded"
+    },
+    {
+      "path": "00-Standards/templates/lesson.md",
+      "size": 432,
+      "sha256": "3b69805754556021875c5b0df9e09efe48f04755aeab5eb0ec76dccfeba957c1"
+    },
+    {
+      "path": "00-Standards/templates/performance.md",
+      "size": 490,
+      "sha256": "5116af48a03a3a1604a2027cf323655a320ebab672645576b548e29b59e09a9e"
+    },
+    {
+      "path": "00-Standards/templates/project.md",
+      "size": 512,
+      "sha256": "c9d87a8614b267239bd19496250515df139c67eff39759b8ec11e56740086be7"
+    },
+    {
+      "path": "00-Standards/templates/README.md",
+      "size": 977,
+      "sha256": "305b4fcb6339a3d124a9568004f226c053dbf17f32c59849edaf876e2ce16fc5"
+    },
+    {
+      "path": "00-Standards/templates/release-manifest.md",
+      "size": 376,
+      "sha256": "47d5f5bb9cba1390c273cdac35e0ba4d45ae6f80d01dfc5afe0940c8ab5b8ffa"
+    },
+    {
+      "path": "00-Standards/templates/research.md",
+      "size": 264,
+      "sha256": "cfe18d2e2762957d667870b482ca2db9cde71a4a1bb69fdf6ff6b166f9538537"
+    },
+    {
+      "path": "00-Standards/templates/review.md",
+      "size": 428,
+      "sha256": "0b195f60b5949c14fd7d2122cb7368f6c165f5bd56be7d363e086b0e5282d89c"
+    },
+    {
+      "path": "00-Standards/templates/settings.md",
+      "size": 389,
+      "sha256": "ee032aaadde8a49e9fd12cba4df65b4e1101c225d960d1c2265f0613cce2ae3e"
+    },
+    {
+      "path": "00-Standards/templates/source.md",
+      "size": 348,
+      "sha256": "e7e1a544cc13da8c28c067dcc87eb4c66ef422e194e3a779ad89a6204846fbe7"
+    },
+    {
+      "path": "01-Knowledge/equipment/us-angling-tackle.md",
+      "size": 19081,
+      "sha256": "d92aab9dd09b0fa2bdc97b0f8f139d74eaf3d3379c4a1297d829a6bebe3bd2e1"
+    },
+    {
+      "path": "01-Knowledge/habitats/underwater-realism.md",
+      "size": 27060,
+      "sha256": "4ccdce5880b92808b509978b0a5ce40fddf91fa816fb779ce9f64883ad0333ac"
+    },
+    {
+      "path": "01-Knowledge/INDEX.md",
+      "size": 1193,
+      "sha256": "80f007f2b2f28845839d23e47d4c45758200a74ffd9570003b8a46fbdd5e1db5"
+    },
+    {
+      "path": "01-Knowledge/interactions/fish-prey-and-lure.md",
+      "size": 1177,
+      "sha256": "a39eafdcbd472998bced53468e181a438fb61f3312e4d4c26d11b8190230ad60"
+    },
+    {
+      "path": "01-Knowledge/sources/google-omni-2026-10-16.md",
+      "size": 835,
+      "sha256": "853f6b268b55da859210ef38adadd4e15a776dd574dcc7370189dfd8e6050687"
+    },
+    {
+      "path": "01-Knowledge/sources/INDEX.md",
+      "size": 1231,
+      "sha256": "ef5e7b0c1522c89fa8e8ae8d01596dd0f79b5120244e0c3ad34fa64b076bbc7c"
+    },
+    {
+      "path": "01-Knowledge/species/muskie.md",
+      "size": 1177,
+      "sha256": "e00dd9284b5b5a8aadc858293089c16fd5c9cf00444e661e64ecda42c0fe2f2d"
+    },
+    {
+      "path": "01-Knowledge/species/redfish.md",
+      "size": 1029,
+      "sha256": "6f4c34c8f9629c2ba5be0ef55e30207cee83b5cf1f6f5e6b6d6f2d505d4604b3"
+    },
+    {
+      "path": "01-Knowledge/species/walleye.md",
+      "size": 1087,
+      "sha256": "bf9aaa92b438464bd77bfcf21c076e212dded781b35e2a3df0ebfb744691cea1"
+    },
+    {
+      "path": "02-Models/INDEX.md",
+      "size": 413,
+      "sha256": "25cddb3a6bda4a9b075709c57524647530e64f0501924a9e18aa026d12a4621a"
+    },
+    {
+      "path": "02-Models/model-profiles/omni-flash.md",
+      "size": 2553,
+      "sha256": "b5bc739bede9a24cae065d8ea6bc65634c0a2d8fc5c0a950898453d6bad42969"
+    },
+    {
+      "path": "03-Projects/INDEX.md",
+      "size": 923,
+      "sha256": "6276913c03cffd48f76eb10f7890fe400fe9e53f51fa6480234789e9ef56b767"
+    },
+    {
+      "path": "03-Projects/underwater/audience-and-caption.md",
+      "size": 4866,
+      "sha256": "de2d9dca9870408e1fdaf032a85ee0ce639879a09c38edf4a1c1814603a6fc47"
+    },
+    {
+      "path": "03-Projects/underwater/creative-direction.md",
+      "size": 4215,
+      "sha256": "c6bfb397e2f87437f97397e3beb147e3d0c5df3390486f24b9a77c39767764fc"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "size": 3645,
+      "sha256": "7f83fb95ded9bde05738e4ffeb5b3fa34deef0e2d3327cd279a0854a1dbb8563"
+    },
+    {
+      "path": "03-Projects/underwater/format.md",
+      "size": 19340,
+      "sha256": "968387e7819fbf5215f7a782b59c64f1fa971d726c3e3093555e877cf9de2b37"
+    },
+    {
+      "path": "03-Projects/underwater/idea-ledger.md",
+      "size": 1047,
+      "sha256": "6c6a34169df38faa9648045b886b4c6ec13dc30477d2b7ed32d6a19cd39e2916"
+    },
+    {
+      "path": "03-Projects/underwater/output-contract.md",
+      "size": 18215,
+      "sha256": "7a265e966d896a8a82b0e0963f7377938ec30482865591585b2945884ced25b1"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "size": 5457,
+      "sha256": "c3d3e61d67561c1109cd786dd3f789406d94c5650aa990a119983c4d45204db9"
+    },
+    {
+      "path": "03-Projects/underwater/references/README.md",
+      "size": 4593,
+      "sha256": "4d3566ca087f9493983c299b2e411662e51826ca82a58285f0d534c2aa5cb18b"
+    },
+    {
+      "path": "04-Productions/underwater/README.md",
+      "size": 583,
+      "sha256": "650ca7f0493d1ea4fd2007ce95d3592e098629b18c1ba64fe2bcc683d0ceec22"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/caption.txt",
+      "size": 82,
+      "sha256": "6780ab4d7ec8b24d588f7de69d42607b5a8bd85b261c4cda8b38a26afa035773"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/first-frame-prompt.txt",
+      "size": 1710,
+      "sha256": "1b542145e69e40bff59364f96507b6fa3da5748b0e6acd239722195e8fc2245c"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/INPUTS.md",
+      "size": 1241,
+      "sha256": "5a61192b921e3f3ca1e134fd7b732264e7d296134bbed98c39368fd9f5189084"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/review.md",
+      "size": 1572,
+      "sha256": "7ef7ce7c9bc6a92948f90c958690753e1698ed5ebb715ce12258a3de47880f82"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/settings.md",
+      "size": 907,
+      "sha256": "c5b09ddd135755f6eb83ef5507d54a397d6114cb357d8cb3c10c651a48250bae"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A01/video-prompt.txt",
+      "size": 2922,
+      "sha256": "8fe3abe87018ae6caaa92354102041ddea165cf9f5d9949edde1da899b1001e8"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A02/first-frame.png",
+      "size": 2455783,
+      "sha256": "f3c048a4b63402e1a52fcf2051b8363944401aa91a36e39804c4b1187398004c"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A02/generation-prompt.txt",
+      "size": 1844,
+      "sha256": "2a8ce44cd797bbfbf196b9a4a8a144feb2a51b871a5d0d1360f4caabc76a7184"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A02/INPUTS.md",
+      "size": 852,
+      "sha256": "0e58a5cf65426857e9f1c8c75a5bf8409a693b14247183ac4bb449ffccd0377e"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A02/review.md",
+      "size": 768,
+      "sha256": "80f5026701e5ceb981ec43b2cb69a622048fff57a88bfba74745b09f8c5b94bd"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A02/settings.md",
+      "size": 484,
+      "sha256": "adeffa557aa54d1ecb8328d1c492f85b81e2f248eb340ae2a127a0bf084a24c8"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/audio-measurement.txt",
+      "size": 19547,
+      "sha256": "374d73890e25324b5a5011adc8bce629283e441bb500e21a4a97d97e40e459f9"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/contact-01.jpg",
+      "size": 269254,
+      "sha256": "01b642dbcf5daa986c5a86c8dca899fa92de0ae713c451e03f1578944b7f6f3a"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/contact-02.jpg",
+      "size": 315875,
+      "sha256": "95d54bd1a0cc7c75b78c1aca2c19d48b5b416233a8cff74b0173f88b32d67d57"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/ffprobe.json",
+      "size": 4558,
+      "sha256": "8d6d666f4a6e0da7fd2a0fcae282ce7a32682be996b226e87ccfdca477d52bae"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/frame-0.png",
+      "size": 1128767,
+      "sha256": "8e1c0a5f99b0a11b5b0ee68bbec74aa4d1e7837ba381c6ee0ba5e8bf2db86040"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/frame-1.png",
+      "size": 1157450,
+      "sha256": "651e7b94f38be90110b4a23c926c7a171d161772584a0a5f084e579d1cd2566b"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/frame-2.png",
+      "size": 1150051,
+      "sha256": "d90f0a6881518cb8f9156b5defa22cfe283d9e7e3e7cd9e17ba8e60b0ab3d20b"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/INPUTS.md",
+      "size": 412,
+      "sha256": "eaf921710ba16027f29b860df76351c9c51f15d9f99bb6823f5ed6da40fe6bab"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/key-frames.jpg",
+      "size": 306697,
+      "sha256": "abfa0a0e6fb0f5c251232e37bfb1d5a1cd26b28a3e7bf7f866eddda7741605b6"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/review.md",
+      "size": 3852,
+      "sha256": "3495142a74c2d8dbadd0985e1fb52be019c40d7a078d6770669b5bcbf2cf4bb0"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A03/source-video.mp4",
+      "size": 4607923,
+      "sha256": "747c1d3537dd202150717eaed801925994a5d68c7c96ccb5271f5e8c1f6402b4"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/caption.txt",
+      "size": 83,
+      "sha256": "5ef0d480d4c85df72e1709d2d4ee8dd8dce2dda08bf60a74160839ecdb9f3db8"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/concept-revision.md",
+      "size": 578,
+      "sha256": "e1edd7f6ddd901493aabc934c1f64dd336443568694f5841e65c48889e72fb11"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/first-frame-prompt.txt",
+      "size": 2121,
+      "sha256": "824fb938b6e78cdafa4d0bf059f8df6d72193258118cf4830dd08d31a3685edc"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/first-frame.png",
+      "size": 2454275,
+      "sha256": "20ce921159e9d6db26ce38d46ee2ce28c156071d2728b83b8f2020a500a30944"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/INPUTS.md",
+      "size": 941,
+      "sha256": "2a27ab302d667624503de805040166a32f0aa679ecbd911942acd020320b2d41"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/review.md",
+      "size": 695,
+      "sha256": "e8d64c741e7c84b21ff24e560bc5cb377b452235630ea3609c2497ace9fa715c"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/settings.md",
+      "size": 507,
+      "sha256": "798b38e93062c08065aea50065d58eef87de6f0f732a931731a8d9865758faf8"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/A04/video-prompt.txt",
+      "size": 3466,
+      "sha256": "03e19648d5326a70185961a43a058e3815d54a3df0ed4cae06affdcb323ed98c"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/brief.md",
+      "size": 954,
+      "sha256": "34a8535b7be0544e2f5929a03b6c9fa6f9c5974101eb5c0495ba4964664fda3a"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/concept.md",
+      "size": 3254,
+      "sha256": "15b4bb770dd0d0f78af46f5578f30da02a34a2c36c5e6fafed9f27e61cca91b9"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/feedback.md",
+      "size": 660,
+      "sha256": "56de9487fffcc3ad1fab46e3d0935b0f75e8c043192147b926a039feea6bc17c"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/performance.md",
+      "size": 544,
+      "sha256": "04b11d794c21cfd2572b3ac5fccf63fbc2e04d0b646988e10c45c93df9d6b93a"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/research.md",
+      "size": 2582,
+      "sha256": "1c41967c1f4de78e93629f3bf6f751603c907d7bea9c9becdab95ecf725e00cb"
+    },
+    {
+      "path": "04-Productions/underwater/UF-0001/SUMMARY.md",
+      "size": 1435,
+      "sha256": "dfcd681d6382ca668694c971ee80977292d89178b702867d26dd850022733fb8"
+    },
+    {
+      "path": "05-Memory/active/README.md",
+      "size": 145,
+      "sha256": "adc1b5cbeb7eb6ca5bf0ea933bd22672214e4b5ae70d1ac2f686bd1408e0b3e5"
+    },
+    {
+      "path": "05-Memory/candidates/README.md",
+      "size": 149,
+      "sha256": "a3f0e63c42be385187ed10fae363b8010f2bf36c37695852afc5b12b15247530"
+    },
+    {
+      "path": "05-Memory/INDEX.md",
+      "size": 494,
+      "sha256": "f66a90488d83a1ced353410acf9ba1c01f45e9e04d45aa0456f50d2a03d6ed86"
+    },
+    {
+      "path": "05-Memory/retired/README.md",
+      "size": 146,
+      "sha256": "17ea223c818446d3bb60aae48b494b3033b1b63f817107396150510a23b47c98"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-001.md",
+      "size": 519,
+      "sha256": "b0de5e92f539fd0b056e8ae32074f75b11fb10a9805d5e683dad5e3dcc461da3"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-002.md",
+      "size": 488,
+      "sha256": "75032def347cb152120d1a99604590a004d41e3ae956e865e850275abac53f60"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-SYS-003.md",
+      "size": 565,
+      "sha256": "ee47e9f5decf7580b31503485ac245c83bd85bab8ce437bc19e6aa6faeae5fe9"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-001.md",
+      "size": 532,
+      "sha256": "432995b314251a57f6387fc9633b27cec3fb75650035b038e38cded705f8b19e"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-002.md",
+      "size": 518,
+      "sha256": "422e5f5671439dd506138cf2ad758b4cef338c2668ebccfb8ba9e48a723713e4"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-003.md",
+      "size": 537,
+      "sha256": "a190e473d04159da81f07bd38dddcb7c9cf3aac701156f979fb90a03692e2b1a"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-004.md",
+      "size": 567,
+      "sha256": "e963792a38f3b23e2805681d5162c8813beeb25f149679db5922c78fce0803ce"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-005.md",
+      "size": 532,
+      "sha256": "ed7f2cd536d35cdcc08d69c779a6ea93c10a46515da320dae370a797bd85d38e"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-006.md",
+      "size": 925,
+      "sha256": "c38db15539bc1136cb4a247f09805c8eff5e65a7e01a10f58493ad71380f8974"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-007.md",
+      "size": 522,
+      "sha256": "808698b5be79cfa67837b13c857db6b81b22a592b51427124579c41923f3a274"
+    },
+    {
+      "path": "06-Evaluation/criteria/production-quality.md",
+      "size": 1057,
+      "sha256": "e4f91e0f7765176385f2e718f32d9e057f53e4b1920f332cb7b846059a51dde8"
+    },
+    {
+      "path": "06-Evaluation/README.md",
+      "size": 662,
+      "sha256": "a93a6ea4e365b9a36a050bb2032a3eecce769811a6bc2dfd6f92fe5c089acbf6"
+    },
+    {
+      "path": "06-Evaluation/results/README.md",
+      "size": 244,
+      "sha256": "de5d667cd6d248394420031c074376a3bc00d7a3d3418985666da2e7eb6e4599"
+    },
+    {
+      "path": "07-Releases/manifests/chayvideo-1.0-2026-10-16.json",
+      "size": 3295,
+      "sha256": "1a5581a3f5f4fe9254475b55e124984db8c8cf31189c7cee308851732e6124e1"
+    },
+    {
+      "path": "07-Releases/manifests/chayvideo-1.1-2026-10-16.json",
+      "size": 3751,
+      "sha256": "bcfcb44a2a2ad4aac3a0c334aa737f00e9db30d2c5dc4ae7780709290e219718"
+    },
+    {
+      "path": "07-Releases/manifests/creative-direction-2026-10-16.json",
+      "size": 2456,
+      "sha256": "1accaa5e0a7e360c02ca20f52bb3b4349f651528c30b3a2d6583845053520bf7"
+    },
+    {
+      "path": "07-Releases/manifests/github-package-2026-10-16.json",
+      "size": 26414,
+      "sha256": "bc40a926560ece9ca1c5b5294156c30a350fe36ab15331abe5ec5291af0df7f8"
+    },
+    {
+      "path": "07-Releases/manifests/initialization-2026-10-15.json",
+      "size": 9994,
+      "sha256": "11ce80ffacb868fc675a43cbda5423998af0834c058f8deaa64f716c5dda7e2a"
+    },
+    {
+      "path": "07-Releases/manifests/project-migration-2026-10-16.json",
+      "size": 10624,
+      "sha256": "e55a49e3d840f5c5685c3af30367b074347121857b06aec2fd6c04213866764a"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "size": 3493,
+      "sha256": "ab2841555cd0724bfd92c981a50c1fc004b9ccbbb8f3b972da216d58e07becb9"
+    },
+    {
+      "path": "07-Releases/snapshots/before-creative-direction-2026-10-16/.agents/skills/chayvideo/SKILL.md",
+      "size": 13556,
+      "sha256": "f9a77902f488246efce4dfaa053417fdb4ac42da0c2ae9c401bd6db5bd565faa"
+    },
+    {
+      "path": "07-Releases/snapshots/before-creative-direction-2026-10-16/03-Projects/underwater/decisions.md",
+      "size": 3261,
+      "sha256": "a7e45f11346d1082694142c26713b2b3d48d295652a60466411ab3ec330c73aa"
+    },
+    {
+      "path": "07-Releases/snapshots/before-creative-direction-2026-10-16/03-Projects/underwater/format.md",
+      "size": 18806,
+      "sha256": "18325eaf6616bc9a191c8db39f0b254db21d3c05de7c49852217c7a1fa671b6b"
+    },
+    {
+      "path": "07-Releases/snapshots/before-creative-direction-2026-10-16/03-Projects/underwater/output-contract.md",
+      "size": 17883,
+      "sha256": "fdbaab8b38a1a5dd23139d3cb5c8d684ff7bb7db03b6b8dda6b1d8f0fdab7a4d"
+    },
+    {
+      "path": "07-Releases/snapshots/before-creative-direction-2026-10-16/03-Projects/underwater/PROJECT.md",
+      "size": 5072,
+      "sha256": "24e5df1eca5412b5b1d9cbf01f1f2bc087e03d2006c0678265666ee40f6bc4e5"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/.agents/skills/chayvideo/agents/openai.yaml",
+      "size": 128,
+      "sha256": "8a713b9fdcdcd15ce73c080a56aa452ad56cd574a04dcc7e826cf5dd8f1102e0"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/.agents/skills/chayvideo/SKILL.md",
+      "size": 13172,
+      "sha256": "21ff3da693692b4f624064c032d0de9d55b13238156db86fbf79c88086449c97"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/INDEX.md",
+      "size": 291,
+      "sha256": "03835aff4fb69f1deec7be62bfc49e62d12a4ed901567068101b9079c1ccb197"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/memory-policy.md",
+      "size": 2095,
+      "sha256": "10ccc40a8bbf6731eb860916b10574e3c76e7263514fb7777846760658346878"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/production.md",
+      "size": 2263,
+      "sha256": "c46fc4da2ddb203f1f9edeeed95898994dd0c1b4f23a11d185da3f1fe974e284"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/quality-review.md",
+      "size": 1804,
+      "sha256": "986a451b766626f0f2edce19c55be9818473ab946d364cfa6492974417ef8b59"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/research.md",
+      "size": 1670,
+      "sha256": "6a1bace2ffd6c0c82e73cc6ed207ef7922235bd2b721ebd857b290dc7af0c6d0"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/attempt-inputs.md",
+      "size": 281,
+      "sha256": "8ea96e9b85f5da49b8c397be26b094c3d46716e2eb2a884d725b821784b88b87"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/brief.md",
+      "size": 239,
+      "sha256": "0642a65e03ca54de9def221e92f7dee219402132e20ae3d5f1cdaed63fd353c7"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/channel.md",
+      "size": 432,
+      "sha256": "bb5310c4df28a6d9c9e12438c6bee75f1704e6560dbfff9350608f4e3146cefb"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/concept.md",
+      "size": 318,
+      "sha256": "574684e11eb51fe9304f8178f07c56b964cc3c6d01decd16509cf737918d6cec"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/episode-summary.md",
+      "size": 370,
+      "sha256": "abfc006155bf633a4133d01394526aa864b4f61ba09d70eefa8eebbcb2f1263f"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/evaluation-case.md",
+      "size": 427,
+      "sha256": "6c8d9a5de4af87044ed784b9e7d1182b0990223e06b133079fc42b1117eaf192"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/feedback.md",
+      "size": 349,
+      "sha256": "b01e65d39fa1c61e13e862c4f84d164e78495a4413cdf86889b1f16fddd76719"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/lesson.md",
+      "size": 416,
+      "sha256": "7a1698b82b0f7b7e3559574676685bb9f000660d7d9941facf0b43ecaca275d6"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/performance.md",
+      "size": 490,
+      "sha256": "5116af48a03a3a1604a2027cf323655a320ebab672645576b548e29b59e09a9e"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/README.md",
+      "size": 963,
+      "sha256": "b8bd83f84fb0a8e8dc87b7d693cb3db1c1c9cfd2343224bc04813428c8447fa2"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/release-manifest.md",
+      "size": 365,
+      "sha256": "43fce81951aef9255c7c2d4531600bfddfc125788abebf32fe2df6de6bcab4eb"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/research.md",
+      "size": 264,
+      "sha256": "cfe18d2e2762957d667870b482ca2db9cde71a4a1bb69fdf6ff6b166f9538537"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/review.md",
+      "size": 428,
+      "sha256": "0b195f60b5949c14fd7d2122cb7368f6c165f5bd56be7d363e086b0e5282d89c"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/settings.md",
+      "size": 389,
+      "sha256": "ee032aaadde8a49e9fd12cba4df65b4e1101c225d960d1c2265f0613cce2ae3e"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/00-Standards/templates/source.md",
+      "size": 348,
+      "sha256": "e7e1a544cc13da8c28c067dcc87eb4c66ef422e194e3a779ad89a6204846fbe7"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/equipment/us-angling-tackle.md",
+      "size": 19081,
+      "sha256": "d92aab9dd09b0fa2bdc97b0f8f139d74eaf3d3379c4a1297d829a6bebe3bd2e1"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/habitats/underwater-realism.md",
+      "size": 27060,
+      "sha256": "4ccdce5880b92808b509978b0a5ce40fddf91fa816fb779ce9f64883ad0333ac"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/INDEX.md",
+      "size": 1193,
+      "sha256": "80f007f2b2f28845839d23e47d4c45758200a74ffd9570003b8a46fbdd5e1db5"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/interactions/fish-prey-and-lure.md",
+      "size": 1132,
+      "sha256": "174729cc494f2a1956a13fee49f1b4aa2e95e6380968043ab0b9929306cec3fa"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/sources/google-omni-2026-10-16.md",
+      "size": 835,
+      "sha256": "853f6b268b55da859210ef38adadd4e15a776dd574dcc7370189dfd8e6050687"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/sources/INDEX.md",
+      "size": 1231,
+      "sha256": "ef5e7b0c1522c89fa8e8ae8d01596dd0f79b5120244e0c3ad34fa64b076bbc7c"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/species/muskie.md",
+      "size": 1177,
+      "sha256": "e00dd9284b5b5a8aadc858293089c16fd5c9cf00444e661e64ecda42c0fe2f2d"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/species/redfish.md",
+      "size": 1029,
+      "sha256": "6f4c34c8f9629c2ba5be0ef55e30207cee83b5cf1f6f5e6b6d6f2d505d4604b3"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/01-Knowledge/species/walleye.md",
+      "size": 1087,
+      "sha256": "bf9aaa92b438464bd77bfcf21c076e212dded781b35e2a3df0ebfb744691cea1"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/02-Models/INDEX.md",
+      "size": 413,
+      "sha256": "25cddb3a6bda4a9b075709c57524647530e64f0501924a9e18aa026d12a4621a"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/02-Models/model-profiles/omni-flash.md",
+      "size": 2524,
+      "sha256": "a8b49e0ba3b8edd0d25ad090b8c6ef2f51351305a8492667a6e7d6303a5bfbb0"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/audience-and-caption.md",
+      "size": 4863,
+      "sha256": "7db51c3cfc60819abcdb02c5762f03a4601a07f47eca329314ae295daa89d6da"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/CHANNEL.md",
+      "size": 4247,
+      "sha256": "1f1062766d7f744791a4b5183628c5638e584cdfa1fbc3a7f1cccd41cd0ec10e"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/decisions.md",
+      "size": 2852,
+      "sha256": "7460e38734e308c25482e853681c402b8fb885a26e80b0712c8e041a71f69829"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/format.md",
+      "size": 18797,
+      "sha256": "d84e486f07e886df86a7a4f71aa01676bb5653a35f1f97c6c45f4a46ab64e1d6"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/idea-ledger.md",
+      "size": 577,
+      "sha256": "dd125e1958c8ae7058170a7d487084017dec2e960f2b7d7f743bb56e91f87d6b"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/output-contract.md",
+      "size": 17883,
+      "sha256": "f4539e1fb769ea91eaf08bd34bff920876d44b5888fa70fd7d1243aef64c8ee9"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/03-Channels/under-fishing-us/references/README.md",
+      "size": 4563,
+      "sha256": "47168d92f964b57824c7869e92f38b4855412daa501a4b32e334b84b0341332c"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/04-Productions/under-fishing-us/README.md",
+      "size": 520,
+      "sha256": "f2279bec9db22954d8e8ea001907652b4d9cb9f5fad345105cf9a9a07603a315"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/05-Memory/active/README.md",
+      "size": 145,
+      "sha256": "adc1b5cbeb7eb6ca5bf0ea933bd22672214e4b5ae70d1ac2f686bd1408e0b3e5"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/05-Memory/candidates/README.md",
+      "size": 149,
+      "sha256": "a3f0e63c42be385187ed10fae363b8010f2bf36c37695852afc5b12b15247530"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/05-Memory/INDEX.md",
+      "size": 483,
+      "sha256": "5f46623c60426ccf1e59527af9bf2ae1b7e929dcb5dc9d43dff11fe0af214034"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/05-Memory/retired/README.md",
+      "size": 146,
+      "sha256": "17ea223c818446d3bb60aae48b494b3033b1b63f817107396150510a23b47c98"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-SYS-001.md",
+      "size": 507,
+      "sha256": "7d3de00a5271789bff7f98598df7c1f79cd558ef4cff320ceea044b10f2d1063"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-SYS-002.md",
+      "size": 488,
+      "sha256": "75032def347cb152120d1a99604590a004d41e3ae956e865e850275abac53f60"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-SYS-003.md",
+      "size": 550,
+      "sha256": "338aa7a3d22f6358a1a590d18148ad0f0fa5ddc20af45accf5545f70bd9265c0"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-UF-001.md",
+      "size": 532,
+      "sha256": "432995b314251a57f6387fc9633b27cec3fb75650035b038e38cded705f8b19e"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-UF-002.md",
+      "size": 518,
+      "sha256": "422e5f5671439dd506138cf2ad758b4cef338c2668ebccfb8ba9e48a723713e4"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-UF-003.md",
+      "size": 537,
+      "sha256": "a190e473d04159da81f07bd38dddcb7c9cf3aac701156f979fb90a03692e2b1a"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-UF-004.md",
+      "size": 567,
+      "sha256": "e963792a38f3b23e2805681d5162c8813beeb25f149679db5922c78fce0803ce"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/cases/EV-UF-005.md",
+      "size": 532,
+      "sha256": "ed7f2cd536d35cdcc08d69c779a6ea93c10a46515da320dae370a797bd85d38e"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/criteria/production-quality.md",
+      "size": 1050,
+      "sha256": "49a050d2688754a50f5121b24b6a7d9cb5764350b69d234907b05b186e10d86f"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/README.md",
+      "size": 662,
+      "sha256": "a93a6ea4e365b9a36a050bb2032a3eecce769811a6bc2dfd6f92fe5c089acbf6"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/06-Evaluation/results/README.md",
+      "size": 238,
+      "sha256": "f8c717fc185b890360cffbf0632b21539c996edfc3a214e17dbc8b0456d90409"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/AGENTS.md",
+      "size": 1315,
+      "sha256": "442ed44ebdd75bc128411101be5b440470428a0b8f8e6dd8c9aa9cc9fad4b1af"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/START-HERE.md",
+      "size": 3450,
+      "sha256": "86d61d68abbe16ca48355f32bf8c44d68869e97a6b5c5a642608c7a4f412c738"
+    },
+    {
+      "path": "07-Releases/snapshots/before-project-migration-2026-10-16/SYSTEM.md",
+      "size": 4113,
+      "sha256": "8f4f1b7345af89e1f609b6834dde1b4a019aa1ed1a90d0a16a2503930d04070d"
+    },
+    {
+      "path": "07-Releases/standalone-guides/underwater-ai-realism-prompt-guide-v1.9.md",
+      "size": 142179,
+      "sha256": "5eb952357362b7a8c669a057db8d9c89c9c4c6aa1a5336b9980bad0f3bbf96c8"
+    },
+    {
+      "path": "AGENTS.md",
+      "size": 1712,
+      "sha256": "d476a2444b3c52fd094b049a51679ea8368f16904834edb8a4627a9c9421722d"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "size": 2389,
+      "sha256": "39d080324f53c64bc53b2810c5032a7e6bdd89105667a97d29b2b60923af7f79"
+    },
+    {
+      "path": "README.md",
+      "size": 4972,
+      "sha256": "ce78d3b66693f3c9727375c4514eb382fac3217b7b4b02806174ed7255005d3b"
+    },
+    {
+      "path": "scripts/package_workspace.py",
+      "size": 4254,
+      "sha256": "7aac0c9c0d6735997cc9ba6cba5d73625d52d8025735ba2a3104a20f38d4c899"
+    },
+    {
+      "path": "START-HERE.md",
+      "size": 4352,
+      "sha256": "d1b4e77be9a8f728ea853d9ebc980e8d18533d28365d43d3a14fc18d16352b1c"
+    },
+    {
+      "path": "SYSTEM.md",
+      "size": 5639,
+      "sha256": "4d880eb3be2c5d06516f9f3c56ea7cea7ec1ce7c1b25faf10cb34c4f0347fff1"
+    },
+    {
+      "path": "UPDATE.md",
+      "size": 8591,
+      "sha256": "cb7a0c1000c6fce625f77b0898e04562d8bbf7d1e56addd298c8a8f4909097f9"
+    },
+    {
+      "path": "VERSION",
+      "size": 4,
+      "sha256": "5717e7c840171019a4eeab5b79a7f894a4986eaff93d04ec5b12c9a189f594bf"
+    }
+  ]
+}

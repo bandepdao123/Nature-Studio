@@ -19,4 +19,6 @@ Các quyết định dưới kế thừa yêu cầu người dùng và hướng 
 
 | UF-D013 | 2026-10-16 | Đổi cấu trúc quản lý Channel thành Project: 03-Projects/<slug>/PROJECT.md; đổi tên Under Fish US / Under Fishing US thành Underwater, slug underwater; giữ ID under-fishing-us, prefix UF và các quyết định cũ để truy vết. Hồ sơ sản xuất chuyển sang 04-Productions/underwater | PROJECT.md; SYSTEM.md; manifest project-migration-2026-10-16 |
 
+| UF-D014 | 2026-10-16 | Bổ sung sáng tạo mở: ví dụ không là danh mục đóng; phát triển tiền đề độc lập từ brief/dữ kiện, chọn chuyện rồi xây timeline; kiểm độ mới bằng hành vi/nhân quả, không chỉ đếm hai thuộc tính khác; revision giữ chuyện đã chốt | creative-direction.md; format.md; skill chayvideo v1.3 |
+
 Khi đổi, thêm dòng quyết định thay thế và cập nhật chính file nguồn. Không để hai quyết định xung đột cùng mang trạng thái hiện hành.

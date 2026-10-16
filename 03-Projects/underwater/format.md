@@ -1,4 +1,4 @@
-# Format Underwater — v1.3
+# Format Underwater — v1.4
 
 Updated: 2026-10-16 | Origin: approved guide v1.9 + /chayvideo
 
@@ -7,6 +7,8 @@ Khi chạy `/chayvideo`, yêu cầu ngôn ngữ/số mục/định dạng trong 
 Video đúng 10s, 9:16; camera dưới nước cố định đời thực mặc định, một shot liên tục. Key bắt đầu strictly sau 5.0s, phần đầu vẫn có tò mò/tiến triển; không bảo đảm retention. Chọn ý tưởng mới khi tạo mới, giữ ý tưởng khi sửa cục bộ.
 
 ### 0.1a. Mỗi lần yêu cầu tạo mới phải có một ý tưởng sáng tạo mới phù hợp
+
+Áp dụng [Sáng tạo mở](creative-direction.md) trước khi chọn concept. Các cảnh mẫu là ví dụ, không phải danh mục tình huống được phép. Ngưỡng hai khác biệt bên dưới là điều kiện tối thiểu: nếu bỏ tên loài/địa điểm mà tín hiệu, hành vi, nhân quả và kết quả vẫn cùng khuôn thì chưa mới. Lịch sử giúp tránh lặp, không cấm vĩnh viễn một kết cục. Quy tắc này áp dụng cho tạo mới; revision giữ ý định đã chốt.
 
 - Không coi việc nhận file là lệnh lặp một ví dụ. Khi loài đã rõ, **tự phát triển một câu chuyện nguyên bản cho lần yêu cầu này**, thay vì mặc định Redfish–cua, Muskie–perch hoặc một tình huống mẫu khác. Ví dụ nghiên cứu/thử nghiệm trong file là tài liệu học, không phải kịch bản mặc định.
 - Trước khi chọn, cân nhắc vài hướng khác nhau về mồi/con mồi hoặc sinh vật tương tác, kiểu tương tác, địa hình vi mô, key/twist và kết cục; chọn một hướng mới mà vẫn đúng sinh thái/vật lý. Không xuất danh sách ý tưởng thay cho bộ ba cuối trừ khi người dùng yêu cầu brainstorm.

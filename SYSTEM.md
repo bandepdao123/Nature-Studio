@@ -1,6 +1,8 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.2 | Updated: 2026-10-16 | Scope: toàn kho
+Version: 1.3 | Updated: 2026-10-16 | Scope: toàn kho
+
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Từ 2026-10-16, workspace hiện hành được đặt tên Nature Studio v1.0; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 

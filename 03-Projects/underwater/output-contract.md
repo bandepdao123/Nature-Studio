@@ -1,8 +1,10 @@
-# Hợp đồng đầu ra — v1.3
+# Hợp đồng đầu ra — v1.4
 
 Updated: 2026-10-16 | Origin: approved guide v1.9 + user /chayvideo requirements
 
 ## Hợp đồng hiện hành khi gọi /chayvideo
+
+Khi tạo mới, đọc [creative-direction.md](creative-direction.md) và phát triển các tiền đề độc lập trước khi chọn. Không lấy những tình huống đã minh họa làm giới hạn sáng tạo; bốn mục/ngôn ngữ/định dạng và các yêu cầu kỹ thuật bên dưới vẫn giữ nguyên.
 
 Theo điều chỉnh mới nhất của người dùng ngày 2026-10-16, trả bốn mục: **Ý TƯỞNG** (tiếng Việt), **FIRST FRAME PROMPT** (tiếng Anh), **VIDEO PROMPT** (tiếng Anh), **CAPTION** (tiếng Anh Mỹ tự nhiên, phù hợp người câu cá Mỹ, có 3–5 hashtag đúng cảnh). Mỗi prompt là một đoạn văn không xuống dòng trong nội dung; beat/timecode và sound design viết liền trong video prompt. Caption có hook ngắn gợi tò mò, thường 3–8 từ, hashtag nối cùng đoạn, không nhắc AI. Không xuất bản dịch song ngữ trừ khi được yêu cầu. Hợp đồng này áp dụng cả khi gọi /chayvideo lẫn khi skill tự nhận dự án từ đặc trưng; thay yêu cầu v1.1 toàn bộ tiếng Việt. Cấu trúc Omni Flash theo model profile: ảnh mở đầu → thời lượng/tỷ lệ/camera → tính nhất quán cảnh → chuyển động/beat → Sound design → loại trừ ngắn; không bịa tham số hoặc hứa model bảo đảm timecode.
 

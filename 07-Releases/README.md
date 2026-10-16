@@ -18,3 +18,11 @@ Tên hiện hành **Underwater**, nguồn tại [PROJECT.md](../03-Projects/unde
 ## Đóng gói GitHub ngày 2026-10-16
 
 Thêm README, quy tắc Git, script đóng gói và [manifest](manifests/github-package-2026-10-16.json). Gói ZIP sinh trong packages/ (không commit) chứa cả skill ẩn và media. Trạng thái upload phải kiểm riêng; đóng gói/commit local chưa đồng nghĩa đã có repository trên GitHub.
+
+## Sáng tạo mở ngày 2026-10-16
+
+Skill chayvideo v1.3 và quy chuẩn Underwater v1.4 bổ sung [creative-direction](../03-Projects/underwater/creative-direction.md). [Manifest](manifests/creative-direction-2026-10-16.json) ghi nguồn, kiểm cấu trúc và giới hạn; snapshot trước thay đổi được giữ trong snapshots/before-creative-direction-2026-10-16/. Hai ca EV-UF-006/007 mới ở trạng thái not run; chưa chứng minh chất lượng sáng tạo qua thử nghiệm.
+
+## Nature Studio v1.0 — 2026-10-16
+
+Phiên bản toàn hệ thống đầu tiên: [VERSION](../VERSION), [CHANGELOG](../CHANGELOG.md), [UPDATE](../UPDATE.md). [Manifest v1.0](manifests/nature-studio-v1.0-2026-10-16.json) ghi nội dung thực của workspace và phạm vi kiểm. Script đóng gói tạo ZIP có phiên bản cùng commit nguồn/trạng thái local; Git tag/GitHub Release là bước riêng, không tự có từ VERSION.
