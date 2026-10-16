@@ -1,8 +1,8 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.5 | Updated: 2026-10-16 | Scope: toàn kho
+Version: 1.6 | Updated: 2026-10-16 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.1; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.2; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -36,7 +36,7 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 
 ## Cấu trúc Project — cập nhật 2026-10-16
 
-Đơn vị quản lý là Project/dự án: `03-Projects/<slug>/PROJECT.md`; hồ sơ sản xuất ở `04-Productions/<slug>/`. Tên hiện hành của dự án đầu tiên là Underwater, slug underwater; ID nội bộ under-fishing-us và prefix UF giữ ổn định. Tên cũ chỉ dùng làm alias/truy vết. Mẫu mới là `00-Standards/templates/project.md`; skill phải tra PROJECT.md. Baseline/manifest/snapshot trong 07-Releases là lịch sử, có thể chứa tên và đường dẫn cũ; không dùng chúng làm cấu trúc hiện hành. Kênh đăng trên nền tảng hoặc kênh đối thủ là khái niệm xuất bản, không phải đơn vị tổ chức workspace.
+Đơn vị quản lý là Project/dự án: `03-Projects/<slug>/PROJECT.md`; hồ sơ sản xuất ở `04-Productions/<slug>/`. Tên hiện hành của dự án đầu tiên là Underwater, slug underwater; ID nội bộ under-fishing-us giữ ổn định; prefix UF dành cho lịch sử, video mới theo video-identifiers.md. Tên cũ chỉ dùng làm alias/truy vết. Mẫu mới là `00-Standards/templates/project.md`; skill phải tra PROJECT.md. Baseline/manifest/snapshot trong 07-Releases là lịch sử, có thể chứa tên và đường dẫn cũ; không dùng chúng làm cấu trúc hiện hành. Kênh đăng trên nền tảng hoặc kênh đối thủ là khái niệm xuất bản, không phải đơn vị tổ chức workspace.
 
 ## Đóng gói và Git — 2026-10-16
 
@@ -51,3 +51,7 @@ Giữ repository Nature-Studio và URL nguồn cố định khi tăng VERSION. �
 Nguồn quyền/trạng thái là [memory-policy v2.0](00-Standards/memory-policy.md). Bộ nhớ riêng tại 05-Memory/projects/<slug>/; bộ nhớ chung tại 05-Memory/shared/. Dùng ID Project ổn định và lọc điều kiện khi áp dụng. Shared không cao hơn quy chuẩn Project; không tự áp lesson của Project khác.
 
 /dongvideo được ghi tổng kết, đề xuất ở cả hai cấp và tự kích hoạt procedural lesson có phép kiểm khách quan khi đạt mọi gate trong policy. Đây không phải quyền nâng hypothesis, kết luận sáng tạo/khán giả/hiệu quả model chưa kiểm thành active. Quyền này không áp cho /chayvideo. Đóng phiên không đồng nghĩa QA pass, selected, approved hay published; không tự render/chi tiền/push. Không sửa Standards/format từ lesson; yêu cầu rõ của người dùng vẫn được xử lý như quyết định đúng phạm vi.
+
+## Mã video — Nature Studio v1.2
+
+Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
