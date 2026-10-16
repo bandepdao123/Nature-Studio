@@ -1,6 +1,6 @@
 # Underwater
 
-ID: under-fishing-us | Version: 1.3 | Status: configured | Updated: 2026-10-16
+ID: under-fishing-us | Version: 1.4 | Status: configured | Updated: 2026-10-16
 Slug: underwater
 Production prefix: UF
 Legacy names: Under Fish US; Under Fishing US; Under Fishing
@@ -21,6 +21,8 @@ Khi chạy `/chayvideo`, áp dụng hợp đồng riêng tại đầu output-con
 3. [Hợp đồng đầu ra](output-contract.md)
 4. [Quyết định](decisions.md), [Lịch sử ý tưởng](idea-ledger.md)
 5. Theo cảnh: Knowledge về loài, môi trường, tackle; model profile; Memory active phù hợp.
+
+Trước khi phát triển concept mới, bắt buộc đọc [Sáng tạo mở](creative-direction.md): ví dụ không giới hạn loại câu chuyện; phát triển tiền đề độc lập rồi kiểm độ mới ở hành vi và nhân quả. Revision giữ chuyện đã chốt. Đây là hướng dẫn sáng tạo bổ sung theo UF-D014, không thay format kỹ thuật.
 
 Các file này là nguồn hiện hành trong hệ thống, kế thừa đầy đủ phần liên quan từ v1.9. Các tham chiếu đánh số cũ trong đoạn trích trỏ về bản v1.9 tại ../../07-Releases/standalone-guides/; không phải tên file mới. Khi phát hiện chưa phân tách đủ, tra baseline thay vì tự bỏ ràng buộc; ghi vấn đề để sửa nguồn.
 

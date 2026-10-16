@@ -3,6 +3,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 import hashlib
 import json
+import re
+import subprocess
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,6 +13,8 @@ EXCLUDED_DIRS = {'.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'
 
 def included(path):
     rel = path.relative_to(ROOT)
+    if rel.as_posix() == 'PACKAGE-MANIFEST.json':
+        return False  # Replace an extracted package's old manifest with a fresh one.
     if any(part in EXCLUDED_DIRS for part in rel.parts):
         return False
     if rel.parts[:2] == ('07-Releases', 'packages'):
@@ -25,20 +29,45 @@ def included(path):
     }
 
 
+def source_git():
+    """Record provenance without treating a dirty working tree as a Git snapshot."""
+    def git(*args):
+        result = subprocess.run(['git', '-C', str(ROOT), *args],
+                                capture_output=True, text=True, encoding='utf-8')
+        return result.stdout.strip() if result.returncode == 0 else None
+    try:
+        top = git('rev-parse', '--show-toplevel')
+        if not top or Path(top).resolve() != ROOT:
+            return {'head': None, 'has_local_changes': None, 'exact_git_snapshot': False}
+        head = git('rev-parse', 'HEAD')
+        status = git('status', '--porcelain', '--untracked-files=normal')
+        dirty = bool(status) if status is not None else None
+        return {'head': head, 'has_local_changes': dirty,
+                'exact_git_snapshot': bool(head) and dirty is False}
+    except FileNotFoundError:
+        return {'head': None, 'has_local_changes': None, 'exact_git_snapshot': False}
+
+
 def build():
+    version = (ROOT / 'VERSION').read_text(encoding='utf-8').strip()
+    if not re.fullmatch(r'\d+\.\d+(?:\.\d+)?', version):
+        raise ValueError('VERSION must contain a numeric workspace version such as 1.0.')
     files = sorted(p for p in ROOT.rglob('*') if p.is_file() and included(p))
     if any(p.is_symlink() for p in files):
         raise RuntimeError('Resolve symlinks explicitly before packaging.')
     records = [{'path': p.relative_to(ROOT).as_posix(), 'size': p.stat().st_size,
                 'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
-    manifest = {'format_version': 1, 'workspace': 'Nature-Studio',
+    manifest = {'format_version': 2, 'workspace': 'Nature-Studio',
+                'workspace_version': version,
+                'source_repository': 'https://github.com/bandepdao123/Nature-Studio',
+                'source_git': source_git(),
                 'created_at_utc': datetime.now(timezone.utc).isoformat(),
                 'file_count': len(records), 'files': records}
     payload = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
     output = ROOT / '07-Releases' / 'packages'
     output.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
-    archive = output / f'Nature-Studio-{stamp}.zip'
+    archive = output / f'Nature-Studio-v{version}-{stamp}.zip'
     with zipfile.ZipFile(archive, 'x', zipfile.ZIP_DEFLATED) as bundle:
         for path in files:
             bundle.write(path, 'Nature-Studio/' + path.relative_to(ROOT).as_posix())

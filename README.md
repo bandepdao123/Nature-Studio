@@ -1,14 +1,20 @@
-# Nature Studio
+# Nature Studio v1.0
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
+## Dành cho AI nhận link GitHub
+
+Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
+
+Phiên bản hiện hành được đặt tên **Nature Studio v1.0**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+
 ## Dự án hiện tại
 
 [Underwater](03-Projects/underwater/PROJECT.md): Reel camera dưới nước hướng người câu cá Mỹ. Video mục tiêu 10s, 9:16, một shot; quy chuẩn cụ thể nằm trong hồ sơ dự án. Tên cũ Under Fish US / Under Fishing US chỉ là alias; ID nội bộ và prefix UF được giữ để truy vết.
 
-Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md), bộ prompt A01 và ảnh first frame A02. Video và âm thanh chưa được tạo/kiểm trong hồ sơ này. Các ca đánh giá khởi tạo vẫn chưa chạy.
+Đã có hồ sơ [UF-0001](04-Productions/underwater/UF-0001/SUMMARY.md) với lịch sử đến A04: video A03 được review chưa đạt; A04 có ảnh/prompt sửa, video mới chưa render. Đọc SUMMARY/review để biết đúng mức kiểm từng attempt. Các ca đánh giá khởi tạo và hai ca sáng tạo mở mới chưa chạy.
 
 ## Sử dụng skill
 
@@ -45,6 +51,6 @@ Tạo ZIP đầy đủ, gồm cả `.agents`, media hiện có và snapshot:
 python scripts/package_workspace.py
 ```
 
-Gói nằm trong `07-Releases/packages/`, kèm manifest SHA256 từng file. Gói không chứa `.git`, file bí mật, cache hoặc chính các gói ZIP cũ. ZIP và manifest gói được bỏ qua khi commit để tránh lưu lặp nội dung.
+Gói nằm trong `07-Releases/packages/`, kèm manifest SHA256 từng file, phiên bản workspace, commit nguồn và trạng thái thay đổi local. Gói không chứa `.git`, file bí mật, cache hoặc chính các gói ZIP cũ. ZIP và manifest gói được bỏ qua khi commit để tránh lưu lặp nội dung. Khi dùng ZIP, giữ PACKAGE-MANIFEST.json làm baseline để lần cập nhật sau đối chiếu; tên file gói có phiên bản nhưng không thay việc kiểm hash.
 
 Repo không chứa API key hoặc cấu hình đăng nhập. Nguồn bên ngoài và quyền sử dụng được ghi trong hồ sơ khi biết; việc đóng gói không cấp lại quyền cho tài liệu hoặc tài sản tham chiếu. Không có lịch sao lưu, render hoặc đăng bài tự động được cài trong bản này.

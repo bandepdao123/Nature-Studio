@@ -1,0 +1,63 @@
+{
+  "release_id": "NS-CREATIVE-DIRECTION-2026-10-16",
+  "date": "2026-10-16",
+  "timezone": "Asia/Saigon",
+  "type": "workspace-instruction-update",
+  "skill_version": "1.3",
+  "project_version": "1.4",
+  "decision": "UF-D014",
+  "changes": [
+    "Open-ended premise development grounded in brief and natural facts; examples are not a closed genre list.",
+    "Semantic novelty review beyond two changed attributes; revision intent and technical/output constraints preserved."
+  ],
+  "previous_sources_snapshot": "07-Releases/snapshots/before-creative-direction-2026-10-16",
+  "checks": {
+    "bundled_skill_validator": "pass",
+    "changed_file_links": "pass",
+    "baseline_unchanged": "pass",
+    "manual_scope_review": "Existing UF-0001 attempts and feedback not edited; new-vs-revision boundary retained."
+  },
+  "not_tested": [
+    "EV-UF-006 and EV-UF-007: not run.",
+    "End-to-end creative quality, generated media or audience performance."
+  ],
+  "publication": "Local source update only; no GitHub push or ZIP rebuild in this task.",
+  "files": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "4d2cfb48161210a58d4adece28f5ce2495527f199dfbf8dcc3c7a30e332fb67d"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "c3d3e61d67561c1109cd786dd3f789406d94c5650aa990a119983c4d45204db9"
+    },
+    {
+      "path": "03-Projects/underwater/format.md",
+      "sha256": "968387e7819fbf5215f7a782b59c64f1fa971d726c3e3093555e877cf9de2b37"
+    },
+    {
+      "path": "03-Projects/underwater/output-contract.md",
+      "sha256": "7a265e966d896a8a82b0e0963f7377938ec30482865591585b2945884ced25b1"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "sha256": "7f83fb95ded9bde05738e4ffeb5b3fa34deef0e2d3327cd279a0854a1dbb8563"
+    },
+    {
+      "path": "03-Projects/underwater/creative-direction.md",
+      "sha256": "c6bfb397e2f87437f97397e3beb147e3d0c5df3390486f24b9a77c39767764fc"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-006.md",
+      "sha256": "c38db15539bc1136cb4a247f09805c8eff5e65a7e01a10f58493ad71380f8974"
+    },
+    {
+      "path": "06-Evaluation/cases/EV-UF-007.md",
+      "sha256": "808698b5be79cfa67837b13c857db6b81b22a592b51427124579c41923f3a274"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "5f635501eaceebfb4639fae8ef99db789f50c45f01ea83d764f6ef3e047ba38f"
+    }
+  ]
+}
