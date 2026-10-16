@@ -10,3 +10,5 @@ Creative freedom:
 Deliverables:
 Missing inputs and resolution:
 Status:
+
+Video UUID / local Project UUID (new videos: IDENTITY.json; legacy: unknown if not recorded):
