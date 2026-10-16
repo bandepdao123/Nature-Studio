@@ -124,3 +124,11 @@ Tiếp tục so commit/baseline/local, tạo bản khôi phục gồm tracked/un
 Registry `.nature-studio/video-ids.sqlite3` bị Git ignore và bị loại khỏi ZIP phân phối. Backup cá nhân phải kèm registry riêng sau khi các tác vụ ghi kết thúc; không chỉ sao chép database trong lúc transaction đang chạy. Khi import nhiều nguồn, mã giống nhau nhưng UUID khác là xung đột thật: giữ cả hai, xử lý mapping trước khi gộp. Công cụ không hỗ trợ tự gộp hay bảo đảm prefix duy nhất toàn cầu.
 
 Rollback: giữ bản sao registry và IDENTITY/production mới; không xóa để trở về v1.1. v1.1 chưa biết bộ cấp mã nên chỉ khôi phục source sau khi bảo toàn dữ liệu và lập mapping, không coi sửa VERSION là rollback hoàn tất.
+
+## Nâng từ v1.2 lên v1.3
+
+Theo quy trình so commit/baseline/local ở trên; giữ nguyên registry, production, attempt và caption lịch sử. Merge audience-and-caption, output-contract, PROJECT/decisions và chayvideo cùng nhau để không còn hướng dẫn trái UF-D015/016. Caption mới theo phong cách ngắn, trực tiếp, đa dạng kiểu câu; giữ 3–5 hashtag khác, loại #Underwater không phân biệt hoa/thường. Không sửa hàng loạt caption đã tạo hoặc file baseline/release cũ.
+
+Nhận benchmark/corpus văn bản và đường đọc tương ứng. Candidate nhập từ nguồn giữ trạng thái chưa kiểm; so ID/nội dung trước khi nhận, không ghi đè bộ nhớ local hoặc tự active. INDEX có thể dựng lại theo lesson thực; không lấy số đếm từ repo đè lên workspace có nhiều lesson.
+
+Cập nhật .gitignore và packager để ảnh giao diện/evidence nghiên cứu ở local không lên public; không xóa ảnh local. Kiểm liên kết, validator bộ nhớ và hai skill, sau đó chốt VERSION 1.3. Giữ các gói/manifest lịch sử. Không áp phong cách hoặc danh sách tag của Underwater cho Project khác.

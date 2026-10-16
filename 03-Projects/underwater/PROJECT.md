@@ -1,6 +1,6 @@
 # Underwater
 
-ID: under-fishing-us | Version: 1.6 | Status: configured | Updated: 2026-10-16
+ID: under-fishing-us | Version: 1.8 | Status: configured | Updated: 2026-10-16
 Slug: underwater
 Production prefix: local-generated (XXX); legacy prefix: UF
 Legacy names: Under Fish US; Under Fishing US; Under Fishing
@@ -53,3 +53,7 @@ Nền người dùng chốt: v1.9 chỉnh từ v1.7, không v1.8. Bản phát h�
 Đọc [Memory Underwater](../../05-Memory/projects/underwater/INDEX.md) và [shared](../../05-Memory/shared/INDEX.md), lọc theo điều kiện. ID under-fishing-us giữ ổn định. /dongvideo tổng kết production cụ thể và xét đóng góp cho cả hai cấp theo policy; không đưa đặc tính loài hay format Underwater thành quy tắc chung. /chayvideo ghi ID/version/cách dùng lesson vào INPUTS. Đây là thay đổi đường đọc bộ nhớ, không đổi format hay quyết định sáng tạo.
 
 Mã mới: đọc [quy tắc](../../00-Standards/video-identifiers.md), chạy init/reserve với slug underwater; prefix local không ghi cứng vào repo. UF-0001 tiếp tục revision bình thường. Bắt đầu 00001 trong prefix mới, không đổi mã cũ.
+
+Caption hiện hành theo UF-D015 tại audience-and-caption.md v1.6: học phong cách ngắn/trực tiếp/đa dạng kiểu câu của Underfishing, giữ Anh Mỹ và 3–5 hashtag; đây là quyết định biên tập của người dùng, không là chứng minh performance.
+
+UF-D016: Caption mới không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh. Caption/attempt lịch sử không tự sửa; khi revision caption thì theo quy chuẩn hiện hành.

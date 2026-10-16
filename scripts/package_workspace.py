@@ -19,6 +19,9 @@ def included(path):
         return False
     if rel.parts[:2] == ('07-Releases', 'packages'):
         return False
+    if rel.parts[:2] == ('01-Knowledge', 'benchmarks') and (
+            'evidence' in rel.parts[2:] or path.name in {'captions-raw.json', 'evidence-manifest.json'}):
+        return False  # Browser UI evidence stays local, outside public distribution.
     name = path.name.lower()
     if name.startswith('.env') and name != '.env.example':
         return False

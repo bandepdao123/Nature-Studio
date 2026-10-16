@@ -104,6 +104,11 @@ class VideoIdTests(unittest.TestCase):
         package = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(package)
         self.assertFalse(package.included(package.ROOT / '.nature-studio/video-ids.sqlite3'))
+        base = package.ROOT / '01-Knowledge/benchmarks/example'
+        for rel in ['evidence/source.jpg', 'captions-raw.json', 'evidence-manifest.json']:
+            self.assertFalse(package.included(base / rel))
+        self.assertTrue(package.included(base / 'REPORT.md'))
+        self.assertTrue(package.included(base / 'corpus.json'))
 
     def test_failed_identity_write_does_not_reuse_reservation(self):
         ids.initialize(self.root, 'one', 'ABC')

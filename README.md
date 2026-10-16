@@ -1,4 +1,4 @@
-# Nature Studio v1.2
+# Nature Studio v1.3
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
@@ -8,7 +8,7 @@ Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Pr
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.2**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.3**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
@@ -78,3 +78,7 @@ Nâng cấp từ v1.0 theo [UPDATE.md — migration](UPDATE.md#nâng-từ-v10-l�
 Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
 
 Gói ZIP phân phối loại `.nature-studio/` để không phát tán prefix local. Muốn di chuyển workspace cá nhân đang làm, sao lưu registry riêng khi không có tác vụ cấp mã; ZIP phân phối không thay bản sao lưu danh tính Project.
+
+## Caption Underwater — v1.3
+
+Phong cách theo benchmark Underfishing: ít chữ, trực tiếp, một điểm đáng xem; linh hoạt câu hỏi/nhận xét/phản ứng/chỉ dẫn, tiếng Anh Mỹ tự nhiên. Giữ 3–5 hashtag khác đúng cảnh, **không dùng #Underwater**. Đọc [quy chuẩn](03-Projects/underwater/audience-and-caption.md) và [nghiên cứu 40 caption](01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md). Đây là lựa chọn biên tập, chưa chứng minh hiệu quả nền tảng. Ảnh UI nghiên cứu chỉ lưu local, không có trong repo/gói phân phối.

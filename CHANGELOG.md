@@ -2,6 +2,12 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.3 — 2026-10-16
+
+- Underwater UF-D015: chốt phong cách caption học từ Underfishing, ít chữ/trực tiếp/đa dạng kiểu câu, độ dài linh hoạt; giữ tiếng Anh Mỹ và 3–5 hashtag. Quyết định biên tập không là kết luận performance. Phát hành cùng UF-D016: không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh.
+- Thêm benchmark 40 caption và một candidate riêng Underwater, chưa kiểm hiệu quả. Chỉ đưa dữ liệu nghiên cứu văn bản lên repo; ảnh giao diện, registry và production đang làm giữ local.
+- Cập nhật đường đọc skill/quy chuẩn, hướng dẫn nâng từ v1.2 và kiểm đóng gói bỏ ảnh UI nghiên cứu.
+
 ## v1.2 — 2026-10-16
 
 - Chuẩn mã video mới XXX-yyyyy, prefix ba chữ sinh riêng Project trên local, số từ 00001; revision giữ mã và tăng attempt.

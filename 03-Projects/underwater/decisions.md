@@ -22,3 +22,7 @@ Các quyết định dưới kế thừa yêu cầu người dùng và hướng 
 | UF-D014 | 2026-10-16 | Bổ sung sáng tạo mở: ví dụ không là danh mục đóng; phát triển tiền đề độc lập từ brief/dữ kiện, chọn chuyện rồi xây timeline; kiểm độ mới bằng hành vi/nhân quả, không chỉ đếm hai thuộc tính khác; revision giữ chuyện đã chốt | creative-direction.md; format.md; skill chayvideo v1.3 |
 
 Khi đổi, thêm dòng quyết định thay thế và cập nhật chính file nguồn. Không để hai quyết định xung đột cùng mang trạng thái hiện hành.
+
+| UF-D015 | 2026-10-16 | Người dùng chọn Underwater học phong cách caption Underfishing sau benchmark 40 Reel: ít chữ, trực tiếp, một điểm đáng xem, linh hoạt hỏi/nhận xét/phản ứng/chỉ dẫn; thường 1–8 từ không cứng, giữ Anh Mỹ tự nhiên và 3–5 hashtag cùng đoạn. Thay ưu tiên độ dài/kiểu câu trước đó; giữ các yêu cầu còn lại. Không coi thành công đối thủ là bằng chứng nhân quả hoặc hiệu quả đã kiểm của Underwater | audience-and-caption.md v1.5; output-contract.md v1.5; chayvideo v1.7; yêu cầu trực tiếp người dùng trong phiên này |
+
+| UF-D016 | 2026-10-16 | Người dùng yêu cầu không dùng #Underwater trong caption mới/revision, không phân biệt hoa/thường; giữ 3–5 hashtag khác phù hợp loài/phương pháp/môi trường. Thay ví dụ tag cũ, không đổi caption/attempt lịch sử | audience-and-caption.md v1.6; output-contract.md v1.6; chayvideo v1.8 |

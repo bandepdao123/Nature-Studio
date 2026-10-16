@@ -11,3 +11,5 @@ Status: inherited, chưa mở lại trong lần khởi tạo 2026-10-15.
 - Chưa sao chép/download báo cáo, media tham chiếu hay MP4 cũ. Chưa đo lại audio hoặc kiểm lượt view.
 
 Khi nghiên cứu mới, tạo hồ sơ nguồn bằng template và liên kết về các dữ kiện thực sự được hỗ trợ. Không biến mục sources thành nơi chứa file không rõ nguồn/quyền.
+
+- [SRC-UF-CAP-20261016](underfishing-caption-benchmark-2026-10-16.md): 130 Reel rà, 42 mở, 40 caption gốc giữ lại; số view làm tròn >1 triệu, quan sát 2026-10-16. Chỉ caption và khung hình; không xem trọn/nghe 40 video.
