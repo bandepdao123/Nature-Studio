@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "tasks": {
+    "video-idea": ["concept", "idea", "ý tưởng"],
+    "research": ["nghiên cứu"],
+    "video-prompt": ["video-prompt-writing", "viết prompt video"],
+    "video-prompt-revision": ["revision", "sửa prompt video"],
+    "first-frame-prompt": ["image-prompt", "first-frame-prompt-writing"],
+    "image-generation": ["first-frame-generation", "image-edit", "taoanh", "tạo ảnh"],
+    "image-review": ["first-frame-qa", "image-qa"],
+    "video-review": ["media-review", "review video", "đánh giá video", "image-to-video-review"],
+    "reference-video-adaptation": ["clonevideo"],
+    "caption": ["caption-writing", "caption-revision", "caption-only", "caption-review"],
+    "generated-audio-review": ["audio-review", "đánh giá âm thanh"],
+    "production-finishing": ["audio-finishing", "normalize-audio"],
+    "history-inventory": ["history-review"],
+    "memory-retrieval": ["lesson-retrieval"]
+  },
+  "modes": {
+    "new": ["video-idea", "research", "video-prompt", "first-frame-prompt", "caption"],
+    "revision": ["video-prompt-revision", "first-frame-prompt"],
+    "caption": ["caption"],
+    "reference": ["reference-video-adaptation", "research", "video-prompt", "first-frame-prompt", "caption"]
+  },
+  "topics": {
+    "tackle-continuity": ["dây câu", "móc câu", "leader", "rig", "fishing line", "hook", "spinner"],
+    "animal-motion": ["chuyển động", "vùng vẫy", "giãy", "thrash", "struggle", "tail"],
+    "anatomy": ["giải phẫu", "nhận dạng", "mõm", "hàm", "jaw", "identity"],
+    "audio": ["âm thanh", "loudness", "lufs", "true peak", "sound"],
+    "caption": ["caption", "hashtag"],
+    "framing": ["bố cục", "mép khung", "composition", "frame margin"],
+    "history": ["lịch sử", "inventory", "gitignore"],
+    "water-optics": ["quang học", "màu nước", "turbidity", "attenuation"]
+  },
+  "entities": {
+    "muskie": ["musky", "muskellunge", "Esox masquinongy"],
+    "redfish": ["red drum", "Sciaenops ocellatus"],
+    "walleye": ["Sander vitreus"]
+  },
+  "interactions": {
+    "angling": ["câu cá", "hooked", "mắc câu", "lure", "spinner"],
+    "natural": ["săn mồi tự nhiên", "natural predation"]
+  }
+}

@@ -2,6 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.8 — 2026-10-17
+
+- Thêm engine truy xuất metadata Project/shared, task aliases và nhãn chủ đề/đối tượng/tương tác; phân trang summary, mở nguồn hash-bound, unknown/legacy fallback. Topic xếp hạng, không là quyền áp dụng.
+- Packet schema2 không nạp toàn bộ Memory INDEX/active; selection theo ID, freshness bắt thêm/sửa/xóa/chuyển trạng thái bài học. Giữ verify packet legacy.
+- Đồng bộ bốn skill, policy/template/validator và publication guard; catalog/query chỉ local, không xuất JSON Memory. Không thay gate activation/format/registry/quota hoặc duyệt video.
+- Giữ bản vá dependencies v1.7.1; ca kiểm/đo thực ghi riêng sau triển khai.
+
 ## v1.7.1 — 2026-10-17
 
 - Sửa thiếu khai báo/hướng dẫn PyYAML cho bước kiểm skill external trên máy mới; thêm requirements-dev.txt, phân biệt dependency dev và runtime stdlib, cài đúng interpreter.

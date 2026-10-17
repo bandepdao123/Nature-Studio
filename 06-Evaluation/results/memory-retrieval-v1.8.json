@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "date": "2026-10-17",
+  "kind": "synthetic-memory-routing",
+  "benchmark": {
+    "fixture_lessons": 1000,
+    "fixture_metadata_valid": true,
+    "expected_ids": [
+      "L-line",
+      "L-motion",
+      "L-shared"
+    ],
+    "actual_ids": [
+      "L-line",
+      "L-motion",
+      "L-shared"
+    ],
+    "expected_recall": 1.0,
+    "excluded_explicit_task": 997,
+    "baseline_body_bytes": 6108991,
+    "descriptor_bytes": 2264,
+    "selected_body_bytes": 18422,
+    "total_loaded_bytes": 20686,
+    "reduction_ratio": 0.996613843431755,
+    "query_seconds": 1.3308926000026986,
+    "broad_paginated_count": 1000,
+    "token_measurement": "not measured; bytes only",
+    "scope": "synthetic metadata retrieval fixture, not semantic/model quality or real-workload token guarantee"
+  },
+  "unit_suite": {
+    "total": 152,
+    "passed": 150,
+    "skipped": 2,
+    "failed": 0,
+    "skip_reason": "FFmpeg integration executables not in PATH"
+  },
+  "validation_scope": "Retrieval contracts and source/publication structure; no claim about semantic/model quality or media QA",
+  "external_skill_validator": "unavailable: optional PyYAML missing; stdlib frontmatter presence/link checks run separately"
+}

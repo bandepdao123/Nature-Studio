@@ -7,6 +7,8 @@ import re
 import subprocess
 import zipfile
 import importlib.util
+import os
+from public_memory_indexes import rebuild as public_indexes
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_DIRS = {'.nature-studio', '.git', '__pycache__', '.venv', 'node_modules', '.pytest_cache'}
@@ -67,15 +69,28 @@ def build():
     expected_url = f"https://github.com/{repository['owner']}/{repository['name']}"
     if repository.get('name_policy') != 'stable' or repository['url'] != expected_url:
         raise ValueError('REPOSITORY.json must describe the stable repository URL.')
-    files = sorted(p for p in ROOT.rglob('*') if p.is_file() and included(p))
+    # Prune runtime before traversal: private/permission-restricted media isn't an export input.
+    files = []
+    for parent, dirs, names in os.walk(ROOT):
+        folder = Path(parent)
+        dirs[:] = [d for d in dirs if d not in EXCLUDED_DIRS
+                   and not _GUARD.forbidden((folder / d / '_').relative_to(ROOT).as_posix())
+                   and (folder / d).relative_to(ROOT).parts[:2] != ('07-Releases', 'packages')]
+        files.extend(folder / name for name in names if included(folder / name))
+    runtime_readme = ROOT / '04-Productions/README.md'
+    if runtime_readme.is_file():
+        files.append(runtime_readme)
+    files = sorted(set(files))
     by_path = {p.relative_to(ROOT).as_posix(): p for p in files}
-    public_check = _GUARD.validate_files(by_path, lambda rel: by_path[rel].read_bytes())
+    payloads = {rel: p.read_bytes() for rel, p in by_path.items()}
+    payloads.update(public_indexes(payloads, payloads.__getitem__))
+    public_check = _GUARD.validate_files(payloads, payloads.__getitem__)
     if not public_check['valid']:
         raise ValueError('Public package rejected: ' + '; '.join(public_check['errors']))
     if any(p.is_symlink() for p in files):
         raise RuntimeError('Resolve symlinks explicitly before packaging.')
-    records = [{'path': p.relative_to(ROOT).as_posix(), 'size': p.stat().st_size,
-                'sha256': hashlib.sha256(p.read_bytes()).hexdigest()} for p in files]
+    records = [{'path': rel, 'size': len(data),
+                'sha256': hashlib.sha256(data).hexdigest()} for rel, data in sorted(payloads.items())]
     manifest = {'format_version': 2, 'workspace': 'Nature-Studio',
                 'workspace_version': version,
                 'source_repository': repository['url'],
@@ -89,8 +104,8 @@ def build():
     stamp = datetime.now().strftime('%Y%m%d-%H%M%S-%f')
     archive = output / f'Nature-Studio-v{version}-{stamp}.zip'
     with zipfile.ZipFile(archive, 'x', zipfile.ZIP_DEFLATED) as bundle:
-        for path in files:
-            bundle.write(path, 'Nature-Studio/' + path.relative_to(ROOT).as_posix())
+        for rel, data in payloads.items():
+            bundle.writestr('Nature-Studio/' + rel, data)
         bundle.writestr('Nature-Studio/PACKAGE-MANIFEST.json', payload)
     with zipfile.ZipFile(archive) as bundle:
         assert bundle.testzip() is None, 'ZIP integrity check failed'

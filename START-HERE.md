@@ -2,7 +2,7 @@
 
 Kho sản xuất nội dung thiên nhiên, lưu trên máy; khởi tạo 15/10/2026 (Asia/Saigon).
 
-Phiên bản toàn hệ thống: **Nature Studio v1.7.1**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
+Phiên bản toàn hệ thống: **Nature Studio v1.8**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
 
 ## Lệnh tạo bộ nội dung
 
@@ -20,7 +20,7 @@ Giao file này cùng yêu cầu và quyền đọc thư mục Nature-Studio. N�
 2. Tra [danh mục dự án](03-Projects/INDEX.md), xác định dự án; đọc PROJECT.md của đúng dự án. Dự án đã cấu hình: [Underwater](03-Projects/underwater/PROJECT.md). Thiếu dự án và không suy được từ yêu cầu thì hỏi một câu ngắn.
 3. Đọc quy chuẩn dự án liên quan nhiệm vụ rồi lấy hướng dẫn từ [Standards](00-Standards/INDEX.md). /chayvideo theo nhánh new/revision/caption của skill: tạo bộ đầy đủ đọc format/giọng/output-contract; chỉ sửa caption không buộc nạp lại format/model/kiến thức không liên quan. Khi tạo ý tưởng mới, bắt buộc đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và tài liệu sáng tạo mà PROJECT.md dẫn tới; Underwater có [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Khi sửa clip, giữ trọng tâm đã chốt.
 4. Tra [Knowledge](01-Knowledge/INDEX.md) theo loài, môi trường, tương tác/dụng cụ; tra [Models](02-Models/INDEX.md) khi cần thông tin model/giao diện.
-5. Tra [Memory](05-Memory/INDEX.md): đọc INDEX riêng Project và shared, mở bản gốc rồi chỉ áp active đúng điều kiện. Ghi ID/version/cách dùng vào INPUTS; không tự áp lesson Project khác. Tạo mới rà idea-ledger và hồ sơ thực để tránh lặp; chỉ mục/fingerprint có hash hỗ trợ tra cứu, hồ sơ chưa được bao phủ hoặc hết hạn vẫn phải đọc gốc. Revision/caption giữ chuyện đã chốt, đọc lịch sử liên quan.
+5. Tra [Memory](00-Standards/memory-retrieval.md): query descriptor Project + shared theo nhiệm vụ/hint, phân trang và xét unknown/legacy, mở bài gốc phù hợp rồi chỉ áp active đúng điều kiện; không nạp toàn bộ INDEX/active. Ghi ID/version/cách dùng vào INPUTS; không tự áp lesson Project khác. Tạo mới rà idea-ledger và hồ sơ thực để tránh lặp; chỉ mục/fingerprint có hash hỗ trợ tra cứu, hồ sơ chưa được bao phủ hoặc hết hạn vẫn phải đọc gốc. Revision/caption giữ chuyện đã chốt, đọc lịch sử liên quan.
 6. Khi sản xuất, tạo hồ sơ bằng mẫu trong 00-Standards/templates/. Ghi phiên bản tài liệu/đầu vào đã dùng; mỗi lần thử là một thư mục mới. Không tạo/render nếu yêu cầu chỉ viết prompt.
 7. Review sản phẩm thực tế khi có; ghi phản hồi, chỉ đưa kết luận đủ cơ sở vào bộ nhớ theo memory-policy.md. Khi chỉ có prompt thì chỉ kiểm được prompt.
 

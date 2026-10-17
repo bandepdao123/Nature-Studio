@@ -94,10 +94,12 @@ class ContextTests(unittest.TestCase):
     def test_active_discovery_ignores_candidates(self):
         self.write('05-Memory/projects/one/candidates/L-a.md','candidate')
         p = ctx.packet(self.root, 'one', 'caption')
-        self.write('05-Memory/shared/active/L-b.md','active body, conditions require AI inspection')
-        self.assertIn('active_inventory', ctx.verify(self.root,p))
+        self.write('05-Memory/shared/active/L-b.md','invalid legacy body must surface an error')
+        self.assertIn('memory_inventory', ctx.verify(self.root,p))
         updated = ctx.packet(self.root, 'one', 'caption')
-        self.assertEqual(updated['active_inventory'], ['05-Memory/shared/active/L-b.md'])
+        self.assertTrue(updated['memory']['errors'])
+        self.assertFalse(updated['memory']['candidates'])
+        self.assertNotIn('05-Memory/shared/active/L-b.md', [x['path'] for x in updated['sources']])
 
     def test_missing_source_fails_instead_of_silent_omission(self):
         (self.root/'new.md').unlink()

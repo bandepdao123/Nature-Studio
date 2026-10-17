@@ -9,6 +9,7 @@ from pathlib import Path
 import re
 import sys
 import tempfile
+import memory_retrieval as memory
 
 ROOT = Path(__file__).resolve().parents[1]
 FINGERPRINT_FIELDS = ('opening', 'interaction', 'objects', 'terrain_role',
@@ -61,7 +62,8 @@ def active_files(root, slug):
     return sorted(files)
 
 
-def packet(root, slug, mode, species=(), interaction='unspecified'):
+def packet(root, slug, mode, species=(), interaction='unspecified',
+           memory_selection=None, lesson_ids=(), topics=(), query_text=''):
     slug_ok(slug)
     recipe_path = f'03-Projects/{slug}/context-map.json'
     recipe_source = source(root, recipe_path)
@@ -80,6 +82,8 @@ def packet(root, slug, mode, species=(), interaction='unspecified'):
         else:
             raise ValueError(f'Missing task recipe: {mode}')
     files = [recipe_path] + recipe['common'] + chosen
+    # Human-facing indexes can grow without bound; discovery returns paged descriptors.
+    files = [p for p in files if not (p.startswith('05-Memory/') and p.endswith('/INDEX.md'))]
     missing = []
     if mode != 'caption':
         for name in species:
@@ -94,8 +98,18 @@ def packet(root, slug, mode, species=(), interaction='unspecified'):
             missing.append('Resolve species or granted choice before producing content')
         if interaction != 'natural':
             files += recipe.get('angling', [])
-    active = active_files(root, slug)
-    files += active
+    selection = memory.query(root, slug, mode=mode, topics=topics, entities=species,
+                             interactions=[] if interaction == 'unspecified' else [interaction],
+                             text=query_text)
+    if selection['errors']:
+        missing.append('Memory discovery incomplete: inspect memory.errors before producing content')
+    if lesson_ids:
+        if memory_selection is None or memory_selection.get('request', {}).get('mode') != mode:
+            raise ValueError('Supply a memory selection page for the same task mode')
+        selected = memory.load_lessons(root, slug, memory_selection, list(lesson_ids))
+        files += [row['path'] for row in selected]
+    else:
+        selected = []
     sources = [source(root, path) for path in dict.fromkeys(files)]
     dependencies = []
     for path in ['VERSION', 'START-HERE.md', 'SYSTEM.md', 'AGENTS.md',
@@ -106,6 +120,11 @@ def packet(root, slug, mode, species=(), interaction='unspecified'):
         item = source(root, path)
         item.pop('text')
         dependencies.append(item)
+    for path in ['scripts/memory_retrieval.py', '00-Standards/memory-taxonomy.json']:
+        if inside(root, path).is_file():
+            item = source(root, path)
+            item.pop('text')
+            dependencies.append(item)
     if mode == 'reference':
         for path in ['00-Standards/reference-video-adaptation.md',
                      '.agents/skills/clonevideo/SKILL.md',
@@ -115,8 +134,9 @@ def packet(root, slug, mode, species=(), interaction='unspecified'):
             item = source(root, path)
             item.pop('text')
             dependencies.append(item)
-    return dict(schema=1, project=slug, mode=mode, species=list(species),
-                interaction=interaction, active_inventory=active,
+    return dict(schema=2, project=slug, mode=mode, species=list(species),
+                interaction=interaction, memory=selection,
+                selected_lessons=[{k: r[k] for k in ('id', 'status', 'path', 'sha256')} for r in selected],
                 sources=sources, dependencies=dependencies, pending=missing,
                 note='Exact current sources, no token truncation. Read real production/attached media '
                      'separately. Active location is discovery, not permission: inspect status and '
@@ -130,7 +150,11 @@ def verify(root, data):
         path = inside(root, item['path'])
         if not path.is_file() or digest(path.read_bytes()) != item['sha256']:
             stale.append(item['path'])
-    if active_files(root, data['project']) != data['active_inventory']:
+    if 'memory' in data:
+        current = memory.scan(root, data['project'])
+        if current['fingerprint'] != data['memory']['fingerprint'] or current['errors']:
+            stale.append('memory_inventory')
+    elif active_files(root, data['project']) != data['active_inventory']:
         stale.append('active_inventory')
     return stale
 
@@ -233,6 +257,10 @@ def main():
     p.add_argument('--species', action='append', default=[])
     p.add_argument('--interaction', choices=('natural', 'angling', 'unspecified'), default='unspecified')
     p.add_argument('--out', type=Path)
+    p.add_argument('--memory-selection', type=Path)
+    p.add_argument('--lesson-id', action='append', default=[])
+    p.add_argument('--topic', action='append', default=[])
+    p.add_argument('--query', default='')
     p = subs.add_parser('verify')
     p.add_argument('packet', type=Path)
     p = subs.add_parser('history')
@@ -248,7 +276,10 @@ def main():
     if args.command == 'projects':
         result = catalog(root)
     elif args.command == 'packet':
-        result = packet(root, args.project, args.mode, args.species, args.interaction)
+        selection = (json.loads(inside(root, args.memory_selection.as_posix()).read_text(encoding='utf-8-sig'))
+                     if args.memory_selection else None)
+        result = packet(root, args.project, args.mode, args.species, args.interaction,
+                        selection, args.lesson_id, args.topic, args.query)
         if args.out:
             path = inside(root, args.out)
             path.parent.mkdir(parents=True, exist_ok=True)

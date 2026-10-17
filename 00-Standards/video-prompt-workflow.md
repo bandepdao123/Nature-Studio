@@ -1,4 +1,4 @@
-# Lõi viết prompt và lưu hồ sơ video — v1.2
+# Lõi viết prompt và lưu hồ sơ video — v1.3
 
 Updated: 2026-10-17 | Dùng chung chayvideo/clonevideo; nguồn Project và helper là một nơi duy nhất.
 
@@ -12,7 +12,7 @@ Thay placeholder trong lệnh bằng dữ liệu thật. `--species` lặp lại
 
 Chỉ truyền species khi có liên quan; Project quyết định đầu vào bắt buộc. Profile Underwater giữ gate chọn loài/quyền chọn; packet chung không ép Project cảnh quan chọn loài chỉ vì có hồ sơ loài tùy chọn. Pending trống không chứng nhận brief đầy đủ. Output helper giữ gate tag/AI/timing riêng cho Underwater; Project khác chỉ được kiểm cú pháp chung, AI vẫn phải đối chiếu contract thật (không tự coi số tag hoặc disclosure được phép cho mọi Project). Không thêm cấu hình máy mới hoặc thay hợp đồng bốn mục.
 
-Map chỉ chọn tài liệu; AI vẫn đọc/áp đúng phạm vi, tra link nội bộ cần thiết. Tự bổ sung nguồn theo concept; map không biết mọi nhu cầu sáng tạo. Packet chứa nguyên văn nguồn, không tóm tắt bằng LLM/cắt theo token. Các active được tìm từ file thật cả Project/shared; đọc status/điều kiện gốc trước áp, chỉ ghi lesson thực sự dùng. Không lấy candidate trong INDEX làm luật.
+Map chỉ chọn tài liệu; AI vẫn đọc/áp đúng phạm vi, tra link nội bộ cần thiết. Tự bổ sung nguồn theo concept; map không biết mọi nhu cầu sáng tạo. Packet chứa nguyên văn nguồn, không tóm tắt bằng LLM/cắt theo token. Bộ nhớ theo [truy xuất chọn lọc](memory-retrieval.md): packet schema2 trả descriptor phân trang Project + shared, không nạp toàn bộ INDEX/active. Xét điều kiện/unknown/legacy, mở nguồn phù hợp bằng query/read hoặc --memory-selection/--lesson-id trước áp dụng; INPUTS ghi bài đã dùng. Không coi candidate là luật hoặc trang đầu là coverage đầy đủ.
 
 Nếu công cụ đọc báo truncated, đọc tiếp theo từng source/phần cho đến hết; không coi file bị cắt là đã đọc đủ. Không cần đưa toàn bộ JSON/hash inventory vào context suy luận: manifest dùng để đối chiếu/lưu, nội dung nguồn mới là phần phải đọc.
 
@@ -51,3 +51,7 @@ Nếu dùng ảnh đã QA, theo [kiểm liên kết first frame](first-frame.md#
 ## Khi tiếp nhận media thực — v1.7
 
 Theo [kiểm media và finishing](media-review-and-finishing.md) khi nhận reference hoặc render; chỉ viết prompt không cần chạy đo. Tách khả năng trích xuất, ASR và hiểu hình/âm thực; giữ trạng thái text/render/QA/approval độc lập trong SUMMARY. Bộ đầu ra vẫn bốn mục.
+
+## Bộ nhớ schema2 — v1.8
+
+Task/hint từ nhiệm vụ thật, cùng lõi memory_retrieval.py cho new/revision/caption/reference và skill ảnh/đóng phiên. Đọc memory-retrieval.md lần đầu dùng; packet chưa chọn lesson không chứng minh đã áp bộ nhớ. Lưu selection/query local, mở nguyên văn bài có thể dùng; tiếp tục next_cursor hoặc --broad khi cần. Verify xét cả inventory namespace để phát hiện bài mới/đổi status ngoài selection, không chỉ hash bài đã dùng. Khối sources và memory.errors/pending cần kiểm trước giao.
