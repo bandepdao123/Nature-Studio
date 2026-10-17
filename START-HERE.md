@@ -2,9 +2,11 @@
 
 Kho sản xuất nội dung thiên nhiên, lưu trên máy; khởi tạo 15/10/2026 (Asia/Saigon).
 
-Phiên bản toàn hệ thống: **Nature Studio v1.5**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
+Phiên bản toàn hệ thống: **Nature Studio v1.6**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
 
 ## Lệnh tạo bộ nội dung
+
+Để chuyển thể video mẫu, gửi `/clonevideo` kèm file/link và thay đổi mong muốn. [Skill clonevideo](.agents/skills/clonevideo/SKILL.md) phân tích cách quay, vai trò/hành động từng chủ thể, câu chuyện và âm thanh; đổi loài/nhân vật/bối cảnh qua mapping đúng tự nhiên rồi xuất cùng bốn mục. Dùng [lõi chung](00-Standards/video-prompt-workflow.md) và [chuẩn chuyển thể](00-Standards/reference-video-adaptation.md), không ép sáng tạo một chuyện khác mẫu. Cần công cụ truy cập hình/âm thật; chỉ xem frame/transcript không là phân tích toàn clip. Không tự tạo media hoặc công bố nội dung. Việc xây skill không chạy phân tích/render thật.
 
 Gửi `/chayvideo` kèm tên dự án, loài hoặc brief nếu có. AI đọc [skill chayvideo](.agents/skills/chayvideo/SKILL.md), tra nguồn hiện hành và lịch sử thực trước khi chọn ý tưởng; trả bốn mục: Ý TƯỞNG tiếng Việt; FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh; CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag. Có thể chỉ nêu đặc trưng dự án trong yêu cầu tạo nội dung, skill tự tra dự án phù hợp; chỉ hỏi khi mơ hồ hoặc không có dự án khớp. Mỗi prompt là một đoạn văn. Khi thiếu lựa chọn bắt buộc, skill hỏi đúng phần còn thiếu. Lệnh chỉ tạo văn bản và hồ sơ local, không tự render/đăng.
 
@@ -16,9 +18,9 @@ Giao file này cùng yêu cầu và quyền đọc thư mục Nature-Studio. N�
 
 1. Đọc [SYSTEM.md](SYSTEM.md); xác định nhiệm vụ: nghiên cứu, ý tưởng, viết prompt, tạo media, review hay cập nhật hệ thống.
 2. Tra [danh mục dự án](03-Projects/INDEX.md), xác định dự án; đọc PROJECT.md của đúng dự án. Dự án đã cấu hình: [Underwater](03-Projects/underwater/PROJECT.md). Thiếu dự án và không suy được từ yêu cầu thì hỏi một câu ngắn.
-3. Đọc format, đối tượng/giọng và hợp đồng đầu ra của dự án; sau đó lấy đúng hướng dẫn nhiệm vụ từ [Standards](00-Standards/INDEX.md). Khi tạo ý tưởng mới, bắt buộc đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và tài liệu sáng tạo mà PROJECT.md dẫn tới; Underwater có [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Khi sửa clip, giữ trọng tâm đã chốt.
+3. Đọc quy chuẩn dự án liên quan nhiệm vụ rồi lấy hướng dẫn từ [Standards](00-Standards/INDEX.md). /chayvideo theo nhánh new/revision/caption của skill: tạo bộ đầy đủ đọc format/giọng/output-contract; chỉ sửa caption không buộc nạp lại format/model/kiến thức không liên quan. Khi tạo ý tưởng mới, bắt buộc đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và tài liệu sáng tạo mà PROJECT.md dẫn tới; Underwater có [Sáng tạo mở](03-Projects/underwater/creative-direction.md). Khi sửa clip, giữ trọng tâm đã chốt.
 4. Tra [Knowledge](01-Knowledge/INDEX.md) theo loài, môi trường, tương tác/dụng cụ; tra [Models](02-Models/INDEX.md) khi cần thông tin model/giao diện.
-5. Tra [Memory](05-Memory/INDEX.md): đọc INDEX riêng Project và shared, mở bản gốc rồi chỉ áp active đúng điều kiện. Ghi ID/version/cách dùng vào INPUTS; không tự áp lesson Project khác. Đọc idea-ledger và hồ sơ thực để tránh lặp.
+5. Tra [Memory](05-Memory/INDEX.md): đọc INDEX riêng Project và shared, mở bản gốc rồi chỉ áp active đúng điều kiện. Ghi ID/version/cách dùng vào INPUTS; không tự áp lesson Project khác. Tạo mới rà idea-ledger và hồ sơ thực để tránh lặp; chỉ mục/fingerprint có hash hỗ trợ tra cứu, hồ sơ chưa được bao phủ hoặc hết hạn vẫn phải đọc gốc. Revision/caption giữ chuyện đã chốt, đọc lịch sử liên quan.
 6. Khi sản xuất, tạo hồ sơ bằng mẫu trong 00-Standards/templates/. Ghi phiên bản tài liệu/đầu vào đã dùng; mỗi lần thử là một thư mục mới. Không tạo/render nếu yêu cầu chỉ viết prompt.
 7. Review sản phẩm thực tế khi có; ghi phản hồi, chỉ đưa kết luận đủ cơ sở vào bộ nhớ theo memory-policy.md. Khi chỉ có prompt thì chỉ kiểm được prompt.
 

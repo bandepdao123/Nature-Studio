@@ -1,5 +1,9 @@
 # Nature Studio — điểm vào cho AI
 
+## /clonevideo — chuyển thể từ mẫu
+
+Khi người dùng gọi `/clonevideo` hoặc yêu cầu học cách quay/hành động/kịch bản/âm từ video mẫu để thay loài, nhân vật hoặc bối cảnh, đọc [.agents/skills/clonevideo/SKILL.md](.agents/skills/clonevideo/SKILL.md). Không kích hoạt từ thảo luận hoặc xây/sửa skill. Phân tích hình và âm thực có coverage/timecode; thiếu quyền/công cụ thì báo và xin phần thiếu, không giả đã xem/nghe toàn bộ. Chuyển thể theo vai trò/nhân quả, kiểm lại đặc tính đối tượng đích. Nhánh reference dùng [lõi prompt](00-Standards/video-prompt-workflow.md) và Project hiện hành chung với chayvideo; không ép đổi chuyện để đạt độ mới. Không tự render/đăng/push. Analysis/brief/evidence giữ local; registry/quota/history được bảo toàn.
+
 Đọc START-HERE.md và SYSTEM.md trước khi thực hiện công việc trong kho.
 
 Phiên bản toàn hệ thống đọc từ VERSION, thay đổi ở CHANGELOG.md. Khi nhận link GitHub để hiểu hệ thống hoặc yêu cầu cập nhật, đọc README.md và thực hiện UPDATE.md; đối chiếu commit/hash và thay đổi local trước khi ghi. Không coi link nguồn là bằng chứng đã biết bản đang dùng của người dùng.
@@ -10,7 +14,7 @@ Khi người dùng gửi `/chayvideo` hoặc yêu cầu tạo bộ nội dung qu
 
 Skill đọc quy chuẩn và lịch sử đúng dự án trước khi tạo ý tưởng. Mặc định của skill: Ý TƯỞNG tiếng Việt; FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag; mỗi prompt là một đoạn văn. Tự tra metadata các dự án để chọn dự án khớp rõ; chỉ hỏi khi mơ hồ hoặc chưa có dự án phù hợp. Không kích hoạt sản xuất từ câu hỏi kiến thức đơn thuần. Không khởi chạy tạo media chỉ từ lệnh này.
 
-Version: 1.6 | Updated: 2026-10-16 | Reason: Nature Studio v1.1, /dongvideo và bộ nhớ Project/shared.
+Version: 1.7 | Updated: 2026-10-17 | Reason: thêm /clonevideo và lõi prompt chung; giữ /dongvideo và bộ nhớ Project/shared.
 
 Khi người dùng gọi `/dongvideo` hoặc yêu cầu tổng kết/đóng phiên video và rút bài học, đọc [.agents/skills/dongvideo/SKILL.md](.agents/skills/dongvideo/SKILL.md). Không kích hoạt từ trích dẫn, câu hỏi hay sửa skill. Lệnh tổng kết tiếng Việt, luôn xét Project và shared, không tự render/push hay duyệt video. Bộ nhớ theo [memory-policy](00-Standards/memory-policy.md): /chayvideo chỉ áp active đúng điều kiện; /dongvideo có quyền tự kích hoạt phương pháp khách quan khi đạt đủ gate đã duyệt, không tự thay chính sách sáng tạo.
 

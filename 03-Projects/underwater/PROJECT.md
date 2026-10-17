@@ -1,69 +1,29 @@
 # Underwater
 
-ID: under-fishing-us | Version: 1.8 | Status: configured | Updated: 2026-10-16
+ID: under-fishing-us
 Slug: underwater
-Production prefix: local-generated (XXX); legacy prefix: UF
-Legacy names: Under Fish US; Under Fishing US; Under Fishing
+Version: 2.0 | Updated: 2026-10-17 | Plan 01 / UF-D019
+Aliases: Under Fish US; Under Fishing US; Under Fishing
+Routing: Video/prompt tương tác cá–mồi dưới nước, khán giả câu cá Mỹ; săn mồi tự nhiên hoặc bait/lure/rig/jig; mọi loài cá được câu phù hợp tại Mỹ, không giới hạn Redfish/red drum/Sciaenops ocellatus, Muskie/muskellunge/Esox masquinongy, Walleye/Sander vitreus. Camera chìm cố định, dọc 10s và key sau 5s là dấu hiệu kết hợp. Một từ cá/Mỹ/Omni hoặc nhắc benchmark Underfishing riêng không đủ phân biệt dự án.
+Model: omni-flash
 
-Tên hiện hành: **Underwater**. ID nội bộ `under-fishing-us` và các mã UF lịch sử giữ nguyên; prefix video mới được sinh trên local theo chuẩn XXX-yyyyy; thư mục hiện hành dùng slug `underwater`. Đây là cùng một dự án được đổi tên, không phải dự án mới.
+UF-D020 — 2026-10-17: /clonevideo dùng [chuẩn chuyển thể](../../00-Standards/reference-video-adaptation.md) và lõi prompt chung. Reference giữ cơ chế mẫu có chủ đích, ánh xạ đúng loài/bối cảnh mới; ngưỡng độ mới dành cho concept độc lập không ép thay câu chuyện của bản chuyển thể. Quy chuẩn kỹ thuật/QA/âm/caption hiện hành vẫn áp dụng, khác biệt camera/nhịp so với mẫu phải ghi rõ.
 
+## Nguồn hiện hành
 
-## Mục tiêu
-
-Reel dưới nước hướng khán giả Mỹ thích câu cá; footage mô phỏng camera thật, đúng loài/vùng/vật lý, câu chuyện nguyên bản. Người dùng chỉ định model video Omni Flash. Mặc định một bộ prompt, không tự sinh media khi chỉ được yêu cầu viết.
-
-## Đọc theo thứ tự
-
-Khi chạy `/chayvideo`, áp dụng hợp đồng riêng tại đầu output-contract.md và [skill](../../.agents/skills/chayvideo/SKILL.md): Ý TƯỞNG tiếng Việt, FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, CAPTION tiếng Anh Mỹ kèm hashtag; mỗi prompt một đoạn, tra lịch sử trước khi sáng tạo. Phần ngôn ngữ/ba mục tiếng Anh kế thừa chỉ áp dụng ngoài chế độ này, trừ yêu cầu mới của người dùng. Thị trường mục tiêu là Mỹ; caption dùng cách nói tự nhiên của người câu cá Mỹ. Chế độ skill cũng áp dụng khi nhận diện yêu cầu tạo nội dung qua đặc trưng dự án, không cần gọi đúng tên.
-
-1. [Format hiện hành](format.md)
-2. [Khán giả và caption](audience-and-caption.md)
-3. [Hợp đồng đầu ra](output-contract.md)
-4. [Quyết định](decisions.md), Lịch sử ý tưởng local `idea-ledger.md` (khởi tạo từ mẫu khi cần)
-5. Theo cảnh: Knowledge về loài, môi trường, tackle; model profile; Memory active phù hợp.
-
-Trước khi phát triển concept mới, bắt buộc đọc [Sáng tạo mở](creative-direction.md): ví dụ không giới hạn loại câu chuyện; phát triển tiền đề độc lập rồi kiểm độ mới ở hành vi và nhân quả. Revision giữ chuyện đã chốt. Đây là hướng dẫn sáng tạo bổ sung theo UF-D014, không thay format kỹ thuật.
-
-Các file này là nguồn hiện hành trong hệ thống, kế thừa đầy đủ phần liên quan từ v1.9. Các tham chiếu đánh số cũ trong đoạn trích trỏ về bản v1.9 tại ../../07-Releases/standalone-guides/; không phải tên file mới. Khi phát hiện chưa phân tách đủ, tra baseline thay vì tự bỏ ràng buộc; ghi vấn đề để sửa nguồn.
+- [Format](format.md), [hợp đồng đầu ra](output-contract.md), [khán giả/caption](audience-and-caption.md).
+- Tạo concept mới phải đọc [Sáng tạo mở](creative-direction.md), [Story Development](story-development.md) cùng hai hướng dẫn chung tương ứng ở 00-Standards. Revision giữ ý định.
+- [context-map.json](context-map.json) chọn nguồn theo nhiệm vụ; workflow skill quy định cách đọc và fallback, không coi packet là nguồn quyền mới. [decisions.md](decisions.md) giữ lịch sử; đọc khi truy nguyên/mâu thuẫn, không nạp mọi quyết định mỗi lượt. Baseline v1.9 chỉnh từ v1.7, không dùng v1.8; bản nhập giữ nguyên ở 07-Releases/standalone-guides.
+- Knowledge: môi trường/quang học, đúng loài/tương tác và dụng cụ khi có câu cá. Thiếu loài trong kho thì tự nghiên cứu hồ sơ đúng loài, không thay tên trong hồ sơ Muskie. Research 20 Reel được khuyến nghị để hiểu/phát triển chứ không giới hạn sáng tạo.
 
 ## Chọn loài
 
-Nếu người dùng đã chọn/giao quyền thì không hỏi lại. Nếu thiếu, hỏi một câu có bốn lựa chọn: Redfish / Muskie / Walleye / Loài cá được câu bất kỳ ở Mỹ, cho nhập loài khác. Dùng lựa chọn tương tác khi có công cụ, không giả nút Markdown. Chờ câu trả lời thật; đáp án chọn sẵn không phải xác nhận. Với cá bất kỳ, tự nghiên cứu/chọn loài và vùng thích hợp rồi làm. Không hỏi chọn cá khi chỉ sửa hướng dẫn.
+Đã có loài/quyền chọn thì không hỏi lại. Thiếu thì hỏi một câu: **Redfish / Muskie / Walleye / Loài cá được câu bất kỳ ở Mỹ**, cho nhập loài khác. Dùng lựa chọn click nếu công cụ hỗ trợ (có thể gộp trong giới hạn số lựa chọn của công cụ), nếu không thì lựa chọn chữ; không giả nút Markdown. Chờ đáp án thật, lựa chọn sẵn không là xác nhận. “Bất kỳ” cho phép tự nghiên cứu/chọn loài và vùng phù hợp. Không hỏi chọn cá khi chỉ sửa skill.
 
-## Nguồn hiện hành và phiên bản
+## Runtime và bộ nhớ
 
-Nền người dùng chốt: v1.9 chỉnh từ v1.7, không v1.8. Bản phát hành nhập nguyên trạng chỉ dùng tham chiếu/đóng gói, không chỉnh song song. Khi sửa nội dung dự án, cập nhật file nguồn, decisions và manifest phát hành mới trong cùng công việc được giao.
+Production: `04-Productions/underwater/`; idea-ledger.md local tại thư mục Project. Thiếu ledger không có nghĩa không có lịch sử. Mã mới qua scripts/video_ids.py reserve underwater theo video-identifiers.md; prefix riêng local, không ghi cứng. Giữ UF legacy khi revision.
 
-2026-10-16: bổ sung chế độ /chayvideo theo yêu cầu trực tiếp; xem UF-D008–UF-D012; UF-D011 thay UF-D009 về ngôn ngữ đầu ra. Baseline v1.9 được giữ nguyên.
+Đọc Memory Project/shared, mở active gốc đúng điều kiện theo memory-policy. Ghi ID/version/đường dẫn/cách dùng vào INPUTS; candidates chỉ thử riêng, không tự active. /dongvideo đóng phiên theo skill riêng; không tự đóng từ /chayvideo.
 
-## Đặc trưng nhận diện cho skill
-
-- Tên hiện hành/slug: Underwater / underwater; ID ổn định under-fishing-us. Tên cũ Under Fish US, Under Fishing US, Under Fishing chỉ là alias để nhận diện yêu cầu cũ. Underfishing là nguồn benchmark, không phải tên hiện hành của dự án; chỉ nhắc tên nguồn chưa đủ để chọn dự án.
-- Chủ đề: Reel quan sát tương tác cá–mồi dưới nước cho người câu cá Mỹ; săn mồi tự nhiên, bait hoặc lure, rig/jig.
-- Loài khởi đầu: Redfish/red drum/Sciaenops ocellatus; Muskie/muskellunge/Esox masquinongy; Walleye/Sander vitreus. Cũng có thể làm loài cá được câu khác ở Mỹ theo brief.
-- Dấu hiệu kết hợp: camera chìm cố định, một shot dọc 10s, key sau 5s, lạch triều Texas/Louisiana/Florida hoặc hồ/sông phía bắc Mỹ. Đây là dấu hiệu định tuyến, không phải mọi yêu cầu đều phải nêu đủ.
-- Chỉ suy ra dự án khi có ý định tạo bộ nội dung/video/prompt trong ngữ cảnh. “Làm bộ Walleye theo jig” khớp; “Walleye ăn gì?” là câu hỏi kiến thức. Từ đơn “cá”, “Mỹ”, “Omni Flash” chưa đủ phân biệt khi có nhiều dự án. Đọc metadata các dự án khác trước khi kết luận độc nhất.
-
-2026-10-16: v1.2 điều chỉnh ngôn ngữ và nhận diện theo đặc trưng; giữ rà lịch sử và format kỹ thuật.
-
-2026-10-16: v1.3 chuyển cấu trúc Channel sang Project và đổi tên dự án thành Underwater; xem UF-D013. Mục tiêu, format, lựa chọn loài, model và hợp đồng đầu ra giữ nguyên.
-
-## Bộ nhớ và tổng kết — v1.1 workspace
-
-Đọc [Memory Underwater](../../05-Memory/projects/underwater/INDEX.md) và [shared](../../05-Memory/shared/INDEX.md), lọc theo điều kiện. ID under-fishing-us giữ ổn định. /dongvideo tổng kết production cụ thể và xét đóng góp cho cả hai cấp theo policy; không đưa đặc tính loài hay format Underwater thành quy tắc chung. /chayvideo ghi ID/version/cách dùng lesson vào INPUTS. Đây là thay đổi đường đọc bộ nhớ, không đổi format hay quyết định sáng tạo.
-
-Mã mới: đọc [quy tắc](../../00-Standards/video-identifiers.md), chạy init/reserve với slug underwater; prefix local không ghi cứng vào repo. UF-0001 tiếp tục revision bình thường. Bắt đầu 00001 trong prefix mới, không đổi mã cũ.
-
-Caption hiện hành theo UF-D015 tại audience-and-caption.md v1.6: học phong cách ngắn/trực tiếp/đa dạng kiểu câu của Underfishing, giữ Anh Mỹ và 3–5 hashtag; đây là quyết định biên tập của người dùng, không là chứng minh performance.
-
-UF-D016: Caption mới không dùng #Underwater, giữ 3–5 hashtag khác đúng cảnh. Caption/attempt lịch sử không tự sửa; khi revision caption thì theo quy chuẩn hiện hành.
-
-UF-D017 (2026-10-16): khi tạo concept mới, bắt buộc đọc [Story Development](story-development.md) cùng creativity/creative-direction. Phương pháp chung có nguồn tại 00-Standards/story-development.md; không đổi key >5s, output-contract hoặc caption hiện hành. Nghiên cứu cơ chế không là xác nhận hiệu quả Reel của dự án.
-
-## Dữ liệu local và bài học chia sẻ — v1.4
-
-Lịch sử ý tưởng tại idea-ledger.md là file local không có trong repo; khi thiếu thì tạo theo ../../00-Standards/templates/idea-ledger.md sau khi rà production thật. Đây không phải dự án không có lịch sử. Các bài học công khai được tra từ Memory; publish theo ../../00-Standards/publication.md, không đẩy production/ledger hoặc dùng template như video đã làm.
-
-## First frame — UF-D018
-
-Khi tạo ảnh thật bằng /taoanh, đọc [QA riêng](first-frame-qa.md) và [gate chung](../../00-Standards/first-frame.md). Tối đa 5 call sinh/sửa, chưa đạt xin thêm; không sửa chuyện/loài để lách QA. Ưu tiên Sunburst qua image_gen; không tìm được thì dùng model mặc định không hỏi lại, model không là tiêu chí QA. Ảnh QA pass không thay QA video hoặc user approval.
+Tạo ảnh thật qua /taoanh theo [first-frame-qa.md](first-frame-qa.md) và gate chung; tối đa 5 call/cycle, quota/handoff/hash local được bảo toàn. Không tự sinh media từ việc viết prompt. Danh tính model ảnh không chặn QA, không giả chọn Sunburst. Production/ledger/registry/media riêng không publish; lesson đi theo publication policy.

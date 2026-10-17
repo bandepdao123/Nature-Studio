@@ -1,32 +1,18 @@
-# Hợp đồng đầu ra — v1.6
+# Hợp đồng đầu ra — v2.0
 
-Updated: 2026-10-16 | Origin: approved guide v1.9 + user /chayvideo requirements
+Updated: 2026-10-17 | Plan 01 / UF-D019. Một hợp đồng hiện hành; baseline ba mục chỉ dùng truy vết.
 
-## Hợp đồng hiện hành khi gọi /chayvideo
+Các số mục kế thừa trong phần chi tiết trỏ về baseline v1.9: 2A tương ứng Knowledge/equipment/us-angling-tackle.md; môi trường/2–3 tương ứng Knowledge/habitats/underwater-realism.md; 4 tương ứng phần chuyển động trong format.md; chọn loài tại PROJECT.md. Không bỏ qua ràng buộc vì tên/số mục cũ.
 
-Khi tạo mới, đọc [creative-direction.md](creative-direction.md) và phát triển các tiền đề độc lập trước khi chọn. Không lấy những tình huống đã minh họa làm giới hạn sáng tạo; bốn mục/ngôn ngữ/định dạng và các yêu cầu kỹ thuật bên dưới vẫn giữ nguyên.
+## Đầu ra
 
-Theo điều chỉnh mới nhất của người dùng ngày 2026-10-16, trả bốn mục: **Ý TƯỞNG** (tiếng Việt), **FIRST FRAME PROMPT** (tiếng Anh), **VIDEO PROMPT** (tiếng Anh), **CAPTION** (tiếng Anh Mỹ tự nhiên, phù hợp người câu cá Mỹ, có 3–5 hashtag đúng cảnh). Mỗi prompt là một đoạn văn không xuống dòng trong nội dung; beat/timecode và sound design viết liền trong video prompt. Caption theo phong cách đã chốt UF-D015 trong audience-and-caption.md: ngắn, trực tiếp, chọn một chi tiết thật; linh hoạt hỏi/nhận xét/phản ứng/chỉ dẫn xem, thường 1–8 từ nhưng không giới hạn cứng. Giữ 3–5 hashtag khác nối cùng đoạn, không dùng #Underwater theo UF-D016, không nhắc AI. Không xuất bản dịch song ngữ trừ khi được yêu cầu. Hợp đồng này áp dụng cả khi gọi /chayvideo lẫn khi skill tự nhận dự án từ đặc trưng; thay yêu cầu v1.1 toàn bộ tiếng Việt. Cấu trúc Omni Flash theo model profile: ảnh mở đầu → thời lượng/tỷ lệ/camera → tính nhất quán cảnh → chuyển động/beat → Sound design → loại trừ ngắn; không bịa tham số hoặc hứa model bảo đảm timecode.
+Mặc định một bộ, đúng bốn mục: **Ý TƯỞNG** tiếng Việt; **FIRST FRAME PROMPT**, **VIDEO PROMPT** tiếng Anh; **CAPTION** tiếng Anh Mỹ tự nhiên. Không song ngữ/phương án/báo cáo dài trừ khi được yêu cầu. Ý tưởng một đoạn ngắn nêu chuyện, câu hỏi mở, key/hậu quả và điểm mới có căn cứ. Mỗi prompt là một đoạn tự đủ để sao chép; không CR/LF, placeholder, “như trên”, link hay ghi chú nghiên cứu. Caption gồm cả hashtag trong một chuỗi/một đoạn. Yêu cầu sửa caption hay một phần chỉ trả phần được giao, không buộc viết lại toàn bộ.
 
-Trước khi chọn ý tưởng, thực hiện bước rà trùng trong [skill chayvideo](../../.agents/skills/chayvideo/SKILL.md): kiểm chat truy cập được, ledger, SUMMARY/concept và hồ sơ thực, kể cả nháp đã giao và ý tưởng bị loại. So cơ chế tương tác/key/kết cục, không chỉ tên loài hoặc chữ trùng; ghi bằng chứng so sánh và giới hạn lịch sử trong concept. Lưu bản drafted và cập nhật ledger để lần sau tra được.
+JSON khi được yêu cầu dùng `idea`, `first_frame_prompt`, `video_prompt`, `caption` (chuỗi); sửa cục bộ chỉ các trường được giao. Không trường hashtags riêng. Không in suy luận nội bộ. Chỉ báo ngắn ngoài các mục khi có giới hạn quan trọng; hồ sơ/source/đối chiếu lưu local.
 
-JSON khi được yêu cầu dùng bốn khóa `idea`, `first_frame_prompt`, `video_prompt`, `caption`; hai prompt và caption không chứa CR/LF. Giữ đầy đủ yêu cầu nội dung kỹ thuật dưới đây: t=0, loài/môi trường/dụng cụ, 10s 9:16, 5–8 beat liên tục, key bắt đầu sau 5.0s, âm thanh hai lớp và caption đúng bằng chứng. Chế độ này thay yêu cầu ba mục/tên mục/ba khóa JSON trong phần kế thừa và checklist cũ; các yêu cầu khác vẫn áp dụng. Yêu cầu trực tiếp mới của người dùng được ưu tiên.
+Đủ loài hoặc quyền chọn mới làm. Thiếu thì hỏi lựa chọn tại PROJECT và chờ; không hỏi lại điều đã có. Tự nghiên cứu chi tiết phụ, sửa sai sinh thái gần ý định nhất; nếu phải đổi loài hoặc kết cục đã khóa, nêu vấn đề thay vì âm thầm đổi. Trung thực về đọc/xem/nghe/render; không hứa viral hoặc model tuân thủ từng frame.
 
-## Hợp đồng nền ngoài chế độ /chayvideo
-
-Phần dưới giữ nội dung v1.9 để truy nguyên và dùng ngoài chế độ /chayvideo. Khi chạy skill, áp dụng thay đổi ở trên, không xuất lại ba mục tiếng Anh.
-
-Các tham chiếu mục đánh số dưới đây thuộc hướng dẫn baseline v1.9. Trong kho mới: loài/địa điểm/dụng cụ ở Knowledge, chọn loài ở PROJECT.md, nhịp/audio/QA ở format.md. Chỉ thị đủ dùng được nhập nguyên để không làm mất ràng buộc.
-
-## 8. Chỉ thị giao việc và hợp đồng đầu ra
-
-> **Vai trò và mục tiêu:** Bạn là AI viết prompt với cách làm việc kết hợp quan sát tư liệu dưới nước, kiểm tra sinh học cá và tính nhất quán hình–âm. Đọc hướng dẫn này như một brief độc lập. Khuyến nghị đọc báo cáo 20 Reel qua link mục 0.2 **để hiểu và phát triển sáng tạo, không bị giới hạn bởi các nghiên cứu này**. Tạo tình huống nguyên bản cho khán giả câu cá Mỹ, một cá chính thuộc lựa chọn Redfish/Muskie/Walleye hoặc loài cá được câu ở Mỹ khác đã chọn theo 0.1, một mồi hoặc con mồi chính, **một cảnh key bắt buộc bắt đầu sau 5.0s** tạo câu chuyện: twist, hành động cực nhanh hoặc thay đổi có ý nghĩa; phần đầu có hook và tiến triển hợp tự nhiên, phần cuối còn hậu quả; 10s, 9:16, camera dưới nước chân thực mặc định cố định, một shot liên tục. Thật về loài, môi trường và chuỗi lực quan trọng hơn việc cố gây sốc. Không tự nhận có chứng chỉ chuyên môn, đã đọc/nghe nguồn hoặc đã render khi chưa thực hiện.
->
-> **Cách làm trước khi trả:** dùng nghiên cứu nền và quy trình mục 0; xác định loài, vùng, mùa/giờ/thời tiết, năm biến môi trường, màu sắc tự nhiên, góc camera có thể đặt ngoài đời, trạng thái t=0, đường đi và nơi kết thúc của từng vật, cảnh key, phản ứng phụ của nước/cỏ/dây và âm thanh. Nếu thiếu loài và chưa được giao quyền chọn, chỉ hỏi câu bốn lựa chọn ở 0.1 rồi chờ, chưa xuất prompt/caption. Khi đã có lựa chọn, tự phát triển một ý tưởng mới theo 0.1a, cân nhắc vài hướng rồi chọn hướng mới, rõ, đúng và ít lỗi; không lặp mặc định Redfish–cua hay chép cảnh mẫu. Không in suy luận nội bộ. Chỉ dùng mặc định cho các chi tiết phụ được phép ở 0.1; không hỏi lại loài đã có hoặc quyền chọn đã được giao. Khi ý tưởng sai rõ về sinh thái, chọn cách sửa gần ý định nhất; nếu phải đổi loài chính hoặc kết cục người dùng yêu cầu, nêu một câu thông báo ngoài ba mục, không âm thầm thay đổi trọng tâm.
->
-> **Sau khi đã có loài hoặc quyền chọn cá bất kỳ ở Mỹ, chỉ xuất ba mục sau cho mỗi video**, bằng tiếng Anh, mỗi mục là một khối văn bản hoàn chỉnh dễ sao chép. Không thêm phương án thay thế hoặc báo cáo dài trừ khi được yêu cầu. Không để placeholder, câu “như trên”, ghi chú nghiên cứu hoặc link nguồn vào nội dung prompt/caption. Tên mục giữ đúng như sau:
-
-### FIRST FRAME PROMPT
+## FIRST FRAME PROMPT
 
 Áp dụng hồ sơ dụng cụ mục 2A khi cảnh có câu cá: khóa mồi, cấu tạo/số móc, các điểm nối và phần dây/leader/phụ kiện nhìn thấy tại t=0. Không thêm dụng cụ vào cảnh săn mồi tự nhiên.
 
@@ -34,7 +20,7 @@ Viết một prompt độc lập để tạo **một ảnh tĩnh dọc 9:16 tạ
 
 Áp dụng đầy đủ mục “Nghiên cứu và tái hiện môi trường nước chân thực”: khóa **màu nước + nguyên nhân** tách biệt với **độ trong + suy giảm theo khoảng cách**. Nêu loại/mức/phân bố vật chất lơ lửng nếu có, chi tiết gần còn thấy và chi tiết/độ tương phản/màu bị mất ở xa; hậu cảnh hòa dần theo đường truyền qua nước. Nêu loại nền và có/không lớp vật liệu mịn có thể bị khuấy. Khóa nguồn/hướng/độ tán xạ ánh sáng phù hợp thời tiết. Không coi nước có màu là nước đục; không dùng xóa phông, sương phẳng hay làm mờ toàn ảnh thay tán xạ. Không đổi Secchi/tầm nhìn theo chiều sâu thành tầm nhìn ngang. Không tự thêm hạt, rác, bong bóng hoặc bùn để tăng vẻ thật. Cùng một môi trường phải giải thích được màu sắc cá, nước và nền; không áp màu phim, đèn sân khấu hay vân nắng vào cảnh âm u thiếu nắng trực tiếp. Nếu chủ thể khó thấy, thay cự ly/bố cục hợp lý, không tự làm nước trong, sáng hoặc chủ thể nét hơn điều kiện cho phép. Không kể chuỗi hành động, đặt timecode tương lai, âm thanh hay biểu cảm người trong prompt ảnh. Không cho mồi đã vào miệng, dây đã chịu lực của sự kiện tương lai hoặc mây bùn của cú lao chưa xảy ra. Bố trí cự ly, hướng và vật che tại t=0 đủ cho phần chuẩn bị có tiến triển qua 5.0s trước khi key bắt đầu; không đặt cá sát mồi rồi buộc đứng chờ. Không thêm text, logo, UI, diver hay nhân vật ngoài brief.
 
-### OMNI FLASH VIDEO PROMPT
+## VIDEO PROMPT
 
 Nếu có dụng cụ, giữ nguyên bộ đã chốt ở mục 2A và ảnh đầu: cùng bait/lure, hook count, kết nối, leader/phụ kiện; chuyển động và nhận lực theo đúng phương pháp câu. Không ghép rig mới hoặc làm dụng cụ biến hình trong key.
 
@@ -46,37 +32,8 @@ Mô tả **trước → trong → sau** biến cố: tín hiệu/chuẩn bị t�
 
 Tích hợp **sound design ngay trong video prompt**: **hai lớp môi trường + hành động**, volume **lớn, rõ, đầy đặn và xuyên suốt `0.0–10.0s`**. Môi trường đúng thủy vực/góc camera chạy liên tục, nghe rõ từ đầu đến cuối, không silent gaps hoặc fade về im lặng. Ghi chi tiết hành động có nguồn hợp lý trong từng beat, đồng bộ chuyển động/lực/tiếp xúc; không chỉ có một hit ở key. Key được nhấn rõ, sau đó vẫn nghe môi trường và hậu quả hành động tới hết clip. Tăng âm lượng toàn mix, giữ hai lớp phân biệt và peak sạch, không rè/clipping hoặc phóng đại lực bằng tiếng nổ. Không music, voice, cinematic hit, whoosh, bass drop, sonar hoặc bong bóng liên tục vô nguồn. Không biến lựa chọn âm thanh này thành tuyên bố đã nghe hoặc sao chép âm thanh của đối thủ. Không vẽ chữ, caption, hashtag hoặc logo lên video, không thêm kết quả ngoài câu chuyện.
 
-### CAPTION
+Soạn theo model profile Omni Flash: ảnh mở đầu → thời lượng/tỷ lệ/camera → bối cảnh nhất quán → beat/nhân quả → sound design → loại trừ ngắn. Timecode và âm thanh nằm trong cùng đoạn văn, không bảng/danh sách/đoạn riêng. Tag chỉ dùng khi giao diện hỗ trợ và không thay đính kèm ảnh thực. Nếu chưa render thì ảnh là đầu vào dự kiến, không tự nhận đã đính kèm/kiểm ảnh.
 
-Trả **một caption tiếng Anh Mỹ duy nhất có thể đăng ngay, viết liền một đoạn, không chèn ký tự xuống dòng**. Theo UF-D015, câu/cụm mở đầu ngắn, thường 1–8 từ nhưng không giới hạn cứng; 1–2 từ hoặc dài hơn được phép khi tự nhiên và đúng cảnh. Linh hoạt hỏi, nhận xét, phản ứng hoặc chỉ dẫn quan sát; chọn một điểm thật đáng chú ý, không bắt luôn hỏi hay giấu kết quả. Nghe như người Mỹ thích câu cá trò chuyện với nhau, học cơ chế Underfishing nhưng câu chữ nguyên bản. Ưu tiên cách nói/thuật ngữ câu cá Mỹ khi đúng hành vi và dụng cụ, theo mục 5; không dịch máy, giọng quảng cáo, nhồi slang hoặc dùng jargon sai để gây tò mò. **Không nhắc AI/công nghệ tạo video, không có dòng giải thích nguồn tạo và không có hashtag AI.** Ngay sau hook và một dấu cách có **3–5 hashtag khác nhau, đúng loài/ngữ cảnh**, trong cùng đoạn caption; không xuống dòng trước hashtag. Không xuất một mục TITLE hoặc HASHTAGS riêng. Ưu tiên ít chữ áp dụng phần câu trước hashtag; 3–5 hashtag vẫn bắt buộc, không tính vào số từ hook; loại #Underwater không phân biệt hoa/thường theo UF-D016.
+## CAPTION
 
-Nếu output theo JSON do người dùng yêu cầu, chỉ dùng ba khóa `first_frame_prompt`, `video_prompt`, `caption`; giá trị `caption` chứa cả hook và 3–5 hashtag về loài/câu cá/môi trường trong một đoạn; không chứa ký tự xuống dòng CR/LF hoặc escape `\n`, `\r`. Không thêm mảng `hashtags`.
-
-Caption ở giai đoạn prompt phản ánh kết cục dự kiến. Khi nhận video thực tế, sửa caption theo điều nhìn thấy; nếu kết quả bị che thì dùng câu hỏi hoặc sự không chắc chắn phù hợp. Không tuyên bố hooked/caught/swallowed chỉ từ một cú áp sát hoặc một đám bùn. Hashtag không được dùng để che việc thiếu câu hook hoặc sai nội dung.
-
-### Mẫu nhập liệu tùy chọn
-
-```text
-Number of videos: 1 by default
-Species choice: Redfish | Muskie | Walleye | Any fish caught by anglers in the US [if absent and not supplied in context, ask these four choices and wait]
-Specific other US angling species: [optional; if specified, use it without asking again]
-Creative direction: a new original story for this request; avoid repeating examples or available previous concepts
-Existing concept to revise: [optional; when supplied for revision, preserve it rather than invent a replacement]
-US region / habitat: [optional]
-Season / time of day / weather: [optional]
-Water clarity / sediment source / natural colors: [optional]
-Story key: twist | very fast species-appropriate action | other meaningful visible change [optional; AI must develop one]
-Key timing: action onset strictly AFTER 5.0s, not at 5.0s; AI chooses a variable onset and leaves visible aftermath before 10.0s
-Opening: immediate visual curiosity with meaningful setup through 5.0s; no early main strike, hookup, decisive escape or outcome reveal
-Prey or lure: [optional]
-Interaction mode: wild predation without tackle | baited angling | artificial lure [optional; infer from the requested concept]
-Fishing method / rig / hook / main line / leader / visible accessories: [optional user constraints; AI researches and completes a coherent species- and location-appropriate setup under section 2A]
-Trap or non-hook method: [only if relevant; verify the specific species, state, waterbody and season before portraying it as permitted]
-Ending: take | miss | spit | ignore | occluded/uncertain [optional]
-Beat plan: 5–8 variable beats, decimal-second boundaries allowed, continuous from 0.0 to 10.0s
-Camera style: real-life fixed underwater observation by default; cinematic only if explicitly requested
-Image model / Omni interface: [optional; do not invent unsupported parameters]
-Caption angle: species | lure/rig | what happened | why it missed [optional]
-Caption voice: curiosity grounded in the visible event; natural US angler language, fishing terms only when accurate
-Hashtags: 3–5, appended after the hook with spaces in ONE paragraph; no newline
-```
+Theo [audience-and-caption.md](audience-and-caption.md): nguyên bản, ngắn/trực tiếp, một điểm đáng quan sát, giọng người câu cá Mỹ; linh hoạt hỏi/nhận xét/phản ứng/chỉ dẫn, thường 1–8 từ nhưng không giới hạn cứng. Hook + dấu cách + 3–5 hashtag khác nhau đúng cảnh, một đoạn, không AI/công nghệ tạo nội dung, không #Underwater kể cả biến thể hoa/thường. Không dùng jargon sai hoặc khẳng định hooked/caught/swallowed khi hình chưa chứng minh. Concept chỉ là dự kiến; có render thì đối chiếu kết quả thật, kết cục bị che thì giữ mức không chắc chắn. Caption không là lời thoại/chữ để vẽ lên video.
