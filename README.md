@@ -1,18 +1,35 @@
-# Nature Studio v1.7
+# Nature Studio v1.7.1
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v1.7
+## Mới trong v1.7.1
 
-Camera Underwater cầm tay tự nhiên; kiểm capability, metadata/âm thực, tỷ lệ first frame và trạng thái text/render/QA/approval. Xem [ghi chú v1.7](07-Releases/v1.7.md) và [hướng dẫn nâng cấp](UPDATE.md#nâng-từ-v16-lên-v17).
+Bản vá dependency kiểm skill: thêm requirements-dev.txt và hướng dẫn xử lý thiếu PyYAML. Xem [ghi chú v1.7.1](07-Releases/v1.7.1.md). Camera Underwater cầm tay tự nhiên; kiểm capability, metadata/âm thực, tỷ lệ first frame và trạng thái text/render/QA/approval. Xem [ghi chú v1.7](07-Releases/v1.7.md) và [hướng dẫn nâng cấp](UPDATE.md#nâng-từ-v16-lên-v17).
+
+## Python trên máy mới và PyYAML
+
+Helper lõi dùng Python 3.11+ và thư viện chuẩn; clone/tải ZIP không tự cài package Python. Đọc skill Markdown hoặc chạy memory/publication validator không cần PyYAML. FFmpeg/FFprobe/WhisperX là công cụ media riêng, không phải dependency PyYAML.
+
+Nếu host chạy `quick_validate.py` của skill-creator để kiểm skill, script **bên ngoài repo** đó import `yaml` từ package [PyYAML](https://pypi.org/project/PyYAML/6.0.3/). Bản vá khai báo trong [requirements-dev.txt](requirements-dev.txt); đây là dependency kiểm skill tùy chọn. Không có script quick_validate trên host thì ghi phép kiểm đó unavailable, không bắt cài cả skill-creator hoặc chặn các helper lõi.
+
+Tại thư mục Nature-Studio, dùng chính Python sẽ chạy validator:
+
+```text
+python -m pip install -r requirements-dev.txt
+python -c "import sys, yaml; print(sys.executable); print(yaml.__version__)"
+```
+
+Nếu đã tải tag v1.7 cũ chưa có requirements-dev.txt, cài trực tiếp `python -m pip install PyYAML==6.0.3` hoặc nhận v1.7.1 theo UPDATE.md. Không cài bằng một `pip` khác interpreter. Nếu validator chạy qua Python riêng của host, dùng đường dẫn Python đó thay `python` ở cả hai lệnh. Chạy validator với `-X utf8` để đọc skill tiếng Việt trên Windows.
+
+Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, sau đó Windows dùng `.venv\Scripts\python.exe -m pip install -r requirements-dev.txt`, macOS/Linux dùng `.venv/bin/python -m pip install -r requirements-dev.txt`; dùng cùng executable khi gọi validator. Không cần activate hoặc thay Python toàn máy. Không commit/đóng gói `.venv`.
 
 ## Dành cho AI nhận link GitHub
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.7**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.7.1**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 

@@ -2,6 +2,11 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.7.1 — 2026-10-17
+
+- Sửa thiếu khai báo/hướng dẫn PyYAML cho bước kiểm skill external trên máy mới; thêm requirements-dev.txt, phân biệt dependency dev và runtime stdlib, cài đúng interpreter.
+- CI kiểm dependency dev và parse frontmatter bốn skill riêng với job lõi. Không di chuyển tag v1.7 hoặc sửa release cũ; [ghi chú bản vá](07-Releases/v1.7.1.md).
+
 ## v1.7 — 2026-10-17
 
 - Underwater UF-D021: thay mặc định camera cố định bằng camera cầm tay chuyển động nhẹ tự nhiên như người cầm điện thoại quay; đồng bộ format/output-contract/Project/QA, hướng dẫn new và chuẩn reference. Phân biệt chuyển động máy và cá; giữ quy chuẩn còn lại. Không tuyên bố đã kiểm độ tự nhiên của render bằng video liên tục.

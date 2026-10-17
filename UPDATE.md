@@ -164,3 +164,9 @@ Giữ backup/hash của production, registry, quota, ledger và Memory private t
 Không cài FFmpeg/WhisperX hoặc dịch vụ chỉ vì nâng source: capability kiểm runtime riêng từng máy, không phải native perception. Normalization chỉ chạy khi được giao xử lý media và có listening assessment; không tự sửa video hiện có. Dung sai ≤0.1% chỉ cho tỷ lệ input, không backfill QA hoặc gọi raster gần đúng là exact export. Giữ trạng thái unknown/provisional và attempt bất biến; không đổi final/qa_pass hàng loạt. Merge lesson public theo ID/scope/version, giữ bản private/evidence và dựng chỉ mục theo dữ liệu local thực.
 
 Chạy unit suite, validate_memory, skill checks và validate_publication trên toàn index trước push. Test FFmpeg chạy trên fixture tổng hợp, có thể skip khi máy thiếu executable; không coi skip là integration pass. Không đổi key>5s, bốn mục đầu ra hay quota. Bản cũ rollback source phải bảo toàn runtime mới, không dùng reset --hard/clean hoặc xóa lesson để ép tương thích.
+
+## Nâng từ v1.7 lên v1.7.1 — PyYAML khi kiểm skill
+
+Nhận requirements-dev.txt, hướng dẫn Python trong README, CI và tài liệu phiên bản; không đổi media/lesson/quota/registry. PyYAML chỉ cần cho validator YAML bên ngoài (ví dụ skill-creator quick_validate.py), không cần cho helper lõi hoặc đọc skill. Cài vào đúng interpreter chạy validator bằng `python -m pip install -r requirements-dev.txt`; nếu chỉ có bản v1.7 cũ, dùng `python -m pip install PyYAML==6.0.3`. Nếu không được phép/có mạng để cài, ghi kiểm skill external unavailable, tiếp tục các kiểm stdlib và không nhận đã kiểm skill. Không hứa cài trên máy khác từ việc cập nhật repo.
+
+Tag v1.7 giữ nguyên; bản vá ở v1.7.1/main. Nhận theo commit cụ thể và giữ dữ liệu local như quy trình ở trên, không chép ZIP đè workspace.
