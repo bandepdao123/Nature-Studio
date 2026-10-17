@@ -1,8 +1,8 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.9 | Updated: 2026-10-17 | Scope: toàn kho
+Version: 2.0 | Updated: 2026-10-17 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.8; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v2.0.0; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -56,7 +56,7 @@ Nguồn quyền/trạng thái là [memory-policy v2.1](00-Standards/memory-polic
 
 ## Mã video — Nature Studio v1.2
 
-Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
+Video mới dùng **XX-YYYY**, hai chữ A–Z riêng từng Project local, bốn chữ số từ **0001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001, mã ba chữ/năm số và các attempt lịch sử giữ nguyên. Prefix UF dành riêng cho legacy; namespace mới được chuyển khi init/reserve thật, giữ UUID Project. Xem UPDATE.md khi nâng từ v1.1.
 
 ## Xuất bản hệ thống và bộ nhớ — v1.4
 

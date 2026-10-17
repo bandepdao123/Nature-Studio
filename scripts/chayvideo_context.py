@@ -10,6 +10,7 @@ import re
 import sys
 import tempfile
 import memory_retrieval as memory
+import context_routing as routing
 
 ROOT = Path(__file__).resolve().parents[1]
 FINGERPRINT_FIELDS = ('opening', 'interaction', 'objects', 'terrain_role',
@@ -63,30 +64,29 @@ def active_files(root, slug):
 
 
 def packet(root, slug, mode, species=(), interaction='unspecified',
-           memory_selection=None, lesson_ids=(), topics=(), query_text=''):
+           memory_selection=None, lesson_ids=(), topics=(), query_text='',
+           stage=None, effects=(), tasks=()):
     slug_ok(slug)
     recipe_path = f'03-Projects/{slug}/context-map.json'
     recipe_source = source(root, recipe_path)
     recipe = json.loads(recipe_source['text'])
-    selection = mode
-    seen = set()
-    while True:
-        if selection in seen:
-            raise ValueError('Cyclic context-map alias')
-        seen.add(selection)
-        chosen = recipe.get(selection, 'new' if selection == 'reference' else None)
-        if isinstance(chosen, str):
-            selection = chosen
-        elif isinstance(chosen, list):
-            break
-        else:
-            raise ValueError(f'Missing task recipe: {mode}')
+    chosen = routing.mode_sources(recipe, mode)
+    plan = routing.route(root, slug, recipe, mode, stage, effects) if stage is not None else None
+    if effects and plan is None:
+        raise ValueError('Effects require an explicit --stage (use all for full coverage)')
+    if plan:
+        chosen = plan['files']
+    defaults = (plan['tasks'] if plan and not plan['fallback'] else
+                memory.taxonomy(root)['modes'].get(mode, []))
+    task_union = list(dict.fromkeys([*defaults, *tasks]))
+    if plan:
+        plan['tasks'] = task_union
     files = [recipe_path] + recipe['common'] + chosen
     # Human-facing indexes can grow without bound; discovery returns paged descriptors.
     files = [p for p in files if not (p.startswith('05-Memory/') and p.endswith('/INDEX.md'))]
     missing = []
     if mode != 'caption':
-        for name in species:
+        for name in species if not plan or plan['include_species'] else ():
             profile = recipe.get('species', {}).get(name.lower())
             if profile:
                 files.append(profile)
@@ -96,9 +96,9 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
         # in another Project's map do not make species a mandatory input there.
         if slug == 'underwater' and not species:
             missing.append('Resolve species or granted choice before producing content')
-        if interaction != 'natural':
+        if interaction != 'natural' and (not plan or plan['include_angling']):
             files += recipe.get('angling', [])
-    selection = memory.query(root, slug, mode=mode, topics=topics, entities=species,
+    selection = memory.query(root, slug, mode=mode, tasks=task_union, topics=topics, entities=species,
                              interactions=[] if interaction == 'unspecified' else [interaction],
                              text=query_text)
     if selection['errors']:
@@ -120,7 +120,11 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
         item = source(root, path)
         item.pop('text')
         dependencies.append(item)
-    for path in ['scripts/memory_retrieval.py', '00-Standards/memory-taxonomy.json']:
+    for path in ['scripts/chayvideo_context.py', 'scripts/context_routing.py',
+                 'scripts/memory_retrieval.py', '00-Standards/memory-taxonomy.json',
+                 *[f'.agents/skills/chayvideo/references/{m}.md'
+                   for m in ('new', 'revision', 'caption', 'reference')],
+                 '00-Standards/context-routing.md', *([plan['config']] if plan and plan['config'] else [])]:
         if inside(root, path).is_file():
             item = source(root, path)
             item.pop('text')
@@ -134,7 +138,8 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
             item = source(root, path)
             item.pop('text')
             dependencies.append(item)
-    return dict(schema=2, project=slug, mode=mode, species=list(species),
+    dependencies = list({s['path']: s for s in dependencies}.values())
+    result = dict(schema=3 if plan else 2, project=slug, mode=mode, species=list(species),
                 interaction=interaction, memory=selection,
                 selected_lessons=[{k: r[k] for k in ('id', 'status', 'path', 'sha256')} for r in selected],
                 sources=sources, dependencies=dependencies, pending=missing,
@@ -142,6 +147,9 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
                      'separately. Active location is discovery, not permission: inspect status and '
                          'conditions before applying. Project decides required inputs; generic packet '
                          'does not certify completeness. New facts need external research.')
+    if plan:
+        result.update(routing=plan, routing_request=dict(stage=stage, effects=list(effects), tasks=list(tasks)))
+    return result
 
 
 def verify(root, data):
@@ -150,6 +158,35 @@ def verify(root, data):
         path = inside(root, item['path'])
         if not path.is_file() or digest(path.read_bytes()) != item['sha256']:
             stale.append(item['path'])
+        elif 'text' in item and path.read_bytes().decode('utf-8-sig') != item['text']:
+            stale.append(item['path'] + ': packet text differs from source')
+    if data.get('schema') == 3:
+        try:
+            recipe_path = f'03-Projects/{data["project"]}/context-map.json'
+            recipe = json.loads(inside(root, recipe_path).read_text(encoding='utf-8-sig'))
+            request = data['routing_request']
+            plan = routing.route(root, data['project'], recipe, data['mode'], request['stage'], request['effects'])
+            defaults = (plan['tasks'] if not plan['fallback'] else
+                        memory.taxonomy(root)['modes'].get(data['mode'], []))
+            plan['tasks'] = list(dict.fromkeys([*defaults, *request['tasks']]))
+            if plan != data['routing']:
+                stale.append('routing_plan')
+            expected_tasks = plan['tasks'] or memory.taxonomy(root)['modes'].get(data['mode'], [])
+            if (data['memory']['request'].get('tasks') != expected_tasks
+                    or data['memory']['request'].get('mode') != data['mode']):
+                stale.append('routing_memory_tasks')
+            required = {recipe_path, *recipe['common'], *plan['files']}
+            if data['mode'] != 'caption':
+                if plan['include_species']:
+                    required.update(recipe.get('species', {}).get(name.lower()) for name in data['species'])
+                    required.discard(None)
+                if data['interaction'] != 'natural' and plan['include_angling']:
+                    required.update(recipe.get('angling', []))
+            required = {p for p in required if not (p.startswith('05-Memory/') and p.endswith('/INDEX.md'))}
+            if required - {s['path'] for s in data['sources']}:
+                stale.append('routing_sources_missing')
+        except (ValueError, OSError, KeyError, TypeError):
+            stale.append('routing_plan')
     if 'memory' in data:
         current = memory.scan(root, data['project'])
         if current['fingerprint'] != data['memory']['fingerprint'] or current['errors']:
@@ -157,6 +194,39 @@ def verify(root, data):
     elif active_files(root, data['project']) != data['active_inventory']:
         stale.append('active_inventory')
     return stale
+
+
+def coverage(root, packets, receipts=(), context_id=None, retained=False):
+    """Conservative whole-source coverage floor; does not certify understanding."""
+    if not packets:
+        raise ValueError('Supply at least one current packet')
+    first = packets[0]
+    identity = tuple(first.get(k) for k in ('project', 'mode', 'species', 'interaction'))
+    if any(tuple(p.get(k) for k in ('project', 'mode', 'species', 'interaction')) != identity for p in packets):
+        raise ValueError('Coverage packets must have identical Project/mode/species/interaction')
+    stale = sorted({x for p in packets for x in verify(root, p)})
+    # Rebuild full baseline, including any effect-added sources and new unassigned sources.
+    effects = list(dict.fromkeys(e for p in packets for e in p.get('routing_request', {}).get('effects', [])))
+    full = packet(root, first['project'], first['mode'], first['species'], first['interaction'],
+                  stage='all', effects=effects)
+    required = {(s['path'], s['sha256']) for s in full['sources']}
+    offered = {(s['path'], s['sha256']) for p in packets for s in p['sources']}
+    accepted, missing_receipts = set(), []
+    if receipts and (not retained or not context_id):
+        raise ValueError('Read coverage requires --retained and --context-id; unknown context must reload')
+    digests = {routing.dependency_digest(p) for p in packets}
+    for receipt in receipts:
+        if (receipt.get('schema') != 1 or receipt.get('root') != str(root.resolve())
+                or receipt.get('context_id') != context_id or receipt.get('dependency_digest') not in digests):
+            missing_receipts.append('Receipt stale or from another context')
+            continue
+        accepted.update((s['path'], s['sha256']) for s in receipt.get('sources', []))
+    missing = sorted(path for path, sha in required - (accepted & offered))
+    pending = sorted({x for p in packets for x in p['pending']} | set(full['pending']))
+    return dict(complete=not (missing or stale or pending or missing_receipts),
+                required_source_count=len(required), missing_sources=missing,
+                stale=stale, pending=pending, receipt_errors=missing_receipts,
+                note='Declared whole-source read coverage only; not semantic, history, lesson application or media QA. Receipts require actual retained untruncated source text.')
 
 
 def history(root, slug, query=''):
@@ -261,6 +331,24 @@ def main():
     p.add_argument('--lesson-id', action='append', default=[])
     p.add_argument('--topic', action='append', default=[])
     p.add_argument('--query', default='')
+    p.add_argument('--stage', choices=routing.STAGES)
+    p.add_argument('--effect', action='append', default=[])
+    p.add_argument('--task', action='append', default=[])
+    p = subs.add_parser('view', help='Verify, then display exact text without JSON body escaping')
+    p.add_argument('packet', type=Path)
+    p.add_argument('--context-id')
+    p.add_argument('--seen', type=Path, action='append', default=[])
+    p.add_argument('--retained', action='store_true')
+    p.add_argument('--source', action='append', default=[])
+    p.add_argument('--receipt', type=Path)
+    p.add_argument('--max-chars', type=int, default=18000,
+                   help='Soft whole-source display batch target; never cuts a source')
+    p.add_argument('--all-sources', action='store_true', help='Explicitly display all bodies; choose adequate tool output budget')
+    p = subs.add_parser('coverage', help='Check full mode source coverage across staged packets')
+    p.add_argument('packets', type=Path, nargs='+')
+    p.add_argument('--receipt', type=Path, action='append', default=[])
+    p.add_argument('--context-id')
+    p.add_argument('--retained', action='store_true')
     p = subs.add_parser('verify')
     p.add_argument('packet', type=Path)
     p = subs.add_parser('history')
@@ -279,13 +367,40 @@ def main():
         selection = (json.loads(inside(root, args.memory_selection.as_posix()).read_text(encoding='utf-8-sig'))
                      if args.memory_selection else None)
         result = packet(root, args.project, args.mode, args.species, args.interaction,
-                        selection, args.lesson_id, args.topic, args.query)
+                        selection, args.lesson_id, args.topic, args.query,
+                        args.stage, args.effect, args.task)
         if args.out:
             path = inside(root, args.out)
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
             print(path)
             return
+    elif args.command == 'view':
+        data = json.loads(inside(root, args.packet.as_posix()).read_text(encoding='utf-8-sig'))
+        stale = verify(root, data)
+        if stale:
+            raise ValueError('Stale/incomplete packet; rebuild before view: ' + ', '.join(stale))
+        seen = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.seen]
+        rendered, receipt = routing.render(data, root, args.context_id, seen,
+                                           args.retained, args.source,
+                                           None if args.all_sources else args.max_chars)
+        if args.receipt:
+            path = inside(root, args.receipt.as_posix())
+            relative = path.relative_to(root).as_posix()
+            if not relative.startswith(('.nature-studio/context/', '.nature-studio/audits/')) or path.exists():
+                raise ValueError('Use a new local context/audit receipt path; never overwrite a source or receipt')
+            if path == inside(root, args.packet.as_posix()) or path in [inside(root, p.as_posix()) for p in args.seen]:
+                raise ValueError('Receipt must not overwrite packet or prior receipt')
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2), encoding='utf-8')
+        sys.stdout.buffer.write(rendered.encode('utf-8'))
+        return
+    elif args.command == 'coverage':
+        packets = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.packets]
+        receipts = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.receipt]
+        result = coverage(root, packets, receipts, args.context_id, args.retained)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        sys.exit(0 if result['complete'] else 2)
     elif args.command == 'history':
         result = history(root, args.project, args.query)
         if not args.full:
@@ -304,4 +419,8 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except (ValueError, OSError) as exc:
+        print(json.dumps({'errors': [str(exc)], 'scope': 'Read original sources; no silent repair'}, ensure_ascii=False))
+        sys.exit(1)

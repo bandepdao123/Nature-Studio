@@ -1,12 +1,12 @@
-# Nature Studio v1.8
+# Nature Studio v2.0.0
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v1.8
+## Mới trong v2.0.0
 
-Truy xuất bài học theo Project/nhiệm vụ/chủ đề: descriptor phân trang trước, mở bản gốc sau; không nạp toàn bộ INDEX/active. Legacy/unknown có đường dự phòng, candidate vẫn tách riêng. Xem [ghi chú v1.8](07-Releases/v1.8.md) và [hướng dẫn bộ nhớ](00-Standards/memory-retrieval.md).
+Một skill /chayvideo chọn đúng nguồn theo Project, nhiệm vụ, loài và giai đoạn; Knowledge và cấu hình nguồn chỉnh độc lập. Đọc nguyên văn theo batch, tránh đọc lặp khi còn ngữ cảnh; giữ đường đọc đầy đủ và kiểm coverage. Mã video mới **XX-YYYY**, lịch sử giữ nguyên. Bản vá nhỏ tiếp theo là **2.0.1**, **2.0.2**… Xem [ghi chú v2.0.0](07-Releases/v2.0.0.md), [phân luồng](00-Standards/context-routing.md) và [quy tắc phiên bản](00-Standards/versioning.md).
 
 ## Bản vá v1.7.1 được giữ
 
@@ -33,7 +33,7 @@ Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, 
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.8**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v2.0.0**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
@@ -104,7 +104,7 @@ Nâng cấp từ v1.0 theo [UPDATE.md — migration](UPDATE.md#nâng-từ-v10-l�
 
 ## Mã video — Nature Studio v1.2
 
-Video mới dùng **XXX-yyyyy**, ba chữ A–Z riêng từng Project local, số từ **00001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001 và các attempt lịch sử giữ nguyên. Xem UPDATE.md khi nâng từ v1.1.
+Video mới dùng **XX-YYYY**, hai chữ A–Z riêng từng Project local, bốn chữ số từ **0001**. [Quy tắc và công cụ](00-Standards/video-identifiers.md): init tạo prefix, reserve cấp mã an toàn và UUID. Không cấp mã từ câu hỏi hoặc revision. Registry `.nature-studio/` không lên Git, phải được giữ khi backup/di chuyển/cập nhật; không nằm trong gói mẫu. UF-0001, mã ba chữ/năm số và các attempt lịch sử giữ nguyên. Prefix UF dành riêng cho legacy; namespace mới được chuyển khi init/reserve thật, giữ UUID Project. Xem UPDATE.md khi nâng từ v1.1.
 
 Gói ZIP phân phối loại `.nature-studio/` để không phát tán prefix local. Muốn di chuyển workspace cá nhân đang làm, sao lưu registry riêng khi không có tác vụ cấp mã; ZIP phân phối không thay bản sao lưu danh tính Project.
 

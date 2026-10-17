@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.6 | Updated: 2026-10-17 | Bộ nhớ theo ngữ cảnh; giữ identity/format
+Version: 2.7 | Updated: 2026-10-17 | Nguồn theo giai đoạn, view nguyên văn và kiểm coverage
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 
@@ -15,7 +15,7 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 
    Yêu cầu học cách quay/hành động/kịch bản từ video mẫu, kể cả đổi đối tượng, dùng [clonevideo](../clonevideo/SKILL.md) và nhánh **reference**. Không chạy đồng thời cả new và clone. Nhánh [reference](references/reference.md) dùng cùng lõi/output/Project, không ép đổi câu chuyện để đạt độ mới.
 2. Chạy `python scripts/chayvideo_context.py projects`. Catalog đọc metadata hiện hành mọi PROJECT.md; mở bản gốc khi metadata thiếu/mơ hồ. Ưu tiên tên/ID được chỉ định, rồi tổ hợp chủ đề/loài/môi trường/thị trường/format/ngữ cảnh. Không chọn chỉ bởi “cá/Mỹ/Omni”, không ép vào dự án duy nhất khi không phù hợp. Chỉ hỏi khi thật sự chưa phân biệt được.
-3. Đọc [workflow](references/workflow.md) và đúng một nhánh: [tạo mới](references/new.md), [revision](references/revision.md), [caption](references/caption.md). Thiếu map/công cụ thì đọc nguồn gốc theo workflow; không đoán cấu hình Underwater cho dự án khác.
+3. Đọc [workflow](references/workflow.md) và đúng một nhánh: [tạo mới](references/new.md), [revision](references/revision.md), [caption](references/caption.md). Dùng packet/view/coverage theo lệnh trong lõi chung; không nạp JSON rồi đọc lại từng file. Thiếu cấu hình hoặc ảnh hưởng chưa rõ thì mở nguồn toàn nhánh. [Hướng dẫn cấu hình](../../../00-Standards/context-routing.md) chỉ cần khi thêm nguồn/bảo trì hoặc dùng tuỳ chọn chưa rõ.
 
 ## Bất biến
 

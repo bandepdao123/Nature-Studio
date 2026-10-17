@@ -3,12 +3,13 @@ ID: <project-id>
 Slug: <project-slug>
 Aliases / đặc trưng nhận diện:
 Status: draft
-Version: 0.4
+Version: 0.5
 Updated: <date>
 Prefix sản xuất: local-generated, chưa cấp trong repo; init bằng scripts/video_ids.py sau khi tạo Project local.
 Legacy prefixes nếu có:
 Mục tiêu / chủ đề / khán giả / thị trường:
 Nguồn quy chuẩn hiện hành: format.md; audience-and-caption.md; output-contract.md
+Context sources: context-map.json là tập nguồn đầy đủ theo mode; có thể trỏ routing tới cấu hình stage/effect riêng theo 00-Standards/context-routing.md. Không có config thì đọc full branch; nguồn mới chưa phân stage vẫn phải đọc. Không sao chép nguồn/điều kiện Underwater cho Project khác.
 Yêu cầu lấy đầu vào:
 Giới hạn sáng tạo / tính chân thực:
 Nguồn nghiên cứu / thẻ truy xuất:

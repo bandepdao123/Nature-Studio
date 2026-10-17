@@ -1,4 +1,6 @@
-# Quy trình sản xuất — v1.5
+# Quy trình sản xuất — v1.6
+
+Updated: 2026-10-17 | Mã XX-YYYY từ Nature Studio v2.0.0.
 
 Clonevideo — 2026-10-17: chuyển thể theo reference-video-adaptation.md, dùng video-prompt-workflow.md và helper chung. Phân tích mẫu không cấp ID; bộ nội dung chuyển thể mới đủ brief thì cấp mới, revision dùng ID cũ. Research/INPUTS ghi nguồn/coverage/hash analysis/brief/mapping và những thay đổi so với mẫu; ledger ghi reuse có chủ đích. Không ép chuyện khác mẫu để đạt novelty; các gate thực tế và Project vẫn giữ. Hồ sơ tham chiếu ở .nature-studio/references hoặc production local, không publish.
 
@@ -13,7 +15,7 @@ Plan 01 — 2026-10-17: /chayvideo được lấy nguồn theo task packet và t
 
 ## Hồ sơ và ID
 
-- Video mới theo [quy tắc mã](video-identifiers.md): XXX-yyyyy, ba chữ riêng Project local và số từ 00001. Dùng scripts/video_ids.py init/reserve, registry local và IDENTITY.json; không tự thêm hậu tố thời gian hoặc đoán mã. Revision dùng mã cũ và attempt mới; giữ nguyên ID legacy.
+- Video mới theo [quy tắc mã](video-identifiers.md): XX-YYYY, hai chữ riêng Project local và bốn số từ 0001. Dùng scripts/video_ids.py init/reserve, registry local và IDENTITY.json; không tự thêm hậu tố thời gian hoặc đoán mã. Revision dùng mã cũ và attempt mới; giữ nguyên ID legacy.
 - Mỗi production có brief/research/concept/feedback/performance/SUMMARY theo template; mỗi attempt A01, A02... giữ inputs, prompt, settings, review và media thực sự có.
 - INPUTS ghi đường dẫn và phiên bản, ảnh input chính xác và hash nếu công cụ có; ghi model/giao diện/thông số thực sự dùng. Không đoán seed hoặc setting ẩn.
 - Viết prompt không đồng nghĩa sinh ảnh/video. Chỉ lưu file media khi thật sự có; không tạo file rỗng giả render. Không tạo clip hoặc lượt trả phí ngoài phạm vi giao việc.
@@ -25,7 +27,7 @@ Plan 01 — 2026-10-17: /chayvideo được lấy nguồn theo task packet và t
 - Cập nhật SUMMARY và idea-ledger bằng thông tin cần tra nhanh, liên kết bài học thay vì sao chép.
 - Chỉ cập nhật quy chuẩn/bộ nhớ theo memory-policy; số view không thay thế QA kỹ thuật.
 
-Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PROJECT.md để ghi `04-Productions/<slug>/`. Không suy thư mục từ ID ổn định sau đổi tên. Production ID cũ tiếp tục dùng cho lịch sử/revision; video mới theo chuẩn XXX-yyyyy và prefix local, không đổi mã vì đổi tên dự án.
+Cập nhật 2026-10-16: đơn vị quản lý là Project; đọc Slug trong PROJECT.md để ghi `04-Productions/<slug>/`. Không suy thư mục từ ID ổn định sau đổi tên. Production ID cũ tiếp tục dùng cho lịch sử/revision; video mới theo chuẩn XX-YYYY từ v2.0.0 và prefix local (thay chuẩn XXX-yyyyy ban đầu), không đổi mã vì đổi tên dự án.
 
 ## Tổng kết phiên và vòng học — v1.2, 2026-10-16
 
