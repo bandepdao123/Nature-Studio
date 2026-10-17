@@ -1,6 +1,6 @@
 # Phát triển câu chuyện — Nature Studio
 
-Version: 1.0 | Updated: 2026-10-16 | Scope: concept mới trong mọi Project
+Version: 1.1 | Updated: 2026-10-17 | Scope: concept mới trong mọi Project
 Status: phương pháp biên tập hiện hành, được người dùng yêu cầu triển khai; hiệu quả khán giả chưa kiểm chứng.
 
 Đọc cùng [creativity](creativity.md), quy chuẩn Project, [research](research.md), [memory-policy](memory-policy.md). Cơ sở và giới hạn từng nguồn: [SRC-STORY-20261016](../01-Knowledge/sources/story-development-research-2026-10-16.md). Underwater có [áp dụng riêng](../03-Projects/underwater/story-development.md). Nguồn bên ngoài giải thích cơ chế hoặc cách làm, không tự đặt quy định mới lên Project. Không cần mở lại mọi nguồn cho mỗi clip nếu không có dữ kiện mới; nghiên cứu loài/cảnh vẫn phải đúng.
@@ -52,7 +52,11 @@ Sau đó so các tiền đề theo: mức phù hợp khán giả; chi tiết đ�
 
 ### Bước G — Chuyển thành đầu ra và kiểm lại
 
-Khóa t=0, đường vào/ra, cấu tạo/kết nối, timeline theo Project; video tiếp từ ảnh đầu. Đọc thử câu chuyện không caption để xem hình có đặt và đáp câu hỏi được không; sau đó kiểm với audio/caption thật. Với kênh có lời kể, thử không lời chỉ là chẩn đoán phần hình, không phải lệnh bỏ narration.
+Khóa trạng thái mở đầu, đường vào/ra và cấu tạo/kết nối khi liên quan; timeline và cách dùng ảnh đầu theo Project/nhiệm vụ. Đọc thử câu chuyện không caption để xem phần hình tự thể hiện được gì; sau đó xét cùng hình/âm/lời theo thiết kế. Với Project có lời kể, thử không lời chỉ là chẩn đoán phần hình, không phải lệnh bỏ narration. Chưa có media thì chỉ đối chiếu thiết kế/prompt, không nhận đã xem/nghe kết quả.
+
+Trong cùng bước kiểm, đối chiếu chi tiết hoặc quan hệ quyết định của concept với prompt: nó được thể hiện bằng hình, âm, lời hoặc nhịp nào phù hợp Project; có thiếu/mâu thuẫn giữa đầu vào và chỉ đạo không; có chỉ đạo phụ gây nhiễu hoặc hạn chế không cần thiết không? Giữ đủ chi tiết khóa nhận dạng, cấu tạo, thao tác và tính đúng; không rút gọn theo số từ hoặc bỏ quan hệ cần thiết để model dễ làm. Chỉ ghi vấn đề/quyết định đáng giữ vào concept hoặc review hiện có, không tạo checklist/hồ sơ bắt buộc mới.
+
+Phần phải giữ xuất phát từ brief, tính đúng và quy chuẩn Project; chi tiết được linh hoạt không được làm sai những phần đó. Cảnh quan, quan sát hoặc biến đổi chậm có thể đáng xem nhờ trạng thái/chi tiết/nhịp, không phải thêm hành động, cao trào hay kết quả đóng để điền khuôn. Không áp thời lượng, số beat, camera hoặc luật âm/lời của Project khác. Với reference, thực hiện đối chiếu này sau mapping theo chuẩn chuyển thể, không ép bản đích phải nguyên bản so với mẫu. Revision chỉ kiểm phần thay đổi và liên đới; caption-only không mở lại bước phát triển chuyện.
 
 Caption đúng phong cách/kiến thức người xem của Project, hướng mắt tới chi tiết đọc được. Không hứa điều ngoài hình, không giải thích hộ lỗi. Giữ số mục/ngôn ngữ/định dạng output-contract; không tự xuất thêm báo cáo nghiên cứu hay story card như mục thứ năm.
 

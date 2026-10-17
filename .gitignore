@@ -10,6 +10,8 @@ secrets*.json
 # Generated packages and caches
 /07-Releases/packages/
 /PACKAGE-MANIFEST.json
+# Machine-local installation receipts; originals remain available for recovery.
+/07-Releases/manifests/*-installation-*.json
 __pycache__/
 *.py[cod]
 .venv/

@@ -1,8 +1,8 @@
 # Quy tắc hệ thống Nature Studio
 
-Version: 1.6 | Updated: 2026-10-16 | Scope: toàn kho
+Version: 1.8 | Updated: 2026-10-17 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.5; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v1.6; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -13,6 +13,8 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 - Không lấy bản có tên phiên bản lớn nhất làm bản hiện hành một cách tự động; tra PROJECT.md và chỉ mục. Tài liệu retired/archive không áp dụng mặc định.
 
 ## Một nơi lưu chính cho mỗi nội dung
+
+/chayvideo và /clonevideo dùng chung 00-Standards/video-prompt-workflow.md, quy chuẩn Project và helper kiểm/lưu. Reference là tái dùng có chủ đích theo reference-video-adaptation.md, không chịu yêu cầu câu chuyện phải mới so với mẫu. Giữ các gate sinh học/vật lý/format/âm/caption; analysis/brief/evidence local không là nguồn quyền. Cập nhật phần lõi kiểm cả new và reference; không tự đưa thay đổi phân tích video sang luồng sáng tạo độc lập.
 
 - Standards: phương pháp chung. Knowledge: sự kiện có nguồn. Models: khả năng theo model/giao diện/ngày kiểm. Projects: quyết định sáng tạo từng dự án. Productions: lịch sử từng trường hợp. Memory: bài học tái sử dụng. Evaluation: kiểm cải tiến. Releases: ảnh chụp phiên bản để bàn giao.
 - Dùng ID và đường dẫn tương đối để liên kết, không sao chép bài học sang nhiều dự án. File index là bản đồ có thể tạo lại, không phải nguồn dữ kiện gốc.
@@ -40,7 +42,7 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 
 ## Đóng gói và Git — 2026-10-16
 
-Đã khởi tạo Git local trên nhánh main để quản lý phiên bản; việc này không đồng nghĩa đã push lên GitHub hoặc có sao lưu tự động. Gói ZIP dùng scripts/package_workspace.py, giữ cả .agents, media và lịch sử; bỏ .git, cache, file credential và các gói cũ. README.md là điểm vào khi clone/tải repo.
+Đã khởi tạo Git local trên nhánh main để quản lý phiên bản; việc này không đồng nghĩa đã push lên GitHub hoặc có sao lưu tự động. scripts/package_workspace.py tạo ZIP hệ thống công khai theo [publication.md](00-Standards/publication.md), gồm .agents và nguồn được phép chia sẻ; loại production/media riêng, ledger, registry, lesson private, manifest cài đặt local, .git/cache/credential và gói cũ. ZIP phân phối không thay backup cá nhân: backup phải giữ runtime/registry riêng ngoài repo công khai. README.md là điểm vào khi clone/tải repo.
 
 ## Tên repo ổn định — 2026-10-16
 

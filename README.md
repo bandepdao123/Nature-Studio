@@ -1,14 +1,18 @@
-# Nature Studio v1.5
+# Nature Studio v1.6
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
+## Mới trong v1.6
+
+Nâng cấp `/chayvideo`, thêm `/clonevideo`, truy nguyên revision và first-frame handoff; hoàn thiện phương pháp sáng tạo dùng chung và sửa năm lỗi sau audit. Xem [ghi chú v1.6](07-Releases/v1.6.md) và [hướng dẫn nâng cấp](UPDATE.md#nâng-từ-v15-lên-v16).
+
 ## Dành cho AI nhận link GitHub
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.5**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.6**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
@@ -31,6 +35,10 @@ Trong workspace, gửi `/chayvideo` kèm loài hoặc ý tưởng, hoặc yêu c
 ```
 
 Skill [chayvideo](.agents/skills/chayvideo/SKILL.md) tự tìm dự án phù hợp, đọc quy chuẩn và rà lịch sử trước khi viết. Đầu ra gồm Ý TƯỞNG tiếng Việt; FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, mỗi prompt một đoạn; CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag. Lệnh chỉ tạo văn bản và hồ sơ local; không tự render hoặc đăng bài. `/chayvideo` là quy ước trong tin nhắn, không cam kết mọi giao diện có menu slash riêng.
+
+## Chuyển thể video mẫu — /clonevideo
+
+Gửi `/clonevideo` kèm file/link video và thay đổi mong muốn. [Skill clonevideo](.agents/skills/clonevideo/SKILL.md) xem xét hình/âm/timecode, ánh xạ vai trò và chức năng câu chuyện sang loài/nhân vật/bối cảnh đích rồi xuất bốn mục như chayvideo. Quy chuẩn được chọn theo Project; cần truy cập video thực để phân tích, thiếu coverage phải ghi rõ. Skill chỉ tạo nội dung và hồ sơ local, không tự render hoặc đăng.
 
 ## Cấu trúc
 

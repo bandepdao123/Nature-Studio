@@ -2,6 +2,17 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.6 — 2026-10-17
+
+- `/chayvideo` v2.4: tách nhánh tạo mới/revision/caption, nạp context đúng nhiệm vụ với nguồn/hash và fallback; lịch sử có coverage/fingerprint, hồ sơ loài là tùy chọn theo Project. Helper kiểm đầu ra và lưu attempt bất biến.
+- Thêm `/clonevideo` v1.2: chuyển thể video mẫu qua coverage hình/âm, timecode, vai trò và chức năng câu chuyện; ánh xạ theo brief/Project. Dùng chung workflow v1.2, quy chuẩn và helper với chayvideo. Brief được verify cả payload/schema/hash và độ mới của nguồn; helper không thay việc xem/nghe video thật.
+- Revision truy nguyên từng trường theo `base_attempt`/`base_sha256`, không tự chọn bản mới nhất. First-frame handoff schema 2 ràng buộc ảnh, review, nguồn attempt, trạng thái t=0 và tiêu chí QA; `/taoanh` v1.1 hỗ trợ đối chiếu. Legacy thiếu bằng chứng giữ unverified; caption-only giữ khả năng tái dùng ảnh khi các đầu vào ảnh không đổi.
+- Story Development v1.1 liên kết ý đồ với hình/âm/lời/nhịp; revision sửa đúng phạm vi, phân biệt quan sát/phản hồi/giả thuyết; chuyển thể cho phép giữ/thay/bỏ chức năng và gộp/tách event có căn cứ. Không thêm biểu mẫu bắt buộc cho các kiểm sáng tạo này.
+- Hợp nhất hợp đồng Underwater và đường đọc; giữ quy chuẩn 10s, 9:16, một shot, key onset >5s, 5–8 beats, âm thanh/caption. Gate loài và caption riêng Underwater không áp thành luật cho mọi Project; reference được tái dùng mẫu có chủ đích.
+- Sau hai audit độc lập: sửa verify brief, kiểm identity trước save, tách gate đúng Project, loại manifest installation local khỏi public tree/ZIP, thêm unit suite vào CI. SYSTEM v1.8/publication v1.1 phân biệt gói hệ thống và backup cá nhân.
+- Kiểm gần nhất: 133/133 unit test đạt; bốn skill/memory/publication checks đạt; 480 file được bảo vệ không đổi/mất sau đợt sửa lỗi. Chi tiết và giới hạn tại [báo cáo năm sửa lỗi](06-Evaluation/results/five-repairs-implementation-2026-10-17.md); số liệu các báo cáo trước là mốc lịch sử, không cộng dồn.
+- Chốt VERSION 1.6 và đồng bộ tài liệu điểm vào; [ghi chú phát hành](07-Releases/v1.6.md), [bản tổng hợp trước phát hành](07-Releases/v1.6-preparation-2026-10-17.md). Chưa đo token thực, hiệu quả sáng tạo/khán giả hoặc QA media thật trong đợt xây hệ thống.
+
 ## v1.5 — 2026-10-16
 
 - Triển khai story-development v1.0 dùng chung và phần áp dụng Underwater UF-D017; bảy nguồn được phân loại, có giới hạn ngoại suy.

@@ -1,6 +1,6 @@
 # Tạo ảnh first frame và QA
 
-Version: 1.0 | Updated: 2026-10-16
+Version: 1.1 | Updated: 2026-10-17 | Kiểm nguồn ảnh trước tái dùng
 
 Thực thi theo [.agents/skills/taoanh/SKILL.md](../.agents/skills/taoanh/SKILL.md). Đây là phương pháp chung; tiêu chí hình ảnh lấy từ Project, không mặc định cá/nước/9:16 cho mọi dự án.
 
@@ -30,3 +30,25 @@ Mỗi lượt là một attempt Axx riêng, dùng đúng mã video hiện có. C
 ## Lựa chọn model
 
 Sunburst là ưu tiên, image_gen là tuyến thực thi. Chọn Sunburst nếu công cụ hỗ trợ; nếu không tìm được hoặc không có selector thì dùng model mặc định và tiếp tục không hỏi lại. Danh tính model không thuộc tiêu chí QA và không chặn sinh/duyệt chất lượng ảnh. Ghi actual_model=unknown nếu tool không công bố, không nhận đã dùng Sunburst. Không tự chuyển API/CLI. Xem [model profile](../02-Models/model-profiles/sunburst-imagegen.md).
+
+## Kiểm liên kết ảnh trước tái dùng
+
+Khi tiếp tục dùng ảnh cho video/ảnh revision: `python scripts/chayvideo_output.py check-frame A03 --project <slug> --production <ID>`; A03 là **attempt nguồn nội dung được xác định**, không mặc định mới nhất. Dùng attempts/A03 nếu layout tương ứng; `--handoff <path>` chọn handoff khác, đường dẫn tương đối production. Lệnh chỉ đọc, không sửa ảnh/review/handoff/selection/quota. Caption-only không dùng ảnh thì không chạy.
+
+| Kết quả | Xử lý |
+|---|---|
+| matched (exit 0) | File/hash/review và opening inputs khớp hồ sơ QA; không chứng minh ảnh đúng hoặc người dùng duyệt |
+| needs_review (exit 2) | Opening/first-frame prompt/tiêu chí đổi hoặc chưa qa_pass; đối chiếu ảnh thật, không tự sinh lại |
+| unverified (exit 2) | Thiếu frame_state/binding hoặc hồ sơ legacy; đọc nguồn/ảnh để xác định |
+| invalid (exit 2), lỗi đọc/resolve (exit 1) | Sai nguồn, thiếu file/hash không khớp; xử lý trước dùng |
+
+Đọc cả errors/needs_review/unverified vì có thể nhiều vấn đề. Nếu ảnh vẫn phù hợp sau đối chiếu thì QA lại bằng quan sát, không cần sinh lại. Giữ QA cũ, lưu review/handoff mới trước cập nhật FIRST-FRAME.json theo quyền đã có; không tự đổi lựa chọn người dùng.
+
+Handoff schema 2 theo template:
+
+- project_id là ID ổn định trong PROJECT.md. attempt_id vẫn là attempt **sinh/sửa ảnh**; source_attempt là attempt **nguồn bộ nội dung** đã resolve, source_attempt_sha256 lấy từ attempt_sha256. Hai attempt có thể khác nhau.
+- image_path/review_path tương đối production, dùng `/`; sha256/review_sha256 là hash bytes ảnh/review. Đo pixel/QA thật như trước; helper không giải mã ảnh hoặc chấm tiêu chí.
+- frame_inputs/frame_inputs_sha256 lấy từ `resolve <attempt> --project <slug> --production <ID> --frame-inputs` **sau đối chiếu QA ảnh thật**: gồm frame_state và first-frame prompt, không gồm caption/chuyển động sau t=0. Snapshot chỉ in thêm khi có cờ này để giảm đọc trùng; không sửa snapshot để che ảnh lệch brief.
+- qa_sources là đường dẫn tương đối workspace → SHA256 của tiêu chí thực sự dùng: first-frame.md, quality-review.md, PROJECT.md và tiêu chí ảnh riêng do Project chỉ định nếu có. Nguồn đổi cần kiểm phần liên quan; hash không chứng minh đánh giá đúng.
+
+Frame_state theo [lõi chung](video-prompt-workflow.md#tiếp-tục-đúng-bộ-đầu-vào). Ảnh trực tiếp từ brief chưa có bộ bốn trường vẫn được tạo/QA theo yêu cầu; không bịa video prompt/caption để dùng resolver. Khi đó binding unverified; trước dùng cho bộ video thật mới đối chiếu và bổ sung qua review mới. Handoff cũ giữ nguyên, kiểm tay khi cần, không backfill hoặc sửa qa_status hàng loạt. Thiếu helper thì kiểm nguồn/ảnh trực tiếp và ghi giới hạn, không giả matched.

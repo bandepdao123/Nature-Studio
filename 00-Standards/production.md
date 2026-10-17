@@ -1,4 +1,8 @@
-# Quy trình sản xuất — v1.3
+# Quy trình sản xuất — v1.5
+
+Clonevideo — 2026-10-17: chuyển thể theo reference-video-adaptation.md, dùng video-prompt-workflow.md và helper chung. Phân tích mẫu không cấp ID; bộ nội dung chuyển thể mới đủ brief thì cấp mới, revision dùng ID cũ. Research/INPUTS ghi nguồn/coverage/hash analysis/brief/mapping và những thay đổi so với mẫu; ledger ghi reuse có chủ đích. Không ép chuyện khác mẫu để đạt novelty; các gate thực tế và Project vẫn giữ. Hồ sơ tham chiếu ở .nature-studio/references hoặc production local, không publish.
+
+Plan 01 — 2026-10-17: /chayvideo được lấy nguồn theo task packet và tra lịch sử bằng chỉ mục có hash. Tạo mới đọc creativity/Story Development; revision giữ chuyện; caption-only chỉ nguồn liên quan. Không bắt đọc lại nguồn nguyên vẹn đã có trong phiên. Index không thay nguồn gốc: đọc hồ sơ chưa có fingerprint/hết hạn và trường hợp gần nhất; không dùng tìm từ khóa để chứng nhận mới. Helper chỉ kiểm cú pháp/lưu attempt, không thay tự kiểm nội dung hoặc hồ sơ/ledger.
 
 ## Trước sản xuất
 

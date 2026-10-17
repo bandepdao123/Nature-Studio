@@ -2,6 +2,7 @@
 from pathlib import Path
 import importlib.util
 import json
+import tempfile
 import unittest
 
 SPEC = importlib.util.spec_from_file_location('public_guard', Path(__file__).resolve().parents[1] / 'validate_publication.py')
@@ -28,6 +29,30 @@ class PublicationTests(unittest.TestCase):
 
     def test_template_and_runtime_readme_allowed(self):
         self.assertTrue(self.check({'04-Productions/README.md': b'Local only', '00-Standards/templates/idea-ledger.md': b'Empty template'})['valid'])
+
+    def test_local_installation_manifests_blocked_in_public_tree(self):
+        for path in ['07-Releases/manifests/story-development-installation-2026-10-16.json',
+                     '07-Releases/manifests/taoanh-installation-2026-10-16.json',
+                     '07-Releases/snapshots/old/07-Releases/manifests/tool-installation-2026-10-16.json']:
+            with self.subTest(path=path):
+                self.assertFalse(self.check({path: b'{"backup_root":"local-only"}'})['valid'])
+        self.assertTrue(self.check({'07-Releases/manifests/public-baseline.json': b'{"source_version":"1.5"}'})['valid'])
+
+    def test_packager_uses_same_installation_filter_and_preserves_original(self):
+        spec = importlib.util.spec_from_file_location('packager_fixture', Path(__file__).resolve().parents[1] / 'package_workspace.py')
+        package = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(package)
+        with tempfile.TemporaryDirectory() as tmp:
+            package.ROOT = Path(tmp)
+            local = package.ROOT / '07-Releases/manifests/tool-installation-2026-10-17.json'
+            local.parent.mkdir(parents=True)
+            local.write_bytes(b'{"backup_root":"local-only"}')
+            public = local.parent / 'public-baseline.json'
+            public.write_bytes(b'{"source_version":"1.5"}')
+            before = local.read_bytes()
+            self.assertFalse(package.included(local))
+            self.assertTrue(package.included(public))
+            self.assertEqual(local.read_bytes(), before)
 
     def test_public_candidate_is_included_without_activation(self):
         files = self.files()

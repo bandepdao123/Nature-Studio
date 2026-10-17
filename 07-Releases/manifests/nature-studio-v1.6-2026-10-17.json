@@ -1,0 +1,228 @@
+{
+  "format_version": 1,
+  "type": "public-system-release",
+  "workspace_version": "1.6",
+  "date": "2026-10-17",
+  "source_repository": "https://github.com/bandepdao123/Nature-Studio",
+  "baseline_commit": "87f2750a6a1ce7681e2a24d0932a2ab2693c53ae",
+  "changed_sources": [
+    {
+      "path": ".agents/skills/chayvideo/SKILL.md",
+      "sha256": "a48ce394da2b4a4bc1837c3f5bd9979add94709ef50519404ec83b23fea0eafb"
+    },
+    {
+      "path": ".agents/skills/chayvideo/references/caption.md",
+      "sha256": "cbe8aef5902a83f123b833a88d0ccd1c641d8662bbea3ea581dce2cc49e2e820"
+    },
+    {
+      "path": ".agents/skills/chayvideo/references/new.md",
+      "sha256": "82d8957db61b55b806ddb3c9d1eed553240120c649220aa4c460dead658fadc9"
+    },
+    {
+      "path": ".agents/skills/chayvideo/references/reference.md",
+      "sha256": "2a118610021b3b421956090595744a88b26eddcd80b45d2a8c4102480bb56984"
+    },
+    {
+      "path": ".agents/skills/chayvideo/references/revision.md",
+      "sha256": "9b45a965ff7cc0920a8d7e492617517ddee285fab4bdc1b32cbf8486c77c5c08"
+    },
+    {
+      "path": ".agents/skills/chayvideo/references/workflow.md",
+      "sha256": "06da84a36cfdf934539f02015e74c6777da4d73548c7787c9d62201211dc5177"
+    },
+    {
+      "path": ".agents/skills/clonevideo/SKILL.md",
+      "sha256": "ccae5d143d0378a725ca2eb002e3ae4224a056e6cc542a36d0f05ded85890d4c"
+    },
+    {
+      "path": ".agents/skills/clonevideo/agents/openai.yaml",
+      "sha256": "9058de13caec1a3c3bb3111f36f212f027984518d961e05e1a31824334c7fd83"
+    },
+    {
+      "path": ".agents/skills/clonevideo/references/analysis.md",
+      "sha256": "d2d815c3eb0d3f59d0f67d3bfa85034138ac6c1cb92674f4bc3d7d9e19e0f4fb"
+    },
+    {
+      "path": ".agents/skills/clonevideo/references/schema.md",
+      "sha256": "4ff9bc1f2f260a2b443ab640bc9fd0c8e1a7bbdc02dfe626f1f08751a1a4939b"
+    },
+    {
+      "path": ".agents/skills/taoanh/SKILL.md",
+      "sha256": "09bae53f3b5d091cf0eb5b3874012aad05b883787409a1f2c8c7c761c530e0fd"
+    },
+    {
+      "path": ".github/workflows/public-tree.yml",
+      "sha256": "c563a1a359f87a24f07a8ccf356600d2a249d02f51be5b57081fb47ca28fd7dc"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "5e0a43b248cc6d9b6f9d6ef820a95fe1c35582175d9067143d249c9cf03f8c61"
+    },
+    {
+      "path": "00-Standards/INDEX.md",
+      "sha256": "a47042ed44ca875af6c1d2486d3f3067603bc86f88218a20a35e04012f35fb8a"
+    },
+    {
+      "path": "00-Standards/first-frame.md",
+      "sha256": "30a387cbc61bdcb1efd7d5521b72a571640d66fdf8cd6991f1bbaaebb9860e42"
+    },
+    {
+      "path": "00-Standards/production.md",
+      "sha256": "0abd8fc72317203d63360d58fa5c2b1c298be3431b22792e765c2a02a27300fa"
+    },
+    {
+      "path": "00-Standards/publication.md",
+      "sha256": "cee5ecf974778a0a68bfc9345688bf43a70e420371898d5e8452047e27b52140"
+    },
+    {
+      "path": "00-Standards/reference-video-adaptation.md",
+      "sha256": "a953cb8825021c07e5ed35068eb595f6091467fb18e6af51cb66311a8af13b92"
+    },
+    {
+      "path": "00-Standards/story-development.md",
+      "sha256": "aaf262ca81332c0036308bb07114baeac92e130d3cb0fd5bda61b8e7413a63c5"
+    },
+    {
+      "path": "00-Standards/templates/attempt-inputs.md",
+      "sha256": "a7abc7502b7e698f37c15beacb34cf230af519ca3c6471d2d35e55e5e202b37a"
+    },
+    {
+      "path": "00-Standards/templates/first-frame-handoff.json",
+      "sha256": "d096d546d0c29ca30dccfb7107296c0444aa7ef254a85d4a2da2503febc652bc"
+    },
+    {
+      "path": "00-Standards/video-prompt-workflow.md",
+      "sha256": "5bf330b0209818dec48a8fe2d07ec1dec101541040d42fd5b489f87106353ce7"
+    },
+    {
+      "path": "03-Projects/underwater/PROJECT.md",
+      "sha256": "c6d1e37516d099b5781321414cd70bfbd47a3c387dd8deff9d74210ccc7e7bfb"
+    },
+    {
+      "path": "03-Projects/underwater/audience-and-caption.md",
+      "sha256": "744839c25f6a8babdd784b4975fdd80a26792ae590260d5ab50574fbc1c80c96"
+    },
+    {
+      "path": "03-Projects/underwater/context-map.json",
+      "sha256": "fc039488bd81acb95d493088ded0092b9ea0213e1ac543aa163b451e424d993b"
+    },
+    {
+      "path": "03-Projects/underwater/decisions.md",
+      "sha256": "85d7a3c6d89243ba3a7063690c752e7d9cd4ee185eca6919fcacb2bfb2e05fe7"
+    },
+    {
+      "path": "03-Projects/underwater/format.md",
+      "sha256": "e723ad142d3e093d5519a51c322755c8e24c3f07e746ca1acb28099157536a3f"
+    },
+    {
+      "path": "03-Projects/underwater/output-contract.md",
+      "sha256": "1849c1185f17f72fda840d0f48ec08fb0c110573ac71468191f994bbfc1df142"
+    },
+    {
+      "path": "06-Evaluation/results/clonevideo-implementation-2026-10-17.md",
+      "sha256": "d3ffbc33bcda11cc0c67b696a77773843c1b935ada8a8420c91e7d123c70098a"
+    },
+    {
+      "path": "06-Evaluation/results/five-repairs-implementation-2026-10-17.md",
+      "sha256": "9cb2dea9879318217127f99776d84368c7ae07e748dfdc33b7bfb43959564553"
+    },
+    {
+      "path": "06-Evaluation/results/independent-audits-and-repair-plan-2026-10-17.md",
+      "sha256": "c3702f9b22f3d429b8ecfe0f9d85c65db4cc73fc759c287bc17dbb4dc42f1b78"
+    },
+    {
+      "path": "06-Evaluation/results/plan01-implementation-2026-10-17.md",
+      "sha256": "ac6dec17b9dc50d25c4a099c3d2f0d0cab4cebd217864a73b1fa7f3ea96288bd"
+    },
+    {
+      "path": "06-Evaluation/results/revision-frame-implementation-2026-10-17.md",
+      "sha256": "76bf8f0c6025545bbb71787a3828db2a3e83f66801575215e1fe619c4096f3b1"
+    },
+    {
+      "path": "06-Evaluation/results/skills-abc-implementation-2026-10-17.md",
+      "sha256": "80f35b369d2bde9940a0837ba682a8fec8a212ddd9f12111392bbfe1512d91b5"
+    },
+    {
+      "path": "06-Evaluation/results/system-audit-2026-10-17.md",
+      "sha256": "e86d673498822dd9a60eba698f284876828504153cdd77016a8bdc320d72b4d0"
+    },
+    {
+      "path": "07-Releases/README.md",
+      "sha256": "4c89dadb96eeadf2235c1d75a0fd991b5f22bdde483902e99a9a7c209cf4c95c"
+    },
+    {
+      "path": "07-Releases/v1.6-preparation-2026-10-17.md",
+      "sha256": "9c998e9af4561bb7d7e178df9e922c2ce57a7b9d481372a3f03acfa2d1e729c8"
+    },
+    {
+      "path": "07-Releases/v1.6.md",
+      "sha256": "70feb6698f8789cb4afdd3ceb34ae53b27d168e35e7042966d6455500ce3bfa2"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "d9b3f30b3e43001500e53c009b807b2866f7843b601e2cefc9cb568f243d53d2"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "fde38f805cc78e9db529445c83cf775425e63a5859c80e86e5b410c52f4e30a1"
+    },
+    {
+      "path": "README.md",
+      "sha256": "a4d26932898f5a1e82d0f1e7a12a82da8deb41c76e593e970325b55da9c03a41"
+    },
+    {
+      "path": "START-HERE.md",
+      "sha256": "078824951802b6fd3028f73b391134f9b55e1124e51821f3938dfadd9a969042"
+    },
+    {
+      "path": "SYSTEM.md",
+      "sha256": "497828f7c44e04aa40e0774963a209c7f9890bc24a3880212d66dbfe8ed08f51"
+    },
+    {
+      "path": "UPDATE.md",
+      "sha256": "1032a9a375f8ef2293204f025cdcdfccfb8c6faa479a0e25c0809e30fc0576bc"
+    },
+    {
+      "path": "VERSION",
+      "sha256": "3f3ae6f85d022c669f9977e4c7a5ab80a1ab61c4a3c782e96fb65b1bbaef318a"
+    },
+    {
+      "path": "scripts/chayvideo_context.py",
+      "sha256": "94f0005e390bd12baac84e4db951e114cd1ba809a9a5aac61983dedda437de84"
+    },
+    {
+      "path": "scripts/chayvideo_output.py",
+      "sha256": "b729a37868e35915fe07f315fb5d15fbe7b45fbae384ddc44995346543236db1"
+    },
+    {
+      "path": "scripts/reference_video.py",
+      "sha256": "da57dd7cc8540de4ea4b414b6e244f04d39301f5338edb0ae1f2cf1010226b35"
+    },
+    {
+      "path": "scripts/tests/test_chayvideo.py",
+      "sha256": "54aea729fb87c513029bcb29f3dc835e0f2df57b575741762aa46447977d63b2"
+    },
+    {
+      "path": "scripts/tests/test_publication.py",
+      "sha256": "fc0eec151bd1d72293ef27281981f710029f5b65bb6501aea99d5503287e24f4"
+    },
+    {
+      "path": "scripts/tests/test_reference_video.py",
+      "sha256": "6ddaed8375a00a4f7f4565d888aab4e6ae0acdba649a5527af10c5e8d3d60532"
+    },
+    {
+      "path": "scripts/tests/test_revision_frame.py",
+      "sha256": "1dc54fc327fe5b327fecbb6648872b0d77011bf17333fb0efac43a2e4af3ca76"
+    },
+    {
+      "path": "scripts/validate_publication.py",
+      "sha256": "4c34449a3c475013f3824c4ce77662b063eb606043e4acef70f4ffe8f93b12a0"
+    }
+  ],
+  "validation": {
+    "unit_tests": 133,
+    "media_or_audience_validation": false,
+    "token_usage_measured": false
+  },
+  "compatibility": "Keep local production, registry, quota and private memory; legacy handoffs without evidence remain unverified."
+}

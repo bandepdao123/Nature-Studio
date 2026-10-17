@@ -1,6 +1,6 @@
-# Khán giả và giọng — v1.6
+# Khán giả và giọng — v1.7
 
-Updated: 2026-10-16 | Origin: approved guide v1.9 + /chayvideo
+Updated: 2026-10-17 | Origin: approved guide v1.9 + /chayvideo
 
 **Chế độ skill /chayvideo (kể cả nhận diện theo đặc trưng):** theo [output-contract.md](output-contract.md), giữ caption tiếng Anh Mỹ tự nhiên, phù hợp người câu cá Mỹ, một đoạn gồm hook ngắn và 3–5 hashtag đúng cảnh; ý tưởng tiếng Việt, FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, mỗi prompt một đoạn. Yêu cầu mới này thay ngoại lệ caption tiếng Việt ở v1.1. Các tiêu chí giọng/cấu trúc bên dưới tiếp tục áp dụng. Lý do: điều chỉnh người dùng 2026-10-16.
 
@@ -26,4 +26,4 @@ Khán giả Mỹ thích câu cá; ngôn ngữ đầu ra tiếng Anh Mỹ, gợi 
 
 ## Nghiên cứu tham chiếu — 2026-10-16
 
-Trước khi viết caption, đọc [benchmark 40 caption Underfishing](../../01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md). Nghiên cứu là quan sát, không chứng minh caption gây viral; phong cách được áp dụng theo **quyết định trực tiếp của người dùng UF-D015**, không phải tự nâng hypothesis thành active. Giữ **3–5 hashtag** dù mẫu đối thủ không thấy hashtag. Quyết định này cập nhật ưu tiên độ ngắn/kiểu câu; mọi giới hạn kỹ thuật video và ngôn ngữ vẫn giữ. Báo cáo nghiên cứu gốc giữ nguyên để truy vết các đề xuất trước quyết định.
+Phong cách đã duyệt ở trên là nguồn chạy mặc định. Mở báo cáo gốc khi nghiên cứu lại phong cách, cần ví dụ/đối chứng hoặc nguồn thay đổi; không bắt đọc lại mọi caption mỗi lần sửa một câu. Tham chiếu [benchmark 40 caption Underfishing](../../01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md). Nghiên cứu là quan sát, không chứng minh caption gây viral; phong cách được áp dụng theo **quyết định trực tiếp của người dùng UF-D015**, không phải tự nâng hypothesis thành active. Giữ **3–5 hashtag** dù mẫu đối thủ không thấy hashtag. Quyết định này cập nhật ưu tiên độ ngắn/kiểu câu; mọi giới hạn kỹ thuật video và ngôn ngữ vẫn giữ. Báo cáo nghiên cứu gốc giữ nguyên để truy vết các đề xuất trước quyết định.

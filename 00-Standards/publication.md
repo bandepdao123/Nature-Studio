@@ -1,6 +1,6 @@
 # Cập nhật hệ thống công khai, giữ lịch sử sản xuất ở local
 
-Version: 1.0 | Updated: 2026-10-16 | Nature Studio v1.4
+Version: 1.1 | Updated: 2026-10-17 | Quy trình xuất hệ thống, workspace VERSION độc lập
 
 ## Phân định
 
@@ -28,6 +28,8 @@ Chỉ mục public chỉ liệt kê lesson đã xuất, dựng lại counts/link
 6. Sau publish, fetch và đối chiếu tree/hash; xác nhận production/ledger/registry local nguyên vẹn. CI `Public tree guard` kiểm lại cả push và PR. CI phát hiện sau push không thay kiểm trước publish; chưa cấu hình branch protection hoặc pre-push hook tự chạy trên mọi máy.
 
 Packager mặc định tạo gói hệ thống công khai, bỏ production/ledger/private lesson/browser UI/registry và kiểm tập file xuất. Đây không phải backup cá nhân đầy đủ. Backup local phải có dữ liệu runtime và registry, lưu ngoài repo công khai.
+
+Manifest cài đặt local trong `07-Releases/manifests/` có thành phần tên `installation` (ví dụ `*-installation-*.json`), kể cả bản lồng trong snapshot, không được xuất. Packager và public-tree guard dùng cùng quy tắc đường dẫn; giữ nguyên file gốc để khôi phục, không sửa/xóa release đã đóng. Manifest hệ thống khác vẫn được kiểm theo quy trình hiện hành. Quy tắc này không thay việc rà nội dung riêng tư ở các file có tên khác.
 
 ## Dữ liệu đã từng lên GitHub
 

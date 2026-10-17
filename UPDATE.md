@@ -1,6 +1,6 @@
 # Cập nhật Nature Studio từ GitHub
 
-Version của quy trình: 1.1 | Updated: 2026-10-16
+Version của quy trình: 1.2 | Updated: 2026-10-17
 
 Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio). Phiên bản workspace: [VERSION](VERSION); lịch sử: [CHANGELOG.md](CHANGELOG.md). Không giả định nguồn luôn mới hơn local hoặc mọi bản cùng VERSION có nội dung giống nhau.
 
@@ -144,3 +144,15 @@ Public index dựng từ lesson thực đã xuất, không copy index có mục 
 ## Nâng lên v1.5 — /taoanh và Story Development
 
 Khi nhận bản có skill taoanh, merge routing AGENTS/START-HERE, first-frame.md, model profile và QA guide của Project cùng nhau. Giữ production/attempt/ảnh/quota .image-qa.sqlite3/FIRST-FRAME.json, không reset số lượt từ template hoặc cập nhật repo. Test dùng thư mục tạm, không chạy init/reserve trên production thật để thử. Model requested Sunburst không chứng minh backend; không đổi actual unknown thành Sunburst khi nâng phiên bản. Sunburst là ưu tiên; nếu không tìm được thì dùng model mặc định image_gen, không hỏi lại hoặc thêm cổng xác minh model vào QA. Không tự đưa production/QA lên GitHub; lesson chia sẻ qua publication.md. Bản v1.5 bổ sung cả Story Development và đường đọc qua creativity; giữ dữ liệu riêng khi merge. Các manifest installation là hồ sơ local cũ, không dùng như danh mục gói public.
+
+## Nâng từ v1.5 lên v1.6
+
+Đối chiếu commit và thay đổi local theo quy trình trên, không dùng VERSION 1.5 đơn lẻ để kết luận hai workspace giống nhau. Phạm vi bản v1.6 ở [ghi chú phát hành](07-Releases/v1.6.md); [bản tổng hợp chuẩn bị](07-Releases/v1.6-preparation-2026-10-17.md) là mốc lịch sử trước khi chốt phiên bản.
+
+1. Merge đồng bộ skills chayvideo/clonevideo/taoanh, các references, lõi video-prompt-workflow, chuẩn chuyển thể, templates và ba helper chayvideo_context/chayvideo_output/reference_video. Nhận routing và context-map cùng quy chuẩn Project; Project khác không sao chép mặc định gate Underwater.
+2. Attempt mới ghi đúng nguồn revision và hash; save kiểm Project trước khi ghi. Giữ nguyên ID/attempt cũ, không chọn lại bản approved hoặc sửa hàng loạt hồ sơ legacy để qua validator. Thiếu nguồn legacy phải đối chiếu; unverified không đồng nghĩa nội dung sai.
+3. Handoff schema 2 chỉ ghi bằng chứng thực sau QA; không điền hash/t=0/qa_sources giả cho ảnh cũ. Giữ ảnh, review, ngân sách và database quota local. Caption-only không reset quota hay tự buộc tạo lại ảnh.
+4. Giữ production, ledger, registry, memory private và manifest cài đặt local. Không dùng gói phân phối thay backup; không áp deletion upstream lên dữ liệu riêng. Brief nguồn cũ/đã sửa phải được tạo lại và verify, không chỉnh cờ để bỏ qua thiếu coverage.
+5. Chạy unit suite, memory validator, kiểm skill và public-tree guard trên toàn cây index dự định xuất. Chốt VERSION cùng README/START-HERE/SYSTEM khi thực sự phát hành; commit/tag/GitHub Release là các trạng thái cần xác nhận riêng.
+
+Rollback nguồn cần giữ toàn bộ dữ liệu mới và bản khôi phục; các helper cũ có thể chưa hiểu schema mới. Không reset/xóa attempts, quota hay registry để ép tương thích.

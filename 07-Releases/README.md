@@ -50,3 +50,7 @@ Underwater UF-D015/016: caption ngắn/trực tiếp theo phong cách tham chi�
 ## Nature Studio v1.4 — 2026-10-16
 
 Repo/gói hệ thống giữ lịch sử video ở local và mang theo lesson đã rà public. [Policy](../00-Standards/publication.md), [kiểm](../06-Evaluation/results/v1.4-publication-2026-10-16.md), [manifest](manifests/nature-studio-v1.4-2026-10-16.json). UPDATE.md hướng dẫn giữ file local khi upstream bỏ tracking. Commit cũ còn dữ liệu lịch sử; không rewrite trong lần này.
+
+## Nature Studio v1.6 — 2026-10-17
+
+[Ghi chú v1.6](v1.6.md): luồng video dùng chung, clonevideo, revision provenance, first-frame handoff và năm sửa lỗi sau audit. [Manifest nguồn](manifests/nature-studio-v1.6-2026-10-17.json) ghi phiên bản/hash; [UPDATE](../UPDATE.md#nâng-từ-v15-lên-v16) hướng dẫn giữ dữ liệu riêng. Bản tổng hợp chuẩn bị và báo cáo cũ giữ trạng thái lịch sử; không dùng chúng thay VERSION/CHANGELOG hiện hành. Trạng thái commit/tag/GitHub Release cần đối chiếu trên GitHub.

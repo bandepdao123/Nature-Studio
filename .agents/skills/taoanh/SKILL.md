@@ -5,7 +5,7 @@ description: Tạo hoặc sửa ảnh first frame Nature Studio khi gọi /taoan
 
 # /taoanh
 
-Version: 1.0 | Updated: 2026-10-16
+Version: 1.1 | Updated: 2026-10-17 | Liên kết ảnh với đầu vào và review
 
 Quy ước trong chat, không cam kết giao diện đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Tổng kết/QA tiếng Việt; prompt thực thi tiếng Anh một đoạn. Skill này tạo ảnh, không tạo video. Chỉ xây/sửa skill không phải yêu cầu chạy sinh ảnh.
 
@@ -20,6 +20,8 @@ Quy ước trong chat, không cam kết giao diện đăng ký slash command. D�
 Ghi bản khóa đầu vào: t=0, chủ thể/số lượng/nhận dạng/tỷ lệ, môi trường, camera, vị trí/quan hệ/đường chuyển động cần cho video và tiêu chí bắt buộc. Tách ảnh đích sửa, reference và supporting input; mở từng ảnh local cần dùng bằng view_image trước khi sửa. Mâu thuẫn hoặc dữ kiện chưa có cơ sở phải xử lý trước khi tiêu lượt.
 
 ## Công cụ và ưu tiên Sunburst
+
+Khi dùng bộ nội dung đã có, resolve đúng attempt và đối chiếu frame_state theo lõi chung. Tái dùng ảnh đã QA phải theo [kiểm liên kết ảnh](../../../00-Standards/first-frame.md#kiểm-liên-kết-ảnh-trước-tái-dùng). matched chỉ là liên kết hồ sơ khớp; vẫn xem/đo ảnh như skill yêu cầu. Khi ghi handoff dùng schema 2, phân biệt attempt ảnh với source_attempt nội dung; giữ review/handoff trước, không tự nâng hồ sơ cũ hoặc sinh lại chỉ vì cần kiểm lại.
 
 Chỉ dùng built-in `image_gen` theo yêu cầu người dùng, không tự dùng CLI/API. Model ưu tiên: **GPT Image 2.5 Sunburst**. Nếu schema thực có selector và hỗ trợ Sunburst thì chọn Sunburst; nếu không tìm được hoặc không có selector, dùng model mặc định của image_gen và tiếp tục, không hỏi lại. Không tự chỉ định Flare để thay thế. Tên Sunburst trong prompt không chọn backend; không bịa model/seed/quality ẩn.
 
