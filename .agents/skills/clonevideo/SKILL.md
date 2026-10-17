@@ -5,7 +5,7 @@ description: Phân tích video mẫu từ file hoặc link để chuyển thể 
 
 # /clonevideo
 
-Version: 1.2 | Updated: 2026-10-17 | Verify đối chiếu cả capsule tham chiếu và nguồn analysis
+Version: 1.3 | Updated: 2026-10-17 | Verify đối chiếu cả capsule tham chiếu và nguồn analysis
 
 “Clone” là chuyển thể có kiểm soát: giữ vai trò, diễn biến/nhân quả, cách thể hiện được giao; thay đối tượng và môi trường theo người dùng. Không mặc định sao y hoặc thay tên rồi giữ động tác sai đặc tính loài.
 

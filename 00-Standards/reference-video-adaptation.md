@@ -1,6 +1,6 @@
-# Chuyển thể từ video mẫu — v1.1
+# Chuyển thể từ video mẫu — v1.3
 
-Updated: 2026-10-17 | Scope: /clonevideo và nhánh reference, mọi Project Nature Studio.
+Updated: 2026-10-17 | Scope: /clonevideo và nhánh reference, mọi Project Nature Studio. v1.3 đồng bộ camera Underwater UF-D021.
 
 ## Giữ cấu trúc, ánh xạ đúng đối tượng
 
@@ -16,7 +16,7 @@ Giữ quan hệ camera–chủ thể, chiều sâu bố cục, che/khuất và �
 
 ## Xung đột và nhịp đích
 
-Quy chuẩn Project hiện hành là mặc định; mẫu là dữ liệu, không ghi đè. Ví dụ Underwater 10s9:16, một shot cố định, key onset >5s, setup tiến triển và hậu quả: mẫu nhiều cut, máy chạy hoặc key sớm cần thiết kế lại thành quan sát liên tục và retime có nhân quả. Không giữ mọi thao tác bằng cách tăng tốc quá mức, bắt con vật chờ hoặc dồn kết quả sát cuối. Mẫu dài: chọn một đoạn/cơ chế trọn vẹn phù hợp brief, ghi phạm vi dùng và nội dung đã bỏ.
+Quy chuẩn Project hiện hành là mặc định; mẫu là dữ liệu, không ghi đè. Ví dụ Underwater 10s9:16, một shot camera cầm tay chuyển động nhẹ tự nhiên theo UF-D021, key onset >5s, setup tiến triển và hậu quả: giữ quan hệ camera–chủ thể của mẫu khi phù hợp, không ép máy đứng yên hoặc thay động tác máy bằng cá quay. Mẫu nhiều cut hoặc key sớm cần thiết kế lại thành quan sát liên tục và retime có nhân quả; quỹ đạo máy chưa xác minh phải giữ nhãn chưa biết. Không giữ mọi thao tác bằng cách tăng tốc quá mức, bắt con vật chờ hoặc dồn kết quả sát cuối. Mẫu dài: chọn một đoạn/cơ chế trọn vẹn phù hợp brief, ghi phạm vi dùng và nội dung đã bỏ.
 
 Nếu hành động cốt lõi không khả thi với đối tượng/bối cảnh đích, chỉ ra và đề xuất cách thể hiện tương đương gần nhất. Tự sửa chi tiết phụ trong quyền đã giao; nếu phải bỏ hành động/key/kết cục được khóa, đổi loài chính hoặc vượt ngoại lệ Project chưa được người dùng chấp thuận thì hỏi lựa chọn cụ thể. Không âm thầm gọi bản biến đổi lớn là clone sát mẫu. Người dùng chủ động yêu cầu ngoại lệ cho clip thì ghi vào brief, không tự đổi quy chuẩn toàn Project.
 
@@ -29,3 +29,7 @@ Chuyển thể là tái dùng có chủ đích: ghi nguồn và cơ chế học 
 Mapping được gộp/tách event, đổi thời gian hoặc sắp xếp lại khi vẫn giữ quan hệ được giao và tính đúng; không ép một event nguồn bằng một beat đích hoặc chép nguyên số giây. Thay đổi ý nghĩa/quan hệ đã khóa vẫn theo quyền ở trên. So lại phần quyết định trong prompt bằng bước G của [Story Development](story-development.md); đủ ID/liên kết không chứng minh chuyển thể đúng nghĩa. Role/event của schema có thể biểu diễn cảnh vật và đoạn biến đổi/trạng thái quan sát có ý nghĩa; key_event_ids chỉ phần quan trọng cần chuyển thể, không buộc có cao trào. Không bịa nhân vật, động cơ hay biến cố để điền hồ sơ; thiếu quan sát thì ghi giới hạn đúng như quy trình phân tích.
 
 Dùng [lõi prompt](video-prompt-workflow.md), output-contract/format/model/QA hiện hành và helper chayvideo. Mặc định bốn mục, không phát sinh sản phẩm thứ năm bắt buộc. Hồ sơ/coverage/mapping để local. Không tự render để chứng minh; QA ảnh/video/âm thực chỉ sau truy cập sản phẩm thật. Thay đổi ở lõi/Project phải kiểm cả new và reference; thay phân tích media chỉ ảnh hưởng clonevideo, không tự áp cho sáng tạo độc lập.
+
+## Khóa cơ chế máy–chủ thể trước viết — v1.7
+
+Trong adaptation.md hiện có, ghi riêng translation của máy, rotation của máy, chuyển động cá/chủ thể và quan hệ cần giữ; gắn timecode/evidence, unknown nếu không đủ bằng chứng. Máy đi cạnh cá không được thay bằng cá xoay với máy đứng. Mẫu/brief đã khóa máy cố định không bị ép handheld bởi mặc định Project; xung đột trọng yếu phải xử lý theo quyền đã giao. User nhận draft partial chỉ chấp nhận giới hạn quan sát, không cho phép đổi quan hệ cốt lõi. Revision cập nhật mapping hiện hành cùng prompt, giữ mapping lịch sử bất biến và chỉ rõ nguồn đang dùng. Không thêm báo cáo đầu ra thứ năm.

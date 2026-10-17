@@ -1,10 +1,10 @@
-# Format Underwater — v2.0
+# Format Underwater — v2.1
 
-Updated: 2026-10-17 | Plan 01 / UF-D019 | Nguồn: guide v1.9 và quyết định hiện hành.
+Updated: 2026-10-17 | UF-D021 — camera cầm tay nhẹ theo yêu cầu người dùng | Nguồn: guide v1.9 và quyết định hiện hành.
 
 ## Thông số và phạm vi
 
-10 giây, 9:16, một shot dưới nước liên tục, camera quan sát cố định có thể đặt ngoài đời; không cuts/zoom/reframing mặc định. Chỉ dùng góc điện ảnh khi người dùng yêu cầu. Không tự thêm chữ/logo/UI/diver/chủ thể ngoài brief. Hợp đồng bốn mục/ngôn ngữ ở [output-contract.md](output-contract.md), caption ở [audience-and-caption.md](audience-and-caption.md); không còn hợp đồng ba mục chạy song song.
+10 giây, 9:16, một shot dưới nước liên tục; mặc định camera cầm tay chuyển động nhẹ, tự nhiên như người cầm điện thoại trong vỏ chống nước để quay. Không cắt cảnh hoặc zoom số; cho phép đổi khung nhẹ do chuyển động máy thật. Chỉ dùng góc điện ảnh khi người dùng yêu cầu. Không tự thêm chữ/logo/UI/diver/chủ thể ngoài brief. Hợp đồng bốn mục/ngôn ngữ ở [output-contract.md](output-contract.md), caption ở [audience-and-caption.md](audience-and-caption.md); không còn hợp đồng ba mục chạy song song.
 
 Mọi loài cá được câu ở Mỹ phù hợp brief đều được phép; Redfish/Muskie/Walleye là lựa chọn khởi đầu, không giới hạn hệ thống. Sinh vật tương tác, cây, đáy, thời tiết, địa điểm, mùa và phương pháp câu phải cùng phù hợp tự nhiên; không ghép các đặc tính đúng riêng lẻ thành một cảnh sai. Dữ kiện chưa đủ phải nghiên cứu, không coi ví dụ là mặc định.
 
@@ -15,6 +15,16 @@ Ngoại lệ phạm vi UF-D020: yêu cầu chuyển thể video mẫu theo [chu�
 Tạo mới theo [creative-direction.md](creative-direction.md) và [story-development.md](story-development.md). Phát triển vài tiền đề độc lập trước khi chọn; không lấy kho ví dụ làm danh mục đóng. Rà lịch sử theo workflow của skill. So với chuyện gần nhất cần ít nhất hai khác biệt có ý nghĩa, trong đó một thuộc key/kiểu tương tác/kết cục; đây chỉ là ngưỡng tối thiểu, cơ chế nhân quả giống nhau vẫn là lặp. Revision giữ câu chuyện đã chốt.
 
 Khuyến nghị đọc [báo cáo 20 Reel Underfishing](https://drive.google.com/file/d/1gDUVVbi5IJ9GUxaQetKA30wkkWhhSPjs/view?usp=sharing) để hiểu và phát triển sáng tạo, không bị giới hạn bởi nghiên cứu. Đọc khi cần khảo sát lại cơ chế/tham chiếu; không tự nhận đã xem/nghe/đọc link khi chưa truy cập. Số đo âm nguồn không là mục tiêu mix mới. Knowledge lưu các yêu cầu đầy đủ về môi trường/quang học/dụng cụ, không thay bằng chữ “photorealistic”.
+
+## Camera cầm tay tự nhiên — UF-D021
+
+Mặc định có trôi tịnh tiến chậm, dao động góc nhỏ không đều và những chỉnh khung nhẹ có quán tính tay người; hình vẫn đọc được, không rung giật hoặc lắc tuần hoàn như hiệu ứng. Chọn đường máy theo cảnh, khoảng trống và đối tượng. Có thể giữ gần một vị trí với vi chuyển động hoặc dịch chuyển ngắn để quan sát chi tiết; không buộc mọi clip phải tracking dọc thân. Người cầm và thiết bị nằm ngoài khung, không tự thêm diver/tay/điện thoại.
+
+Phân biệt dịch chuyển camera, xoay camera và chuyển động của cá. Máy dịch chuyển làm vật gần/xa đổi vị trí tương đối theo phối cảnh; vật vẫn giữ vị trí trong không gian, kích thước và hình thể. Giữ tiêu cự thực ổn định, phơi sáng/màu nước liên tục, chuyển hướng mềm và tốc độ nhẹ. Tránh đường ray/gimbal quá hoàn hảo, orbit phô diễn, lao máy, rung mạnh, zoom số hoặc kéo giãn nền giả. Không khóa vị trí/hướng máy rồi đồng thời yêu cầu chuyển động cầm tay.
+
+Với reference, học chức năng và quan hệ camera–chủ thể của mẫu khi có bằng chứng; không thay động tác máy bằng việc bắt cá quay hoặc bơi khác. Chưa tách được camera/cá thì ghi chưa xác minh, không tự điền quỹ đạo nguồn. Camera cố định chỉ dùng khi người dùng yêu cầu hoặc một brief cụ thể đã chốt như vậy.
+
+Câu chỉ đạo tham khảo, tùy chỉnh theo từng cảnh: `One continuous handheld underwater shot, as if a person were holding a waterproof phone: subtle irregular hand drift, small soft tilts and gentle framing corrections, with natural inertia and physically coherent parallax. Keep the subject readable, the focal length stable and the movement restrained; no cuts, digital zoom, strong shake or mechanical orbit.`
 
 ## Chuyển động, key và nhịp
 

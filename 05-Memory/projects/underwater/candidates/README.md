@@ -1,3 +1,3 @@
 # candidates
 
-Có 1 candidate từ benchmark caption, chưa kiểm hiệu quả. Tra [INDEX](../INDEX.md) và policy; không coi candidate là quy chuẩn đã xác nhận.
+Có 2 candidate public; chưa có active. Tra [INDEX](../INDEX.md) và bản gốc, không coi candidate là phương pháp đã xác nhận.

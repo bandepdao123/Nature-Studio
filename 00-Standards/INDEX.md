@@ -20,3 +20,5 @@ Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thi�
 
 - [Lõi viết prompt video](video-prompt-workflow.md) — dùng chung chayvideo/clonevideo, context/hash/kiểm/lưu.
 - [Chuyển thể video mẫu](reference-video-adaptation.md) — đổi đối tượng/bối cảnh, giữ cơ chế và cách thể hiện, kiểm tương thích tự nhiên.
+
+- [Kiểm media thực và finishing](media-review-and-finishing.md) — capability, duration, loudness và trạng thái độc lập.

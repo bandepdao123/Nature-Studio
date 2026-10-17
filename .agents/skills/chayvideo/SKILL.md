@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.4 | Updated: 2026-10-17 | Helper đúng phạm vi Project và kiểm identity trước lưu
+Version: 2.5 | Updated: 2026-10-17 | Đồng bộ nhánh new với camera hiện hành của Project; giữ helper/identity
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 

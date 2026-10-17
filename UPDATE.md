@@ -156,3 +156,11 @@ Khi nhận bản có skill taoanh, merge routing AGENTS/START-HERE, first-frame.
 5. Chạy unit suite, memory validator, kiểm skill và public-tree guard trên toàn cây index dự định xuất. Chốt VERSION cùng README/START-HERE/SYSTEM khi thực sự phát hành; commit/tag/GitHub Release là các trạng thái cần xác nhận riêng.
 
 Rollback nguồn cần giữ toàn bộ dữ liệu mới và bản khôi phục; các helper cũ có thể chưa hiểu schema mới. Không reset/xóa attempts, quota hay registry để ép tương thích.
+
+## Nâng từ v1.6 lên v1.7
+
+Giữ backup/hash của production, registry, quota, ledger và Memory private trước merge. Nhận UF-D021 đồng bộ Project/format/output-contract/new/reference và override tài liệu môi trường kế thừa; Underwater mặc định cầm tay nhẹ, không ép thay brief clip đã khóa máy cố định. Nhận media-review-and-finishing, hai helper và tests, first-frame ratio policy, QA và mẫu trạng thái cùng nhau.
+
+Không cài FFmpeg/WhisperX hoặc dịch vụ chỉ vì nâng source: capability kiểm runtime riêng từng máy, không phải native perception. Normalization chỉ chạy khi được giao xử lý media và có listening assessment; không tự sửa video hiện có. Dung sai ≤0.1% chỉ cho tỷ lệ input, không backfill QA hoặc gọi raster gần đúng là exact export. Giữ trạng thái unknown/provisional và attempt bất biến; không đổi final/qa_pass hàng loạt. Merge lesson public theo ID/scope/version, giữ bản private/evidence và dựng chỉ mục theo dữ liệu local thực.
+
+Chạy unit suite, validate_memory, skill checks và validate_publication trên toàn index trước push. Test FFmpeg chạy trên fixture tổng hợp, có thể skip khi máy thiếu executable; không coi skip là integration pass. Không đổi key>5s, bốn mục đầu ra hay quota. Bản cũ rollback source phải bảo toàn runtime mới, không dùng reset --hard/clean hoặc xóa lesson để ép tương thích.

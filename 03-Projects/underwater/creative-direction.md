@@ -1,12 +1,12 @@
 # Sáng tạo mở — Underwater
 
-Version: 1.0 | Updated: 2026-10-16 | Decision: UF-D014
+Version: 1.1 | Updated: 2026-10-17 | Decisions: UF-D014, UF-D021
 
 ## Phạm vi
 
 Các cảnh ví dụ và lịch sử là dữ liệu để học chất lượng, phát hiện lặp và tránh lỗi. Chúng không xác định danh sách tình huống được phép. Không giới hạn ý tưởng vào lao hụt, thoát móc, tranh mồi hoặc bất kỳ bộ thể loại cố định nào. Tài liệu này hướng dẫn tạo mới; revision vẫn giữ câu chuyện người dùng đã chọn.
 
-Giữ các ràng buộc thực của dự án: khán giả câu cá Mỹ, loài/môi trường và vật lý có cơ sở, quy mô chủ thể theo brief, 10s 9:16, một shot mặc định cố định, key bắt đầu sau 5s có hậu quả. Những giới hạn này vẫn thu hẹp không gian sáng tạo; không hứa sáng tạo vô hạn hoặc mọi lần đều hay.
+Giữ các ràng buộc thực của dự án: khán giả câu cá Mỹ, loài/môi trường và vật lý có cơ sở, quy mô chủ thể theo brief, 10s 9:16, một shot với chuyển động cầm tay nhẹ tự nhiên theo format hiện hành, key bắt đầu sau 5s có hậu quả. Những giới hạn này vẫn thu hẹp không gian sáng tạo; không hứa sáng tạo vô hạn hoặc mọi lần đều hay.
 
 ## Cách tìm ý tưởng
 

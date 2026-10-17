@@ -1,6 +1,6 @@
 # Áp dụng Story Development — Underwater
 
-Version: 1.0 | Updated: 2026-10-16 | Decision: UF-D017
+Version: 1.1 | Updated: 2026-10-17 | Decisions: UF-D017, UF-D021
 
 Đọc [phương pháp chung](../../00-Standards/story-development.md) và [sáng tạo mở](creative-direction.md). Phần này không đổi format, model, quyền sản xuất hay caption hiện hành.
 
@@ -10,7 +10,7 @@ Version: 1.0 | Updated: 2026-10-16 | Decision: UF-D017
 - Tự nhiên trước kịch tính: chọn loài/vùng, mồi/prey/dụng cụ đúng. Không gán thù hận, trả ơn, hy sinh hoặc suy nghĩ người vào động vật. Mồi giả không tự bơi, mồi chết không sống lại.
 - Ngay t=0 đặt điều đáng quan sát và không gian cho tiến triển. Không bắt cá/mồi phô cả hai như quảng cáo; không làm nước trong sai thực tế để khoe chi tiết.
 - 0.0–5.0s có các thay đổi đọc được về phát hiện, quan hệ không gian hoặc hành vi hợp loài. Sau 5.0s key mới bắt đầu; đỉnh muộn không hợp thức hóa cú tấn công/cắn sớm. Điều chỉnh bố cục/quỹ đạo, không bắt cá đứng chờ.
-- Chọn chuyện trước, sau đó 5–8 beat liên tục đủ 10s, một shot camera cố định mặc định. Key có thể là phát hiện/đổi trạng thái chứ không nhất thiết đớp/hụt; không thêm cú cắn như kết quả bắt buộc.
+- Chọn chuyện trước, sau đó 5–8 beat liên tục đủ 10s, một shot camera cầm tay chuyển động nhẹ tự nhiên mặc định. Phân biệt đường máy với hành vi cá; có thể tạo phát hiện bằng camera tới một chi tiết, không bịa hành động cá để thay cách quay. Key có thể là phát hiện/đổi trạng thái chứ không nhất thiết đớp/hụt; không thêm cú cắn như kết quả bắt buộc.
 - Chừa hậu quả đủ đọc; nếu mắc câu, kiểm liên kết miệng–hook–lure–leader qua nhận lực. Một ảnh ngậm không chứng minh đã mắc; kết cục bị che vẫn cần dấu hiệu sự kiện, không gọi màn bùn là twist.
 - Audio môi trường + hành động lớn/rõ liên tục 0–10s, nguồn hợp lý; không dùng tiếng giả kéo chú ý. Key có âm tương ứng khi hợp nguồn/thu âm, không mặc định tiếng nổ khi cá đớp.
 - Caption theo audience-and-caption.md: học cách ngắn/trực tiếp/đa dạng của tham chiếu, Anh Mỹ, 3–5 hashtag cùng đoạn, không #Underwater, không AI. Không nhắc cánh spinner dừng nếu trong render không đọc được. Không ép mọi caption thành câu hỏi.

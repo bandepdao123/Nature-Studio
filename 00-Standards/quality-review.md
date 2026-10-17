@@ -27,3 +27,7 @@ Dùng checklist tại [story-development.md](story-development.md). Tách tính 
 ## Gate first frame
 
 Theo [first-frame.md](first-frame.md) và hướng dẫn Project. Xem ảnh output thật, kiểm chi tiết và đo pixel/tỷ lệ; mọi tiêu chí bắt buộc pass, không lỗi chặn hoặc not_checked bắt buộc mới qa_pass. Model verification, image QA và user approval là ba trạng thái riêng. Không dùng giới hạn 5 lượt để hạ chuẩn. Chỉ kiểm ảnh không chứng minh timeline/chuyển động/audio của video.
+
+## Kiểm file và trạng thái — v1.7
+
+Khi có render, theo [media-review-and-finishing.md](media-review-and-finishing.md): đo duration thực, mức âm đầu–giữa–cuối; kiểm giải phẫu lúc reveal/ending, không lấy QA t=0 thay phần chưa thấy. Tách text hiện hành/render thực/QA từng miền/tạm duyệt/final; không suy actual settings từ prompt. Metrics không thay nghe hoặc xem liên tục.

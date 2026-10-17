@@ -1,18 +1,18 @@
-# Nature Studio v1.6
+# Nature Studio v1.7
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v1.6
+## Mới trong v1.7
 
-Nâng cấp `/chayvideo`, thêm `/clonevideo`, truy nguyên revision và first-frame handoff; hoàn thiện phương pháp sáng tạo dùng chung và sửa năm lỗi sau audit. Xem [ghi chú v1.6](07-Releases/v1.6.md) và [hướng dẫn nâng cấp](UPDATE.md#nâng-từ-v15-lên-v16).
+Camera Underwater cầm tay tự nhiên; kiểm capability, metadata/âm thực, tỷ lệ first frame và trạng thái text/render/QA/approval. Xem [ghi chú v1.7](07-Releases/v1.7.md) và [hướng dẫn nâng cấp](UPDATE.md#nâng-từ-v16-lên-v17).
 
 ## Dành cho AI nhận link GitHub
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v1.6**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v1.7**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
