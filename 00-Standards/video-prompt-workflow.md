@@ -1,22 +1,27 @@
-# Lõi viết prompt và lưu hồ sơ video — v1.3
+# Lõi viết prompt và lưu hồ sơ video — v1.4
 
-Updated: 2026-10-17 | Dùng chung chayvideo/clonevideo; nguồn Project và helper là một nơi duy nhất.
-
-v1.2: helper kiểm đúng phạm vi Project và thống nhất identity trước lưu; giữ cơ chế kế thừa/ảnh của v1.1, không đổi format hoặc quyền sinh media.
+Updated: 2026-10-17 | Một lõi cho chayvideo/clonevideo; nguồn nguyên văn theo giai đoạn.
 
 ## Context đúng nhiệm vụ
 
-`python scripts/chayvideo_context.py packet <slug> --mode new|revision|caption|reference --species <tên> --interaction natural|angling|unspecified --out .nature-studio/context/<tên>.json`
+Chọn Project từ metadata hiện hành. Nguồn do context-map và routing Project chọn; giữ toàn văn, không tóm tắt/cắt theo quota. Lệnh dùng dữ liệu thật, đường dẫn local tương đối:
 
-Thay placeholder trong lệnh bằng dữ liệu thật. `--species` lặp lại cho nhiều loài; dùng tên profile nếu có, loài khác vẫn hợp lệ và được báo cần nghiên cứu. Interaction chưa rõ giữ unspecified để không vô tình bỏ gate dụng cụ. Đọc nội dung packet một lần; ghi manifest đường dẫn/hash vào INPUTS. Không cần đọc lại từng file có toàn văn nguyên vẹn trong packet. Trước tái dùng packet ở lượt khác hoặc trước lưu: `python scripts/chayvideo_context.py verify <packet.json>`; nguồn thay đổi phải dựng/đọc lại. Không coi một packet cũ là trí nhớ vĩnh viễn. Catalog cũng phải tra lại khi định tuyến mới.
+```text
+python -X utf8 scripts/chayvideo_context.py packet <slug> --mode new|revision|caption|reference --stage all --species <tên> --interaction natural|angling|unspecified --out .nature-studio/context/task.json
+python -X utf8 scripts/chayvideo_context.py view .nature-studio/context/task.json --context-id task-epoch-1 --receipt .nature-studio/context/read.json
+```
 
-Chỉ truyền species khi có liên quan; Project quyết định đầu vào bắt buộc. Profile Underwater giữ gate chọn loài/quyền chọn; packet chung không ép Project cảnh quan chọn loài chỉ vì có hồ sơ loài tùy chọn. Pending trống không chứng nhận brief đầy đủ. Output helper giữ gate tag/AI/timing riêng cho Underwater; Project khác chỉ được kiểm cú pháp chung, AI vẫn phải đối chiếu contract thật (không tự coi số tag hoặc disclosure được phép cho mọi Project). Không thêm cấu hình máy mới hoặc thay hợp đồng bốn mục.
+Thay placeholder thật; `--species` lặp cho nhiều loài. Loài chưa có profile phải nghiên cứu đúng đối tượng; chưa rõ interaction giữ unspecified. Pending trống không chứng nhận brief đầy đủ. Output gate loài/tag/key riêng Project không áp sang mọi Project.
 
-Map chỉ chọn tài liệu; AI vẫn đọc/áp đúng phạm vi, tra link nội bộ cần thiết. Tự bổ sung nguồn theo concept; map không biết mọi nhu cầu sáng tạo. Packet chứa nguyên văn nguồn, không tóm tắt bằng LLM/cắt theo token. Bộ nhớ theo [truy xuất chọn lọc](memory-retrieval.md): packet schema2 trả descriptor phân trang Project + shared, không nạp toàn bộ INDEX/active. Xét điều kiện/unknown/legacy, mở nguồn phù hợp bằng query/read hoặc --memory-selection/--lesson-id trước áp dụng; INPUTS ghi bài đã dùng. Không coi candidate là luật hoặc trang đầu là coverage đầy đủ.
+New/reference có thể chia `orient → concept → write → review → save`: orient làm rõ brief; concept đọc creativity/story, format và Knowledge trước chọn chuyện; write đọc contract/model/giọng và nguồn liên quan; review tự kiểm; save đọc production/IDs trước cấp mã/lưu. Giữ nguồn theo chuẩn reference, không ép mới so mẫu. Revision dùng write/review/save, caption dùng write; `--stage all` đọc đầy đủ một lần khi chưa chắc. Source mới chưa phân stage vẫn được nạp. Nguồn đang ảnh hưởng quyết định phải mở ngay, không chờ stage sau.
 
-Nếu công cụ đọc báo truncated, đọc tiếp theo từng source/phần cho đến hết; không coi file bị cắt là đã đọc đủ. Không cần đưa toàn bộ JSON/hash inventory vào context suy luận: manifest dùng để đối chiếu/lưu, nội dung nguồn mới là phần phải đọc.
+Thêm `--effect camera|rig|species|environment|story|audio-level|audio-source` cho ảnh hưởng thật; effects chỉ thêm phụ thuộc. Khi có nhiệm vụ review render/âm, dùng effect video-review/audio-review hoặc lặp `--task` đúng nhiệm vụ. Không giả review chỉ từ prompt.
 
-Thiếu Python/map, lỗi hash hoặc nguồn: đọc PROJECT, format, output-contract, audience và các nguồn được Project chỉ định theo nhiệm vụ; tìm file thật bằng rg. Khi tạo mới vẫn đọc creativity/story-development, Knowledge/Models, memory policy và active liên quan. Decisions/baseline/benchmark chỉ mở khi cần truy nguyên, sửa phong cách, làm rõ mâu thuẫn hoặc kiểm ràng buộc thiếu; chúng không mặc định nạp mỗi lượt.
+View verify trước đọc và chia batch nguyên nguồn, mục tiêu 18.000 ký tự body; không cần đọc JSON/hash. Còn NEXT SOURCES.count thì gọi lại cùng packet với receipt trước làm seen, ghi receipt mới đến khi hết. `--max-chars` chỉnh theo budget tool, không cắt nguồn. Truncated thì không dùng receipt đó; đọc đủ từng nguồn bằng `--source`/file tools hoặc fallback đọc gốc, ghi chưa được helper kiểm. Chỉ thêm `--seen <receipt> --retained --context-id <cùng-epoch>` khi mọi nguồn của receipt đã đọc đủ và nguyên văn còn trong context. Receipt không chứng minh AI đã hiểu. Sau compaction/đổi chat/không chắc: bỏ seen/retained, đổi epoch và đọc lại. Packet stale phải dựng lại; không tự coi cache là trí nhớ.
+
+Trước lưu/giao, `python -X utf8 scripts/chayvideo_context.py coverage <các-packet-đã-đọc> --receipt <receipt-còn-giữ> --context-id <epoch> --retained`; lặp receipt khi cần. Complete=false phải đọc nguồn thiếu/dựng lại nguồn stale. Coverage chỉ kiểm khai báo đủ nguồn, không thay QA ngữ nghĩa/history/media. Lưu manifest paths/version/hash vào INPUTS, không in vào bốn mục. [Cấu hình/tuỳ chọn chi tiết](context-routing.md) đọc khi bảo trì hoặc chưa rõ lệnh, không nạp mỗi lượt.
+
+Memory theo [truy xuất chọn lọc](memory-retrieval.md): descriptor Project/shared theo task, xét hết trang/unknown/legacy và mở bài gốc phù hợp. Candidate không là luật. Nguồn tham chiếu/hồ sơ thực vẫn cần đọc riêng; quyết định/baseline/benchmark chỉ mở khi cần, không mặc định nạp lại. Thiếu Python/map/nguồn hoặc cấu hình sai: đọc Project/format/contract/giọng và Knowledge/model/creativity/story cần cho mode, bổ sung nguồn gốc; không đoán cấu hình hoặc nhận helper đã kiểm.
 
 ## Lưu và kiểm
 

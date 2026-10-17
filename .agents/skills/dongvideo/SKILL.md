@@ -5,7 +5,7 @@ description: Tổng kết phiên video Nature Studio khi gọi /dongvideo hoặc
 
 # /dongvideo
 
-Version: 1.2 | Updated: 2026-10-17 | Truy xuất/chỉ mục chọn lọc
+Version: 1.3 | Updated: 2026-10-17 | Nhận XX-YYYY và hai định dạng legacy; giữ truy xuất chọn lọc
 
 Nhận lệnh trong tin nhắn, không giả định giao diện đã đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Đầu ra tiếng Việt. Đóng phiên là chốt ghi nhận hiện tại, không cấm tiếp tục sửa video.
 
@@ -44,7 +44,7 @@ Chạy `python scripts/validate_memory.py`, kiểm diff/link/ID, quyền đổi 
 
 Trả ngắn bằng tiếng Việt: production/phạm vi tổng kết; kết quả; bộ nhớ Project; đóng góp shared (hoặc không có); active mới kèm căn cứ/candidate chờ; file thay đổi và việc tiếp theo. Không nhận video đã duyệt vì đã tổng kết. Không tự commit/push/publish hay tạo media từ lệnh này.
 
-Nhận cả mã XXX-yyyyy mới và mã legacy như UF-0001. Đọc IDENTITY.json khi có để đối chiếu Project/video UUID; không cấp lại mã khi tổng kết, không yêu cầu đổi mã cũ và không đoán Project chỉ từ ba chữ.
+Nhận mã XX-YYYY và mã legacy XXX-YYYYY hoặc UF-0001. Đọc IDENTITY.json khi có để đối chiếu Project/video UUID; không cấp lại mã khi tổng kết, không yêu cầu đổi mã cũ và không đoán Project chỉ từ prefix.
 
 ## Phân biệt ghi nhớ local và chia sẻ
 

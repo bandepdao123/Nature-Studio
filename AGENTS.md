@@ -16,11 +16,11 @@ Khi người dùng gửi `/chayvideo` hoặc yêu cầu tạo bộ nội dung qu
 
 Skill đọc quy chuẩn và lịch sử đúng dự án trước khi tạo ý tưởng. Mặc định của skill: Ý TƯỞNG tiếng Việt; FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag; mỗi prompt là một đoạn văn. Tự tra metadata các dự án để chọn dự án khớp rõ; chỉ hỏi khi mơ hồ hoặc chưa có dự án phù hợp. Không kích hoạt sản xuất từ câu hỏi kiến thức đơn thuần. Không khởi chạy tạo media chỉ từ lệnh này.
 
-Version: 1.7 | Updated: 2026-10-17 | Reason: thêm /clonevideo và lõi prompt chung; giữ /dongvideo và bộ nhớ Project/shared.
+Version: 2.0 | Updated: 2026-10-17 | Reason: chốt v2.0.0, phân luồng nguồn và mã XX-YYYY; giữ lịch sử và bộ nhớ Project/shared.
 
 Khi người dùng gọi `/dongvideo` hoặc yêu cầu tổng kết/đóng phiên video và rút bài học, đọc [.agents/skills/dongvideo/SKILL.md](.agents/skills/dongvideo/SKILL.md). Không kích hoạt từ trích dẫn, câu hỏi hay sửa skill. Lệnh tổng kết tiếng Việt, luôn xét Project và shared, không tự render/push hay duyệt video. Bộ nhớ theo [memory-policy](00-Standards/memory-policy.md): /chayvideo chỉ áp active đúng điều kiện; /dongvideo có quyền tự kích hoạt phương pháp khách quan khi đạt đủ gate đã duyệt, không tự thay chính sách sáng tạo.
 
-Video mới: đọc [video-identifiers.md](00-Standards/video-identifiers.md); dùng scripts/video_ids.py cấp prefix ba chữ trên local và số từ 00001. Không gán prefix repo cố định; giữ nguyên video legacy khi sửa/tổng kết. Registry .nature-studio/ là dữ liệu local cần bảo toàn khi nâng cấp.
+Video mới: đọc [video-identifiers.md](00-Standards/video-identifiers.md); dùng scripts/video_ids.py cấp mã XX-YYYY: prefix hai chữ A–Z trên local và bốn số từ 0001; UF dành riêng cho legacy. Không gán prefix repo cố định; giữ nguyên video legacy khi sửa/tổng kết. Registry .nature-studio/ là dữ liệu local cần bảo toàn khi nâng cấp.
 
 ## Xuất bản hệ thống và bộ nhớ — v1.4
 

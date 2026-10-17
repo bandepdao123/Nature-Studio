@@ -44,5 +44,6 @@
     "01-Knowledge/equipment/us-angling-tackle.md"
   ],
   "notes": "Nguồn đầy đủ, không cắt theo token. Loài khác bắt buộc nghiên cứu; không có profile không có nghĩa cấm loài đó. Interaction unspecified giữ angling để không bỏ gate. Memory active gốc và production liên quan đọc sau, không áp candidate từ index. v1.8: Memory query descriptor phân trang qua engine chung; không nạp toàn bộ INDEX/active, chỉ mở bài liên quan, unknown/legacy cần xét.",
-  "reference": "new"
+  "reference": "new",
+  "routing": "03-Projects/underwater/context-routing.json"
 }
