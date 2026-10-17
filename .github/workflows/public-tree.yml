@@ -13,3 +13,24 @@ jobs:
       - run: python scripts/validate_publication.py --tree HEAD
       - run: python scripts/validate_memory.py
       - run: python -m unittest discover -s scripts/tests
+  validate-dev-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-dev.txt
+      - name: Check PyYAML and skill frontmatter
+        run: |
+          python -X utf8 - <<'PY'
+          from pathlib import Path
+          import yaml
+          paths = sorted(Path('.agents/skills').glob('*/SKILL.md'))
+          assert len(paths) == 4, paths
+          for path in paths:
+              metadata = yaml.safe_load(path.read_text(encoding='utf-8').split('---', 2)[1])
+              assert isinstance(metadata, dict), path
+              assert metadata.get('name') and metadata.get('description'), path
+          print('PyYAML', yaml.__version__, ': four skill frontmatters parsed')
+          PY

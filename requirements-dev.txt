@@ -1,0 +1,3 @@
+# Optional: external skill-creator quick_validate.py imports yaml.
+# Nature Studio core scripts and unit suite use Python's standard library.
+PyYAML==6.0.3
