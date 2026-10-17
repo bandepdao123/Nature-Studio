@@ -3,10 +3,7 @@
   "project_id": "under-fishing-us",
   "common": [
     "03-Projects/underwater/PROJECT.md",
-    "00-Standards/memory-policy.md",
-    "05-Memory/INDEX.md",
-    "05-Memory/projects/underwater/INDEX.md",
-    "05-Memory/shared/INDEX.md"
+    "00-Standards/memory-policy.md"
   ],
   "new": [
     "00-Standards/research.md",
@@ -46,6 +43,6 @@
   "angling": [
     "01-Knowledge/equipment/us-angling-tackle.md"
   ],
-  "notes": "Nguồn đầy đủ, không cắt theo token. Loài khác bắt buộc nghiên cứu; không có profile không có nghĩa cấm loài đó. Interaction unspecified giữ angling để không bỏ gate. Memory active gốc và production liên quan đọc sau, không áp candidate từ index.",
+  "notes": "Nguồn đầy đủ, không cắt theo token. Loài khác bắt buộc nghiên cứu; không có profile không có nghĩa cấm loài đó. Interaction unspecified giữ angling để không bỏ gate. Memory active gốc và production liên quan đọc sau, không áp candidate từ index. v1.8: Memory query descriptor phân trang qua engine chung; không nạp toàn bộ INDEX/active, chỉ mở bài liên quan, unknown/legacy cần xét.",
   "reference": "new"
 }

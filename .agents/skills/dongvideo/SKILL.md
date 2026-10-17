@@ -5,7 +5,7 @@ description: Tổng kết phiên video Nature Studio khi gọi /dongvideo hoặc
 
 # /dongvideo
 
-Version: 1.1 | Updated: 2026-10-16
+Version: 1.2 | Updated: 2026-10-17 | Truy xuất/chỉ mục chọn lọc
 
 Nhận lệnh trong tin nhắn, không giả định giao diện đã đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Đầu ra tiếng Việt. Đóng phiên là chốt ghi nhận hiện tại, không cấm tiếp tục sửa video.
 
@@ -19,9 +19,11 @@ Nhận lệnh trong tin nhắn, không giả định giao diện đã đăng ký
 
 ## Tổng kết và học ở hai cấp
 
+Theo [truy xuất bộ nhớ](../../../00-Standards/memory-retrieval.md): query Project + shared với `--candidates` khi tìm trùng, không giới hạn task nếu cần so toàn namespace; phân trang descriptor rồi mở bài gốc liên quan. Khi tạo/sửa lesson, bổ sung `retrieval` summary/topics/entities/interactions sau đọc nguồn, giữ ID/status/evidence/quyền chia sẻ; query lại để catalog phản ánh thay đổi. Candidate không thành luật, unknown không bị bỏ qua; không nạp toàn bộ INDEX/body để bắt đầu.
+
 - Xác định dữ liệu mới so với SESSION-REVIEW.md; so nội dung/hash/phiên bản, không chỉ ngày. Cùng dữ liệu và không có thay đổi thì báo không có cập nhật, không thêm entry/lesson lặp.
 - Tách kết quả thực, phương pháp có ích, lỗi, đánh đổi, giả thuyết nguyên nhân và việc chưa kiểm. Không chỉ gom lỗi; render đẹp hoặc lời AI lặp lại không là bằng chứng độc lập.
-- Đọc INDEX và lesson thực liên quan của Project và shared. Tìm trùng theo hành động/điều kiện/cơ chế trước khi tạo ID. Chỉ đọc bộ nhớ Project khác khi được giao đánh giá chuyển giao.
+- Đọc descriptor phân trang và lesson gốc liên quan của Project và shared theo lõi truy xuất; INDEX dùng điều hướng/kiểm chỉ mục khi cần. Tìm trùng theo hành động/điều kiện/cơ chế trước khi tạo ID. Chỉ đọc bộ nhớ Project khác khi được giao đánh giá chuyển giao.
 - Luôn đánh giá riêng bài học Project và đóng góp shared. Đổi chủ đề phương pháp còn có ích không? Phụ thuộc model/giao diện/format nào? Hành động/bằng chứng gì? Kỹ thuật không tự là chung, đặc tính loài không thành quy tắc toàn kho. Không có đóng góp mới thì ghi lý do ngắn, không ép tạo lesson.
 - Định tuyến dữ kiện → Knowledge, giới hạn model → Models, chỉ thị lâu dài → quy chuẩn/decisions theo quyền rõ đã có, quan sát cục bộ → production. Không tự sửa các nguồn từ suy đoán. Lesson chỉ ghi phương pháp mới và dẫn nguồn, không nhân bản quy chuẩn.
 - Tự ghi/cập nhật candidate ở Project hoặc shared; giữ ID khi bổ sung bằng chứng/chuyển phạm vi. Một sự việc có hai lesson chỉ khi khác hành động/phạm vi. Nếu active mất căn cứ, ghi mâu thuẫn và đưa về candidate theo policy; giữ lịch sử, sửa chỉ mục/liên kết.

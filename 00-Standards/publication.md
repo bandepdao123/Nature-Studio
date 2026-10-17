@@ -34,3 +34,7 @@ Manifest cài đặt local trong `07-Releases/manifests/` có thành phần tên
 ## Dữ liệu đã từng lên GitHub
 
 v1.4 xóa runtime khỏi cây main hiện hành bằng commit thông thường, giữ bản local. Dữ liệu ở commit cũ vẫn có thể truy cập; ignore/CI không xóa lịch sử Git. Muốn xóa toàn bộ lịch sử cần quy trình rewrite/force-push phối hợp với người dùng, không tự thực hiện trong cập nhật hệ thống thường lệ.
+
+## Chỉ mục truy xuất — v1.8
+
+Catalog/query/selection của memory_retrieval.py giữ tại .nature-studio, không đưa lên GitHub/gói phân phối; guard chặn JSON bên trong05-Memory kể cả snapshot. Metadata retrieval của lesson công khai phải được rà/làm sạch như action. Dựng INDEX Markdown của tập xuất từ đúng bài public/reviewed đã chọn, không chép index/catalog local có tóm tắt private. Không có public JSON catalog trong bản đầu; nhận source lesson đủ để rebuild local. Việc đọc/lọc không nâng status hoặc publication.

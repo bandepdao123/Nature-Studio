@@ -5,6 +5,13 @@
   "status": "candidate",
   "kind": "procedural",
   "action": "<specific-reusable-action>",
+  "retrieval": {
+    "schema": 1,
+    "summary": "<action and important limits; read original before use>",
+    "topics": [],
+    "entities": [],
+    "interactions": []
+  },
   "transfer_rationale": null,
   "scope": "project",
   "project_id": "<stable-project-id>",

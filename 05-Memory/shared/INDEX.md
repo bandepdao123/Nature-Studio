@@ -1,9 +1,8 @@
-# Bộ nhớ chung có điều kiện
+# Bộ nhớ công khai
 
-Updated: 2026-10-17 | Active: 0 | Candidates: 1 | Retired: 0
+Chỉ mục dựng từ tập bài public/reviewed thực được xuất. Active: 0 | Candidates: 2 | Retired: 0
 
-| ID | Version | Status | Action / applicability | Path |
-|---|---|---|---|---|
-| L-f1f7b278-539b-41d8-b308-9a489c003de4 |0.1 |candidate | Đo mức mix và chuyển nhánh hậu kỳ âm khi cần; không tự xử lý file | [lesson](candidates/L-f1f7b278-539b-41d8-b308-9a489c003de4.md) |
+[Truy xuất chọn lọc](../../00-Standards/memory-retrieval.md); đọc gốc trước áp dụng, candidate không là luật.
 
-Có 1 candidate public; kiểm tín hiệu không thay kiểm nghe, chưa có active. [Chính sách bộ nhớ](../../00-Standards/memory-policy.md). Chỉ mục là bản đồ; kiểm file thực khi có nghi ngờ.
+- [L-34e879f8-478d-4349-97df-36224470c043 v0.3 — candidate](candidates/L-34e879f8-478d-4349-97df-36224470c043.md)
+- [L-f1f7b278-539b-41d8-b308-9a489c003de4 v0.2 — candidate](candidates/L-f1f7b278-539b-41d8-b308-9a489c003de4.md)

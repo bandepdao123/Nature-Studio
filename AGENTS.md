@@ -6,6 +6,8 @@ Khi người dùng gọi `/clonevideo` hoặc yêu cầu học cách quay/hành 
 
 Đọc START-HERE.md và SYSTEM.md trước khi thực hiện công việc trong kho.
 
+Bộ nhớ theo [truy xuất chọn lọc](00-Standards/memory-retrieval.md): query mô tả ngắn Project + shared theo nhiệm vụ/ngữ cảnh, phân trang và xét unknown/legacy rồi mở bản gốc phù hợp; không nạp toàn bộ INDEX/active, không áp candidate như luật.
+
 Phiên bản toàn hệ thống đọc từ VERSION, thay đổi ở CHANGELOG.md. Khi nhận link GitHub để hiểu hệ thống hoặc yêu cầu cập nhật, đọc README.md và thực hiện UPDATE.md; đối chiếu commit/hash và thay đổi local trước khi ghi. Không coi link nguồn là bằng chứng đã biết bản đang dùng của người dùng.
 
 Trước khi phát triển concept mới, đọc [hướng dẫn sáng tạo chung](00-Standards/creativity.md) và hướng dẫn riêng được PROJECT.md chỉ định. Ví dụ không giới hạn không gian câu chuyện; rà lịch sử và kiểm độ mới ở hành vi/nhân quả. Revision giữ ý định đã chốt.

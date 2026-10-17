@@ -30,6 +30,28 @@ class PublicationTests(unittest.TestCase):
     def test_template_and_runtime_readme_allowed(self):
         self.assertTrue(self.check({'04-Productions/README.md': b'Local only', '00-Standards/templates/idea-ledger.md': b'Empty template'})['valid'])
 
+    def test_memory_json_catalog_never_exported(self):
+        for path in ['05-Memory/catalog.json', '05-Memory/shared/query.json',
+                     '07-Releases/snapshots/old/05-Memory/catalog.json']:
+            self.assertFalse(self.check({path: b'{"private_summary":"hidden"}'})['valid'])
+
+    def test_indexes_rebuilt_from_public_set_only(self):
+        import sys
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+        from public_memory_indexes import rebuild
+        files = self.files()
+        files['03-Projects/test/PROJECT.md'] = b'ID: test'
+        data = json.loads(files['05-Memory/projects/test/candidates/L-test.md'].decode().split('---')[1])
+        data.update(id='L-test', version='0.1', status='candidate')
+        files['05-Memory/projects/test/candidates/L-test.md'] = ('---\n'+json.dumps(data)+'\n---\npublic').encode()
+        files['05-Memory/projects/test/INDEX.md'] = b'PRIVATE-ID PRIVATE-SUMMARY'
+        output = rebuild(files, files.__getitem__)
+        self.assertNotIn(b'PRIVATE', b''.join(output.values()))
+        self.assertIn(b'L-test', output['05-Memory/projects/test/INDEX.md'])
+        data['publication']['visibility']='private'
+        files['05-Memory/projects/test/candidates/L-test.md']=('---\n'+json.dumps(data)+'\n---').encode()
+        with self.assertRaises(ValueError): rebuild(files, files.__getitem__)
+
     def test_local_installation_manifests_blocked_in_public_tree(self):
         for path in ['07-Releases/manifests/story-development-installation-2026-10-16.json',
                      '07-Releases/manifests/taoanh-installation-2026-10-16.json',

@@ -1,6 +1,6 @@
 # Ghi và sử dụng bộ nhớ
 
-Version: 2.0 | Updated: 2026-10-16 | Nature Studio v1.1
+Version: 2.1 | Updated: 2026-10-17 | Truy xuất chọn lọc v1.8; giữ gate activation
 
 ## Phân luồng và nguồn duy nhất
 
@@ -41,7 +41,7 @@ Khi bằng chứng mới mâu thuẫn, ghi phạm vi/bằng chứng, ngừng dù
 
 ## Truy xuất và kiểm vòng sau
 
-Đọc INDEX Project và shared, lọc status/nhiệm vụ/model/giao diện/format/điều kiện thực tế; mở bản gốc trước khi áp. Danh sách conditions rỗng nghĩa là không thêm hạn chế ở chiều đó, không chứng minh áp dụng mọi nơi; vẫn đọc điều kiện/ngoại lệ. Không tự áp bộ nhớ Project khác; chỉ tra khi được giao đánh giá chuyển giao.
+Theo [truy xuất chọn lọc](memory-retrieval.md), query metadata Project hiện hành + shared theo nhiệm vụ và hint chủ đề/đối tượng/tương tác; không nạp toàn bộ INDEX hoặc toàn văn mọi active. Đọc descriptor theo trang rồi mở bản gốc có thể áp dụng. Conditions mâu thuẫn rõ mới loại; thông tin chưa biết/legacy cần xét, nhãn chỉ xếp liên quan. Không cắt top-k để chứng nhận coverage. Danh sách conditions rỗng không thêm hạn chế ở chiều đó, không chứng minh áp dụng mọi nơi; vẫn đọc điều kiện/ngoại lệ. Không tự áp bộ nhớ Project khác; chỉ tra khi được giao đánh giá chuyển giao.
 
 Quy chuẩn hiện hành ưu tiên hơn memory; gặp mâu thuẫn nêu vấn đề, không âm thầm ghi đè. INPUTS ghi ID + version + đường dẫn + cách dùng; candidate đã thử ghi riêng. Lần `/dongvideo` sau kiểm lesson nào thật sự được dùng, kết quả/giới hạn; đã dùng không chứng minh có ích hoặc quan hệ nhân quả.
 

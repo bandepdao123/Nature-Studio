@@ -15,6 +15,7 @@ Nguồn nghiên cứu / thẻ truy xuất:
 Ghi chú: không mặc định kế thừa quy tắc dự án khác.
 
 Memory namespace: 05-Memory/projects/<project-slug>/INDEX.md (stable ID ở trên).
+Memory retrieval: theo 00-Standards/memory-retrieval.md; query descriptor Project + shared theo nhiệm vụ/hint rồi mở bài gốc liên quan, không đưa toàn bộ INDEX/active vào context-map common. Unknown/legacy cần xét; candidate không là luật.
 Khi khởi tạo Project, tạo INDEX và candidates/active/retired trong namespace, dẫn cả shared/INDEX.md từ PROJECT.md và đăng ký namespace ở 05-Memory/INDEX.md. Không kế thừa bài học Project khác mặc định. Model/format/loài là điều kiện nếu liên quan, không mặc định dự án nào cũng có cá.
 
 First-frame QA guide: 00-Standards/first-frame.md + tài liệu riêng Project nếu có; không kế thừa tiêu chí cá/nước/9:16 cho mọi Project. /taoanh chỉ chạy khi có yêu cầu tạo ảnh thực.

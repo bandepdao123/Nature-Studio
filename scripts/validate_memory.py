@@ -87,6 +87,9 @@ def validate_record(root, path, projects):
     productions = data.get('production_ids')
     need(isinstance(productions, list) and all(isinstance(x, str) for x in productions), 'Invalid production_ids')
     conditions = data.get('conditions')
+    if 'retrieval' in data:
+        from memory_retrieval import retrieval_errors
+        errors.extend(retrieval_errors(data['retrieval']))
     need(isinstance(conditions, dict), 'Missing conditions')
     if isinstance(conditions, dict):
         for key in ('tasks', 'models', 'interfaces', 'formats'):

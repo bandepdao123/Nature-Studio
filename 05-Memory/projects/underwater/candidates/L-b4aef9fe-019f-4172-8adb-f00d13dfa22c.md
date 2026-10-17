@@ -1,7 +1,7 @@
 ---
 {
   "id": "L-b4aef9fe-019f-4172-8adb-f00d13dfa22c",
-  "version": "0.1",
+  "version": "0.2",
   "status": "candidate",
   "kind": "empirical",
   "action": "Thử viết caption bằng một chi tiết thật và một ý định giao tiếp phù hợp footage; đối chiếu độ khớp/độ cụ thể với caption cũ, giữ format/hashtag hiện hành và ghi kết quả thực nếu được giao đăng.",
@@ -12,7 +12,10 @@
     "under-fishing-us"
   ],
   "production_ids": [],
-  "publication": {"visibility": "public", "reviewed": true},
+  "publication": {
+    "visibility": "public",
+    "reviewed": true
+  },
   "conditions": {
     "tasks": [
       "caption-writing",
@@ -40,6 +43,15 @@
     "method": "none",
     "date": null,
     "authority": null
+  },
+  "retrieval": {
+    "schema": 1,
+    "summary": "Thử caption hướng vào chi tiết thật theo footage; hiệu quả khán giả chưa kiểm, giữ format Project.",
+    "topics": [
+      "caption"
+    ],
+    "entities": [],
+    "interactions": []
   }
 }
 ---
@@ -54,3 +66,5 @@ Validation: chưa chạy; đánh giá độ khớp footage và tự nhiên Anh M
 Status history: candidate mới từ nghiên cứu; không được xem như chỉ thị active.
 
 2026-10-16 — UF-D015: người dùng đã chọn phong cách để áp dụng trong quy chuẩn Project. Phần giả thuyết hiệu quả vẫn candidate, chưa được kiểm; không cần active lesson để thi hành quyết định người dùng. Giới hạn độ dài cũ được thay bởi ưu tiên linh hoạt trong audience-and-caption.md; giữ 3–5 hashtag.
+
+2026-10-17 — v0.2: bổ sung metadata truy xuất chọn lọc; giữ trạng thái, phạm vi, bằng chứng và quyền chia sẻ.

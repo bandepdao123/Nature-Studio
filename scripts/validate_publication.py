@@ -17,8 +17,10 @@ def forbidden(path):
                           and bool(re.search(r'(?:^|-)installation(?:-|\.)', parts[-1], re.I))
                           and parts[-1].lower().endswith('.json'))
     return (('04-Productions' in parts and path != '04-Productions/README.md')
+            or (bool(parts) and parts[0] == 'tmp')
             or local_installation
             or '.nature-studio' in parts
+            or ('05-Memory' in parts and path.lower().endswith('.json'))
             or ('idea-ledger.md' in parts and path != '00-Standards/templates/idea-ledger.md')
             or ('benchmarks' in parts and ('evidence' in parts or parts[-1] in {'captions-raw.json', 'evidence-manifest.json'})))
 
