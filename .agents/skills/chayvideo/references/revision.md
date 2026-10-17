@@ -1,8 +1,10 @@
 # Sửa/tiếp tục clip
 
-Version: 1.1 | Updated: 2026-10-17 | Dùng chung revision tạo mới và chuyển thể
+Version: 1.2 | Updated: 2026-10-17 | Task/effect union và nguồn theo giai đoạn
 
 Đọc packet revision và production cụ thể: brief/concept, SUMMARY, attempt được chọn, INPUTS/feedback và media/handoff khi được cung cấp. Không mặc định attempt số lớn nhất là được chọn. Thiếu ngữ cảnh clip cần xác định thì hỏi đúng phần thiếu; chưa rõ không viết chuyện thay thế.
+
+Theo [lõi chung](../../../../00-Standards/video-prompt-workflow.md), dùng stage write/review/save và effects thực, không đi lại concept-new. Render/audio review phải có task tương ứng, không coi mode revision là đã truy xuất mọi lesson review. View giữ nguyên văn; coverage giữ đủ tập nguồn nền và phần được effects bổ sung. Ảnh hưởng chưa rõ hoặc config thiếu quay về nguồn đầy đủ; không tự cắt Knowledge chỉ từ chữ “sửa nhỏ”.
 
 Dùng resolve và base_attempt/base_sha256 theo [lõi chung](../../../../00-Standards/video-prompt-workflow.md#tiếp-tục-đúng-bộ-đầu-vào) để giữ nguồn từng trường. Đối chiếu frame_state khi sửa chuyện/prompt; thiếu xác nhận t=0 thì unverified. Nếu tiếp tục dùng ảnh đã QA, kiểm handoff theo first-frame.md; sửa văn bản không tự ghi lại handoff hoặc sinh ảnh.
 

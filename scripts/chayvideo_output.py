@@ -8,6 +8,7 @@ import re
 import shutil
 import sys
 import tempfile
+import uuid
 
 from chayvideo_context import ROOT, inside, slug_ok
 from video_ids import project as project_id
@@ -33,17 +34,25 @@ def sha256(path):
 
 def production(root, slug, production_id):
     slug_ok(slug)
-    if not isinstance(production_id, str) or not re.fullmatch(r'(?:[A-Z]{3}-\d{5}|UF-\d{4})', production_id):
+    if not isinstance(production_id, str) or not re.fullmatch(r'(?:[A-Z]{3}-[0-9]{5}|[A-Z]{2}-[0-9]{4})', production_id):
         raise ValueError('Invalid production ID')
     folder = inside(root, f'04-Productions/{slug}/{production_id}')
     if not folder.is_dir():
         raise ValueError('Existing production required; no ID is allocated')
-    if re.fullmatch(r'[A-Z]{3}-\d{5}', production_id):
+    if not re.fullmatch(r'UF-[0-9]{4}', production_id):
         identity = json.loads((folder / 'IDENTITY.json').read_text(encoding='utf-8-sig'))
         if identity.get('video_id') != production_id:
             raise ValueError('Reserved identity mismatch')
         if identity.get('project_id') not in (None, project_id(root, slug)):
             raise ValueError('Reserved Project identity mismatch')
+        if re.fullmatch(r'[A-Z]{2}-[0-9]{4}', production_id):
+            if production_id.endswith('-0000') or identity.get('schema') != 2 or identity.get('id_format') != 'XX-YYYY' or identity.get('project_id') != project_id(root, slug):
+                raise ValueError('Invalid v2 reserved identity')
+            try:
+                for key in ('project_uuid', 'video_uuid'):
+                    uuid.UUID(identity.get(key, ''))
+            except (ValueError, TypeError, AttributeError) as exc:
+                raise ValueError('Invalid v2 identity UUID') from exc
     return folder
 
 

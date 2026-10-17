@@ -10,7 +10,7 @@
 
 Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thiên nhiên.
 
-- [Mã video và Project local](video-identifiers.md) — XXX-yyyyy từ 00001, cấp bằng script.
+- [Mã video và Project local](video-identifiers.md) — XX-YYYY từ 0001, cấp bằng script.
 
 - [Phát triển câu chuyện](story-development.md) — phương pháp chung có nguồn, áp theo Project; không bảo đảm viral.
 
@@ -19,8 +19,12 @@ Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thi�
 - [Tạo first frame và QA](first-frame.md) — /taoanh, QA ảnh thật, tối đa 5 call; tiêu chí riêng lấy từ Project.
 
 - [Lõi viết prompt video](video-prompt-workflow.md) — dùng chung chayvideo/clonevideo, context/hash/kiểm/lưu.
+- [Cấu hình phân luồng nguồn](context-routing.md) — bảo trì nguồn/stage/effect độc lập; view nguyên văn và kiểm coverage.
 - [Chuyển thể video mẫu](reference-video-adaptation.md) — đổi đối tượng/bối cảnh, giữ cơ chế và cách thể hiện, kiểm tương thích tự nhiên.
 
 - [Kiểm media thực và finishing](media-review-and-finishing.md) — capability, duration, loudness và trạng thái độc lập.
 
 - [Truy xuất bài học theo ngữ cảnh](memory-retrieval.md) — descriptor phân trang, mở gốc chọn lọc, cache local và chống bỏ sót.
+
+- [Phạm vi Knowledge và thêm loài/Project](knowledge-routing.md).
+- [Phiên bản hệ thống và bản vá](versioning.md).
