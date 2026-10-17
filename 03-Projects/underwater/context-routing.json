@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "version": "1.0",
+  "updated": "2026-10-17",
+  "description": "Independent source-stage routing. The context-map mode lists remain the mandatory coverage floor. Unknown/unassigned sources broaden reading. Text/media review are separate tasks.",
+  "modes": {
+    "new": {
+      "stages": {
+        "orient": {
+          "sources": [],
+          "tasks": [],
+          "species": false,
+          "angling": false
+        },
+        "concept": {
+          "sources": [
+            "00-Standards/research.md",
+            "00-Standards/creativity.md",
+            "00-Standards/story-development.md",
+            "03-Projects/underwater/creative-direction.md",
+            "03-Projects/underwater/story-development.md",
+            "03-Projects/underwater/format.md",
+            "01-Knowledge/habitats/underwater-realism.md",
+            "01-Knowledge/interactions/fish-prey-and-lure.md",
+            "03-Projects/underwater/output-contract.md",
+            "03-Projects/underwater/audience-and-caption.md",
+            "02-Models/model-profiles/omni-flash.md"
+          ],
+          "tasks": [
+            "video-idea",
+            "research"
+          ],
+          "species": true,
+          "angling": true
+        },
+        "write": {
+          "sources": [
+            "03-Projects/underwater/format.md",
+            "03-Projects/underwater/output-contract.md",
+            "03-Projects/underwater/audience-and-caption.md",
+            "02-Models/model-profiles/omni-flash.md",
+            "01-Knowledge/habitats/underwater-realism.md",
+            "01-Knowledge/interactions/fish-prey-and-lure.md"
+          ],
+          "tasks": [
+            "video-prompt",
+            "first-frame-prompt",
+            "caption"
+          ],
+          "species": true,
+          "angling": true
+        },
+        "review": {
+          "sources": [
+            "00-Standards/quality-review.md",
+            "03-Projects/underwater/format.md",
+            "03-Projects/underwater/output-contract.md",
+            "03-Projects/underwater/audience-and-caption.md",
+            "02-Models/model-profiles/omni-flash.md",
+            "01-Knowledge/habitats/underwater-realism.md",
+            "01-Knowledge/interactions/fish-prey-and-lure.md"
+          ],
+          "tasks": [
+            "video-prompt",
+            "first-frame-prompt",
+            "caption"
+          ],
+          "species": true,
+          "angling": true
+        },
+        "save": {
+          "sources": [
+            "00-Standards/production.md",
+            "00-Standards/video-identifiers.md"
+          ],
+          "tasks": [],
+          "species": false,
+          "angling": false
+        }
+      }
+    },
+    "reference": "new",
+    "revision": {
+      "stages": {
+        "orient": {
+          "sources": [],
+          "tasks": [],
+          "species": false,
+          "angling": false
+        },
+        "write": {
+          "sources": [
+            "00-Standards/research.md",
+            "03-Projects/underwater/format.md",
+            "03-Projects/underwater/output-contract.md",
+            "03-Projects/underwater/audience-and-caption.md",
+            "02-Models/model-profiles/omni-flash.md",
+            "01-Knowledge/habitats/underwater-realism.md",
+            "01-Knowledge/interactions/fish-prey-and-lure.md"
+          ],
+          "tasks": [
+            "video-prompt-revision",
+            "first-frame-prompt"
+          ],
+          "species": true,
+          "angling": true
+        },
+        "review": {
+          "sources": [
+            "00-Standards/quality-review.md",
+            "03-Projects/underwater/format.md",
+            "03-Projects/underwater/output-contract.md",
+            "03-Projects/underwater/audience-and-caption.md",
+            "02-Models/model-profiles/omni-flash.md",
+            "01-Knowledge/habitats/underwater-realism.md",
+            "01-Knowledge/interactions/fish-prey-and-lure.md"
+          ],
+          "tasks": [
+            "video-prompt-revision",
+            "first-frame-prompt"
+          ],
+          "species": true,
+          "angling": true
+        },
+        "save": {
+          "sources": [
+            "00-Standards/production.md"
+          ],
+          "tasks": [],
+          "species": false,
+          "angling": false
+        }
+      }
+    },
+    "caption": {
+      "stages": {
+        "orient": {
+          "sources": [],
+          "tasks": [],
+          "species": false,
+          "angling": false
+        },
+        "write": {
+          "sources": [
+            "03-Projects/underwater/audience-and-caption.md"
+          ],
+          "tasks": [
+            "caption"
+          ],
+          "species": false,
+          "angling": false
+        },
+        "review": {
+          "sources": [
+            "03-Projects/underwater/audience-and-caption.md"
+          ],
+          "tasks": [
+            "caption"
+          ],
+          "species": false,
+          "angling": false
+        },
+        "save": {
+          "sources": [],
+          "tasks": [
+            "caption"
+          ],
+          "species": false,
+          "angling": false
+        }
+      }
+    }
+  },
+  "effects": {
+    "camera": {
+      "sources": [
+        "03-Projects/underwater/format.md",
+        "01-Knowledge/habitats/underwater-realism.md",
+        "00-Standards/quality-review.md"
+      ],
+      "tasks": [
+        "first-frame-prompt"
+      ],
+      "requires": []
+    },
+    "rig": {
+      "sources": [
+        "01-Knowledge/equipment/us-angling-tackle.md",
+        "01-Knowledge/interactions/fish-prey-and-lure.md",
+        "03-Projects/underwater/format.md",
+        "03-Projects/underwater/output-contract.md"
+      ],
+      "tasks": [
+        "video-prompt-revision",
+        "first-frame-prompt",
+        "caption"
+      ],
+      "requires": []
+    },
+    "species": {
+      "sources": [
+        "00-Standards/research.md",
+        "01-Knowledge/habitats/underwater-realism.md",
+        "01-Knowledge/interactions/fish-prey-and-lure.md"
+      ],
+      "tasks": [
+        "research",
+        "video-prompt-revision",
+        "first-frame-prompt",
+        "caption"
+      ],
+      "requires": [
+        "camera"
+      ]
+    },
+    "environment": {
+      "sources": [
+        "00-Standards/research.md",
+        "01-Knowledge/habitats/underwater-realism.md"
+      ],
+      "tasks": [
+        "research",
+        "first-frame-prompt",
+        "video-prompt-revision"
+      ],
+      "requires": []
+    },
+    "story": {
+      "sources": [
+        "00-Standards/story-development.md",
+        "03-Projects/underwater/story-development.md"
+      ],
+      "tasks": [
+        "video-prompt-revision",
+        "first-frame-prompt",
+        "caption"
+      ],
+      "requires": []
+    },
+    "audio-level": {
+      "sources": [
+        "03-Projects/underwater/format.md",
+        "03-Projects/underwater/output-contract.md"
+      ],
+      "tasks": [
+        "video-prompt-revision"
+      ],
+      "requires": []
+    },
+    "audio-source": {
+      "sources": [
+        "00-Standards/research.md",
+        "01-Knowledge/interactions/fish-prey-and-lure.md",
+        "01-Knowledge/habitats/underwater-realism.md"
+      ],
+      "tasks": [
+        "research",
+        "video-prompt-revision"
+      ],
+      "requires": [
+        "audio-level"
+      ]
+    },
+    "video-review": {
+      "sources": [
+        "00-Standards/quality-review.md",
+        "00-Standards/media-review-and-finishing.md"
+      ],
+      "tasks": [
+        "video-review"
+      ],
+      "requires": []
+    },
+    "audio-review": {
+      "sources": [
+        "00-Standards/media-review-and-finishing.md"
+      ],
+      "tasks": [
+        "generated-audio-review"
+      ],
+      "requires": [
+        "video-review"
+      ]
+    }
+  },
+  "task_overrides": {
+    "reference": {
+      "concept": [
+        "reference-video-adaptation",
+        "research"
+      ]
+    }
+  }
+}

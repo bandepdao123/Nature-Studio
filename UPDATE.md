@@ -176,3 +176,13 @@ Tag v1.7 giữ nguyên; bản vá ở v1.7.1/main. Nhận theo commit cụ thể
 Giữ bản khôi phục tracked/untracked và Memory/runtime trước thay đổi. Nhận memory_retrieval.py, taxonomy/contract, packet schema2, tests, validator và hướng dẫn skill. INDEX Markdown vẫn là điểm vào người đọc; không nhúng toàn bộ vào packet. Bộ nhớ hiện có không phải xóa/di chuyển: retrieval là metadata tùy chọn, legacy trả needs_review. Bổ sung summary/topics/entities/interactions sau đọc gốc, tăng version phù hợp, giữ ID/status/evidence/activation/publication; không active candidate hoặc public hóa private chỉ vì migration. Khác task/model/format chưa biết giữ unknown, tìm theo nhãn không loại tuyệt đối.
 
 Catalog/query local tại .nature-studio có thể rebuild; không nhận cache upstream. Query lại khi source/taxonomy đổi, giữ log INPUTS cũ. Packet schema1 verify legacy vẫn được hỗ trợ; tác vụ tiếp theo tạo schema2. Khi rollback source, giữ metadata retrieval và runtime; bản cũ không biết lọc có thể đọc rộng hơn, không xóa lesson/quota/approval để tương thích. Publish chỉ khi được giao, dựng INDEX public từ tập bài public/reviewed thực được xuất và chạy guard; không xuất catalog JSON ở05-Memory. Không tự cài dịch vụ hoặc render để kiểm routing.
+
+## Nâng v1.8 lên v2.0.0
+
+Đối chiếu VERSION, commit/hash và thay đổi local theo các bước ở trên. Sao lưu riêng registry bằng SQLite backup hoặc khi không có phiên ghi; giữ production, identity, ledger, quota và Memory. Các file context/helper/schema1/2 cũ vẫn có đường tương thích; schema3 dùng khi chọn stage. Xem [phân luồng](00-Standards/context-routing.md) và [Knowledge](00-Standards/knowledge-routing.md).
+
+Chỉ cập nhật mã nguồn **không gọi init/reserve trên registry thật**. Kiểm `python scripts/video_ids.py status underwater` (chỉ đọc). Lần init/reserve thật sau đó mới chuyển Project đang dùng prefix ba chữ sang namespace hai chữ, giữ Project UUID, lưu series/bộ đếm cũ; mọi video lịch sử giữ nguyên. UF không được cấp mới. Xem [mã video](00-Standards/video-identifiers.md).
+
+Sau nâng cấp chạy bộ kiểm được giao và `python scripts/versioning.py check`. Bản vá nhỏ tiếp theo dùng 2.0.1 theo [chính sách](00-Standards/versioning.md). Không sửa archive cũ hoặc tự push/tag/GitHub Release.
+
+Rollback nguồn trước khi registry chuyển: khôi phục snapshot nguồn đã sao lưu. Sau khi registry đã chuyển: không dùng allocator v1.x với registry v2; guard sẽ từ chối ghi. Cần backup nguồn/registry đồng bộ và xử lý các reservation/video mới phát sinh trước khi khôi phục; không chép backup cũ đè dữ liệu mới.

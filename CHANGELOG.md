@@ -2,6 +2,16 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.0.0 — 2026-10-17
+
+- /chayvideo v2.7: một dispatcher, nguồn theo stage và effect; cấu hình Project độc lập với skill, unknown/unassigned giữ đường đọc đầy đủ. Fullset đủ brief ưu tiên all + view để tránh overhead chia stage không cần thiết.
+- Thêm view nguyên văn + receipt local có context epoch, task union cho review hình/âm, coverage tập nguồn nền và fingerprint builder/router/config. Receipt không là bằng chứng hiểu nguồn; sau compaction phải đọc lại.
+- Giữ nguồn và gate hiện hành, compatibility packet schema1/2; schema3 chỉ dùng khi chọn stage. Chưa công bố chất lượng model tương đương hoặc tỷ lệ tiết kiệm usage thực; kiểm helper và số đo proxy lưu trong hồ sơ triển khai local. Chốt các tối ưu local vào phiên bản hệ thống v2.0.0.
+
+- Mã video mới XX-YYYY: hai chữ ASCII và bốn số 0001–9999; UF giữ riêng cho legacy. Migration registry theo nhu cầu trong transaction, giữ UUID, mã cũ và bộ đếm cũ; chặn allocator cũ ghi sai định dạng. Không cấp video hoặc migrate registry thật khi nâng mã nguồn.
+- Phân biệt Knowledge dùng chung có phạm vi với quy chuẩn Project; hướng dẫn thêm loài/Project độc lập qua map.
+- VERSION 2.0.0; mặc định bản vá nhỏ tăng thành 2.0.1, 2.0.2… Có helper kiểm phiên bản/đề xuất số kế tiếp, không tự phát hành sau mỗi clip.
+
 ## v1.8 — 2026-10-17
 
 - Thêm engine truy xuất metadata Project/shared, task aliases và nhãn chủ đề/đối tượng/tương tác; phân trang summary, mở nguồn hash-bound, unknown/legacy fallback. Topic xếp hạng, không là quyền áp dụng.

@@ -1,31 +1,38 @@
 # Mã Project và video
 
-Version: 1.0 | Updated: 2026-10-16 | Nature Studio v1.2
+Version: 2.0 | Updated: 2026-10-17 | Nature Studio v2.0.0
 
-Video mới có mã `XXX-yyyyy`: ba chữ A–Z viết hoa riêng từng Project local, năm chữ số từ 00001 đến 99999. Ví dụ QMT-00001 chỉ minh họa, không phải prefix mặc định. Repo không gán sẵn prefix cho người clone. Mỗi video giữ mã qua revision; các attempt A01, A02… là lần thử bên trong, không tăng số video. Hủy/xóa video không giải phóng mã. Hết 99999 thì dừng và quyết định mở rộng chuẩn, không quay về 00001 hoặc tự đổi prefix.
+Video mới dùng `XX-YYYY`: hai chữ ASCII A–Z viết hoa và bốn chữ số ASCII từ **0001 đến 9999**. Ví dụ `AB-0001` chỉ minh họa, không là prefix mặc định. Prefix cấp riêng từng Project local; **UF dành riêng cho legacy**, không cấp mới. Có tối đa 675 prefix khả dụng trước các prefix đã dùng/nhập. UUID phân biệt danh tính giữa các workspace; mã ngắn không bảo đảm duy nhất toàn cầu.
 
-## Công cụ cấp mã
+Revision giữ mã và tạo attempt A01, A02… Hủy/xóa không giải phóng số. Đạt 9999 hoặc hết prefix thì dừng để quyết định mở rộng chuẩn, không quay vòng hay tự đổi prefix.
 
-Đọc PROJECT.md để chọn slug/ID ổn định; không suy slug từ tên hiển thị. Khi thiết lập Project lần đầu ở local hoặc trước video mới đầu tiên, chạy:
+## Cấp mã
+
+Đọc Slug và ID ổn định trong PROJECT.md; không suy từ tên hiển thị. Xem trạng thái bằng lệnh chỉ đọc, không tạo registry hoặc migration:
+
+```text
+python scripts/video_ids.py status underwater
+```
+
+Khi thực sự thiết lập Project hoặc chuẩn bị video mới:
 
 ```text
 python scripts/video_ids.py init underwater
-```
-
-Có thể dùng `--prefix ABC` nếu người dùng chỉ định ba chữ chưa dùng. Lệnh init trả lại cấu hình cũ nếu đã có; không cấp prefix mới khi cập nhật repo/đổi tên Project. Khi đủ brief và thực sự tạo video mới:
-
-```text
 python scripts/video_ids.py reserve underwater
 ```
 
-reserve tự init nếu cần, giữ số bằng transaction SQLite và tạo `04-Productions/<slug>/<video-id>/IDENTITY.json`. Identity có UUID Project/video để phân biệt khi nhập dữ liệu từ máy khác. Registry `.nature-studio/video-ids.sqlite3` là dữ liệu local không có trong Git; không xóa/reset khi nâng phiên bản. Số đã commit vẫn bị giữ nếu bước tạo thư mục lỗi; khoảng trống là hợp lệ. Không gọi reserve khi chỉ hỏi kiến thức, sửa skill hoặc sửa video cũ. Không tự đặt mã bằng đoán số trong chat. Python/registry không hoạt động thì báo giới hạn và xử lý trước khi cấp mã.
+`init` không tạo video; tùy chọn `--prefix AB` chỉ nhận hai chữ chưa dùng, khác UF. Khi đã có namespace v2, init trả cấu hình hiện hành, cấm đổi prefix. `reserve` tự init nếu cần, commit số bằng transaction SQLite rồi tạo `04-Productions/<slug>/<video-id>/IDENTITY.json` schema2 với id_format, mã và UUID video/Project. Ghi file lỗi vẫn tiêu hao số đã commit; khoảng trống hợp lệ. Không reserve khi hỏi kiến thức, sửa skill, nâng hệ thống hoặc sửa/tổng kết video cũ. Không tự đoán mã bằng chat. Công cụ lỗi phải xử lý trước khi cấp mã.
 
-Script kiểm prefix đã cấp trong registry và mã mới có trên thư mục production/ledger toàn workspace; số mới lớn hơn số registry và các mã cùng prefix tìm thấy. Các phiên trên cùng workspace sử dụng cùng registry. Không đảm bảo duy nhất toàn cầu bằng ba chữ; UUID là căn cứ phân biệt khi gộp dữ liệu. Hai bản clone được sản xuất độc lập không chia sẻ transaction; trước khi gộp phải so cả mã và UUID, không ghi đè vì mã giống nhau.
+Kiểm prefix trong registry, series lịch sử, videos, thư mục production, ledger và IDENTITY toàn workspace. Số tiếp theo vượt high-water registry/videos và mã cùng prefix đã quan sát. Nhiều phiên cùng local dùng chung registry. Dữ liệu identity hỏng phải sửa/khôi phục, không bỏ qua để cấp tiếp.
 
-## Di chuyển, mẫu và lịch sử
+## Chuyển từ v1.x
 
-- Tiếp tục cùng một Project trên máy khác: sao lưu cả `.nature-studio/` khi không có phiên đang ghi, cùng production/ledger. Đừng clone rồi khởi tạo mới nếu muốn giữ danh tính local cũ.
-- Tạo Project độc lập từ mẫu: cấp ID Project mới và chạy init, không chép registry/IDENTITY từ mẫu. Chỉ clone repo sạch thì chưa có registry, prefix được thiết lập khi init lần đầu; không cần tạo toàn bộ Project ngay khi tải repo.
-- Mất registry nhưng còn production: dừng khôi phục từ backup nếu cần tiếp tục danh tính cũ. init không tái nhận prefix có trên các mã đã có; nó cấp danh tính mới để tránh chiếm nhầm. Không nhận đã khôi phục UUID/bộ đếm chỉ từ tên thư mục.
-- Repo/gói phân phối mẫu không chứa registry local; backup/di chuyển workspace cá nhân phải kèm registry riêng. UPDATE.md hướng dẫn bảo toàn nó. Khi nhập/gộp Project từ nguồn khác, so ID/UUID/prefix và giải quyết xung đột trước, không tự đổi mã lịch sử.
-- UF-0001 và prefix UF là legacy: giữ nguyên đường dẫn, ID, attempt và tham chiếu. Chỉ video mới dùng prefix local ba chữ và bắt đầu 00001; không đổi UF-0001 thành mã mới, không tự gán UUID giả cho lịch sử. /dongvideo vẫn tra được mã cũ.
+Mã `XXX-YYYYY` và `UF-0001` giữ nguyên thư mục, identity, attempt, ledger và tham chiếu. Không rút ngắn mã cũ hoặc gán UUID giả. /chayvideo, /clonevideo, /dongvideo và /taoanh tiếp tục dùng lịch sử cũ.
+
+Registry cũ chỉ chuyển khi **init/reserve thật**: lưu prefix/bộ đếm ba chữ vào bảng series, cấp namespace hai chữ bắt đầu 0001 và giữ nguyên Project UUID. Migration atomic; lỗi thì rollback. Không sửa các hàng video cũ. Registry v2 có guard chặn allocator cũ ghi sai định dạng. Không dùng script v1.x với registry đã chuyển; rollback phải khôi phục mã nguồn và backup registry tương ứng trong lúc không có phiên ghi, đồng thời bảo toàn mọi reservation/video phát sinh sau backup.
+
+## Backup và gộp dữ liệu
+
+`.nature-studio/video-ids.sqlite3` là dữ liệu local, không nằm trong Git/gói mẫu; luôn giữ khi nâng cấp. Di chuyển cùng Project phải sao lưu registry nhất quán (SQLite backup hoặc không có phiên ghi), production và ledger. Đổi tên Project không đổi ID/UUID/prefix.
+
+Mất registry: khôi phục backup trước khi tiếp tục cùng danh tính; không nhận đã khôi phục UUID/bộ đếm từ tên thư mục. Project độc lập từ mẫu dùng ID Project mới, không chép registry/IDENTITY mẫu. Trước gộp hai workspace, so cả ID, UUID và mã; xử lý xung đột trước, không ghi đè hoặc đổi mã lịch sử tự động. Xem [UPDATE](../UPDATE.md).
