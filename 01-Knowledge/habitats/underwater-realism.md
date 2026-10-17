@@ -4,6 +4,8 @@ ID: K-HAB-UNDERWATER-001 | Status: inherited-reference | Updated: 2026-10-15
 
 > Nhập nguyên nội dung liên quan từ hướng dẫn Under Fishing v1.9 do người dùng chốt, ngày 2026-10-15. Đây là dữ liệu kế thừa, không phải lần kiểm nguồn/đo/render mới. Các số mục và tham chiếu đánh số trong đoạn trích thuộc bản gốc; tra bản đầy đủ tại ../../07-Releases/standalone-guides/underwater-ai-realism-prompt-guide-v1.9.md. Ví dụ câu cá không tự áp dụng cho mọi kênh.
 
+> Áp dụng hiện hành riêng Underwater — UF-D021, 2026-10-17: các mô tả camera cố định trong trích nguồn v1.9 bên dưới là lịch sử. Camera hiện hành theo [format Underwater](../../03-Projects/underwater/format.md#camera-cầm-tay-tự-nhiên--uf-d021): cầm tay chuyển động nhẹ tự nhiên như người quay điện thoại; không khóa vị trí/hướng máy. Giữ các yêu cầu quang học, vật liệu và phối cảnh; phân biệt chuyển động ảnh do máy với chuyển động thật của cá. Không suy thay đổi camera cho Project khác.
+
 ## 2. Môi trường phải khớp cả năm biến cùng lúc
 
 Mỗi ý tưởng cần khóa một địa điểm có thật ở mức **vùng và kiểu thủy vực**, không cần bịa tên hồ/lạch cụ thể; rồi khóa năm biến: **độ sâu — nền đáy — độ trong — nguồn sáng — dòng chảy**. Nếu đổi một biến, kiểm lại bốn biến còn lại.

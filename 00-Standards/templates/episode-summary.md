@@ -13,3 +13,9 @@ Next action if any:
 Session review link / latest reviewed scope (independent of production approval/status):
 
 Video identity: IDENTITY.json for new IDs; keep legacy IDs unchanged.
+
+Current text attempt/path/hash:
+Selected render path/hash and actual prompt/first-frame evidence:
+QA by domain: visual / motion / anatomy / audio / format:
+Human approval: none | provisional | final; evidence:
+Optional CURRENT-STATE.json: see current-state.json template; never derive approval from QA or attempt order.

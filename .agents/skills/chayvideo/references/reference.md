@@ -7,3 +7,5 @@
 Khóa trạng thái t=0, vai trò/mapping, lực/đường đi, key/aftermath và âm theo đúng đích. Viết qua output-contract và model profile hiện hành, kiểm chéo với source event IDs; format/caption/lesson/QA/lưu hồ sơ đều dùng [lõi chung](../../../../00-Standards/video-prompt-workflow.md) và cùng scripts/chayvideo_output.py. Dùng `--mode reference` để kiểm/lưu fullset. Khi chỉ sửa caption hoặc một phần của bản chuyển thể đã có, chuyển nhánh caption/revision; không phân tích lại nguyên mẫu khi không cần.
 
 Đủ nội dung mới thì reserve mã đúng Project, lưu analysis/brief paths+hash và adaptation vào research/concept/INPUTS, ghi ledger là chuyển thể có chủ đích. Chỉ phân tích không reserve. Không khẳng định đã render, nghe audio đích hoặc QA media từ việc viết prompt.
+
+Trước viết, khóa translation/rotation/chuyển động chủ thể riêng trong adaptation.md theo chuẩn chuyển thể; partial acceptance không cho phép thay cơ chế. Mapping hiện hành phải khớp revision đã chọn, không lấy nhầm lịch sử.

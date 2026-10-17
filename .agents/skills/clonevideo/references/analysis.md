@@ -1,6 +1,6 @@
 # Đọc mẫu có bằng chứng
 
-Version: 1.1 | Updated: 2026-10-17 | Quan sát và chức năng phục vụ chuyển thể
+Version: 1.2 | Updated: 2026-10-17 | Quan sát và chức năng phục vụ chuyển thể
 
 ## Truy cập và khả năng thật
 
@@ -27,3 +27,7 @@ Phân tích local ở `.nature-studio/references/<ref-id>/analysis-v001.json`, b
 Hash bytes file nguồn với `python scripts/reference_video.py hash <file>`; link chỉ là locator, không là danh tính bất biến. Có file/hash hoặc remote version kiểm được mới xác nhận cache còn đúng; URL giống nhau hoặc bản metadata hash không chứng minh nội dung không đổi. Không kiểm lại được nguồn thì ghi cache unverified, không gọi fresh. Clip/analysis đổi làm brief cũ hết hạn; chuẩn Project đổi chỉ cần đọc lại chuẩn/ánh xạ, không tự phân tích lại video nguyên vẹn không đổi. Đổi target không buộc đọc lại toàn mẫu nếu hồ sơ đã có đầy đủ thông tin cần thiết.
 
 Chạy helper check/brief theo schema. Đọc lại bằng chứng phần ảnh hưởng nếu hồ sơ mơ hồ/thiếu động tác hoặc âm; không dùng bản brief ngắn để che coverage thiếu. Mặc định chỉ giao bộ chuyển thể hoàn chỉnh khi đủ hình và âm (hoặc xác minh nguồn không có audio). Phân tích một phần chỉ giao như draft khi người dùng trực tiếp chấp nhận giới hạn đó; giới hạn phải đi cùng hồ sơ và kết quả, không tự hiểu im lặng là đồng ý.
+
+## Preflight có thể kiểm — v1.7
+
+Trước nhận phân tích, chạy `python scripts/media_review.py capabilities` nếu dùng runtime local, đối chiếu thêm tool thực trong phiên theo [media review](../../../../00-Standards/media-review-and-finishing.md). Phát hiện FFmpeg/WhisperX không mở native video/audio understanding; báo phần thiếu ngay, không hứa upload file sẽ giải quyết. Adapter thật cần method/ranges/evidence. Không biến chấp thuận partial thành quyền đổi cơ chế máy–chủ thể.

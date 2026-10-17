@@ -1,0 +1,8 @@
+{
+  "schema": 1,
+  "current_text": {"path": "Axx/output.md", "sha256": "replace-with-measured-sha256"},
+  "selected_render": null,
+  "approval": "none",
+  "approval_evidence": null,
+  "qa": {"visual": "not_checked", "motion": "not_checked", "anatomy": "not_checked", "audio": "not_checked", "format": "not_checked"}
+}

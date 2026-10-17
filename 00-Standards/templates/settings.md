@@ -11,3 +11,8 @@ Output files:
 Actual measured properties:
 Unknown or unsupported controls:
 Không suy ra setting thực từ yêu cầu trong prompt.
+
+Actual prompt source attempt/path/hash (unknown until verified):
+Actual first-frame path/hash (unknown until verified):
+Actual metadata report / target comparison:
+Generation input evidence (not inferred from newest text or filename):

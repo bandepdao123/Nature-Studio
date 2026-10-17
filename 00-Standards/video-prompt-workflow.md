@@ -47,3 +47,7 @@ Revision đổi idea/video/first-frame prompt phải đánh giá lại frame_sta
 Hồ sơ cũ fullset có OUTPUT.json vẫn resolve được; thiếu frame_state là unverified. Attempt chỉ có Markdown hoặc partial không rõ base phải mở nguồn để xác định, không suy theo số/thời gian. Nếu cần tiếp nối bằng helper, lưu một fullset snapshot mới sau khi đọc/đối chiếu bốn trường thật (`save --mode new` với **ID hiện có**, ghi nguồn legacy vào INPUTS); không cấp ID mới, không sửa attempt cũ và không giả đã tạo concept/media mới. Snapshot là cầu nối rõ ràng, không backfill toàn kho. Không có Python thì dùng tham chiếu từng trường trong INPUTS, ghi chưa được helper kiểm, không giả resolve đạt.
 
 Nếu dùng ảnh đã QA, theo [kiểm liên kết first frame](first-frame.md#kiểm-liên-kết-ảnh-trước-tái-dùng); không chạy kiểm ảnh cho caption-only khi không có việc dùng ảnh.
+
+## Khi tiếp nhận media thực — v1.7
+
+Theo [kiểm media và finishing](media-review-and-finishing.md) khi nhận reference hoặc render; chỉ viết prompt không cần chạy đo. Tách khả năng trích xuất, ASR và hiểu hình/âm thực; giữ trạng thái text/render/QA/approval độc lập trong SUMMARY. Bộ đầu ra vẫn bốn mục.

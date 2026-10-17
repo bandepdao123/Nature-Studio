@@ -1,5 +1,6 @@
 # Quyết định hiện hành
 
+
 Các quyết định dưới kế thừa yêu cầu người dùng và hướng dẫn v1.9; không phải kết quả đo hiệu quả.
 
 | ID | Ngày | Quyết định | Phạm vi / nguồn hiện hành |
@@ -34,3 +35,5 @@ Khi đổi, thêm dòng quyết định thay thế và cập nhật chính file 
 | UF-D019 | 2026-10-17 | Triển khai Plan 01 local: dispatcher new/revision/caption; quy định hiện hành hợp nhất, nguồn nguyên văn theo nhiệm vụ có hash; chỉ mục lịch sử/fingerprint nhân quả có coverage và fallback; helper kiểm cú pháp/lưu attempt. Không khóa loài, giảm chất lượng nghiên cứu, cắt cứng token hoặc áp candidate. Giữ Story Development, t=0/vật lý/sinh thái, key >5s, audio và caption. Không làm /clonevideo; chưa publish hoặc xác nhận hiệu quả model/khán giả | chayvideo v2.0; context-map.json; scripts/chayvideo_context.py; scripts/chayvideo_output.py |
 
 | UF-D020 | 2026-10-17 | Người dùng cho xây /clonevideo để học camera/cách quay, hành động từng vai trò, kịch bản/nhân quả và âm rồi đổi đối tượng/bối cảnh. Reference tái dùng có chủ đích, không ép novelty mới so với mẫu; vẫn kiểm đặc tính loài/vùng/vật lý, format/audio/caption hiện hành. Dùng cùng lõi/Project/helper chayvideo, phân tích media riêng có coverage/provenance. Không render/publish hoặc giả đã phân tích mẫu khi chỉ xây skill | clonevideo v1.0; chayvideo v2.1; reference-video-adaptation.md; video-prompt-workflow.md |
+
+| UF-D021 | 2026-10-17 | Người dùng thay mặc định camera cố định bằng camera cầm tay chuyển động nhẹ tự nhiên như cầm điện thoại quay: trôi nhỏ, nghiêng nhẹ, chỉnh khung có quán tính, hình vẫn đọc được. Đường máy theo cảnh/mẫu, không thay bằng bắt cá quay; máy cố định chỉ khi brief/người dùng chốt. Thay riêng phần camera cố định kế thừa, giữ 10s/9:16/một shot/nhịp/audio/caption. | format.md v2.1; output-contract.md v2.1; PROJECT.md v2.1; yêu cầu trực tiếp người dùng |

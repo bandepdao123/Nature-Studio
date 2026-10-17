@@ -2,6 +2,16 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v1.7 — 2026-10-17
+
+- Underwater UF-D021: thay mặc định camera cố định bằng camera cầm tay chuyển động nhẹ tự nhiên như người cầm điện thoại quay; đồng bộ format/output-contract/Project/QA, hướng dẫn new và chuẩn reference. Phân biệt chuyển động máy và cá; giữ quy chuẩn còn lại. Không tuyên bố đã kiểm độ tự nhiên của render bằng video liên tục.
+
+- Thêm media_review.py: preflight executable, ffprobe, LUFS/true peak đầu–giữa–cuối và two-pass normalization có quyền riêng; không coi đo tín hiệu là nghe thực.
+- Bảo toàn quan hệ camera–chủ thể khi chuyển thể; chấp thuận partial không cho phép đổi cơ chế. QA reveal/ending cho phần ngoài first frame.
+- Tỷ lệ ảnh đầu vào cho phép sai số tương đối ≤0.1%; công bố pixel thật, export chính xác kiểm riêng.
+- Thêm production_state.py và mẫu CURRENT-STATE: text/render/QA/tạm duyệt/final độc lập. Xuất hai candidate đã làm sạch, không tự active.
+- Chi tiết kiểm và giới hạn tại [ghi chú v1.7](07-Releases/v1.7.md).
+
 ## v1.6 — 2026-10-17
 
 - `/chayvideo` v2.4: tách nhánh tạo mới/revision/caption, nạp context đúng nhiệm vụ với nguồn/hash và fallback; lịch sử có coverage/fingerprint, hồ sơ loài là tùy chọn theo Project. Helper kiểm đầu ra và lưu attempt bất biến.
