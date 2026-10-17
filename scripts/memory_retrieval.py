@@ -3,7 +3,7 @@ import argparse
 import base64
 import hashlib
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import re
 import unicodedata
 
@@ -27,7 +27,7 @@ def local(root, relative):
         raise ValueError('Use a workspace-relative path with forward slashes')
     rel = Path(relative)
     path = (root / rel).resolve()
-    if rel.is_absolute() or '..' in rel.parts or not path.is_relative_to(root.resolve()):
+    if rel.is_absolute() or PureWindowsPath(relative).drive or '..' in rel.parts or not path.is_relative_to(root.resolve()):
         raise ValueError('Path outside workspace')
     return path
 

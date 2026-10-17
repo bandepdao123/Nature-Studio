@@ -107,7 +107,7 @@ class RetrievalTests(unittest.TestCase):
         self.lesson('a');self.lesson('a',scope='shared')
         q=self.query();self.assertTrue(q['errors']);self.assertFalse(q['discovery_complete'])
         with self.assertRaises(ValueError):mem.load_lessons(self.root,'one',q,['L-a'])
-        for path in ('../outside','C:/outside','../one'):
+        for path in ('../outside','C:/outside','C:relative','//server/share/outside','../one'):
             with self.assertRaises(ValueError):mem.local(self.root,path)
         with self.assertRaises(ValueError):mem.scan(self.root,'../one')
         self.write('05-Memory/projects/one/active/L-bad.md','broken JSON')
