@@ -17,3 +17,5 @@ Giữ quy chuẩn hiện hành trừ ngoại lệ người dùng chốt cho clip
 Khi đã có render, đọc [media review](../../../../00-Standards/media-review-and-finishing.md): đo thực và kiểm provenance; chỉ lỗi mức mix thì xét finishing có quyền, không mặc định render lại hình. Lấy CURRENT-STATE/SUMMARY và evidence actual inputs, không nhầm text mới nhất với render được chọn hoặc tạm duyệt với QA đạt.
 
 Giữ ngắn danh sách vật thể/điểm nối/trạng thái và dấu hiệu cần thấy trong INPUTS/revision; tách quan sát, nguyên nhân nghi ngờ, phần giữ/sửa. Đổi cơ chế thì rà lại câu cũ thay vì nối thêm cấm. Kiểm lấy đúng mồi, attachment, lực, che khuất và ending riêng theo brief, không buộc mọi loài giãy mạnh. Asset planned theo lõi chung; đổi ảnh/metadata thì kiểm receipt, không tự kế thừa QA. Ngoại lệ beat cần binding thật, không suy từ số động tác.
+
+Caption theo contract/giọng Project hiện hành: Underwater mặc định ba bản, thứ tự caption EN + hashtag → lược dịch caption VI → hook EN 1–9 từ → lược dịch hook VI. Tiếng Anh được viết trước, tự đọc kiểm giọng người câu cá Mỹ rồi dịch ý; không coi helper là kiểm native. Chỉ sửa phần được giao, bundle cũ phải được rà lại khi chuyện đổi.

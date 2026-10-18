@@ -15,6 +15,75 @@ from video_ids import project as project_id
 
 FIELDS = ('idea', 'first_frame_prompt', 'video_prompt', 'caption')
 FRAME_FIELDS = ('subjects', 'environment', 'composition', 'initial_state')
+CAPTION_STYLES = ('standard', 'humor', 'curiosity')
+CAPTION_VARIANT_FIELDS = ('caption', 'caption_vi', 'hook_text', 'hook_vi')
+
+
+def hook_words(text):
+    """Contractions count once; hyphen/dash-separated words count separately."""
+    return re.findall(r"[A-Za-z0-9]+(?:['’][A-Za-z0-9]+)*", text)
+
+
+def caption_phrase(text):
+    return ' '.join(hook_words(text.split('#', 1)[0].casefold()))
+
+
+def caption_bundle_errors(data, underwater=False):
+    if 'caption_variants' not in data:
+        return ['caption_variant requires caption_variants'] if 'caption_variant' in data else []
+    bundle=data['caption_variants']
+    if not isinstance(bundle,dict) or set(bundle)!={'schema','variants'} or type(bundle.get('schema')) is not int or bundle['schema']!=1:
+        return ['caption_variants: schema 1 and variants required']
+    variants=bundle['variants']
+    if not isinstance(variants,dict) or not variants or set(variants)-set(CAPTION_STYLES):
+        return ['caption_variants: nonempty standard/humor/curiosity map required']
+    selected=data.get('caption_variant','standard')
+    errors=[];seen_captions=set();seen_hooks=set()
+    if not isinstance(selected,str) or selected not in variants:
+        errors.append('caption_variant must be supplied in variants');selected=None
+    for style,item in variants.items():
+        label='caption_variants.'+style
+        if not isinstance(item,dict) or set(item)!=set(CAPTION_VARIANT_FIELDS):
+            errors.append(label+': caption/caption_vi/hook_text/hook_vi required');continue
+        bad=False
+        for field in CAPTION_VARIANT_FIELDS:
+            text=item[field]
+            if not isinstance(text,str) or not text.strip() or re.search(r'[\r\n]|\\[nr]',text):
+                errors.append(label+'.'+field+': nonempty single paragraph required');bad=True
+        if bad:continue
+        # Reuse the same Project rules for every publishable English caption.
+        errors.extend(label+': '+e for e in validate({'caption':item['caption']},mode='caption',underwater=underwater))
+        hook=item['hook_text']
+        if not 1<=len(hook_words(hook))<=9:errors.append(label+': hook_text requires 1–9 English words')
+        if '#' in hook:errors.append(label+': hook_text must not include hashtags')
+        if underwater and re.search(r'\bAI\b|\bAI[- ]generated\b',hook,re.I):errors.append(label+': hook_text AI mention')
+        cap_key=caption_phrase(item['caption']);hook_key=caption_phrase(hook)
+        if cap_key in seen_captions:errors.append(label+': repeated caption wording')
+        if hook_key in seen_hooks:errors.append(label+': repeated hook wording')
+        if cap_key==hook_key:errors.append(label+': hook repeats caption wording')
+        seen_captions.add(cap_key);seen_hooks.add(hook_key)
+    if selected is not None and selected in variants and isinstance(variants[selected],dict) and data.get('caption')!=variants[selected].get('caption'):
+        errors.append('caption must equal the selected English caption, including hashtags')
+    return errors
+
+
+def merged_caption_bundle(previous, incoming):
+    """Only use when caption changes without story/opening changes."""
+    if previous is None:return incoming
+    return dict(schema=1,variants={**previous['variants'],**incoming['variants']})
+
+
+def render_caption_variants(bundle):
+    labels=dict(standard='Chuẩn',humor='Hài hước',curiosity='Tò mò');lines=[]
+    for style in CAPTION_STYLES:
+        item=bundle['variants'].get(style)
+        if item is None:continue
+        lines.extend(['## '+labels[style],'',
+                      '**Caption:** '+item['caption'],'',
+                      '**Lược dịch caption:** '+item['caption_vi'],'',
+                      '**Hook text:** '+item['hook_text'],'',
+                      '**Lược dịch hook:** '+item['hook_vi'],''])
+    return '\n'.join(lines)
 
 
 def frame_errors(state):
@@ -102,6 +171,8 @@ def resolve(root, slug, production_id, attempt):
         if 'reference_requirements' in data:
             import asset_catalog
             if asset_catalog.requirement_errors(data['reference_requirements']): raise ValueError('Invalid reference requirements: '+ref)
+        if caption_bundle_errors(data,underwater=(slug=='underwater')):
+            raise ValueError('Invalid caption bundle: '+ref)
         chain.append((ref, file, data))
         parent = data.get('base_attempt')
         if parent is None:
@@ -116,6 +187,7 @@ def resolve(root, slug, production_id, attempt):
         ref = parent
     values, sources, state = {}, {}, None
     metadata, assets, requirements = {}, None, None
+    caption_bundle, caption_variant = None, None
     for ref, file, data in reversed(chain):
         changed = set(FIELDS).intersection(data)
         if data.get('mode') == 'caption' and (changed != {'caption'} or any(k in data for k in ('frame_state','reference_requirements','asset_selection'))):
@@ -123,20 +195,31 @@ def resolve(root, slug, production_id, attempt):
         if changed.intersection(FIELDS[:3]):
             # A semantic revision cannot silently certify unchanged t=0.
             state = data.get('frame_state')
+            caption_bundle, caption_variant = None, None
         if 'video_prompt' in changed:
             metadata = {k:data[k] for k in ('checks','contract_exception','contract_version') if k in data}
         if changed.intersection(FIELDS[:3]):
             assets = data.get('asset_selection')
             requirements = data.get('reference_requirements')
+        if 'caption' in changed:
+            if 'caption_variants' in data:
+                caption_bundle=merged_caption_bundle(caption_bundle,data['caption_variants'])
+                caption_variant=data.get('caption_variant','standard')
+            else:
+                caption_bundle,caption_variant=None,None
         for key in changed:
             values[key] = data[key]
             sources[key] = dict(attempt=ref, sha256=sha256(file))
+    if caption_bundle is not None and caption_bundle_errors(dict(caption=values.get('caption'),caption_variants=caption_bundle,caption_variant=caption_variant),underwater=(slug=='underwater')):
+        raise ValueError('Invalid resolved caption bundle')
     result = dict(production_id=production_id, project=slug, attempt=attempt,
                 attempt_sha256=sha256(chain[0][1]),
                 output=values, sources=sources, frame_state=state,
                 validation_metadata=metadata, validation_status='recorded' if metadata.get('checks') else 'unverified',
                 asset_selection=assets, asset_selection_status='planned' if assets else 'unverified',
                 reference_requirements=requirements, reference_status='recorded' if requirements is not None else 'unverified',
+                caption_variants=caption_bundle, caption_variant=caption_variant,
+                caption_variants_status='recorded' if caption_bundle else 'unverified',
                 frame_state_status='recorded' if state else 'unverified',
                 scope='Explicit inputs only; no selection, approval or semantic QA')
     if state:
@@ -312,6 +395,9 @@ def validate(data, mode='new', underwater=False, contract=None):
     if not isinstance(data, dict):
         return ['Output must be a JSON object']
     errors = []
+    errors.extend(caption_bundle_errors(data,underwater))
+    if any(k in data for k in ('caption_variants','caption_variant')) and 'caption' not in data:
+        errors.append('caption bundle changes require the selected caption field')
     if data.get('contract_exception') is not None and contract is None:
         errors.append('Exception requires bound Project/production context')
     if mode == 'caption' and any(k in data for k in ('asset_selection','contract_exception','reference_requirements')):
@@ -374,6 +460,14 @@ def save(root, slug, production_id, data, mode='new'):
     Root brief/concept/ledger updates remain explicit workflow steps, never overwritten here.
     """
     base = production(root, slug, production_id)
+    data=dict(data)
+    if ('caption_variants' in data and mode in ('caption','revision')
+            and not any(k in data for k in FIELDS[:3])):
+        # Validate the supplied patch before merging; never inherit a stale selection.
+        patch_errors=caption_bundle_errors(data,underwater=(slug=='underwater'))
+        if patch_errors:raise ValueError('; '.join(patch_errors))
+        previous=resolve(root,slug,production_id,data.get('base_attempt'))
+        data['caption_variants']=merged_caption_bundle(previous.get('caption_variants'),data['caption_variants'])
     contract = effective_contract(root, slug, production_id, data, mode, for_save=True)
     errors = validate(data, mode, underwater=(slug == 'underwater'), contract=contract)
     if errors:
@@ -403,7 +497,10 @@ def save(root, slug, production_id, data, mode='new'):
                           ('video_prompt', 'video-prompt.md'), ('caption', 'caption.md')]:
             if key in data:
                 payload[name] = data[key]
-        payload['OUTPUT.json'] = json.dumps({**{k: data[k] for k in (*FIELDS, 'frame_state', 'checks', 'contract_exception', 'asset_selection', 'reference_requirements') if k in data}, **provenance},
+        if 'caption_variants' in data:
+            data.setdefault('caption_variant','standard')
+            payload['caption-variants.md']=render_caption_variants(data['caption_variants'])
+        payload['OUTPUT.json'] = json.dumps({**{k: data[k] for k in (*FIELDS, 'frame_state', 'checks', 'contract_exception', 'asset_selection', 'reference_requirements','caption_variants','caption_variant') if k in data}, **provenance},
                                           ensure_ascii=False, indent=2)
         for name, text in payload.items():
             (stage / name).write_text(text.rstrip() + '\n', encoding='utf-8')

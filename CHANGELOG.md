@@ -2,6 +2,11 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.4 — 2026-10-19
+
+- /chayvideo v2.11: Underwater mặc định ba caption Chuẩn/Hài hước/Tò mò, thứ tự caption Anh Mỹ + hashtag → lược dịch → hook Anh 1–9 từ → lược dịch. Viết Anh trước, tránh văn dịch/slang/đùa gượng; không hứa retention từ kiểm văn bản.
+- Helper giữ bundle/selected caption, kiểm từng bản và lưu caption-variants.md; patch caption giữ frame/asset/history và tương thích caption cũ. Không tạo media hoặc tự xuất bản.
+
 ## v2.1.3 — 2026-10-18
 
 - /taoanh v1.6 và tiêu chí/template QA chung: mặc định màu chân thực, hạn chế ám vàng/cam mạnh toàn cảnh; giữ màu vàng/vàng đồng thật của đối tượng và ánh sáng ấm do brief chủ đích yêu cầu. Không khử vàng bằng ám màu khác, không sửa ảnh/QA lịch sử hàng loạt.

@@ -11,3 +11,5 @@ Version: 1.2 | Updated: 2026-10-17 | Phân giai đoạn nguồn; giữ camera/fo
 7. Kiểm, lưu và cập nhật ledger theo workflow. Với production mới đã hoàn tất hồ sơ, ghi fingerprint từ các nguồn vừa đọc/viết để lần sau giảm đọc lặp; legacy chỉ backfill khi cần dùng. Fingerprint không thay kiểm chuyện gần nhất. Nguồn thiếu có ảnh hưởng quyết định thì xử lý trước khi giao, không bịa thông số hoặc kết quả.
 
 Profile sáu phần hỗ trợ chọn điểm thật đáng xem, gồm cỡ lớn có căn cứ khi hợp brief; không ép mọi clip dùng cực trị. Asset cần cho scene được query theo entity/stage/role ở lõi chung, không tải cả thư viện; nguồn và ảnh còn thiếu ghi đúng giới hạn.
+
+Caption theo contract/giọng Project hiện hành: Underwater mặc định ba bản, thứ tự caption EN + hashtag → lược dịch caption VI → hook EN 1–9 từ → lược dịch hook VI. Tiếng Anh được viết trước, tự đọc kiểm giọng người câu cá Mỹ rồi dịch ý; không coi helper là kiểm native. Chỉ sửa phần được giao, bundle cũ phải được rà lại khi chuyện đổi.

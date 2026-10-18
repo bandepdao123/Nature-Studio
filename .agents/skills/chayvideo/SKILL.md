@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.10 | Updated: 2026-10-18 | Nhu cầu tham chiếu xuyên nội dung và tạo ảnh
+Version: 2.11 | Updated: 2026-10-18 | Ba caption và hook Anh Mỹ, lược dịch Việt
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 
@@ -21,7 +21,7 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 
 - Bộ nhớ theo [lõi truy xuất](../../../00-Standards/memory-retrieval.md): descriptor Project + shared theo nhiệm vụ/hint trước, mở gốc phù hợp sau; không nạp toàn bộ INDEX/active. Unknown/legacy và trang còn lại phải được xét, candidate không là luật.
 
-- Mặc định một bộ: **Ý TƯỞNG** tiếng Việt; **FIRST FRAME PROMPT**, **VIDEO PROMPT** tiếng Anh; **CAPTION** tiếng Anh Mỹ + hashtag. Prompt/caption mỗi mục một đoạn. Sửa phần nào trả phần đó; JSON theo yêu cầu dùng `idea`, `first_frame_prompt`, `video_prompt`, `caption`. Chi tiết theo output-contract Project.
+- Mặc định một bộ bốn mục: **Ý TƯỞNG** tiếng Việt; **FIRST FRAME PROMPT**, **VIDEO PROMPT** tiếng Anh; **CAPTION** theo hợp đồng Project. Underwater trả Chuẩn/Hài hước/Tò mò; mỗi bản đúng thứ tự caption EN + hashtag → lược dịch caption VI → hook text EN 1–9 từ → lược dịch hook VI. Viết trực tiếp giọng người câu cá Mỹ, rồi lược dịch; loại văn dịch/slang hoặc câu đùa gượng. Mỗi prompt và từng caption là một đoạn riêng. JSON giữ `caption` chuỗi, thêm `caption_variants`/`caption_variant` theo template; không nhét cả ba bản vào một chuỗi caption. Sửa đúng phần được giao; chi tiết giọng/hashtag theo nguồn Project, không áp luật Underwater lên Project khác.
 - Tạo mới phải đọc creativity/story-development chung + Project; nghiên cứu đúng loài/vùng/tình huống. Ví dụ không là danh mục đóng. Độ mới xét hành vi/nhân quả, không đổi tên loài/màu/địa danh rồi lặp chuyện.
 - Packet/index tạo lại được, không cao hơn nguồn gốc. Không cắt yêu cầu để đạt ngân sách token; thiếu/stale/coverage chưa đủ thì đọc thêm. Không bịa nguồn hoặc đã xem/nghe/đo/QA.
 - Chỉ áp active gốc đúng điều kiện, ghi ID/version/path/cách dùng; không tự active candidate. Bảo toàn registry/media/quota ảnh/FIRST-FRAME.json/lịch sử; không tự /dongvideo hoặc /taoanh.

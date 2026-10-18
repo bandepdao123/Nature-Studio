@@ -1,0 +1,27 @@
+{
+  "caption": "Passed on that lure. #Muskie #MuskyFishing #FreshwaterFishing",
+  "caption_variants": {
+    "schema": 1,
+    "variants": {
+      "standard": {
+        "caption": "Passed on that lure. #Muskie #MuskyFishing #FreshwaterFishing",
+        "caption_vi": "Nó bỏ qua con mồi giả đó.",
+        "hook_text": "Watch that turn.",
+        "hook_vi": "Để ý cú quay ấy."
+      },
+      "humor": {
+        "caption": "Tough crowd. #Muskie #MuskyFishing #FreshwaterFishing",
+        "caption_vi": "Khó chiều ghê.",
+        "hook_text": "Guess that's a no.",
+        "hook_vi": "Chắc là không thích rồi."
+      },
+      "curiosity": {
+        "caption": "What made it turn away? #Muskie #MuskyFishing #FreshwaterFishing",
+        "caption_vi": "Điều gì khiến nó quay đi?",
+        "hook_text": "Watch the approach.",
+        "hook_vi": "Để ý cách nó tiến lại."
+      }
+    }
+  },
+  "caption_variant": "standard"
+}

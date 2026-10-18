@@ -1,14 +1,14 @@
-# Hợp đồng đầu ra — v2.1
+# Hợp đồng đầu ra — v2.2
 
-Updated: 2026-10-17 | UF-D021 — camera cầm tay nhẹ. Một hợp đồng hiện hành; baseline ba mục chỉ dùng truy vết.
+Updated: 2026-10-18 | UF-D021 — camera cầm tay nhẹ. Một hợp đồng hiện hành; baseline ba mục chỉ dùng truy vết.
 
 Các số mục kế thừa trong phần chi tiết trỏ về baseline v1.9: 2A tương ứng Knowledge/equipment/us-angling-tackle.md; môi trường/2–3 tương ứng Knowledge/habitats/underwater-realism.md; 4 tương ứng phần chuyển động trong format.md; chọn loài tại PROJECT.md. Không bỏ qua ràng buộc vì tên/số mục cũ.
 
 ## Đầu ra
 
-Mặc định một bộ, đúng bốn mục: **Ý TƯỞNG** tiếng Việt; **FIRST FRAME PROMPT**, **VIDEO PROMPT** tiếng Anh; **CAPTION** tiếng Anh Mỹ tự nhiên. Không song ngữ/phương án/báo cáo dài trừ khi được yêu cầu. Ý tưởng một đoạn ngắn nêu chuyện, câu hỏi mở, key/hậu quả và điểm mới có căn cứ. Mỗi prompt là một đoạn tự đủ để sao chép; không CR/LF, placeholder, “như trên”, link hay ghi chú nghiên cứu. Caption gồm cả hashtag trong một chuỗi/một đoạn. Yêu cầu sửa caption hay một phần chỉ trả phần được giao, không buộc viết lại toàn bộ.
+Mặc định một bộ, đúng bốn mục: **Ý TƯỞNG** tiếng Việt; **FIRST FRAME PROMPT**, **VIDEO PROMPT** tiếng Anh; **CAPTION** gồm ba lựa chọn Chuẩn/Hài hước/Tò mò theo phần dưới. Lược dịch Việt chỉ kèm caption/hook; không thêm phương án chuyện/prompt hoặc báo cáo dài. Ý tưởng một đoạn ngắn nêu chuyện, câu hỏi mở, key/hậu quả và điểm mới có căn cứ. Mỗi prompt là một đoạn tự đủ để sao chép; không CR/LF, placeholder, “như trên”, link hay ghi chú nghiên cứu. Mỗi caption EN gồm cả hashtag trong một chuỗi/một đoạn riêng. Sửa caption hay một phần chỉ trả phần được giao, không buộc viết lại toàn bộ.
 
-JSON khi được yêu cầu dùng `idea`, `first_frame_prompt`, `video_prompt`, `caption` (chuỗi); sửa cục bộ chỉ các trường được giao. Không trường hashtags riêng. Không in suy luận nội bộ. Chỉ báo ngắn ngoài các mục khi có giới hạn quan trọng; hồ sơ/source/đối chiếu lưu local.
+JSON khi được yêu cầu giữ `idea`, `first_frame_prompt`, `video_prompt`, `caption` (chuỗi đăng tải), thêm `caption_variants` schema1 và `caption_variant` theo [template](../../00-Standards/templates/caption-variants.json). Caption gốc bằng caption EN của bản được chỉ định, mặc định standard để tương thích, không có nghĩa người dùng đã duyệt. Không trường hashtags riêng. Sửa cục bộ chỉ phần được giao; không in suy luận nội bộ. Hồ sơ/source/đối chiếu lưu local.
 
 Đủ loài hoặc quyền chọn mới làm. Thiếu thì hỏi lựa chọn tại PROJECT và chờ; không hỏi lại điều đã có. Tự nghiên cứu chi tiết phụ, sửa sai sinh thái gần ý định nhất; nếu phải đổi loài hoặc kết cục đã khóa, nêu vấn đề thay vì âm thầm đổi. Trung thực về đọc/xem/nghe/render; không hứa viral hoặc model tuân thủ từng frame.
 
@@ -36,4 +36,4 @@ Soạn theo model profile Omni Flash: ảnh mở đầu → thời lượng/tỷ
 
 ## CAPTION
 
-Theo [audience-and-caption.md](audience-and-caption.md): nguyên bản, ngắn/trực tiếp, một điểm đáng quan sát, giọng người câu cá Mỹ; linh hoạt hỏi/nhận xét/phản ứng/chỉ dẫn, thường 1–8 từ nhưng không giới hạn cứng. Hook + dấu cách + 3–5 hashtag khác nhau đúng cảnh, một đoạn, không AI/công nghệ tạo nội dung, không #Underwater kể cả biến thể hoa/thường. Không dùng jargon sai hoặc khẳng định hooked/caught/swallowed khi hình chưa chứng minh. Concept chỉ là dự kiến; có render thì đối chiếu kết quả thật, kết cục bị che thì giữ mức không chắc chắn. Caption không là lời thoại/chữ để vẽ lên video.
+Theo [audience-and-caption.md](audience-and-caption.md): mặc định ba bản **Chuẩn → Hài hước → Tò mò**; mỗi bản đúng thứ tự **Caption EN + hashtag → Lược dịch caption VI → Hook text EN → Lược dịch hook VI**. Caption thường 1–8 từ trước hashtag nhưng không giới hạn cứng; hook text riêng bắt buộc 1–9 từ, không hashtag. Mỗi caption EN một đoạn, kèm 3–5 hashtag khác nhau đúng cảnh; không AI/công nghệ tạo nội dung hoặc #Underwater bất kể hoa/thường. Viết trực tiếp giọng người câu cá Mỹ trước, dịch ý sau; không câu đùa/slang gượng. Giữ đúng cảnh và mức chắc chắn; ba bản khác cách tiếp cận, hook bổ trợ caption. Hook là gợi ý nội dung, không tự đưa vào ảnh/video prompt hay tự render chữ. Chỉ sửa một bản thì trả bản đó theo yêu cầu.

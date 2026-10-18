@@ -42,3 +42,5 @@ Chỉ dùng khi đã đối chiếu yêu cầu trực tiếp của người dùn
 9 chỉ minh họa. target_attempt phải là attempt tiếp theo đúng layout (A02 hoặc attempts/A02), chưa tồn tại khi save; check bản đã lưu vẫn cho kiểm lại binding. New/reference mới không có base; revision luôn có base thật. Data output chứa `contract_exception: {"path":"requests/beat-grant.json","sha256":"MEASURED"}` và checks.key_onset thật. File grant/request nằm trong production và được kiểm hash. Dùng cùng lệnh check/save với `--project` và `--production`; JSON tự khai không đủ quyền. Ngoại lệ chỉ đổi count, không miễn timeline/key/duration/aspect/one-shot. Không sửa lịch sử để giả đã có grant. Nếu target/prompt/base/yêu cầu đổi thì rà lại phạm vi, không tự gia hạn grant.
 
 - `asset-inputs.json`: khai báo input thực theo attempt; điền hash/arguments thật, không dùng template rỗng như bằng chứng. Handoff mới schema3; legacy giữ nguyên.
+
+- `caption-variants.json`: template minh họa, không phải sản phẩm/footage đã QA; caption canonical + bundle schema1, selected style; mỗi bản caption EN, caption_vi, hook_text, hook_vi. Định dạng/patch/legacy theo lõi workflow.
