@@ -20,3 +20,5 @@ Memory retrieval: theo 00-Standards/memory-retrieval.md; query descriptor Projec
 Khi khởi tạo Project, tạo INDEX và candidates/active/retired trong namespace, dẫn cả shared/INDEX.md từ PROJECT.md và đăng ký namespace ở 05-Memory/INDEX.md. Không kế thừa bài học Project khác mặc định. Model/format/loài là điều kiện nếu liên quan, không mặc định dự án nào cũng có cá.
 
 First-frame QA guide: 00-Standards/first-frame.md + tài liệu riêng Project nếu có; không kế thừa tiêu chí cá/nước/9:16 cho mọi Project. /taoanh chỉ chạy khi có yêu cầu tạo ảnh thực.
+
+Profile loài chọn điểm thật đáng xem và cỡ có căn cứ, không là danh sách tình huống đóng. Khi cần ref, dùng catalog chung theo entity/stage/role ở [knowledge-routing](../knowledge-routing.md); metadata/planned ref không chứng minh ảnh hoặc render đã đạt. Không tải cả thư viện hoặc gán luật Underwater cho Project khác.

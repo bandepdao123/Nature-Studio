@@ -2,7 +2,7 @@
 
 ID: under-fishing-us
 Slug: underwater
-Version: 2.3 | Updated: 2026-10-17 | Nguồn theo giai đoạn; giữ UF-D021
+Version: 2.4 | Updated: 2026-10-18 | Nguồn theo giai đoạn; giữ UF-D021
 Aliases: Under Fish US; Under Fishing US; Under Fishing
 Routing: Video/prompt tương tác cá–mồi dưới nước, khán giả câu cá Mỹ; săn mồi tự nhiên hoặc bait/lure/rig/jig; mọi loài cá được câu phù hợp tại Mỹ, không giới hạn Redfish/red drum/Sciaenops ocellatus, Muskie/muskellunge/Esox masquinongy, Walleye/Sander vitreus. Camera chìm cầm tay chuyển động nhẹ tự nhiên, dọc 10s và key sau 5s là dấu hiệu kết hợp. Một từ cá/Mỹ/Omni hoặc nhắc benchmark Underfishing riêng không đủ phân biệt dự án.
 Model: omni-flash
@@ -30,3 +30,7 @@ Production: `04-Productions/underwater/`; idea-ledger.md local tại thư mục 
 Theo [truy xuất chọn lọc](../../00-Standards/memory-retrieval.md), query Memory Project/shared theo nhiệm vụ/hint, mở active gốc phù hợp; xét unknown/legacy và các trang còn lại, không nạp toàn bộ INDEX theo memory-policy. Ghi ID/version/đường dẫn/cách dùng vào INPUTS; candidates chỉ thử riêng, không tự active. /dongvideo đóng phiên theo skill riêng; không tự đóng từ /chayvideo.
 
 Tạo ảnh thật qua /taoanh theo [first-frame-qa.md](first-frame-qa.md) và gate chung; tối đa 5 call/cycle, quota/handoff/hash local được bảo toàn. Không tự sinh media từ việc viết prompt. Danh tính model ảnh không chặn QA, không giả chọn Sunburst. Production/ledger/registry/media riêng không publish; lesson đi theo publication policy.
+
+Profile loài chọn điểm thật đáng xem và cỡ có căn cứ, không là danh sách tình huống đóng. Khi cần ref, dùng catalog chung theo entity/stage/role ở [knowledge-routing](../../00-Standards/knowledge-routing.md); metadata/planned ref không chứng minh ảnh hoặc render đã đạt. Không tải cả thư viện hoặc gán luật Underwater cho Project khác.
+
+Asset v2.1.1: dùng ID Project hiện hành khi query/select; nguồn chung theo [quy trình](../../00-Standards/first-frame-asset-references.md). Không áp quy tắc Underwater cho Project khác; ref t=0/video tách riêng, ảnh nền trắng chỉ là bản thư viện.

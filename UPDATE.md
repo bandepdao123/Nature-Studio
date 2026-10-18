@@ -186,3 +186,23 @@ Chỉ cập nhật mã nguồn **không gọi init/reserve trên registry thật
 Sau nâng cấp chạy bộ kiểm được giao và `python scripts/versioning.py check`. Bản vá nhỏ tiếp theo dùng 2.0.1 theo [chính sách](00-Standards/versioning.md). Không sửa archive cũ hoặc tự push/tag/GitHub Release.
 
 Rollback nguồn trước khi registry chuyển: khôi phục snapshot nguồn đã sao lưu. Sau khi registry đã chuyển: không dùng allocator v1.x với registry v2; guard sẽ từ chối ghi. Cần backup nguồn/registry đồng bộ và xử lý các reservation/video mới phát sinh trước khi khôi phục; không chép backup cũ đè dữ liệu mới.
+
+## Nâng v2.0.0 lên v2.1.0
+
+Backup nguồn + runtime/registry/quota/Memory trước sửa. Nhận helper asset_catalog, context/output/state cùng tests, profile/template/chuẩn/skill đồng bộ; không chép bài học được cung cấp thành lịch sử đã QA khi thiếu bằng chứng thực. Không nhập private lesson cùng ID/version đè public dựa trên số version đơn lẻ.
+
+Catalog asset là dữ liệu local `.nature-studio/assets/catalog.sqlite3`, có thể init rỗng hoặc nhận lead/source chưa QA; không có asset thật thì query trả missing. Không nhận đã có ảnh từ metadata. Không cấp video ID, tạo image cycle hoặc reset quota để kiểm nâng cấp. Snapshot bằng SQLite backup/khi không có phiên ghi. Catalog không là cache phải xóa để nâng cấp; helper từ chối schema mới hơn thay vì hạ version.
+
+New OUTPUT tiếp tục state_schema1 với metadata bổ sung; giữ checks, contract_version, asset_selection và contract_exception khi có. Resolve legacy không có metadata trả unverified, không sửa OUTPUT/INPUTS cũ. Ngoại lệ chỉ cho target chưa tồn tại khi save; xem templates/README. Schema2 CURRENT-STATE opt-in cho trạng thái mới; schema1 vẫn đọc và ghi QA unverified. Không tự backfill pass, final, actual input hoặc schema mới.
+
+Rollback nguồn phải giữ catalog, refs và attempt mới. Helper cũ có thể không hiểu exception/asset metadata; không xóa metadata, đổi timeline hoặc reset runtime để ép tương thích. Chạy suite/skill/Memory/version/publication phù hợp trước chốt/phát hành; ZIP hệ thống không là backup local.
+
+## Nâng từ v2.1.0 lên v2.1.1
+
+Backup nguồn đang sửa, catalog bằng SQLite backup khi không có writer, và bảo toàn runtime/media/Memory/quota/registry. Nhận helper/skills/lõi/template sau khi so commit/hash. Không thay catalog local bằng catalog mẫu hoặc sinh lại ảnh để nâng cấp.
+
+Record thiếu applicability là unknown; duyệt theo vai trò để shared hoặc projects với ID ổn định. Update bằng expected SHA và sửa derivation cha trước con sau review; không sửa receipt/handoff lịch sử. Không ép S–XL thành life stage hoặc mọi mục thành shared. Không có catalog trên clone sạch là bình thường.
+
+Selection mới dùng --project-id và schema2; legacy schema1 chỉ discovery, cần chọn lại khi dùng cho Project. Handoff mới schema3 liên kết asset-inputs và hash requirements t=0; schema2 cũ vẫn đọc với asset provenance unverified riêng. Không backfill actual inputs từ prompt/metadata. Chỉ tăng schema khi contract cần, đọc được lịch sử cũ.
+
+Chạy unit suite/Memory/version/publication checks trên nguồn xuất; kiểm hash dữ liệu riêng sau migration. Giữ quota cũ, không reserve video/ảnh hay render chỉ để kiểm nâng cấp. Đọc [quy trình tham chiếu](00-Standards/first-frame-asset-references.md). Rollback nguồn/catalog có chọn lọc, không ghi đè production mới phát sinh.

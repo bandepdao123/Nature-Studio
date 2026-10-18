@@ -99,6 +99,9 @@ def resolve(root, slug, production_id, attempt):
                 raise ValueError(f'Invalid {key}: {ref}')
         if 'frame_state' in data and frame_errors(data['frame_state']):
             raise ValueError(f'Invalid frame_state: {ref}')
+        if 'reference_requirements' in data:
+            import asset_catalog
+            if asset_catalog.requirement_errors(data['reference_requirements']): raise ValueError('Invalid reference requirements: '+ref)
         chain.append((ref, file, data))
         parent = data.get('base_attempt')
         if parent is None:
@@ -112,19 +115,28 @@ def resolve(root, slug, production_id, attempt):
             raise ValueError(f'Base changed: {parent}; inspect sources before reuse')
         ref = parent
     values, sources, state = {}, {}, None
+    metadata, assets, requirements = {}, None, None
     for ref, file, data in reversed(chain):
         changed = set(FIELDS).intersection(data)
-        if data.get('mode') == 'caption' and (changed != {'caption'} or 'frame_state' in data):
+        if data.get('mode') == 'caption' and (changed != {'caption'} or any(k in data for k in ('frame_state','reference_requirements','asset_selection'))):
             raise ValueError('Caption attempt must not change story or frame state')
         if changed.intersection(FIELDS[:3]):
             # A semantic revision cannot silently certify unchanged t=0.
             state = data.get('frame_state')
+        if 'video_prompt' in changed:
+            metadata = {k:data[k] for k in ('checks','contract_exception','contract_version') if k in data}
+        if changed.intersection(FIELDS[:3]):
+            assets = data.get('asset_selection')
+            requirements = data.get('reference_requirements')
         for key in changed:
             values[key] = data[key]
             sources[key] = dict(attempt=ref, sha256=sha256(file))
     result = dict(production_id=production_id, project=slug, attempt=attempt,
                 attempt_sha256=sha256(chain[0][1]),
                 output=values, sources=sources, frame_state=state,
+                validation_metadata=metadata, validation_status='recorded' if metadata.get('checks') else 'unverified',
+                asset_selection=assets, asset_selection_status='planned' if assets else 'unverified',
+                reference_requirements=requirements, reference_status='recorded' if requirements is not None else 'unverified',
                 frame_state_status='recorded' if state else 'unverified',
                 scope='Explicit inputs only; no selection, approval or semantic QA')
     if state:
@@ -182,7 +194,7 @@ def check_frame(root, slug, production_id, attempt, handoff='FIRST-FRAME.json'):
         except ValueError as exc:
             unknown.append(str(exc))
     # Bind the QA snapshot to the exact source attempt; do not require current==QA attempt.
-    if record.get('schema') == 2:
+    if record.get('schema') in (2,3):
         image_attempt = record.get('attempt_id')
         if not isinstance(image_attempt, str) or not re.fullmatch(r'(?:attempts/)?A\d+', image_attempt):
             errors.append('Explicit image attempt_id required')
@@ -202,6 +214,29 @@ def check_frame(root, slug, production_id, attempt, handoff='FIRST-FRAME.json'):
             unknown.append(str(exc))
     else:
         unknown.append('Legacy handoff needs explicit provenance review; never silently upgraded')
+    asset_status='unverified'
+    if record.get('schema') == 3 or record.get('asset_inputs') is not None:
+        try:
+            import asset_catalog
+            bind=record.get('asset_inputs')
+            problems=asset_catalog.binding_errors(root,bind,'asset_inputs')
+            if problems: raise ValueError('; '.join(problems))
+            inputs=json.loads(asset_catalog.local(root,bind['path']).read_text(encoding='utf-8-sig'))
+            checked=asset_catalog.inputs_check(root,inputs,project_id(root,slug),historical=True)
+            if inputs.get('production_id')!=production_id or inputs.get('attempt_id')!=record.get('attempt_id'):
+                raise ValueError('Actual input production/attempt mismatch')
+            for key in ('call_id','cycle_id'):
+                if inputs.get(key)!=record.get(key): raise ValueError('Actual input '+key+' mismatch')
+            expected_output=dict(path=local_file(folder,record['image_path']).relative_to(root.resolve()).as_posix(),sha256=record['sha256'])
+            if inputs.get('output')!=expected_output:raise ValueError('Actual input receipt output differs from handoff image')
+            if checked['status']!='matched':raise ValueError('; '.join(checked['issues']))
+            asset_status='matched'
+            req=current.get('reference_requirements')
+            opening=[r for r in (req or {}).get('items',[]) if r['applies_to'] in ('first_frame','both')]
+            if record.get('reference_requirements_sha256')!=snapshot_hash(opening):
+                review.append('Opening reference requirements changed/unbound; review actual image')
+        except (ValueError,TypeError,KeyError,OSError) as exc:
+            errors.append('Asset input evidence: '+str(exc));asset_status='invalid'
     criteria = record.get('qa_sources')
     if not isinstance(criteria, dict) or not criteria:
         unknown.append('Missing QA criteria hashes')
@@ -221,17 +256,73 @@ def check_frame(root, slug, production_id, attempt, handoff='FIRST-FRAME.json'):
                 errors.append('Invalid QA criteria path')
     status = 'invalid' if errors else 'needs_review' if review else 'unverified' if unknown else 'matched'
     return dict(status=status, errors=errors, needs_review=review, unverified=unknown,
+                asset_inputs_status=asset_status,
                 scope='Recorded file/input bindings only; image QA and user approval remain independent')
 
 
-def validate(data, mode='new', underwater=False):
+def effective_contract(root, slug, production_id, data, mode, for_save=False):
+    """Verify scoped bindings, not the authorship of the saved user request."""
+    contract = dict(version='underwater-2' if slug == 'underwater' else 'common-1', beat_count=None)
+    selection = data.get('asset_selection') if isinstance(data, dict) else None
+    if selection is not None:
+        import asset_catalog
+        if not isinstance(selection,dict):raise ValueError('Asset selection must be object')
+        expected_project=project_id(root,slug) if selection.get('schema')==2 else None
+        if expected_project is not None and selection.get('project_id')!=expected_project:raise ValueError('Asset selection Project mismatch')
+        status = asset_catalog.verify(root, selection,expected_project)
+        if status['status'] == 'stale': raise ValueError('Asset selection stale; select/review current references')
+    exception = data.get('contract_exception') if isinstance(data, dict) else None
+    if exception is None: return contract
+    if slug != 'underwater' or mode == 'caption' or not production_id:
+        raise ValueError('Beat exception requires explicit Underwater production and non-caption scope')
+    base = production(root, slug, production_id)
+    if not isinstance(exception, dict): raise ValueError('Exception must bind path/sha256')
+    file = local_file(base, exception.get('path'))
+    if sha256(file) != exception.get('sha256'): raise ValueError('Exception record changed')
+    grant = json.loads(file.read_text(encoding='utf-8-sig'))
+    if not isinstance(grant, dict) or grant.get('schema') != 1 or grant.get('rule') != 'beat_count':
+        raise ValueError('Unsupported exception rule/schema')
+    if (grant.get('project'), grant.get('production'), grant.get('mode')) != (slug, production_id, mode):
+        raise ValueError('Exception scope mismatch')
+    count = grant.get('beat_count')
+    if type(count) is not int or count < 1: raise ValueError('Exception beat count must be a positive integer')
+    if grant.get('confirmed_user_request') is not True:
+        raise ValueError('Agent must first confirm the real user request, not merely a file declaration')
+    authorization = grant.get('authorization')
+    if not isinstance(authorization, dict): raise ValueError('Saved request binding required')
+    request = local_file(base, authorization.get('path'))
+    if sha256(request) != authorization.get('sha256'): raise ValueError('User request evidence changed')
+    text = data.get('video_prompt')
+    if not isinstance(text, str) or grant.get('video_prompt_sha256') != hashlib.sha256(text.encode('utf-8')).hexdigest():
+        raise ValueError('Exception does not match this video prompt')
+    if mode in ('revision','reference') and data.get('base_attempt') is not None:
+        if (grant.get('base_attempt'),grant.get('base_sha256')) != (data.get('base_attempt'),data.get('base_sha256')):
+            raise ValueError('Exception base scope mismatch')
+    elif mode == 'revision':
+        raise ValueError('Revision exception requires base binding')
+    target = grant.get('target_attempt')
+    if not isinstance(target,str) or not re.fullmatch(r'(?:attempts/)?A[0-9]+',target):
+        raise ValueError('Exception requires one explicit target attempt')
+    if for_save and (base / target).exists(): raise ValueError('Exception target already exists; never reuse a grant for a new attempt')
+    contract.update(beat_count=count, target_attempt=target)
+    return contract
+
+
+def validate(data, mode='new', underwater=False, contract=None):
     if not isinstance(data, dict):
         return ['Output must be a JSON object']
     errors = []
+    if data.get('contract_exception') is not None and contract is None:
+        errors.append('Exception requires bound Project/production context')
+    if mode == 'caption' and any(k in data for k in ('asset_selection','contract_exception','reference_requirements')):
+        errors.append('caption: must not change reference or contract bindings')
     if mode == 'caption' and (any(k in data for k in FIELDS[:3]) or 'frame_state' in data):
         errors.append('caption: only caption may change')
     if 'frame_state' in data:
         errors.extend(frame_errors(data['frame_state']))
+    if 'reference_requirements' in data:
+        import asset_catalog
+        errors.extend(asset_catalog.requirement_errors(data['reference_requirements']))
     required = (('caption',) if mode == 'caption' else
                 tuple(k for k in FIELDS if k in data) if mode == 'revision' else FIELDS)
     if not required:
@@ -258,10 +349,13 @@ def validate(data, mode='new', underwater=False):
         text = data['video_prompt']
         beats = re.findall(r'\[(\d+(?:\.\d+)?)\s*[–—-]\s*(\d+(?:\.\d+)?)s\]', text)
         beats = [(Decimal(a), Decimal(b)) for a, b in beats]
-        if (not 5 <= len(beats) <= 8 or beats[0][0] != 0 or beats[-1][1] != 10
+        count = contract.get('beat_count') if isinstance(contract, dict) else None
+        if not (len(beats) == count if count is not None else 5 <= len(beats) <= 8):
+            errors.append('video_prompt: beat count must match explicit exception' if count is not None else 'video_prompt: 5–8 beats required')
+        if (not beats or beats[0][0] != 0 or beats[-1][1] != 10
                 or any(a >= b for a, b in beats)
                 or any(beats[i][1] != beats[i+1][0] for i in range(len(beats)-1))):
-            errors.append('video_prompt: 5–8 positive contiguous beats from 0 to 10s required')
+            errors.append('video_prompt: positive contiguous timeline from 0 to 10s required')
         checks = data.get('checks', {})
         key = checks.get('key_onset') if isinstance(checks, dict) else None
         try:
@@ -280,10 +374,11 @@ def save(root, slug, production_id, data, mode='new'):
     Root brief/concept/ledger updates remain explicit workflow steps, never overwritten here.
     """
     base = production(root, slug, production_id)
-    errors = validate(data, mode, underwater=(slug == 'underwater'))
+    contract = effective_contract(root, slug, production_id, data, mode, for_save=True)
+    errors = validate(data, mode, underwater=(slug == 'underwater'), contract=contract)
     if errors:
         raise ValueError('; '.join(errors))
-    provenance = dict(state_schema=1, mode=mode)
+    provenance = dict(state_schema=1, mode=mode, contract_version=contract['version'])
     if mode in {'revision', 'caption'}:
         ref = data.get('base_attempt')
         resolve(root, slug, production_id, ref)
@@ -308,7 +403,7 @@ def save(root, slug, production_id, data, mode='new'):
                           ('video_prompt', 'video-prompt.md'), ('caption', 'caption.md')]:
             if key in data:
                 payload[name] = data[key]
-        payload['OUTPUT.json'] = json.dumps({**{k: data[k] for k in (*FIELDS, 'frame_state') if k in data}, **provenance},
+        payload['OUTPUT.json'] = json.dumps({**{k: data[k] for k in (*FIELDS, 'frame_state', 'checks', 'contract_exception', 'asset_selection', 'reference_requirements') if k in data}, **provenance},
                                           ensure_ascii=False, indent=2)
         for name, text in payload.items():
             (stage / name).write_text(text.rstrip() + '\n', encoding='utf-8')
@@ -317,11 +412,14 @@ def save(root, slug, production_id, data, mode='new'):
         number = max(numbers, default=0) + 1
         while True:
             dest = parent / f'A{number:02d}'
+            if contract.get('target_attempt') and dest.relative_to(base).as_posix() != contract['target_attempt']:
+                raise ValueError('Exception target is not the next attempt; review scope before saving')
             # mkdir(exist_ok=False) reserves the destination without replacing old attempts.
             try:
                 dest.mkdir()
                 break
             except FileExistsError:
+                if contract.get('target_attempt'): raise ValueError('Exception attempt was concurrently consumed')
                 number += 1
         try:
             for path in stage.iterdir():
@@ -360,7 +458,8 @@ def main():
         sys.exit(0 if args.command == 'resolve' or result['status'] == 'matched' else 2)
     data = json.loads(args.input.read_text(encoding='utf-8-sig'))
     if args.command == 'check':
-        errors = validate(data, args.mode, args.project == 'underwater')
+        contract = effective_contract(args.root.resolve(), args.project, args.production, data, args.mode)
+        errors = validate(data, args.mode, args.project == 'underwater', contract=contract)
         scope = ('Syntax and declared Underwater gates; no semantic/media QA' if args.project == 'underwater'
                  else 'Common syntax only; AI must review the actual Project contract')
         print(json.dumps(dict(errors=errors, scope=scope), ensure_ascii=False))

@@ -65,7 +65,7 @@ def active_files(root, slug):
 
 def packet(root, slug, mode, species=(), interaction='unspecified',
            memory_selection=None, lesson_ids=(), topics=(), query_text='',
-           stage=None, effects=(), tasks=()):
+           stage=None, effects=(), tasks=(), asset_selection=None):
     slug_ok(slug)
     recipe_path = f'03-Projects/{slug}/context-map.json'
     recipe_source = source(root, recipe_path)
@@ -147,6 +147,16 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
                      'separately. Active location is discovery, not permission: inspect status and '
                          'conditions before applying. Project decides required inputs; generic packet '
                          'does not certify completeness. New facts need external research.')
+    if asset_selection is not None:
+        import asset_catalog
+        if asset_selection.get('schema')==2 and asset_selection.get('project_id')!=recipe.get('project_id'):
+            raise ValueError('Asset selection Project mismatch')
+        status = asset_catalog.verify(root, asset_selection,recipe.get('project_id') if asset_selection.get('schema')==2 else None)
+        if status['status'] == 'stale': raise ValueError('Stale asset selection; refresh references')
+        result['asset_selection'] = asset_selection
+        result['asset_review_pending'] = status['issues']
+        helper = inside(root, 'scripts/asset_catalog.py')
+        if helper.is_file(): dependencies.append({k:v for k,v in source(root,'scripts/asset_catalog.py').items() if k != 'text'})
     if plan:
         result.update(routing=plan, routing_request=dict(stage=stage, effects=list(effects), tasks=list(tasks)))
     return result
@@ -187,6 +197,13 @@ def verify(root, data):
                 stale.append('routing_sources_missing')
         except (ValueError, OSError, KeyError, TypeError):
             stale.append('routing_plan')
+    if data.get('asset_selection') is not None:
+        try:
+            import asset_catalog
+            recipe=json.loads(inside(root,f"03-Projects/{data['project']}/context-map.json").read_text(encoding='utf-8-sig'))
+            check = asset_catalog.verify(root,data['asset_selection'],recipe.get('project_id') if data['asset_selection'].get('schema')==2 else None)
+            if check['status'] == 'stale' or check['status'] != data['asset_selection']['status'] or check['issues'] != data.get('asset_review_pending',[]): stale.append('asset_selection')
+        except (ValueError, OSError, TypeError): stale.append('asset_selection')
     if 'memory' in data:
         current = memory.scan(root, data['project'])
         if current['fingerprint'] != data['memory']['fingerprint'] or current['errors']:
@@ -334,6 +351,7 @@ def main():
     p.add_argument('--stage', choices=routing.STAGES)
     p.add_argument('--effect', action='append', default=[])
     p.add_argument('--task', action='append', default=[])
+    p.add_argument('--asset-selection',type=Path,help='Optional verified local planned-reference receipt; never whole catalog')
     p = subs.add_parser('view', help='Verify, then display exact text without JSON body escaping')
     p.add_argument('packet', type=Path)
     p.add_argument('--context-id')
@@ -368,7 +386,8 @@ def main():
                      if args.memory_selection else None)
         result = packet(root, args.project, args.mode, args.species, args.interaction,
                         selection, args.lesson_id, args.topic, args.query,
-                        args.stage, args.effect, args.task)
+                        args.stage, args.effect, args.task,
+                        json.loads(inside(root,args.asset_selection.as_posix()).read_text(encoding='utf-8-sig')) if args.asset_selection else None)
         if args.out:
             path = inside(root, args.out)
             path.parent.mkdir(parents=True, exist_ok=True)

@@ -5,7 +5,7 @@ description: Tổng kết phiên video Nature Studio khi gọi /dongvideo hoặc
 
 # /dongvideo
 
-Version: 1.3 | Updated: 2026-10-17 | Nhận XX-YYYY và hai định dạng legacy; giữ truy xuất chọn lọc
+Version: 1.4 | Updated: 2026-10-18 | Nhận XX-YYYY và hai định dạng legacy; giữ truy xuất chọn lọc
 
 Nhận lệnh trong tin nhắn, không giả định giao diện đã đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Đầu ra tiếng Việt. Đóng phiên là chốt ghi nhận hiện tại, không cấm tiếp tục sửa video.
 
@@ -49,3 +49,5 @@ Nhận mã XX-YYYY và mã legacy XXX-YYYYY hoặc UF-0001. Đọc IDENTITY.json
 ## Phân biệt ghi nhớ local và chia sẻ
 
 Đọc 00-Standards/publication.md. Lesson mới mặc định publication.visibility=private, reviewed=false. Trong báo cáo, tách bài học có thể đóng góp bản cập nhật hệ thống khỏi nguồn production riêng; không tự gửi lên GitHub hoặc coi nhãn public là active. Khi được giao publish, rà/làm sạch bài học theo policy, giữ bằng chứng riêng local và chỉ xuất căn cứ được chia sẻ. Không lược bỏ hết lessons khỏi bản cập nhật chỉ vì không xuất production.
+
+Khi có asset/ref, ghi ID/revision/hash và phần thật đã dùng/QA trong hồ sơ; metadata/hash không chứng minh actual inputs. Bản public/private cùng ID/version có thể khác nội dung: đối chiếu nguồn/hash trước merge, không ghi đè hoặc tự active từ bản kể một phiên.

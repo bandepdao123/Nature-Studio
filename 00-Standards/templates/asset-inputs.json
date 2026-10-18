@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "project_id": null,
+  "production_id": null,
+  "attempt_id": null,
+  "call_id": null,
+  "cycle_id": null,
+  "outcome": "not_submitted",
+  "selection": null,
+  "prompt": {
+    "path": null,
+    "sha256": null
+  },
+  "inputs": [],
+  "tool": {
+    "name": "image_gen",
+    "arguments": {
+      "prompt": null,
+      "transparent_background": false
+    }
+  },
+  "output": null
+}

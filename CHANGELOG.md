@@ -2,6 +2,22 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.1 — 2026-10-18
+
+- Nhu cầu reference_requirements nội bộ xuyên /chayvideo, /clonevideo và /taoanh; tự đánh giá đúng đối tượng/biến thể/role/view, tách first_frame/video/both. Caption-only giữ binding, không tra asset.
+- Catalog thêm applicability shared/projects/unknown, lọc Project/view, đọc metadata theo ID và kiểm phạm vi toàn dependency. Thêm dữ liệu không làm dài skill hoặc bắt nạp toàn catalog.
+- Tách tập nguồn kiểm với bộ ảnh thực gửi. Kiểm declared actual inputs/prompt/output theo hash và thứ tự; handoff schema3 liên kết call/attempt/Project/output, legacy giữ provenance unverified riêng.
+- Một hướng dẫn conditional dùng chung, Knowledge vẫn xác lập sinh học/kích cỡ; ảnh AI không chứng minh scale. Không ép ý tưởng theo thư viện. Không sinh media trong đợt cập nhật.
+- Xem ghi chú v2.1.1 cho kiểm thực tế/giới hạn. Asset binaries/catalog/production/registry vẫn local; không gộp dữ liệu riêng vào bản xuất.
+
+## v2.1.0 — 2026-10-18
+
+- Profile sáu phần phục vụ sáng tạo, giữ ID ba loài; nguồn văn bản/điểm đặc biệt/cỡ có điều kiện, không hứa viral. Asset catalog local stdlib với query phân trang, chọn role/stage/component, dependency, hash, review scope và CAS cập nhật; không render/tải ảnh hoặc tự public.
+- Asset selection tùy chọn trong context/OUTPUT, view descriptor gọn; pending review tách source coverage. Giữ whole-source floor, legacy và ref planned khác actual-used.
+- Check/save giữ checks/contract version, tách count/timeline; ngoại lệ beat bind request/prompt/scope/base/target attempt, dùng chung new/revision/reference. Không sửa attempt lịch sử.
+- CURRENT-STATE schema2 gắn QA reviewed_render/evidence/coverage; null/type thành errors, approval độc lập selected_render. Schema1 đọc được nhưng unverified.
+- Giữ ID/registry/quota/Memory/private và release cũ. Nguồn v2.1.0 chốt local; commit/tag/publish là thao tác riêng theo nhiệm vụ.
+
 ## v2.0.0 — 2026-10-17
 
 - /chayvideo v2.7: một dispatcher, nguồn theo stage và effect; cấu hình Project độc lập với skill, unknown/unassigned giữ đường đọc đầy đủ. Fullset đủ brief ưu tiên all + view để tránh overhead chia stage không cần thiết.

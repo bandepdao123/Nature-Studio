@@ -1,8 +1,23 @@
 {
-  "schema": 1,
-  "current_text": {"path": "Axx/output.md", "sha256": "replace-with-measured-sha256"},
+  "schema": 2,
+  "current_text": {
+    "path": "Axx/OUTPUT.json",
+    "sha256": "replace-with-measured-sha256"
+  },
+  "first_frame": null,
+  "first_frame_handoff": null,
+  "reviewed_render": null,
   "selected_render": null,
+  "actual_inputs_evidence": null,
+  "qa_evidence": null,
+  "qa_coverage": {},
   "approval": "none",
   "approval_evidence": null,
-  "qa": {"visual": "not_checked", "motion": "not_checked", "anatomy": "not_checked", "audio": "not_checked", "format": "not_checked"}
+  "qa": {
+    "visual": "not_checked",
+    "motion": "not_checked",
+    "anatomy": "not_checked",
+    "audio": "not_checked",
+    "format": "not_checked"
+  }
 }

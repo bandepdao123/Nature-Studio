@@ -60,3 +60,17 @@ Theo [kiểm media và finishing](media-review-and-finishing.md) khi nhận refe
 ## Bộ nhớ schema2 — v1.8
 
 Task/hint từ nhiệm vụ thật, cùng lõi memory_retrieval.py cho new/revision/caption/reference và skill ảnh/đóng phiên. Đọc memory-retrieval.md lần đầu dùng; packet chưa chọn lesson không chứng minh đã áp bộ nhớ. Lưu selection/query local, mở nguyên văn bài có thể dùng; tiếp tục next_cursor hoặc --broad khi cần. Verify xét cả inventory namespace để phát hiện bài mới/đổi status ngoài selection, không chỉ hash bài đã dùng. Khối sources và memory.errors/pending cần kiểm trước giao.
+
+## Profile và planned asset — v2.1.0
+
+Profile đúng loài cung cấp nhận dạng, cỡ/biến thể, hành vi và điểm đáng xem có điều kiện; phát triển chuyện mới theo creativity/Story Development, không biến cá thể lớn thành mặc định hoặc lịch bản mẫu. Sau chọn cảnh, tra asset đúng entity/stage/role/rig theo [hướng dẫn catalog](knowledge-routing.md#catalog-asset-local) khi cần ref. Không xem toàn album hoặc thêm rig cho natural prey. Caption chỉ cần thêm nguồn nếu có claim mới; revision giữ phần đã tốt và kiểm ảnh hưởng thực.
+
+Receipt asset có thể gắn packet bằng `--asset-selection <receipt.json>` và gắn output bằng `asset_selection` ngoài frame_state. View chỉ hiện ID/path/giới hạn liên quan; mở ảnh thật riêng, không dump catalog. Thiếu review nằm ở `asset_review_pending`, độc lập source coverage; không giả visual pass. Selection stale phải dựng lại. Planned refs khác actual inputs/settings của render; khi đổi nội dung có liên quan, resolve giữ thiếu binding là unverified chứ không tự chứng nhận ảnh cũ.
+
+Check/save giữ `checks` và phiên bản contract; metadata dự định không là kết quả render. Mặc định Underwater vẫn 5–8 beat và các gate hiện hành. Ngoại lệ số beat chỉ theo yêu cầu thật được đối chiếu, có scope/hash/target attempt; đọc [binding ngoại lệ](templates/README.md#binding-ngoại-lệ-beat) khi cần, không nạp schema này ở mọi lượt. Nhiều cử động trong một beat không tự đòi tăng beat.
+
+## Nhu cầu tham chiếu nội dung → ảnh — v2.1.1
+
+Mỗi bộ nội dung mới/reference hoặc revision hình ghi `reference_requirements` trong OUTPUT/INPUTS: đối tượng/entity, variant/stage/view khi biết, role, must_preserve, reason, essential, applies_to=first_frame/video/both. Khi không cần ghi items=[] và none_reason. Contract và cách dùng theo [quy trình tham chiếu](first-frame-asset-references.md), chỉ đọc phần thao tác chi tiết khi cần asset. Đây là metadata nội bộ, không thêm mục vào bốn phần người dùng nhận. Helper đọc legacy thiếu trường như unverified; revision phải khai lại nhu cầu còn hiệu lực, caption giữ nguyên không query ảnh.
+
+/chayvideo viết từ brief và Knowledge trước, metadata catalog hỗ trợ xác định ref; mở ảnh khi cần chi tiết thị giác, không giả đã xem từ descriptor. /taoanh tự đối chiếu t=0 và chọn bộ ảnh thực gửi. Asset sau t=0 thuộc nhu cầu video, không ép vào ảnh mở đầu. Giữ ý định/cỡ có căn cứ dù thư viện thiếu; không tự đổi loài/Project để tận dụng ảnh. Prompt không coi đường dẫn local là ảnh model đã nhận. Chất lượng motion/audio vẫn kiểm trên video thật.

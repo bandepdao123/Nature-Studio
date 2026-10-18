@@ -58,3 +58,7 @@ Frame_state theo [lõi chung](video-prompt-workflow.md#tiếp-tục-đúng-bộ-
 Tách ba kết luận: QA nội dung ảnh, phù hợp làm đầu vào video, và file export chính xác. Với tỷ lệ đích, sai số tương đối `abs((width/height)/(target_width/target_height)-1) <= 0.001` (0.1%) được chấp nhận riêng cho tỷ lệ đầu vào do làm tròn pixel, nếu giao diện nhận được và brief không yêu cầu exact input. Ví dụ 941×1672 lệch khoảng 0.0532% so với 9:16; luôn ghi pixel thật, không gọi exact 9:16. Không dùng lượt sinh chỉ để sửa sai số này khi nội dung và input đã đạt. Ghi từng kết luận trong review/handoff; không đổi qa_pass lịch sử hoặc tự duyệt export. Export có yêu cầu tỷ lệ/kích thước chính xác vẫn phải kiểm riêng. Không crop/stretch âm thầm; xử lý pixel theo quyền người dùng và tuyến công cụ hiện hành, giữ ảnh gốc/hash và kiểm lại bố cục.
 
 Bộ phận ngoài khung ở t=0 không bị ép xuất hiện nếu brief đã chốt; ảnh chỉ QA phần thấy được, phần sẽ lộ ở video có checkpoint reveal/ending riêng theo [media review](media-review-and-finishing.md).
+
+## Asset inputs — v2.1.1
+
+Khi tạo/sửa, đánh giá nhu cầu và dùng [quy trình tham chiếu](first-frame-asset-references.md) khi cần ref. Handoff mới schema3 mở rộng schema2 với asset_inputs (path/hash tương đối workspace), call_id và reference_requirements_sha256. Helper kiểm input/output/call/Project/attempt bindings; không chứng minh tool dispatch hoặc perception. Schema2 cũ giữ kết luận frame binding riêng, trả asset_inputs_status=unverified nếu không có bằng chứng, không tự backfill. Tiêu chí ảnh/QA và budget không đổi.

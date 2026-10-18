@@ -1,5 +1,5 @@
 {
-  "schema": 2,
+  "schema": 3,
   "production_id": null,
   "project_id": null,
   "attempt_id": null,
@@ -25,5 +25,8 @@
   "model_evidence_path": null,
   "user_approved": false,
   "user_approval_path": null,
-  "limitations": []
+  "limitations": [],
+  "asset_inputs": null,
+  "call_id": null,
+  "reference_requirements_sha256": null
 }

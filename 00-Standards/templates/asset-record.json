@@ -1,0 +1,36 @@
+{
+  "asset_id": "REPLACE-WITH-STABLE-ASSET-ID",
+  "entity_id": "REPLACE-WITH-SPECIES-OR-COMPONENT-ID",
+  "kind": "organism",
+  "stage": null,
+  "roles": [
+    "identity"
+  ],
+  "view": null,
+  "origin": "unknown",
+  "source": {
+    "url": null,
+    "accessed": null,
+    "rights": "unknown"
+  },
+  "file": null,
+  "size": null,
+  "review": {
+    "status": "not_checked",
+    "roles": [],
+    "evidence": null
+  },
+  "requires": [],
+  "publication": {
+    "visibility": "private",
+    "reviewed": false
+  },
+  "notes": "Template only, not a registered asset. Supply an actual local binding or source URL; unknown stage/size cannot certify the corresponding role.",
+  "derivation": null,
+  "applicability": {
+    "scope": "unknown",
+    "project_ids": []
+  },
+  "reference_use": null,
+  "qa_scope": null
+}

@@ -16,7 +16,7 @@ Khi người dùng gửi `/chayvideo` hoặc yêu cầu tạo bộ nội dung qu
 
 Skill đọc quy chuẩn và lịch sử đúng dự án trước khi tạo ý tưởng. Mặc định của skill: Ý TƯỞNG tiếng Việt; FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, CAPTION tiếng Anh Mỹ tự nhiên kèm hashtag; mỗi prompt là một đoạn văn. Tự tra metadata các dự án để chọn dự án khớp rõ; chỉ hỏi khi mơ hồ hoặc chưa có dự án phù hợp. Không kích hoạt sản xuất từ câu hỏi kiến thức đơn thuần. Không khởi chạy tạo media chỉ từ lệnh này.
 
-Version: 2.0 | Updated: 2026-10-17 | Reason: chốt v2.0.0, phân luồng nguồn và mã XX-YYYY; giữ lịch sử và bộ nhớ Project/shared.
+Version: 2.1 | Updated: 2026-10-18 | Reason: profile thực dụng, planned asset catalog và kiểm–lưu/QA có binding; giữ ID, lịch sử và bộ nhớ Project/shared.
 
 Khi người dùng gọi `/dongvideo` hoặc yêu cầu tổng kết/đóng phiên video và rút bài học, đọc [.agents/skills/dongvideo/SKILL.md](.agents/skills/dongvideo/SKILL.md). Không kích hoạt từ trích dẫn, câu hỏi hay sửa skill. Lệnh tổng kết tiếng Việt, luôn xét Project và shared, không tự render/push hay duyệt video. Bộ nhớ theo [memory-policy](00-Standards/memory-policy.md): /chayvideo chỉ áp active đúng điều kiện; /dongvideo có quyền tự kích hoạt phương pháp khách quan khi đạt đủ gate đã duyệt, không tự thay chính sách sáng tạo.
 
@@ -29,3 +29,5 @@ Video mới: đọc [video-identifiers.md](00-Standards/video-identifiers.md); d
 ## /taoanh — tạo ảnh và QA
 
 Khi người dùng gọi `/taoanh`, “tạo ảnh”, “tạo first frame” với ý định tạo/sửa ảnh trong Project, đọc [.agents/skills/taoanh/SKILL.md](.agents/skills/taoanh/SKILL.md). Không kích hoạt từ câu hỏi, trích dẫn, yêu cầu chỉ viết prompt hoặc sửa skill. Ảnh ngoài Project dùng luồng tạo ảnh thông thường, không ép vào Underwater. First frame QA theo [first-frame.md](00-Standards/first-frame.md) và Project. Tối đa 5 lượt sinh/sửa/call đã gửi, lưu budget local, hết lượt chưa đạt thì dừng và xin thêm số lượt cụ thể. image_gen là tuyến thực thi; ưu tiên Sunburst nếu chọn được, nếu không thì dùng model mặc định và tiếp tục không hỏi lại. Danh tính model không phải tiêu chí QA; không nhận đã dùng Sunburst khi chưa có căn cứ hoặc tự chuyển CLI/API. Không sinh ảnh chỉ vì yêu cầu xây skill.
+
+Profile loài và planned asset theo 00-Standards/knowledge-routing.md khi nhiệm vụ cần. Chỉ query descriptor và mở ref liên quan; không nạp cả catalog. Metadata/hash không tự là visual QA, actual model input hoặc bằng chứng viral.

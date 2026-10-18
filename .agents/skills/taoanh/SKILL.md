@@ -5,7 +5,7 @@ description: Tạo hoặc sửa ảnh first frame Nature Studio khi gọi /taoan
 
 # /taoanh
 
-Version: 1.2 | Updated: 2026-10-17 | Truy xuất bài học ảnh có chọn lọc
+Version: 1.4 | Updated: 2026-10-18 | Đánh giá và dùng asset đúng Project
 
 Quy ước trong chat, không cam kết giao diện đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Tổng kết/QA tiếng Việt; prompt thực thi tiếng Anh một đoạn. Skill này tạo ảnh, không tạo video. Chỉ xây/sửa skill không phải yêu cầu chạy sinh ảnh.
 
@@ -23,7 +23,7 @@ Ghi bản khóa đầu vào: t=0, chủ thể/số lượng/nhận dạng/tỷ l
 
 Tra bài học theo [lõi truy xuất](../../../00-Standards/memory-retrieval.md) với task `image-generation` và `image-review`, hint từ brief; đọc descriptor rồi mở active phù hợp, không nạp toàn bộ INDEX. Khi debug/thử mới dùng thêm `--candidates` riêng; không coi candidate là luật. Giữ nguồn/quota/handoff như phần dưới.
 
-Khi dùng bộ nội dung đã có, resolve đúng attempt và đối chiếu frame_state theo lõi chung. Tái dùng ảnh đã QA phải theo [kiểm liên kết ảnh](../../../00-Standards/first-frame.md#kiểm-liên-kết-ảnh-trước-tái-dùng). matched chỉ là liên kết hồ sơ khớp; vẫn xem/đo ảnh như skill yêu cầu. Khi ghi handoff dùng schema 2, phân biệt attempt ảnh với source_attempt nội dung; giữ review/handoff trước, không tự nâng hồ sơ cũ hoặc sinh lại chỉ vì cần kiểm lại.
+Khi dùng bộ nội dung đã có, resolve đúng attempt và đối chiếu frame_state theo lõi chung. Tái dùng ảnh đã QA phải theo [kiểm liên kết ảnh](../../../00-Standards/first-frame.md#kiểm-liên-kết-ảnh-trước-tái-dùng). matched chỉ là liên kết hồ sơ khớp; vẫn xem/đo ảnh như skill yêu cầu. Khi ghi handoff mới dùng schema 3 theo phần asset bên dưới, phân biệt attempt ảnh với source_attempt nội dung; giữ review/handoff trước, không tự nâng hồ sơ cũ hoặc sinh lại chỉ vì cần kiểm lại.
 
 Chỉ dùng built-in `image_gen` theo yêu cầu người dùng, không tự dùng CLI/API. Model ưu tiên: **GPT Image 2.5 Sunburst**. Nếu schema thực có selector và hỗ trợ Sunburst thì chọn Sunburst; nếu không tìm được hoặc không có selector, dùng model mặc định của image_gen và tiếp tục, không hỏi lại. Không tự chỉ định Flare để thay thế. Tên Sunburst trong prompt không chọn backend; không bịa model/seed/quality ẩn.
 
@@ -55,3 +55,5 @@ Theo mẫu `00-Standards/templates/first-frame-review.md`, giữ mỗi attempt I
 Trả ảnh inline + đường dẫn tuyệt đối, QA status/ảnh đạt ở attempt nào, số lượt dùng/còn, model thực xác nhận được và hạn chế quan trọng. Nếu chưa đạt thì chỉ rõ, không đặt tên “final/approved” để gây hiểu nhầm. Không tự tạo video, chi tiền ngoài tuyến đã được giao, đăng bài, commit hoặc push. /dongvideo tổng kết và xét bài học hai cấp; mọi runtime/ảnh/feedback/registry giữ local, bài học theo memory-policy/publication. Không tự active từ vòng sửa ảnh.
 
 Sau call, ghi `image_budget.py finish --production ... --call-id <id> --outcome success|error|cancelled|unknown`; thao tác này không hoàn lượt. Handoff điền theo 00-Standards/templates/first-frame-handoff.json, không lưu template rỗng như ảnh đạt. Quota helper chỉ xác nhận file chấp thuận tồn tại, agent phải kiểm đó là lời đồng ý thật cho số lượt/phạm vi tương ứng.
+
+Trước tạo/sửa, tự đánh giá ảnh cần asset gì từ brief/t=0: identity, anatomy, assembly và nguồn scale khi liên quan; kế thừa reference_requirements từ /chayvideo rồi kiểm lại, brief ảnh trực tiếp tự lập nhu cầu. Khi cần ref, theo [quy trình asset chung](../../../00-Standards/first-frame-asset-references.md): lọc đúng Project/entity/variant/stage/view/role, mở ảnh đã chọn, pin/verify receipt, chỉ gửi ảnh cần và ghi input thực có thứ tự/hash/mục đích. Không mang nền trắng/chữ kích thước từ thư viện vào cảnh; không coi nhãn AI là số đo. Handoff mới schema3 kiểm actual input, schema2 cũ không tự nâng. Thiếu ref hỗ trợ có thể dùng Knowledge; thiếu ref thiết yếu xử lý trước call. Không tạo ảnh chỉ từ việc mở profile/cập nhật catalog; không đọc cả thư viện.

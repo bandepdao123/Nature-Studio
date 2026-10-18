@@ -44,3 +44,7 @@ Production, attempt, SESSION-REVIEW và idea-ledger giữ local theo publication
 ## Sinh ảnh theo /taoanh
 
 Khi được giao tạo ảnh thật, theo first-frame.md và skill taoanh; không khởi chạy từ /chayvideo. Một video giữ ID qua các attempt, quota ảnh theo cycle riêng. Mỗi call ghi prompt/settings/input/output/hash/QA, dùng image_budget.py reserve trước gửi; call lỗi cũng tính. FIRST-FRAME.json chỉ trỏ ảnh QA pass, không sửa provenance các attempt video cũ. Dữ liệu vòng ảnh và quota giữ local, tách lesson theo policy.
+
+## Kiểm–lưu và asset — v2.1.0
+
+Attempt mới giữ checks/contract version và binding ngoại lệ khi có; check/save dùng cùng gate. Planned asset_selection nằm ngoài frame_state bốn key; resolve mới nhất không tự là actual input của render. CURRENT-STATE schema2 gắn QA vào reviewed_render/coverage và approval vào selected_render, giữ legacy unverified. Không cấp ID thử khi nâng hệ thống, tạo catalog hay làm ảnh thư viện độc lập. Xem lõi workflow và templates khi cần ngoại lệ.

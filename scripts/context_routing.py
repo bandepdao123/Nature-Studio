@@ -185,6 +185,10 @@ def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max
     if 'routing' in packet:
         header['routing'] = {k: packet['routing'][k] for k in
                              ('stage', 'effective_stage', 'effects', 'tasks', 'fallback', 'unassigned')}
+    if packet.get('asset_selection') is not None:
+        header['planned_asset_refs'] = [dict(asset_id=r['asset_id'], path=(r.get('file') or {}).get('path')) for r in packet['asset_selection']['records']]
+        header['asset_review_pending'] = packet.get('asset_review_pending',[])
+        header['asset_scope'] = 'Planned references; open actual files; not proof of model use or visual QA'
     header['memory'] = memory
     header['selected_lessons'] = [{k: v for k, v in r.items() if k != 'sha256'}
                                   for r in packet.get('selected_lessons', [])]

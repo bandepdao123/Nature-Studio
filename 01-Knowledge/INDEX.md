@@ -1,6 +1,6 @@
 # Chỉ mục kiến thức
 
-Các hồ sơ ban đầu là inherited-reference từ hướng dẫn đã chốt, chưa nghiên cứu mới trong lần khởi tạo. Không coi trạng thái này là active lesson hoặc chứng nhận mọi chi tiết đã đúng.
+Các hồ sơ ban đầu là inherited-reference từ hướng dẫn đã chốt. Ba hồ sơ loài đã được bổ sung nguồn văn bản ngày 2026-10-18; các tài liệu khác giữ trạng thái tại nguồn. Knowledge không là active lesson hoặc chứng nhận ảnh/video đã đúng.
 
 | ID | Chủ đề / thẻ | File |
 |---|---|---|
@@ -16,3 +16,7 @@ Các hồ sơ ban đầu là inherited-reference từ hướng dẫn đã chốt
 ## Benchmark đã nghiên cứu
 
 - [K-BM-UF-CAP-20261016: 40 caption Underfishing](benchmarks/underfishing-captions-2026-10-16/REPORT.md): quan sát 2026-10-16, mẫu >1 triệu view hiển thị; không là bằng chứng nhân quả viral hoặc quy chuẩn đã kích hoạt.
+
+## Profile phục vụ sáng tạo — v2.1.0
+
+Ba hồ sơ trên đã được bổ sung văn bản có nguồn ngày 2026-10-18, giữ ID: ngoại hình, cỡ/biến thể, hành vi, điểm đáng xem, điều kiện và nguồn/asset. Nhãn researched-reference không là QA ảnh/video hoặc active lesson. Khả năng đặc biệt cần đúng scope; không coi một cỡ lớn là phổ biến. [Cách duy trì và tra asset](../00-Standards/knowledge-routing.md); [mẫu loài](../00-Standards/templates/species-profile.md).
