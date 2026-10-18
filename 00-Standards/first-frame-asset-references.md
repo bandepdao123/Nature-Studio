@@ -14,6 +14,8 @@ Tự xác định đối tượng, cỡ, góc nhìn, đặc điểm nhận dạn
 
 ## Tra cứu có phạm vi
 
+Máy mới hoặc catalog thiếu bộ ref đi kèm: trước khi báo thiếu, nếu có `08-Assets/reference-library.json` thì tự chạy `asset_catalog.py import-bundle` theo [hướng dẫn](../08-Assets/README.md), rồi query lại. Không đọc hết manifest/ảnh vào context; không ghi đè mục local xung đột.
+
 1. Lấy ID ổn định từ PROJECT.md. Tạo request entity/role/variant/stage/view cần thiết; dùng [catalog](knowledge-routing.md#catalog-asset-local) với `--project-id`. Query descriptor phân trang; xem missing/next_cursor. Scope unknown là lead cần xét, không phải eligible. Không thay bằng loài/Project khác để hết missing.
 2. Đọc metadata chi tiết đúng ID bằng `read`, xem source/rights/qa_scope/reference_use/dimensions. Mở ảnh thật đã chọn bằng view_image. Chọn theo brief và vai trò đã QA; không mặc định bản mới nhất hoặc Project-specific luôn tốt hơn shared.
 3. `select` rõ ID, lưu receipt mới và `verify` theo Project. Kiểm dependency/derivation/file/review/hash. Planned selection không chứng minh model đã nhận ảnh.

@@ -323,6 +323,69 @@ def requirement_errors(value):
     return errors
 
 
+def import_bundle(root, manifest):
+    """Import reviewed public references without overwriting local IDs or provenance."""
+    data=read(local(root,manifest))
+    if not isinstance(data,dict) or data.get('schema')!=1 or data.get('reviewed_for_publication') is not True or not isinstance(data.get('assets'),list):
+        raise ValueError('Unsupported public asset bundle')
+    records={};existing={};issues=[]
+    for item in data['assets']:
+        if not isinstance(item,dict):raise ValueError('Bundle record must be object')
+        key=identifier(item.get('asset_id'),'asset ID')
+        if key in records:raise ValueError('Duplicate bundle asset ID')
+        if item.get('publication')!={'visibility':'public','reviewed':True} or item.get('review',{}).get('status')!='pass':raise ValueError('Bundle asset is not reviewed for publication')
+        for bind in (item.get('file'),item.get('review',{}).get('evidence')):
+            if not isinstance(bind,dict) or not isinstance(bind.get('path'),str) or not bind['path'].startswith('08-Assets/'):
+                raise ValueError('Bundle file/evidence must be under 08-Assets')
+            issues.extend(binding_errors(root,bind,key))
+        applicability(item)
+        records[key]=item
+    if issues:raise ValueError('; '.join(issues))
+    with connection(root) as db:
+        if db:
+            for key in records:
+                found=db.execute('SELECT body,sha FROM assets WHERE id=?',(key,)).fetchone()
+                if found:
+                    row=json.loads(found[0])
+                    if digest(row)!=found[1]:raise ValueError('Corrupt local metadata')
+                    existing[key]=(row,found[1])
+    # Preflight conflicts before any registration. Preserve existing local provenance.
+    semantic=('entity_id','kind','stage','variant','view','roles','origin','source','requires','dimensions','reference_use','qa_scope')
+    for key,(row,sha) in existing.items():
+        incoming=records[key]
+        same=(all(row.get(k)==incoming.get(k) for k in semantic)
+              and applicability(row)==applicability(incoming)
+              and (row.get('file') or {}).get('sha256')==incoming['file']['sha256']
+              and row['review'].get('status')==incoming['review'].get('status')
+              and row['review'].get('roles',[])==incoming['review'].get('roles',[]))
+        problems=binding_errors(root,row.get('file'),key)+binding_errors(root,row['review'].get('evidence'),key)
+        if not same or problems:raise ValueError('Local asset conflict; preserved without overwrite: '+key)
+    order=[];visiting=set();done=set()
+    def visit(key):
+        if key in visiting:raise ValueError('Cyclic bundle dependency')
+        if key in done:return
+        if key not in records:raise ValueError('Bundle dependency absent: '+key)
+        visiting.add(key)
+        row=records[key]
+        deps=list(row.get('requires',[]))
+        parent=row.get('derived_from')
+        if parent:
+            if not isinstance(parent,dict) or not isinstance(parent.get('operation'),str) or not parent['operation'].strip():raise ValueError('Invalid bundle derivation')
+            deps.append(identifier(parent.get('parent_id'),'derivation parent'))
+        for dep in deps:visit(dep)
+        visiting.remove(key);done.add(key);order.append(key)
+    for key in records:visit(key)
+    hashes={key:sha for key,(row,sha) in existing.items()};imported=[]
+    for key in order:
+        if key in existing:continue
+        row=json.loads(canonical(records[key]));parent=row.pop('derived_from',None)
+        row.pop('revision',None);row.pop('derivation',None)
+        if parent:row['derivation']=dict(parent_id=parent['parent_id'],parent_record_sha256=hashes[parent['parent_id']],operation=parent['operation'])
+        hashes[key]=register(root,row)['record_sha256'];imported.append(key)
+    return dict(status='imported',imported=len(imported),kept_existing=len(existing),total=len(records),
+                scope='Public references registered; no local IDs, files, approval or generation history overwritten')
+
+
 def inputs_check(root, record, project_id=None, historical=False):
     """Check declared local tool arguments, not perception or proof a remote call ran."""
     errors=[]
@@ -382,7 +445,7 @@ def read(path): return json.loads(Path(path).read_text(encoding='utf-8-sig'))
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',type=Path,default=ROOT)
-    parser.add_argument('action',choices=['init','register','query','read','select','verify','inputs-check'])
+    parser.add_argument('action',choices=['init','register','query','read','select','verify','inputs-check','import-bundle'])
     parser.add_argument('input',type=Path,nargs='?')
     parser.add_argument('--asset',action='append',default=[])
     parser.add_argument('--expected-sha')
@@ -395,6 +458,9 @@ def main():
     if args.action=='init':
         with connection(root,True): pass
         result={'catalog':CATALOG,'status':'initialized','note':'No assets or video IDs allocated'}
+    elif args.action=='import-bundle':
+        if args.input is None:parser.error('Public bundle manifest required')
+        result=import_bundle(root,args.input.as_posix())
     else:
         if args.input is None: parser.error('input JSON required')
         data=read(args.input)

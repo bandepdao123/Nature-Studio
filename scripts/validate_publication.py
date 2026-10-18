@@ -5,6 +5,7 @@ Checks scope and explicit sharing metadata, not the truth/privacy of prose.
 from pathlib import Path, PurePosixPath
 import argparse
 import json
+import hashlib
 import re
 import subprocess
 
@@ -51,6 +52,38 @@ def shareable(text):
 def validate_files(files, read):
     files = set(files)
     errors = [f'Private runtime path in public tree: {p}' for p in sorted(files) if forbidden(p)]
+    if any(p.startswith('08-Assets/') for p in files):
+        manifest='08-Assets/reference-library.json'
+        try:
+            bundle=json.loads(read(manifest).decode('utf-8-sig'))
+            if bundle.get('schema')!=1 or bundle.get('reviewed_for_publication') is not True or not isinstance(bundle.get('assets'),list):
+                raise ValueError('Public bundle needs schema/assets/publication review')
+            ids=set();expected={manifest,'08-Assets/README.md'}
+            for asset in bundle['assets']:
+                key=asset.get('asset_id')
+                if not isinstance(key,str) or not key or key in ids:raise ValueError('Unique asset IDs required')
+                ids.add(key)
+                if asset.get('publication')!={'visibility':'public','reviewed':True} or asset.get('review',{}).get('status')!='pass':
+                    raise ValueError('Only selected, reviewed public assets may be exported')
+                for binding in (asset.get('file'),asset.get('review',{}).get('evidence')):
+                    if not isinstance(binding,dict):raise ValueError('File/review binding required')
+                    path=binding.get('path')
+                    if not isinstance(path,str) or not path.startswith('08-Assets/') or '..' in PurePosixPath(path).parts or '\\' in path or path not in files:
+                        raise ValueError('Public asset binding missing/outside 08-Assets')
+                    if hashlib.sha256(read(path)).hexdigest()!=binding.get('sha256'):raise ValueError('Public asset hash mismatch: '+path)
+                    expected.add(path)
+                # The public export is deliberately selected output, not raw runtime provenance.
+                serialized=json.dumps(asset)
+                if '.nature-studio' in serialized or re.search(r'(?<![A-Za-z])[A-Za-z]:[/\\\\]',serialized):
+                    raise ValueError('Private/machine paths in public asset metadata')
+            for asset in bundle['assets']:
+                deps=list(asset.get('requires',[]))
+                if asset.get('derived_from'):deps.append(asset['derived_from']['parent_id'])
+                if not set(deps)<=ids:raise ValueError('Public dependency missing')
+            if {p for p in files if p.startswith('08-Assets/')}-expected:
+                raise ValueError('Unlisted public asset files; review manifest before publication')
+        except (ValueError,TypeError,KeyError,AttributeError,OSError) as exc:
+            errors.append('Public asset library: '+str(exc))
     for path in sorted(files):
         if not path.startswith('05-Memory/') or not path.endswith('.md'):
             continue

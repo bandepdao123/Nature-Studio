@@ -2,6 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.2 — 2026-10-18
+
+- Bổ sung 64 ảnh asset đã chọn trong 08-Assets, review làm sạch và manifest public/reviewed để dùng trên máy khác; không xuất production, ảnh lỗi hoặc database runtime.
+- import-bundle kiểm hash/dependency, nhập catalog trên clone sạch, idempotent và dừng khi xung đột ID; ảnh bind trực tiếp vào repo, không nhân bản vào runtime.
+- Skills bootstrap bộ ref đi kèm khi thiếu catalog trước khi kết luận không có ảnh. Publication guard kiểm manifest, file/review hash, quyền xuất đã ghi và không có file asset ngoài danh sách.
+- 278 tests đạt; kiểm sạch với 64 ảnh thật nhập và chạy lại thành công, giữ 4 unknown-stage như trước. Chưa sinh media hoặc đo token model thực.
+
 ## v2.1.1 — 2026-10-18
 
 - Nhu cầu reference_requirements nội bộ xuyên /chayvideo, /clonevideo và /taoanh; tự đánh giá đúng đối tượng/biến thể/role/view, tách first_frame/video/both. Caption-only giữ binding, không tra asset.

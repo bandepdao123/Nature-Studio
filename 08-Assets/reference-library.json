@@ -1,0 +1,3574 @@
+{
+  "schema": 1,
+  "library_id": "nature-reference-starter",
+  "version": "1",
+  "reviewed_for_publication": true,
+  "assets": [
+    {
+      "asset_id": "AI-CUT-MULLET",
+      "entity_id": "BAIT-CUT-MULLET",
+      "kind": "other",
+      "stage": null,
+      "variant": "cut",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/striped-mullet/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Chunk length: 5 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 5 cm chunk-length label correct. One skin-on raw mullet-style bait section, silver-scaled skin, moist pale flesh and plausible central vertebra; no live-fish body or hook. Taxonomic identity depends source/design, not cut flesh alone.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-CUT-MULLET.png",
+        "sha256": "1ab4f019525d8eeb69e0a1df56aea895e9b76e1cde3dd7a620d0b7e29454aa0a"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-CUT-MULLET.md",
+          "sha256": "19ee421bdaf5ac15e92980c6920abd8d816c46006a6969f546cc7eed2ec0f2b3"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-FATHEAD",
+      "entity_id": "BAIT-FATHEAD-MINNOW",
+      "kind": "organism",
+      "stage": null,
+      "variant": "whole",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/carpmin/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 6 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 6 cm label correct. Wild-type fathead-minnow appearance: olive-silver small fish, dark lateral marking, blunt head and small mouth, single dorsal and forked tail. Whole body/fin attachments plausible; life stage and fine diagnostic counts not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-FATHEAD.png",
+        "sha256": "dda4a43e8ae97f9c60a65b2124cf7a579ca8b4773d9f886dfe6b70b8ce50264f"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-FATHEAD.md",
+          "sha256": "92c492006034210b919a3c5f533f181cda0516c35dcc82ae49bea3e11e1348c7"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-INLINE-CIRCLE-SIDE",
+      "entity_id": "EQP-HOOK-INLINE-CIRCLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 40 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 40 mm caption correct. Compact rounded circle bend and single inward-directed point are now visibly distinct from open J hook; single barb and closed eye intact. Review visible generic geometry, not certified exact SKU or hidden plane alignment.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-INLINE-CIRCLE-SIDE.png",
+        "sha256": "2e39fdb7dbe25db95a84b0f5c3e4bd0640fbd37ac248b85ea085d7ac81a6a9bd"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-INLINE-CIRCLE-SIDE.md",
+          "sha256": "a96ba8ea2da5fd457e116ad164aa008607a8ae5bc773a1c523f42ed90ca96544"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-INLINE-CIRCLE-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-INLINE-CIRCLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [
+        "AI-HOOK-INLINE-CIRCLE-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 40 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 40 mm label correct. Oblique inline-circle design shows continuous rounded bend, inward point and one eye/barb; no visible separate lateral offset in hook body. Generic design, not product metrology.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-INLINE-CIRCLE-THREE-QUARTER.png",
+        "sha256": "8e93124ab45784f5633c1fe0a05344f50c31fdb46aa1e970bc3de588ff3370aa"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-INLINE-CIRCLE-THREE-QUARTER.md",
+          "sha256": "587ec9c6067148abef6d70375061246fd3d3aaeeb7907ba97b8f8e81fc2893a6"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-HOOK-INLINE-CIRCLE-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-J-BAITHOLDER-SIDE",
+      "entity_id": "EQP-HOOK-J-BAITHOLDER",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 35 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 35 mm caption correct. Open J bend, one tip/barb, two shank bait-holding barbs and one closed upturned eye visible; realistic unbroken metal and plausible surface reflections.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-J-BAITHOLDER-SIDE.png",
+        "sha256": "6c89ff465e31cde3f72d5cb9a024e0facee648b2fbd4e4aced12a735b6592430"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-J-BAITHOLDER-SIDE.md",
+          "sha256": "f99aeffcd8c11adc33db8e8be30050f985b36748e9fac18e37ff0690dc32c31f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-J-BAITHOLDER-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-J-BAITHOLDER",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [
+        "AI-HOOK-J-BAITHOLDER-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 35 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 35 mm label correct. Oblique J baitholder preserves two shank barbs, one point/barb and eye; intact round metal shank, no extra branches or fused loops.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-J-BAITHOLDER-THREE-QUARTER.png",
+        "sha256": "4b77b90764001b7856d214eccf26a63ae4c7e7ea091cc0851bf1ee6c673ca744"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-J-BAITHOLDER-THREE-QUARTER.md",
+          "sha256": "777b7aa4d71b6f31abfe4a0a04ca3d917b4500be129edcfaa6e541e43e2a7dc0"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-HOOK-J-BAITHOLDER-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-JIG-HOOK-SIDE",
+      "entity_id": "EQP-HOOK-JIG-HOOK",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 35 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 35 mm caption correct. Bare single jig hook with clear 90-degree eye leg, one closed eye, continuous round bend and single point/barb, no accidental head or second hook.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-JIG-HOOK-SIDE.png",
+        "sha256": "ee7d8a6959e2ab855722985c9d6c23674447b54f6b81c4bfaa95592c486732d9"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-JIG-HOOK-SIDE.md",
+          "sha256": "50feeb6084e8ede21dcc26d4506adb3f76e54b34f24c74e9daa440c89cc24899"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-JIG-HOOK-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-JIG-HOOK",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [
+        "AI-HOOK-JIG-HOOK-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 35 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 35 mm label correct. Oblique jig hook shows 90-degree eye leg, single closed eye and one point/barb, intact round bend and realistic metal; no duplicate or lead head.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-JIG-HOOK-THREE-QUARTER.png",
+        "sha256": "f7d91c5f1c6b02794c370b902bd94dd09a5cd4ffbbe45969427f2b01679a1938"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-JIG-HOOK-THREE-QUARTER.md",
+          "sha256": "dbf0acadcbf87ec472e3b6d337d8f7ac764e4004cc6c3cb193ed9bbfd4879f50"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-HOOK-JIG-HOOK-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-OCTOPUS-SIDE",
+      "entity_id": "EQP-HOOK-OCTOPUS",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 25 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 25 mm caption correct. Non-circle octopus-style open bend with short shank, single upturned eye, one upward point/barb; no extra bait-holder barbs. Generic geometry only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-OCTOPUS-SIDE.png",
+        "sha256": "82632371cdee8c5c0ab88c22fb509a59506714d8e4e69e885dad4b01c5ad6c1f"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-OCTOPUS-SIDE.md",
+          "sha256": "448681a8ebc02ea46f66fe03b10c2b563baa75e661a60d225c6ed3eb6cd63cf3"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-OCTOPUS-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-OCTOPUS",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [
+        "AI-HOOK-OCTOPUS-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 25 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 25 mm label correct. Oblique octopus-style hook retains one point/barb, short shank, closed upturned eye and continuous open bend; no circle inward-point exaggeration.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-OCTOPUS-THREE-QUARTER.png",
+        "sha256": "c87e47781fb4d350b2f52c20bd5507e6e2d8355bb041d09a113481eb758d2436"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-OCTOPUS-THREE-QUARTER.md",
+          "sha256": "954221694ad30de7f86cf9cc6980a524bf5dfe4d2dbba28d77b3755b17b1d472"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-HOOK-OCTOPUS-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-OFFSET-CIRCLE-SIDE",
+      "entity_id": "EQP-HOOK-OFFSET-CIRCLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 40 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 40 mm label correct. Compact circle-hook silhouette, one tip/barb and eye, credible metal finish. Side view does not independently prove degree of offset; use paired oblique view to assess that property.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-OFFSET-CIRCLE-SIDE.png",
+        "sha256": "3636c2ac00cc0937ed22b818dc1e385e94733e028d5da298b7998e12cc655c27"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-OFFSET-CIRCLE-SIDE.md",
+          "sha256": "fbfe71764b6ca0ec4a420c94aff00ea3bb1049df3775bfda4d39b8931de5a89c"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-OFFSET-CIRCLE-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-OFFSET-CIRCLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 40 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 40 mm label correct. Near-edge-on oblique hook now has foreshortened main bend and visibly turned terminal point relative to straight shank, making offset design inspectable. Single tip/barb and eye intact. Qualitative offset only; exact angle/SKU not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-OFFSET-CIRCLE-THREE-QUARTER.png",
+        "sha256": "7d12de7e7f8bf75c86d2dcb9235dff9c5fa613b81bd7ba34cca4f6196f30774e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-OFFSET-CIRCLE-THREE-QUARTER.md",
+          "sha256": "cd5b8db2fe8d06dfc7bd38183d64c1a81b4f1bda725e8ffe8e047216f6ad9955"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-TREBLE-SIDE",
+      "entity_id": "EQP-HOOK-TREBLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "side",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 30 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 30 mm label correct. Exactly three hook branches and tips, common joined shank and single eye visible. Rear branch softer in focus but separate point/barb readable; use oblique counterpart for additional branch detail.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-TREBLE-SIDE.png",
+        "sha256": "d60270a48c05d21ab0053fd2ab4c9cf5dfa8d4f476f3a32aa727209f86e7f43e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-TREBLE-SIDE.md",
+          "sha256": "61feaaffd3759ea5bf72676d9efc0ed0979dba90e996d8bab1072200ab537665"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-HOOK-TREBLE-THREE-QUARTER",
+      "entity_id": "EQP-HOOK-TREBLE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://business.mustad-fishing.com/us/collections/hooks"
+      },
+      "requires": [
+        "AI-HOOK-TREBLE-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 30 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 30 mm label correct. Oblique treble shows exactly three distinct points/barbs, three branches joined at common shaft and one eye. Natural metal reflections; rear branch slightly softer but topology visible.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-HOOK-TREBLE-THREE-QUARTER.png",
+        "sha256": "0f924fe6ab6794a4d6436809a952fbff9c44a593fb4028590969b86abab740d8"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-HOOK-TREBLE-THREE-QUARTER.md",
+          "sha256": "257683d26da1f7f737f9eee9b1e66b2acd3ec1e8295bf82a2ab28f3b5003704f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-HOOK-TREBLE-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-LEECH",
+      "entity_id": "BAIT-LEECH",
+      "kind": "organism",
+      "stage": null,
+      "variant": "whole",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4591366/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Extended length: 8 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 8 cm extended-length label correct. One flattened annulated ribbon-leech design with small anterior end and larger posterior sucker, natural wet dark skin and no external fantasy teeth. Gross leech appearance only; exact species diagnostics/stage unverified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LEECH.png",
+        "sha256": "5c170915b060515f926def32bfb4298865e4b864e55265ac147a73e342ea4d28"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LEECH.md",
+          "sha256": "8b06ce0b1db0692e887a72a9bdb09d5bcc753343aa8b992641894fb5a729e38a"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LINE-BRAID",
+      "entity_id": "EQP-LINE-BRAID",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "macro",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.berkley-fishing.com/blogs/news/the-right-line"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Diameter: 0.30 mm (macro detail)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background, exact 0.30 mm macro-detail label. Magnified compact green multifiber braid texture visible without falsely showing an entire 30 cm sample. Continuous strand with natural surface sheen; material/breaking strength not proven.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LINE-BRAID.png",
+        "sha256": "fe02de16132f81ac73706055d071a50ffa31443802f9309ca54877d7fe81a1e3"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LINE-BRAID.md",
+          "sha256": "28ad49f90c92590937b69d1709c7f487744deada7136c0a1dc132ad8b0e80d6f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LINE-FLUORO",
+      "entity_id": "EQP-LINE-FLUORO",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "macro",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.berkley-fishing.com/blogs/news/the-right-line"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Diameter: 0.80 mm (macro detail)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background, 0.80 mm macro-detail label correct. Smooth solid clear filament and visible cut end, no unwanted hardware or hollow tube appearance. Fluorocarbon intended material only, no strength/invisibility certification.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LINE-FLUORO.png",
+        "sha256": "bd8965104431c3a2d29f8eba72dd996237eb23721c031780cfd7cd6e131ecc6d"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LINE-FLUORO.md",
+          "sha256": "e61b2fd94f753d03ad7112bc1b1c1757d9e54b5c73493c258b1649673bd9fd4e"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LINE-MONO",
+      "entity_id": "EQP-LINE-MONO",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "macro",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.berkley-fishing.com/blogs/news/the-right-line"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Diameter: 0.30 mm (macro detail)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background, 0.30 mm macro-detail label correct. Smooth solid clear curved filament, no fittings, knot or braid; refraction and edges plausible. Nylon identity is intended metadata, not visually verified chemical composition.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LINE-MONO.png",
+        "sha256": "ea2920b5c909812d2fb3d1e8aa5ced0ab8dfb66efb6247ed02fedc3c2e834617"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LINE-MONO.md",
+          "sha256": "270ded2f6de06b0e7bf6f1acf370f40aec9089671410120a9389181847942957"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LINE-WIRE",
+      "entity_id": "EQP-LINE-WIRE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "macro",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.mercurymarine.com/us/en/lifestyle/dockline/musky-leaders-101"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Leader length: 35 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 35 cm leader design label correct. Wire leader has continuous cable, crimped return loops, one barrel swivel and closed snap at opposite end; no phantom hook. Review qualitative assembly only; cable diameter, strength and length not measured.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LINE-WIRE.png",
+        "sha256": "215ac4ccced8f84ee46991d05e3b124b35ff8df114651b617fd514f9da19dbfb"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LINE-WIRE.md",
+          "sha256": "ba5fb2f52559f6467cb4f666ff5d5c93687ad7d0593d70674129aac75eebd86c"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LURE-B5M",
+      "entity_id": "EQP-MEPPS-B5M",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.rapala.ca/ca_en/musky-killer"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Design length: 15 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 15 cm design label correct. Separate folded brass clevis now visibly supports blade hole around straight shaft, with one blade, weighted body and one dressed treble. Generic B5M-style visual reference; actual SKU dimensions/manufacturing and spin performance not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LURE-B5M.png",
+        "sha256": "80f989fb991feffd1207e25efa6bfb037f8691ea5abe903c72b1cccad177b9aa"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LURE-B5M.md",
+          "sha256": "ddf3da8970a39d57d5c46a4ab7a3ad5601f5a7f020b718628ee02e266bed6556"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-LURE-SOFT-JIG",
+      "entity_id": "EQP-SOFTPLASTIC-JIG",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Overall length: 10 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 10 cm label correct. One round jig head, eye at top, one hook emerging from dorsal side of straight-threaded white paddle-tail soft plastic. Single point/barb, no treble or phantom line. Plausible metal and flexible lure texture.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-LURE-SOFT-JIG.png",
+        "sha256": "5673791fa4c8e8ddcf068efd1e98742a724e693c0f44dcdae1609bff40841401"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-LURE-SOFT-JIG.md",
+          "sha256": "5961f3ee818ecc6e95708e4ce5fff5c67f8fffa24dcfda2fcf710d488d09e12a"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MULLET",
+      "entity_id": "BAIT-STRIPED-MULLET",
+      "kind": "organism",
+      "stage": null,
+      "variant": "whole",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/striped-mullet/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 15 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 15 cm caption correct. Striped-mullet design has small mouth, silver body with longitudinal stripes, two separate dorsals and forked tail; whole silhouette and fins visible. Exact ray count and maturity not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MULLET.png",
+        "sha256": "1234be8f957332f1f3c1f26464db07e8911281d869c8b9f7edb7e40b5df438de"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MULLET.md",
+          "sha256": "39ea73e3953ea4777e50d2b8e576642f2c8fa84e681803f96a09347a4068ef67"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-L-SIDE",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 105 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 105 cm caption correct. Large muskellunge with posterior dorsal/anal, dark bars on pale olive side, broad flattened snout and natural tapered body. Wet skin and paired-fin overlap plausible; no fantasy enlargement.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-L-SIDE.png",
+        "sha256": "4e0fb10ae6f81b93a3f9bd094700181a7dfde68af09286350201184bcc826bdd"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-L-SIDE.md",
+          "sha256": "e6140155fcd45208ec422d5d70bbb6d6692ecc9d4b5063272dbbd2bf8a3f3189"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-L-THREE-QUARTER",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [
+        "AI-MUSKIE-L-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 105 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and corresponding dimension text correct. Oblique muskellunge retains barred olive specimen design, flattened snout, posterior fins and clear eye/jaw. Paired fins are natural overlaps, no extra fin attachments observed. Static identity/production only; intended size not measured.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-L-THREE-QUARTER.png",
+        "sha256": "a02935783e45fc0a0427a8ef82ba59b2202fb46afb80ec7754dbb4d24bb1f8cf"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-L-THREE-QUARTER.md",
+          "sha256": "6b3b1db52bd43eeb05b4f8df63f99653bf66177032b63dfa9762253285c67235"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-MUSKIE-L-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-M-HEAD",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "head",
+      "roles": [
+        "identity",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [
+        "AI-MUSKIE-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Specimen total length: 70 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "Tight head view on white with exact specimen 70 cm caption. Muskellunge flattened elongated jaw, readable eye/gill and small visible conical teeth; gape moderate and lip edges continuous. External visible anatomy only; no internal dental count certification.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-M-HEAD.png",
+        "sha256": "375d21d8decf4c06319fef9a69b3797538b3a84a435dea379a381bc53d5df483"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-M-HEAD.md",
+          "sha256": "c9325d4548774e433b89769677c5670f995a6463b1a8dd00508623b9b52905e7"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-MUSKIE-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-M-SIDE",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 70 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and exact 70 cm design caption visible. Barred muskellunge has elongated head/body, posterior dorsal/anal fins, plausible wet skin and clear outline. Not a pike light-spots pattern. Intended scale, not measured.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-M-SIDE.png",
+        "sha256": "a1a6ce919838518795cca87b76022cc31536a75dc8de6a6a0d9c7b0dfc35c59e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-M-SIDE.md",
+          "sha256": "158224797e4cc98995dc1f68bba72621af61f54d2d28dc928720f59901648007"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-M-THREE-QUARTER",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [
+        "AI-MUSKIE-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 70 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and corresponding dimension text correct. Oblique muskellunge retains barred olive specimen design, flattened snout, posterior fins and clear eye/jaw. Paired fins are natural overlaps, no extra fin attachments observed. Static identity/production only; intended size not measured.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-M-THREE-QUARTER.png",
+        "sha256": "ed8894a74181d9f8e69cbd9f39819a94f7ebe837b356a1832268eac6e2ba510e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-M-THREE-QUARTER.md",
+          "sha256": "0f198804bccf54ae5c7c95cf6f94458fa37fd5659f6dda3194f1123767f3ee94"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-MUSKIE-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-S-SIDE",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 25 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 25 cm design caption. Slender juvenile-style muskie, larger relative eye, posterior dorsal/anal fins, dark bars on lighter body and plausible flat snout. Full silhouette visible; intended stage/size not biological proof.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-S-SIDE.png",
+        "sha256": "302cfbee38ae12503daf6b8778b07b0d59afd3360a567eff6e1cad7e936ba841"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-S-SIDE.md",
+          "sha256": "360dc7afbcaaa3a605da2c130ae058221cfcda17a715b5065d51d58e400941c8"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-S-THREE-QUARTER",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [
+        "AI-MUSKIE-S-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 25 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and corresponding dimension text correct. Oblique muskellunge retains barred olive specimen design, flattened snout, posterior fins and clear eye/jaw. Paired fins are natural overlaps, no extra fin attachments observed. Static identity/production only; intended size not measured.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-S-THREE-QUARTER.png",
+        "sha256": "077cfdc6ab7e1100b0701de3b648db1d9b4d7f35cc4dd37808b726932298b966"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-S-THREE-QUARTER.md",
+          "sha256": "e00714e22c99d1a23e52893c9bb573b3184aa06c11379ae368b749d96945178f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-MUSKIE-S-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-XL-SIDE",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 130 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 130 cm caption correct. Robust large female-compatible muskellunge phenotype, natural dark bars and posterior fins, no obese belly or extra fins. Intended dimensions only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-XL-SIDE.png",
+        "sha256": "61f953b90877f8904e602b36bdf8a822dea2979f4d9413e905d73774170d3454"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-XL-SIDE.md",
+          "sha256": "8aa4e66ab2f4b67184ccc522c7a1c086ed5f947d7376686b1c2b6ad7bd9baa7a"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-MUSKIE-XL-THREE-QUARTER",
+      "entity_id": "K-SP-MUSKIE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://dnr.wisconsin.gov/topic/Fishing/musky/muskywaters_illustration.html"
+      },
+      "requires": [
+        "AI-MUSKIE-XL-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 130 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 130 cm caption correct. XL oblique muskie retains flat snout, robust streamlined body, correct posterior fin layout and corresponding barred specimen. All body ends visible, no extra appendages.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-MUSKIE-XL-THREE-QUARTER.png",
+        "sha256": "3d45e72c1b08aba322eec553c92f2f1f4070e0d1ee4a28e5e5d8894d61eebd86"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-MUSKIE-XL-THREE-QUARTER.md",
+          "sha256": "27b5e2eeb22c2098acaf7b91329576905d2bf3964f2dc4fd9340d5ac5fa3de6f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-MUSKIE-XL-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-L-SIDE",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 90 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background; caption 90 cm exact. Robust copper-silver red drum, natural gill plate and fins, tail spot and whole side outline legible. No new deformity observed.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-L-SIDE.png",
+        "sha256": "ca9ee25a190150689bceac5f030ce875c56002ce0362f794b33d58683d97209b"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-L-SIDE.md",
+          "sha256": "1a03574f50c17b831b33b1eeffd620ca00d5d841086fb7761ba8158f9eb2d6aa"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-L-THREE-QUARTER",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-REDFISH-L-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 90 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and correct dimension caption verified. Gentle oblique red drum view retains corresponding side specimen coloration, black tail-base spot and plausible head depth. Full outline visible, no duplicated fins or barbels; wet scale/gill texture plausible. Identity/production scope, intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-L-THREE-QUARTER.png",
+        "sha256": "580ec809d8842ad99e0e113eb3d7ff36e41c705558cc0137a410bb5c42334030"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-L-THREE-QUARTER.md",
+          "sha256": "b33560fd6f6c7773fd6ec373e92d07e9fadeb0453e5c586702a93a0a456fbfdb"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-REDFISH-L-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-M-HEAD",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "M",
+      "view": "head",
+      "roles": [
+        "identity",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-REDFISH-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Specimen total length: 60 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "Tight head detail now achieved. White background, caption explicitly says specimen total length 60 cm. Eye, nostrils, lips, modest mouth opening and gill plate readable; small visible teeth rather than long predator canines. Anatomy review applies visible external head only, not unseen throat/internal teeth.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-M-HEAD.png",
+        "sha256": "926d1f857defc9f012c67118e6f81a0bea7baa3a1c15cf76a72b6fee35c48b4a"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-M-HEAD.md",
+          "sha256": "294db20b73196bcbb48b688ae4c505cc8a465faf43cb61adbbcb723ecab1d715"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-REDFISH-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-M-SIDE",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "M",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 60 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and exact 60 cm design caption verified visually. Copper-silver red drum with black tail spot, realistic wet scales, complete side silhouette and natural gill/mouth/fins. Identity/production only; not measured scale.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-M-SIDE.png",
+        "sha256": "fa47ba1a6367a945d9060741176a3a2f42961c84274b49a4cb8b54450387064b"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-M-SIDE.md",
+          "sha256": "2e4b7bfcb20ad25c2c55b2fa04777ffe8aaea82967bfb771dda1518732f3dcd5"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-M-THREE-QUARTER",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "M",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-REDFISH-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 60 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and correct dimension caption verified. Gentle oblique red drum view retains corresponding side specimen coloration, black tail-base spot and plausible head depth. Full outline visible, no duplicated fins or barbels; wet scale/gill texture plausible. Identity/production scope, intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-M-THREE-QUARTER.png",
+        "sha256": "77793d5370e5be2e812f433cad36903eaea5b43fc5b8fc5d8b3c90274d6a392c"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-M-THREE-QUARTER.md",
+          "sha256": "edefdd673418a545da74799c1f088ad7aa80e85db3f5bfdb4bac4bb0f48aca09"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-REDFISH-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-S-SIDE",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 20 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background; caption 20 cm exact. Relatively large eye and compact juvenile-like body, tail-base spot, intact red drum silhouette and natural wet scales. Size target only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-S-SIDE.png",
+        "sha256": "5343aa5ffa3e6cc4d63fa01bdbba2ea1dc54047bf6f608e7269ad762e72c749e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-S-SIDE.md",
+          "sha256": "b1590de3a0f2720baca268bf2f03b2ac158fca60a3700dd541d499829f00f77d"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-S-THREE-QUARTER",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-REDFISH-S-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 20 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and correct dimension caption verified. Gentle oblique red drum view retains corresponding side specimen coloration, black tail-base spot and plausible head depth. Full outline visible, no duplicated fins or barbels; wet scale/gill texture plausible. Identity/production scope, intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-S-THREE-QUARTER.png",
+        "sha256": "d372c27fa17c6bfa5ba0392c9c58572dcf44245a2f9886f960b02231cecc5c96"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-S-THREE-QUARTER.md",
+          "sha256": "dddc293d20935acbadc216623f8363bb4325293457d47d9882d53cc194860dbb"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-REDFISH-S-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-XL-SIDE",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 120 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background; caption 120 cm exact. Deep-bodied large red drum phenotype with small relative eye, broad tail peduncle, tail spot and intact fins. No monster exaggeration; centimetres are design target only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-XL-SIDE.png",
+        "sha256": "6ec9a3c98fd6ef4432dcf007208b938e9e73fbcebbdd5ea30e848bce7b1a9490"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-XL-SIDE.md",
+          "sha256": "b2057be68097c7205d035a2ca7ce672fb83f18ff542e6ecfc7aba6c32b670fce"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REDFISH-XL-THREE-QUARTER",
+      "entity_id": "K-SP-REDFISH-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-REDFISH-XL-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 120 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and correct 120 cm caption. Large red drum oblique view preserves spot and robust build; full outline and plausible fin overlaps, no duplicated appendages. Intended size only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REDFISH-XL-THREE-QUARTER.png",
+        "sha256": "a4f695f9f426ec2cb2d08e831c1c00d1ab365b288a7fc31a697a6cf729486d5d"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REDFISH-XL-THREE-QUARTER.md",
+          "sha256": "39fe7ab0632998ead272be3cf5dde555b164f07ca06acc70cba03ce30ab764b7"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-REDFISH-XL-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-REEL-MUSKIE-CAST",
+      "entity_id": "EQP-REEL-MUSKIE-CAST",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://fishshop.shimano.com/pages/shimano-faq"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Body width: 11 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 11 cm design width caption correct. Low-profile baitcaster has transverse spool, visible front levelwind guide, dual-paddle crank with star drag on same side and mounting foot. No spinning bail or impossible extra handles. External configuration only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REEL-MUSKIE-CAST.png",
+        "sha256": "d618817a76c7dd71529236900b1d870844fcd90fb0c2d8ddff18297ac57e5ddc"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REEL-MUSKIE-CAST.md",
+          "sha256": "26ccc390ca25009ef05db1f553d86a7bff12b76b201541728c5076bd52c80017"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REEL-REDFISH-SPIN",
+      "entity_id": "EQP-REEL-REDFISH-SPIN",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://fish.shimano.com/en-US/product/reels/spinning/frontdrag/a075f000035yx1uqaa.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Body height: 13 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 13 cm design label correct. Inshore-style spinning reel with a single bail, two rotor arms, front spool/drag cap, single handle, stem and mounting foot. External topology plausible and no extra wire. Not actual SKU/performance proof.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REEL-REDFISH-SPIN.png",
+        "sha256": "85ab522f07c62507217469517f6613ae7165dcb1efc6cbc1b49caf4d56c8fc2f"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REEL-REDFISH-SPIN.md",
+          "sha256": "b4a456be0c5fcdb12baf03d6e357d5a62c1e4489fe0a042967e5ab8ab030ab9a"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-REEL-WALLEYE-SPIN",
+      "entity_id": "EQP-REEL-WALLEYE-SPIN",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "three-quarter",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://fish.shimano.com/en-US/product/reels/spinning/frontdrag/a075f000035yx1uqaa.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Body height: 10 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 10 cm design body-height label correct. Compact spinning reel has one bail wire connecting rotor arms, visible spool/front drag cap, single handle and foot/stem. External topology plausible, no phantom trailing line. Not exact product or functional certification.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-REEL-WALLEYE-SPIN.png",
+        "sha256": "56a7469ef1b37a3af54c9a53bf8f98f56d70c22015b09db381bfb355e5ee4c34"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-REEL-WALLEYE-SPIN.md",
+          "sha256": "359a9ce7bb6f1f26d0b02a105c1bbaad45bc40bf48c69fc51a5931f3c1a774d3"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-RIG-MUSKIE",
+      "entity_id": "EQP-RIG-MUSKIE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "pilot",
+      "view": "assembly",
+      "roles": [
+        "assembly",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.rapala.ca/ca_en/musky-killer"
+      },
+      "requires": [
+        "AI-LURE-B5M",
+        "AI-LINE-WIRE",
+        "AI-LINE-BRAID"
+      ],
+      "applicability": {
+        "project_ids": [
+          "under-fishing-us"
+        ],
+        "scope": "projects"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Lure: 15 cm | Leader: 35 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and lure 15 cm/leader 35 cm design caption correct. Straight leader is now appreciably longer than complete lure and components readable. Braid knot passes swivel eye, crimped wire reaches closed snap through front lure eye, one blade/clevis and one dressed treble remain. Static qualitative assembly and approximate intended proportions only; exact centimetres, knot strength and dynamic spin not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-RIG-MUSKIE.png",
+        "sha256": "53709d447cc8883bd06d244b1a8b25bde436bf048d12a266cf95f12756b126a2"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "assembly",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-RIG-MUSKIE.md",
+          "sha256": "2e451ee0466ca0b6539217958835445c5abd774c9a1dfa5acc8db2c5d637f44a"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-RIG-REDFISH",
+      "entity_id": "EQP-RIG-REDFISH",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "pilot",
+      "view": "assembly",
+      "roles": [
+        "assembly",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://tpwd.texas.gov/huntwild/wild/species/reddrum/"
+      },
+      "requires": [
+        "AI-HOOK-INLINE-CIRCLE-SIDE",
+        "AI-CUT-MULLET",
+        "AI-LINE-MONO"
+      ],
+      "applicability": {
+        "project_ids": [
+          "under-fishing-us"
+        ],
+        "scope": "projects"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Bait: 5 cm | Leader: 30 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and bait 5 cm/leader 30 cm target caption correct. Circle-hook bend and open gap now outside bait, a small skin-edge pinch at corner holds bait, single inward point/barb exposed. Mono visibly enters eye with compact wraps and tag end. Review static attachment only, not knot strength or full leader length outside crop.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-RIG-REDFISH.png",
+        "sha256": "ec01e0baf1d45e1caf51dc8e41ee9bd57291ac5b26fe0058a20d60b9ec06c223"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "assembly",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-RIG-REDFISH.md",
+          "sha256": "7248ff1b9922bad7eb27d1e2dfeaf761c815dab6cc9d1fed63dde17248ac336c"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-RIG-WALLEYE",
+      "entity_id": "EQP-RIG-WALLEYE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "pilot",
+      "view": "assembly",
+      "roles": [
+        "assembly",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/gofishing/how-catch-walleye.html"
+      },
+      "requires": [
+        "AI-HOOK-JIG-HOOK-SIDE",
+        "AI-FATHEAD",
+        "AI-LINE-MONO"
+      ],
+      "applicability": {
+        "project_ids": [
+          "under-fishing-us"
+        ],
+        "scope": "projects"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Minnow: 6 cm | Jig head: 8 mm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 6 cm minnow/8 mm head target caption correct. Round jig head now materially larger than eye and approximately compatible with minnow head scale; single hook enters front lip area, point exposed near upper margin, thin mono tied at head eye. Static visible rig accepted; exact millimetres and both-lip internal path are not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-RIG-WALLEYE.png",
+        "sha256": "7d85aca46e0b944b10fd57362cc587e56bc36533fb59a27a5372751bbe095949"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "assembly",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-RIG-WALLEYE.md",
+          "sha256": "1fa465abc1ef17a256ee0f473777bb0d0c55f436b9dda8bb3f47531a92aa0cdb"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-MUSKIE-CASTING-FULL",
+      "entity_id": "EQP-ROD-MUSKIE-CASTING",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "full",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.4 m",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 2.4 m label correct. Entire casting rod visible, long cork rear grip, downward trigger and smaller upper-side casting guides, continuous taper and intact tip. Power/action are intended design only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-MUSKIE-CASTING-FULL.png",
+        "sha256": "510fbaceebeb2a3087b31894697e252071d0419a4a2da378fab830b871a9f343"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-MUSKIE-CASTING-FULL.md",
+          "sha256": "4959c3589f8e65831b0237dbb1a3b78e4e080941643ae09aaefadb32722ef02f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-MUSKIE-CASTING-HANDLE-DETAIL",
+      "entity_id": "EQP-ROD-MUSKIE-CASTING",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "handle-detail",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [
+        "AI-ROD-MUSKIE-CASTING-FULL"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.4 m (detail view)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 2.4 m detail label correct. Same long cork grip, visible casting trigger and top foot-channel/hood area, small upper-side guide and continuous blank. No reel added or guide side reversal.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-MUSKIE-CASTING-HANDLE-DETAIL.png",
+        "sha256": "acf0076aa19058ba1d282c51968a86c995d32e329b50415b43994c2887bae554"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-MUSKIE-CASTING-HANDLE-DETAIL.md",
+          "sha256": "9f671b6d05f9a956fc74c3898e1d3a3ccb4f2b6c0cad99f33ad0d2828a010294"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-ROD-MUSKIE-CASTING-FULL",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-REDFISH-INSHORE-FULL",
+      "entity_id": "EQP-ROD-REDFISH-INSHORE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "full",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.1 m",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 2.1 m caption correct. Full inshore spinning rod with plausible heavier blank, cork/EVA grip, triggerless reel seat, aligned spinning guide train and intact tip. No reel or line added, no material/power proof.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-REDFISH-INSHORE-FULL.png",
+        "sha256": "dbabc500c4c9aef1eeb78b7ef9f521c9ff00bc387e93a8cec10f2a5a2ad1a886"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-REDFISH-INSHORE-FULL.md",
+          "sha256": "5da430716e75ded99b636f92447e0ca4446a05b3271079b829aaa4899aff6fa3"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-REDFISH-INSHORE-HANDLE-DETAIL",
+      "entity_id": "EQP-ROD-REDFISH-INSHORE",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "handle-detail",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [
+        "AI-ROD-REDFISH-INSHORE-FULL"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.1 m (detail view)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 2.1 m detail label correct. Same cork/EVA grip, threaded reel-seat hood with plausible foot recess, blue-wrap first spinning guide and continuous blank. No reel added, detailed external construction plausible.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-REDFISH-INSHORE-HANDLE-DETAIL.png",
+        "sha256": "34fba4712a4e71c7bd9a316952b9ae28f78076ce9d68cac5d9fd4b2b1018fb87"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-REDFISH-INSHORE-HANDLE-DETAIL.md",
+          "sha256": "4f2dd21d8983a74c685289f57be56d6f87ebb5c56ca76b89704cf8684c6c3320"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-ROD-REDFISH-INSHORE-FULL",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-REDFISH-SURF-FULL",
+      "entity_id": "EQP-ROD-REDFISH-SURF",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "full",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 3.0 m",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 3.0 m label correct. Rod now assembled into one continuous full-length blank, long EVA rear grip, spinning reel seat, larger first guide and tapered smaller guides to intact tip. No parallel duplicate section.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-REDFISH-SURF-FULL.png",
+        "sha256": "d7dd71180e7f3335e723cecf7c414b1cc3b4bd01c4b77f71dd9775aaf8d17ceb"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-REDFISH-SURF-FULL.md",
+          "sha256": "418bd2fc9743157592135b450d2ffef32ddab1c49bf760cc84fd87e550d397c6"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-REDFISH-SURF-HANDLE-DETAIL",
+      "entity_id": "EQP-ROD-REDFISH-SURF",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "handle-detail",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [
+        "AI-ROD-REDFISH-SURF-FULL"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 3.0 m (detail view)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 3.0 m detail caption correct. Long EVA grip, threaded spinning reel seat and plausible hoods/foot recess, large first guide, continuous blank consistent with assembled surf design. No casting trigger or duplicate parts.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-REDFISH-SURF-HANDLE-DETAIL.png",
+        "sha256": "4c23d758483d6c74709213e82e00e7b697b7c1467a5cafff0ff573cb1be2d705"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-REDFISH-SURF-HANDLE-DETAIL.md",
+          "sha256": "2941ad5c76a2db3a6ce69e36e743be4b20feab885389e75344da76f772443017"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-ROD-REDFISH-SURF-FULL",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-WALLEYE-SPINNING-FULL",
+      "entity_id": "EQP-ROD-WALLEYE-SPINNING",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "full",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.1 m",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 2.1 m design caption correct. Entire spinning rod visible with cork grip, triggerless reel seat, larger stripping guide and progressively smaller aligned guides to tip. Blank continuous and plausible taper, no reel or line added. Power/action not measured from photo.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-WALLEYE-SPINNING-FULL.png",
+        "sha256": "fa75521a9c3181e725059d65cc92649feb1ccf2f3a6fa7bed5b6b8d6a4ecf6f9"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-WALLEYE-SPINNING-FULL.md",
+          "sha256": "121aba1d789bb2b53f6a38065dcce81d5b37a1012ac849e5c53d55d428ba1568"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-ROD-WALLEYE-SPINNING-HANDLE-DETAIL",
+      "entity_id": "EQP-ROD-WALLEYE-SPINNING",
+      "kind": "equipment",
+      "stage": null,
+      "variant": "standard",
+      "view": "handle-detail",
+      "roles": [
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://stcroixrods.com/collections/rods"
+      },
+      "requires": [
+        "AI-ROD-WALLEYE-SPINNING-FULL"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Rod length: 2.1 m (detail view)",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and rod 2.1 m detail caption correct. Cork grip, threaded locking section, hood and triggerless reel-seat body readable; first spinning guide and blue wraps consistent with full rod. Review external visible parts; underside foot channel not fully shown, no functional mounting certification.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-ROD-WALLEYE-SPINNING-HANDLE-DETAIL.png",
+        "sha256": "ee5e564413fe7a7a3a66ff4736d2a35e63da1c788ff3362a9dea85c6b4fbfbea"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-ROD-WALLEYE-SPINNING-HANDLE-DETAIL.md",
+          "sha256": "e188feccdf457082bafc49266a1512208d743b9fc60df29402aa1ddd3d386dff"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-ROD-WALLEYE-SPINNING-FULL",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-SHRIMP",
+      "entity_id": "BAIT-WHITE-SHRIMP",
+      "kind": "organism",
+      "stage": null,
+      "variant": "whole",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.fisheries.noaa.gov/species/white-shrimp/seafood"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Body length: 10 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 10 cm body-length label correct. Antenna tips, legs and tail now inside frame, translucent uncooked shrimp with segmented shell and tail fan. Gross white-shrimp appearance only; fine rostral/species diagnostics and stage not certified.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-SHRIMP.png",
+        "sha256": "c623e5965417cb3c8ca98de257179b649115cd655d7635392f7d890c5ca5a63d"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-SHRIMP.md",
+          "sha256": "0dea7f058734e4d6c1b162a05a2c7547d0ed248680ab952651a489270ec5dbe2"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-L-SIDE",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 60 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 60 cm caption accurate as design label. Robust walleye, separated dorsals, lower caudal white patch, plausible gill/jaw and fins. Full side silhouette, natural wet texture; no motion/scale certification.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-L-SIDE.png",
+        "sha256": "524f4d5273c73c970d3ca68e3723df0c53f8682bdb89a022a399f362e2b4009a"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-L-SIDE.md",
+          "sha256": "c2488a5c853ddb2ad6a5c035c5df90fd6555a728998980d507cc9636c511a7d8"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-L-THREE-QUARTER",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "L",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [
+        "AI-WALLEYE-L-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 60 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and matching size caption verified. Oblique walleye retains corresponding olive-gold specimen, separated dorsals, reflective nonluminous eye and white lower tail. Whole silhouette and fin origins readable; no duplicated parts observed. Static reference and intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-L-THREE-QUARTER.png",
+        "sha256": "ef9aeb5fcbcfe0d995c2edb9643c80305deb9bead366731fc8aaadc32340af0b"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-L-THREE-QUARTER.md",
+          "sha256": "ade4ebb9248fec71babc436e928e33657522a20a3a44f9b7786a57cb68fdcbe5"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-WALLEYE-L-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-M-HEAD",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "head",
+      "roles": [
+        "identity",
+        "anatomy",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [
+        "AI-WALLEYE-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Specimen total length: 40 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and specimen total length 40 cm label correct. Tight head view exposes eye, gill plate, lips and modest canine teeth; no impossible gape or fused jaw. Review covers visible external anatomy only, not full internal dental arrangement.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-M-HEAD.png",
+        "sha256": "6d31795ba30ca4c22b741924d6d4f8c7f997f10e18e102052daa966078d62e1e"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "anatomy",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-M-HEAD.md",
+          "sha256": "56546e16562376397484d3008faa08a5af1d795c6aeaf55a32900c2cea7c4515"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-WALLEYE-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-M-SIDE",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 40 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and exact 40 cm design caption visible. Walleye with two separated dorsals, dark posterior first dorsal region, reflective eye and white lower tail tip. Wet scales and body proportions plausible. Intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-M-SIDE.png",
+        "sha256": "7aa6dafb1652e663a04fe0ee3c09719698a97da67156605d2ae50f66c8f902c0"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-M-SIDE.md",
+          "sha256": "7f5d0a0ca191797fc243481188f4bab285f8bc6f965c7afc36a780bcc8cf72dd"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-M-THREE-QUARTER",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "M",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [
+        "AI-WALLEYE-M-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 40 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and matching size caption verified. Oblique walleye retains corresponding olive-gold specimen, separated dorsals, reflective nonluminous eye and white lower tail. Whole silhouette and fin origins readable; no duplicated parts observed. Static reference and intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-M-THREE-QUARTER.png",
+        "sha256": "beef70fe8031440e9d6139987937133a741e7b653a62b8ba8731408ae5bec319"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-M-THREE-QUARTER.md",
+          "sha256": "30d440a7b353dfb344af0c22fc9282260140c0d926778da0ec4915ae896e004c"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-WALLEYE-M-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-S-SIDE",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 15 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 15 cm caption correct. Juvenile-style walleye with relatively large eye, distinct spiny/soft dorsals and white lower caudal tip; olive-gold skin and full lateral outline realistic. Intended size only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-S-SIDE.png",
+        "sha256": "03d2b27af73e6e80a928542204d14907dbbeee6204c66a760b7cb6617800d2d1"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-S-SIDE.md",
+          "sha256": "e2c8e358e06e272d4dcee3a4c083ea8125df6cf663f4135d1df91c68bd5d02da"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-S-THREE-QUARTER",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "juvenile",
+      "variant": "S",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [
+        "AI-WALLEYE-S-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 15 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and matching size caption verified. Oblique walleye retains corresponding olive-gold specimen, separated dorsals, reflective nonluminous eye and white lower tail. Whole silhouette and fin origins readable; no duplicated parts observed. Static reference and intended scale only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-S-THREE-QUARTER.png",
+        "sha256": "8677f877c6de9c3ffa20bd596f313dce43941f175c284cba301d21edcafa0484"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-S-THREE-QUARTER.md",
+          "sha256": "3ef09e924dc20179dd62b978188ce02c3bdfb10ce49c5cc2b259f24b2fced89f"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-WALLEYE-S-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-XL-SIDE",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "side",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 80 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 80 cm design label correct. Large walleye body build remains plausible, dark first dorsal posterior patch, white lower tail tip and continuous anatomy. Not obese or fantastically enlarged.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-XL-SIDE.png",
+        "sha256": "c0fdddbf1d131568ef06e40dec953a988f60670b10a52f464a65d45fc2eb6010"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-XL-SIDE.md",
+          "sha256": "47c513fe61745704576c236ed011f08b2e79e67edb6dee0e5d656921cb189a6b"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      }
+    },
+    {
+      "asset_id": "AI-WALLEYE-XL-THREE-QUARTER",
+      "entity_id": "K-SP-WALLEYE-001",
+      "kind": "organism",
+      "stage": "adult",
+      "variant": "XL",
+      "view": "three-quarter",
+      "roles": [
+        "identity",
+        "production"
+      ],
+      "origin": "generated",
+      "source": {
+        "rights": "AI-generated output; linked external-source rights unknown; no permission to republish source images asserted",
+        "url": "https://www.dnr.state.mn.us/fish/walleye/biology.html"
+      },
+      "requires": [
+        "AI-WALLEYE-XL-SIDE"
+      ],
+      "applicability": {
+        "project_ids": [],
+        "scope": "shared"
+      },
+      "dimensions": {
+        "basis": "intended_design_not_measured",
+        "label": "Total length: 80 cm",
+        "scope": "Illustrative intended dimensions only; not an image measurement, scale reference, biological evidence or exact manufacturer specification."
+      },
+      "reference_use": "White reference background and dimension caption are library presentation only; do not transfer them, specimen pose or lighting into a production scene unless requested. Read only the required entity/variant/view/role.",
+      "qa_scope": "White background and 80 cm caption correct. XL oblique walleye retains deep body, separated dorsal fins, white lower tail tip and plausible gill/jaw. Complete outline; intended dimensions only.",
+      "notes": "Generated reference with static visual review; not measured scale, biological evidence, exact product certification or user approval.",
+      "file": {
+        "path": "08-Assets/images/AI-WALLEYE-XL-THREE-QUARTER.png",
+        "sha256": "391eecc85631b4c0f90c979d6b41ed3115e9d48e19f460b5b0a2f05001c7112b"
+      },
+      "review": {
+        "status": "pass",
+        "roles": [
+          "identity",
+          "production"
+        ],
+        "evidence": {
+          "path": "08-Assets/reviews/AI-WALLEYE-XL-THREE-QUARTER.md",
+          "sha256": "11358df688b42ce75c752bc0769839730a18fc1823d8abc89b60f52c89c2e6c7"
+        }
+      },
+      "publication": {
+        "visibility": "public",
+        "reviewed": true
+      },
+      "generation": {
+        "actual_model": "unknown",
+        "provenance": "Selected AI output exported with user authorization; full private generation/edit inputs not distributed"
+      },
+      "derived_from": {
+        "parent_id": "AI-WALLEYE-XL-SIDE",
+        "operation": "Generated alternate view/detail from supplied selected image; independently reviewed"
+      }
+    }
+  ]
+}

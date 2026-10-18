@@ -1,10 +1,14 @@
-# Nature Studio v2.1.1
+# Nature Studio v2.1.2
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v2.1.1
+## Mới trong v2.1.2
+
+Repo và ZIP có sẵn **64 ảnh tham chiếu** (~106 MB) trong [08-Assets](08-Assets/README.md), dùng được trên máy khác. AI nhập catalog khi cần bằng `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json`; chạy lại giữ dữ liệu local, không tiêu lượt model. Chỉ đọc ảnh đúng nhu cầu. Xem [v2.1.2](07-Releases/v2.1.2.md).
+
+## Kế thừa v2.1.1
 
 /chayvideo xác định nhu cầu tham chiếu; /taoanh đánh giá/chọn/gửi asset đúng Project, ghi input thực và QA. Catalog lọc view/phạm vi; metadata trước, ảnh sau, không nạp toàn thư viện. Handoff schema3, legacy được giữ. Xem [ghi chú v2.1.1](07-Releases/v2.1.1.md) và [quy trình tham chiếu](00-Standards/first-frame-asset-references.md).
 
@@ -37,7 +41,7 @@ Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, 
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v2.1.1**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v2.1.2**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 

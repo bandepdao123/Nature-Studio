@@ -8,6 +8,8 @@ GitHub/gói phân phối: framework, skills, quy chuẩn, templates, kiến th�
 
 Local vẫn giữ đầy đủ `04-Productions/<slug>/`, `03-Projects/<slug>/idea-ledger.md`, registry và bằng chứng. Repo mới chỉ có mẫu ledger, AI tạo ledger local khi cần; thiếu ledger không chứng minh chưa có lịch sử, vẫn rà file production thật.
 
+Từ v2.1.2, asset tham chiếu được người dùng cho xuất bản có thể đi cùng repo trong `08-Assets/`: chỉ ảnh đã chọn, manifest public/reviewed và review làm sạch. Đây là ngoại lệ có chủ đích cho asset thư viện, không mở quyền đưa media production/ảnh lỗi/database runtime lên GitHub. Mặc định asset mới vẫn private; phạm vi shared/projects độc lập với quyền công bố. Guard kiểm manifest/binding; người xuất vẫn phải rà quyền sử dụng và nội dung. Máy khác nhập bằng `asset_catalog.py import-bundle`; không ghi đè dữ liệu local xung đột.
+
 ## Bài học đi cùng cải tiến
 
 Không tự loại hết Memory khỏi cập nhật. /dongvideo vẫn ghi bài học Project và shared ở local. Mặc định lesson có `publication.visibility=private`, `reviewed=false`; trạng thái chia sẻ độc lập với candidate/active/retired. Bài học public có thể là candidate, không tự active vì được chia sẻ.

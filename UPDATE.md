@@ -206,3 +206,11 @@ Record thiếu applicability là unknown; duyệt theo vai trò để shared ho�
 Selection mới dùng --project-id và schema2; legacy schema1 chỉ discovery, cần chọn lại khi dùng cho Project. Handoff mới schema3 liên kết asset-inputs và hash requirements t=0; schema2 cũ vẫn đọc với asset provenance unverified riêng. Không backfill actual inputs từ prompt/metadata. Chỉ tăng schema khi contract cần, đọc được lịch sử cũ.
 
 Chạy unit suite/Memory/version/publication checks trên nguồn xuất; kiểm hash dữ liệu riêng sau migration. Giữ quota cũ, không reserve video/ảnh hay render chỉ để kiểm nâng cấp. Đọc [quy trình tham chiếu](00-Standards/first-frame-asset-references.md). Rollback nguồn/catalog có chọn lọc, không ghi đè production mới phát sinh.
+
+## Nâng từ v2.1.1 lên v2.1.2
+
+Nhận thư mục 08-Assets cùng helper sau khi so commit/hash và giữ backup local. Bản này bổ sung các ảnh tham chiếu đã được phép công bố, không thay database riêng bằng database trên repo.
+
+Chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json`. Clone sạch nhập 64 ID mới; máy đã có bộ ảnh tương đương giữ metadata/file/provenance local. Cùng ID khác hình hoặc nội dung/scope thì dừng trước ghi, không tự ghi đè, đổi ID hay hạ review để hết conflict. Parent hash cho dẫn xuất được bind theo catalog trên máy nhận, không chép hash runtime từ máy xuất. Không cần chuyển ảnh sang ổ đĩa cố định.
+
+Không sinh lại ảnh hoặc tiêu quota. 4 mồi nguyên con vẫn chưa xác nhận stage. Public bundle chỉ gồm output đã chọn, không có full generation/edit inputs riêng. Những nguồn đó không được giả là đã phân phối; actual input của mỗi lần sản xuất tiếp theo vẫn ghi thật theo v2.1.1. Assets thêm sau phải được rà quyền, nội dung và publication trước xuất. Không thay tag v2.1.1 hoặc release cũ.

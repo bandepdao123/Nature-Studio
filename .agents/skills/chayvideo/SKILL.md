@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.9 | Updated: 2026-10-18 | Nhu cầu tham chiếu xuyên nội dung và tạo ảnh
+Version: 2.10 | Updated: 2026-10-18 | Nhu cầu tham chiếu xuyên nội dung và tạo ảnh
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 
@@ -28,3 +28,5 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 - Chỉ văn bản và hồ sơ local. Media/chi tiền/đăng/push cần yêu cầu tương ứng; sửa skill không là sản xuất. Thiếu brief không reserve mã/lưu ý tưởng giả.
 
 Tự xác định nhu cầu asset từ brief, lưu reference_requirements trong OUTPUT/INPUTS theo [lõi chung](../../../00-Standards/video-prompt-workflow.md): đối tượng/biến thể, đặc điểm cần giữ, role và first_frame/video/both. Có thể ghi không cần với lý do. Query metadata đúng Project khi cần, chỉ mở ảnh để giải quyết chi tiết thị giác; ID gợi ý là planned, không giả đã truyền ảnh. /taoanh sẽ kiểm lại và chọn input thật. Revision ghi nhu cầu còn hiệu lực, caption-only giữ binding không tra asset. Thư viện không giới hạn ý tưởng; không đổi chuyện vì thiếu ảnh, không nạp cả catalog hoặc thêm mục vào bốn phần trả lời mặc định.
+
+Máy mới hoặc catalog thiếu bộ ref đi kèm: nếu có `08-Assets/reference-library.json`, chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json` trước khi báo thiếu, rồi query đúng Project. Không nạp cả manifest vào context hoặc tự ghi đè ID xung đột.
