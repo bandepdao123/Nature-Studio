@@ -2,6 +2,10 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.3 — 2026-10-18
+
+- /taoanh v1.6 và tiêu chí/template QA chung: mặc định màu chân thực, hạn chế ám vàng/cam mạnh toàn cảnh; giữ màu vàng/vàng đồng thật của đối tượng và ánh sáng ấm do brief chủ đích yêu cầu. Không khử vàng bằng ám màu khác, không sửa ảnh/QA lịch sử hàng loạt.
+
 ## v2.1.2 — 2026-10-18
 
 - Bổ sung 64 ảnh asset đã chọn trong 08-Assets, review làm sạch và manifest public/reviewed để dùng trên máy khác; không xuất production, ảnh lỗi hoặc database runtime.

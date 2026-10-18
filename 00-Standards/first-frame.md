@@ -1,6 +1,6 @@
 # Tạo ảnh first frame và QA
 
-Version: 1.2 | Updated: 2026-10-17 | Kiểm nguồn ảnh trước tái dùng
+Version: 1.3 | Updated: 2026-10-18 | Màu tự nhiên, hạn chế ám vàng toàn cảnh
 
 Thực thi theo [.agents/skills/taoanh/SKILL.md](../.agents/skills/taoanh/SKILL.md). Đây là phương pháp chung; tiêu chí hình ảnh lấy từ Project, không mặc định cá/nước/9:16 cho mọi dự án.
 
@@ -13,6 +13,7 @@ Thực thi theo [.agents/skills/taoanh/SKILL.md](../.agents/skills/taoanh/SKILL.
 | Cấu tạo/kết nối | Hình thể/giải phẫu hoặc cấu trúc vật, tiếp xúc/đường nối phù hợp; không nhân đôi/dính/biến dạng |
 | Không gian | Vị trí tương đối, tỷ lệ, che khuất, phối cảnh hợp lý; đủ không gian cho diễn biến đã chọn |
 | Môi trường/phong cách | Chất liệu, ánh sáng, màu, quang học và camera đúng Project, không chỉ ảnh đẹp |
+| Màu tự nhiên/cân bằng trắng | Không ám vàng/cam mạnh toàn cảnh ngoài brief; giữ màu chuẩn đối tượng, phân biệt với ảnh hưởng thật của nguồn sáng/môi trường |
 | Khả năng làm đầu vào video | Bố cục hỗ trợ câu chuyện; không khóa chủ thể vào trạng thái không thể tiếp nối. Đây là đánh giá bố cục, không là test chuyển động |
 | File đầu ra | Mở được và đã xem ảnh; đo pixel/tỷ lệ/thông tin alpha khi liên quan; không suy từ prompt |
 | Ràng buộc Project | Mọi tiêu chí bổ sung Project xác định là bắt buộc đã được kiểm |
@@ -20,6 +21,16 @@ Thực thi theo [.agents/skills/taoanh/SKILL.md](../.agents/skills/taoanh/SKILL.
 Trước sinh ghi danh sách áp dụng, điều kiện/ngoại lệ. Không đặt toàn bộ tiêu chí khó thành not_applicable sau khi thấy ảnh lỗi. Nếu chi tiết nhận dạng bắt buộc bị che/mờ không kiểm được, ghi not_checked và sửa bố cục hoặc báo giới hạn.
 
 Mỗi mục pass/fail/not_checked/not_applicable kèm bằng chứng. `qa_pass` chỉ khi mọi mục bắt buộc pass, không lỗi chặn và không mục bắt buộc chưa kiểm. Lỗi nhỏ chỉ không chặn nếu không ảnh hưởng brief/khả năng dùng và được nêu rõ. Không dùng tổng điểm/giới hạn 5 lượt để hạ chuẩn. Yêu cầu không kiểm được do tool/model phải ghi riêng.
+
+## Màu tự nhiên và cân bằng trắng
+
+Mặc định khi tạo/sửa ảnh: màu chân thực theo đối tượng, nguồn sáng và môi trường; hạn chế lớp ám vàng/cam mạnh phủ cả ảnh. Không tự thêm golden-hour lighting, amber wash hoặc sepia grading chỉ để làm đẹp. Màu vàng/vàng đồng tự nhiên của loài, vật liệu hay chi tiết phải giữ đúng, nhưng không lan thành màu phủ trên nền, nước và các vật khác. Không ép mọi đối tượng trung tính hoặc khử màu thật; không sửa bằng lớp ám xanh/tím đối nghịch.
+
+Khi brief chủ đích yêu cầu ánh sáng/tông ấm phù hợp thực tế, giữ yêu cầu đó và kiểm độ hợp lý; không viện màu vàng riêng của đối tượng để biện minh ám vàng toàn cảnh. Ở môi trường dưới nước, giữ màu nước và suy giảm màu hợp bối cảnh, không bắt nước thành trắng/xám để đạt cân bằng trắng.
+
+Trước call, đưa yêu cầu ngắn phù hợp vào prompt thực thi, ví dụ: “Natural, true-to-life colors under the specified lighting; avoid a strong overall yellow/orange cast, while preserving the subject's authentic yellow or golden coloration.” Không dùng ví dụ để ghi đè brief ánh sáng đã chốt.
+
+QA toàn ảnh và chi tiết: đối chiếu màu đối tượng với Knowledge/ref đúng phạm vi, kiểm nền và vùng trung tính nếu có; không tự thêm vật chuẩn màu vào cảnh. Ghi rõ màu vàng là của đối tượng, nguồn sáng/môi trường hay lớp màu không có căn cứ. Ám vàng mạnh làm sai màu toàn cảnh/nhận dạng ngoài brief là lỗi chặn cần sửa; chưa phân biệt được thì not_checked và ghi giới hạn. Không dùng tỷ lệ pixel vàng hoặc giá trị RGB trung bình làm bằng chứng duy nhất. Sửa màu có mục tiêu, giữ bố cục/anatomy/t=0, kiểm lại phần đã đúng và tính lượt như mọi edit hiện hành. Không sửa QA hay ảnh lịch sử hàng loạt từ quy tắc mới.
 
 ## Hạn mức và danh tính
 

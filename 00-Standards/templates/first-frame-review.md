@@ -13,6 +13,7 @@ Full image actually viewed / detail views:
 
 | Criterion | Mandatory? | Observation and artifact/detail | pass/fail/not_checked/not_applicable | Severity | Correction | Regression recheck |
 |---|---|---|---|---|---|---|
+| Natural color / white balance | Yes | Record subject color vs scene-wide yellow/orange cast; explain intentional warm lighting, if any, against brief/reference | not_checked | TBD | Correct cast without removing authentic yellow/gold or introducing blue/purple cast | Recheck subject, environment and locked composition |
 
 QA status: qa_pass | qa_fail | qa_incomplete | tool_error
 Blocking issues / limitations:

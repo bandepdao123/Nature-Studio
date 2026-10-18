@@ -5,7 +5,7 @@ description: Tạo hoặc sửa ảnh first frame Nature Studio khi gọi /taoan
 
 # /taoanh
 
-Version: 1.5 | Updated: 2026-10-18 | Đánh giá và dùng asset đúng Project
+Version: 1.6 | Updated: 2026-10-18 | Kiểm màu tự nhiên, hạn chế ám vàng toàn cảnh
 
 Quy ước trong chat, không cam kết giao diện đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Tổng kết/QA tiếng Việt; prompt thực thi tiếng Anh một đoạn. Skill này tạo ảnh, không tạo video. Chỉ xây/sửa skill không phải yêu cầu chạy sinh ảnh.
 
@@ -18,6 +18,8 @@ Quy ước trong chat, không cam kết giao diện đăng ký slash command. D�
 Đọc brief/concept/FIRST FRAME PROMPT, INPUTS, feedback, ảnh và review hiện hành cùng các file Project dẫn tới. Tìm lesson active của Project và shared đúng điều kiện, ghi ID/version/cách dùng. Với Underwater đọc `03-Projects/underwater/first-frame-qa.md`. Giữ lựa chọn người dùng và câu chuyện đã chốt; không sáng tác production mới hoặc đổi loài/kết cục để sửa ảnh dễ hơn. Thiếu concept quan trọng thì hoàn thiện trong phạm vi đã giao hoặc hỏi trước khi sinh. Video mới chỉ cấp ID bằng video_ids.py khi nhiệm vụ thật đòi production mới và đủ brief; revision không cấp video ID mới.
 
 Ghi bản khóa đầu vào: t=0, chủ thể/số lượng/nhận dạng/tỷ lệ, môi trường, camera, vị trí/quan hệ/đường chuyển động cần cho video và tiêu chí bắt buộc. Tách ảnh đích sửa, reference và supporting input; mở từng ảnh local cần dùng bằng view_image trước khi sửa. Mâu thuẫn hoặc dữ kiện chưa có cơ sở phải xử lý trước khi tiêu lượt.
+
+Mặc định prompt và QA theo [màu tự nhiên/cân bằng trắng](../../../00-Standards/first-frame.md#màu-tự-nhiên-và-cân-bằng-trắng): hạn chế ám vàng/cam mạnh toàn ảnh, giữ màu chuẩn của đối tượng; đối tượng vàng không là lý do phủ vàng cả cảnh. Không tự thêm golden-hour/amber/sepia grade, không khử vàng bằng ám xanh hoặc làm mất màu thật. Chỉ dùng tông ấm có chủ đích khi brief yêu cầu và nguồn sáng/bối cảnh phù hợp; QA màu trên output thật, sửa có mục tiêu trong budget hiện hành.
 
 ## Công cụ và ưu tiên Sunburst
 

@@ -1,10 +1,14 @@
-# Nature Studio v2.1.2
+# Nature Studio v2.1.3
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v2.1.2
+## Mới trong v2.1.3
+
+/taoanh mặc định màu chân thực, hạn chế ám vàng/cam mạnh toàn cảnh; giữ màu vàng/vàng đồng thật của đối tượng. Prompt và QA cùng áp dụng, không khử vàng bằng ám màu khác. Xem [v2.1.3](07-Releases/v2.1.3.md).
+
+## Kế thừa v2.1.2
 
 Repo và ZIP có sẵn **64 ảnh tham chiếu** (~106 MB) trong [08-Assets](08-Assets/README.md), dùng được trên máy khác. AI nhập catalog khi cần bằng `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json`; chạy lại giữ dữ liệu local, không tiêu lượt model. Chỉ đọc ảnh đúng nhu cầu. Xem [v2.1.2](07-Releases/v2.1.2.md).
 
@@ -41,7 +45,7 @@ Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, 
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v2.1.2**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v2.1.3**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 
