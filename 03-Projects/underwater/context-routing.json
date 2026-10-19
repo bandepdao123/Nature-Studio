@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "version": "1.0",
-  "updated": "2026-10-17",
+  "version": "1.1",
+  "updated": "2026-10-19",
   "description": "Independent source-stage routing. The context-map mode lists remain the mandatory coverage floor. Unknown/unassigned sources broaden reading. Text/media review are separate tasks.",
   "modes": {
     "new": {
@@ -24,7 +24,8 @@
             "01-Knowledge/interactions/fish-prey-and-lure.md",
             "03-Projects/underwater/output-contract.md",
             "03-Projects/underwater/audience-and-caption.md",
-            "02-Models/model-profiles/omni-flash.md"
+            "02-Models/model-profiles/omni-flash.md",
+            "00-Standards/location-context.md"
           ],
           "tasks": [
             "video-idea",
@@ -40,7 +41,8 @@
             "03-Projects/underwater/audience-and-caption.md",
             "02-Models/model-profiles/omni-flash.md",
             "01-Knowledge/habitats/underwater-realism.md",
-            "01-Knowledge/interactions/fish-prey-and-lure.md"
+            "01-Knowledge/interactions/fish-prey-and-lure.md",
+            "00-Standards/location-context.md"
           ],
           "tasks": [
             "video-prompt",
@@ -58,7 +60,8 @@
             "03-Projects/underwater/audience-and-caption.md",
             "02-Models/model-profiles/omni-flash.md",
             "01-Knowledge/habitats/underwater-realism.md",
-            "01-Knowledge/interactions/fish-prey-and-lure.md"
+            "01-Knowledge/interactions/fish-prey-and-lure.md",
+            "00-Standards/location-context.md"
           ],
           "tasks": [
             "video-prompt",
@@ -96,7 +99,8 @@
             "03-Projects/underwater/audience-and-caption.md",
             "02-Models/model-profiles/omni-flash.md",
             "01-Knowledge/habitats/underwater-realism.md",
-            "01-Knowledge/interactions/fish-prey-and-lure.md"
+            "01-Knowledge/interactions/fish-prey-and-lure.md",
+            "00-Standards/location-context.md"
           ],
           "tasks": [
             "video-prompt-revision",
@@ -113,7 +117,8 @@
             "03-Projects/underwater/audience-and-caption.md",
             "02-Models/model-profiles/omni-flash.md",
             "01-Knowledge/habitats/underwater-realism.md",
-            "01-Knowledge/interactions/fish-prey-and-lure.md"
+            "01-Knowledge/interactions/fish-prey-and-lure.md",
+            "00-Standards/location-context.md"
           ],
           "tasks": [
             "video-prompt-revision",
@@ -216,12 +221,15 @@
     "environment": {
       "sources": [
         "00-Standards/research.md",
-        "01-Knowledge/habitats/underwater-realism.md"
+        "01-Knowledge/habitats/underwater-realism.md",
+        "00-Standards/location-context.md",
+        "03-Projects/underwater/audience-and-caption.md"
       ],
       "tasks": [
         "research",
         "first-frame-prompt",
-        "video-prompt-revision"
+        "video-prompt-revision",
+        "caption"
       ],
       "requires": []
     },

@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.11 | Updated: 2026-10-18 | Ba caption và hook Anh Mỹ, lược dịch Việt
+Version: 2.12 | Updated: 2026-10-19 | Truy xuất vùng chọn lọc, giữ bối cảnh và tag địa điểm
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 
@@ -30,3 +30,6 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 Tự xác định nhu cầu asset từ brief, lưu reference_requirements trong OUTPUT/INPUTS theo [lõi chung](../../../00-Standards/video-prompt-workflow.md): đối tượng/biến thể, đặc điểm cần giữ, role và first_frame/video/both. Có thể ghi không cần với lý do. Query metadata đúng Project khi cần, chỉ mở ảnh để giải quyết chi tiết thị giác; ID gợi ý là planned, không giả đã truyền ảnh. /taoanh sẽ kiểm lại và chọn input thật. Revision ghi nhu cầu còn hiệu lực, caption-only giữ binding không tra asset. Thư viện không giới hạn ý tưởng; không đổi chuyện vì thiếu ảnh, không nạp cả catalog hoặc thêm mục vào bốn phần trả lời mặc định.
 
 Máy mới hoặc catalog thiếu bộ ref đi kèm: nếu có `08-Assets/reference-library.json`, chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json` trước khi báo thiếu, rồi query đúng Project. Không nạp cả manifest vào context hoặc tự ghi đè ID xung đột.
+
+
+Khi Project cần địa điểm thực, dùng [chuẩn địa điểm](../../../00-Standards/location-context.md): profile loài → descriptor đúng loài → hồ sơ vùng chọn; khóa setting trong INPUTS và frame_state.environment. Underwater yêu cầu một hashtag địa điểm trong tổng 3–5 tag mỗi caption khi setting đã xác nhận; caption-only/legacy thiếu setting xử lý theo nguồn Project, không đoán vùng.

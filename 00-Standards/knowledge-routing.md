@@ -1,6 +1,6 @@
 # Knowledge chung, phạm vi riêng
 
-Version: 1.0 | Updated: 2026-10-17
+Version: 1.1 | Updated: 2026-10-19
 
 `01-Knowledge/` là thư viện toàn workspace, không thuộc riêng Underwater. Mỗi hồ sơ vẫn có phạm vi: loài, habitat, tương tác, dụng cụ, nguồn và trạng thái. Nội dung hiện tại tập trung Underwater; hồ sơ cá không tự áp cho deer. Quyết định format, khán giả và cách kể nằm trong Project, không chép vào Knowledge chung.
 
@@ -54,3 +54,7 @@ Không tăng schema database chỉ vì metadata mới. CAS/revision/derivation n
 ## Asset đi cùng repo — v2.1.2
 
 Khi lần đầu tra mà catalog chưa có hoặc thiếu bộ tham chiếu đi kèm, chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json` nếu manifest tồn tại, rồi query lại. Helper đọc manifest/hash bằng code, không nạp toàn bộ vào context. Import idempotent: giữ nguyên ID local có cùng nội dung/role/scope; xung đột phải xử lý, không ghi đè hoặc tự đổi ID. Ảnh bind trực tiếp vào `08-Assets/images/`, không sao chép sang runtime. Clone sạch có đầy đủ 64 ảnh công khai; production/catalog/quota/registry riêng vẫn local. Asset mới chỉ thêm vào bundle sau khi đã được phép xuất bản và review làm sạch; xem [hướng dẫn](../08-Assets/README.md).
+
+## Vùng bối cảnh — v2.1.5
+
+Theo [chuẩn địa điểm](location-context.md): profile loài → descriptor vùng của loài → hồ sơ vùng được chọn. Knowledge lưu sự kiện có nguồn; Project giữ hashtag/khán giả. Thêm vùng bằng hồ sơ có ID/path/version/source và một dòng descriptor, không sửa skill hoặc nạp mọi vùng vào context-map. Chỉ mục loài hiện có tại `01-Knowledge/locations/<species>/INDEX.md`; mỗi loài khởi đầu năm vùng, không giới hạn tối đa. Hồ sơ vùng nằm ngoài packet nền: ghi path/version/hash của bản thực đã đọc trong INPUTS. Không tuyên bố coverage packet đã kiểm nguồn động.

@@ -3,7 +3,7 @@
 ID: K-SP-WALLEYE-001
 Scientific name: Sander vitreus
 Status: researched-reference
-Version: 2.0 | Updated: 2026-10-18
+Version: 2.1 | Updated: 2026-10-19
 Tags: fish, US-angling, walleye
 
 ## 1. Nhìn đúng
@@ -44,3 +44,7 @@ Truy xuất văn bản 2026-10-18: W1/W2 lấy nội dung qua web index, direct 
 - W2 [Minnesota DNR cách câu](https://www.dnr.state.mn.us/gofishing/how-catch-walleye.html): jig-and-minnow và lựa chọn cách trình bày; không chứng minh hiệu quả sinh video.
 - W3 [Michigan DNR Walleye](https://www.michigan.gov/dnr/education/michigan-species/fish-species/walleye): ngoại hình/tập tính và vị trí trong cột nước.
 - [Dụng cụ](../equipment/us-angling-tackle.md), [môi trường](../habitats/underwater-realism.md), [tương tác](../interactions/fish-prey-and-lure.md). Catalog entity K-SP-WALLEYE-001; chọn đúng stage/identity và jig/assembly, không tải cả bộ ảnh Muskie/Redfish.
+
+## Vùng bối cảnh tại Mỹ
+
+Tra [descriptor vùng walleye](../locations/walleye/INDEX.md) khi chọn địa điểm; chỉ mở hồ sơ vùng được chọn. Áp dụng [chuẩn địa điểm](../../00-Standards/location-context.md): phân bố + sinh cảnh là bắt buộc; mức thích câu cá chỉ ưu tiên phụ. Không đọc các loài/vùng khác nếu không liên quan.

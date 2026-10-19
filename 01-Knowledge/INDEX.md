@@ -20,3 +20,7 @@ Các hồ sơ ban đầu là inherited-reference từ hướng dẫn đã chốt
 ## Profile phục vụ sáng tạo — v2.1.0
 
 Ba hồ sơ trên đã được bổ sung văn bản có nguồn ngày 2026-10-18, giữ ID: ngoại hình, cỡ/biến thể, hành vi, điểm đáng xem, điều kiện và nguồn/asset. Nhãn researched-reference không là QA ảnh/video hoặc active lesson. Khả năng đặc biệt cần đúng scope; không coi một cỡ lớn là phổ biến. [Cách duy trì và tra asset](../00-Standards/knowledge-routing.md); [mẫu loài](../00-Standards/templates/species-profile.md).
+
+## Vùng bối cảnh Mỹ — 2026-10-19
+
+15 hồ sơ văn bản có nguồn chính thức, không phải ảnh đã QA: [Redfish](locations/redfish/INDEX.md), [Muskie](locations/muskie/INDEX.md), [Walleye](locations/walleye/INDEX.md). Tra descriptor đúng loài rồi đọc vùng được chọn theo [chuẩn địa điểm](../00-Standards/location-context.md); không nạp toàn bộ các vùng mỗi lượt.

@@ -9,3 +9,6 @@ Trả CAPTION theo hợp đồng Project. Underwater mặc định ba bản Chu�
 JSON/lưu dùng caption_variants/selected caption theo [template](../../../../00-Standards/templates/caption-variants.json) và lõi chung. Mặc định làm đủ ba; nếu chỉ được giao sửa một bản, trả đúng bản đó và giữ các bản khác còn phù hợp qua base đã resolve. Không cập nhật lược dịch/hook/caption rời làm lệch nhau. Kiểm cú pháp bằng helper rồi tự QA giọng/đúng cảnh; không cấp ID, viết lại prompt hoặc sửa lịch sử. Hồ sơ cũ chỉ có caption vẫn đọc được, không tự backfill ba bản.
 
 Khi lưu bằng helper, resolve đúng bản gốc rồi truyền base_attempt/base_sha256 theo lõi chung. Caption-only không được kèm thay đổi idea/prompt/frame_state; tự kế thừa phần giữ nguyên, không mở lại QA ảnh nếu không có nhiệm vụ dùng ảnh.
+
+
+Nếu Project yêu cầu tag địa điểm, lấy setting đã khóa từ INPUTS/frame_state; Underwater dùng đúng một tag địa điểm chung cho ba bản, trong tổng 3–5 tag. Legacy thiếu setting không tự đoán: theo nhánh xử lý tại audience-and-caption.md. Đổi vùng ảnh hưởng cảnh phải là revision được giao, không sửa prompt/frame_state trong caption-only.

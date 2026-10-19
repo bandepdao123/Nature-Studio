@@ -1,6 +1,6 @@
-# Khán giả và giọng — v1.8
+# Khán giả và giọng — v1.9
 
-Updated: 2026-10-18 | Origin: approved guide v1.9 + /chayvideo
+Updated: 2026-10-19 | Origin: approved guide v1.9 + /chayvideo
 
 **Chế độ skill /chayvideo (kể cả nhận diện theo đặc trưng):** theo [output-contract.md](output-contract.md), mặc định ba lựa chọn Chuẩn/Hài hước/Tò mò, tiếng Anh Mỹ tự nhiên cho người câu cá Mỹ; mỗi caption một đoạn có 3–5 hashtag đúng cảnh, kèm lược dịch caption rồi hook text và lược dịch hook; ý tưởng tiếng Việt, FIRST FRAME PROMPT và VIDEO PROMPT tiếng Anh, mỗi prompt một đoạn. Yêu cầu mới này thay ngoại lệ caption tiếng Việt ở v1.1. Các tiêu chí giọng/cấu trúc bên dưới tiếp tục áp dụng. Lý do: điều chỉnh người dùng 2026-10-16.
 
@@ -48,3 +48,11 @@ Chỉ được giao sửa một bản thì trả đúng bản đó và giữ cá
 ## Nghiên cứu tham chiếu — 2026-10-16
 
 Phong cách đã duyệt ở trên là nguồn chạy mặc định. Mở báo cáo gốc khi nghiên cứu lại phong cách, cần ví dụ/đối chứng hoặc nguồn thay đổi; không bắt đọc lại mọi caption mỗi lần sửa một câu. Tham chiếu [benchmark 40 caption Underfishing](../../01-Knowledge/benchmarks/underfishing-captions-2026-10-16/REPORT.md). Nghiên cứu là quan sát, không chứng minh caption gây viral; phong cách được áp dụng theo **quyết định trực tiếp của người dùng UF-D015**, không phải tự nâng hypothesis thành active. Giữ **3–5 hashtag** dù mẫu đối thủ không thấy hashtag. Quyết định này cập nhật ưu tiên độ ngắn/kiểu câu; mọi giới hạn kỹ thuật video và ngôn ngữ vẫn giữ. Báo cáo nghiên cứu gốc giữ nguyên để truy vết các đề xuất trước quyết định.
+
+## Hashtag địa điểm — UF-D023, 2026-10-19
+
+Với bộ mới/reference đã khóa setting, mỗi bản Chuẩn/Hài hước/Tò mò có **đúng một hashtag địa điểm**, giống nhau giữa ba bản, nằm **trong tổng 3–5 tag** hiện hành. Dùng hashtag từ hồ sơ vùng đã chọn; tag phải đúng phạm vi, không thêm bang/thành phố/địa danh thứ hai. Các tag còn lại chọn loài/ngữ cảnh/phương pháp phù hợp; không cần thêm địa danh vào câu caption/hook nếu gượng. Ví dụ khi setting là Laguna Madre: `He spotted that shrimp. #Redfish #InshoreFishing #LagunaMadre` (chỉ dùng khi cảnh hỗ trợ hành động).
+
+Caption-only đọc setting đã khóa từ INPUTS/frame_state và nguồn dẫn cần thiết. Nếu legacy chưa có địa điểm, không tự đoán hoặc gắn địa danh nổi tiếng: chỉ sửa chữ thì giữ phạm vi legacy và ghi thiếu setting trong hồ sơ; khi được giao bổ sung địa điểm thì xác minh tối thiểu và kiểm tương thích cảnh trước, không đổi prompt ngầm. Ví dụ cũ không có tag địa điểm chỉ minh họa giọng/định dạng hoặc legacy, không là ngoại lệ cho bộ mới đã khóa setting.
+
+Tag là bối cảnh sáng tạo, không tự xác nhận footage được quay tại đó; không viết tuyên bố trải nghiệm/địa điểm quay thực tế khi chưa có bằng chứng. Không lấy sở thích câu cá làm điều kiện thay phân bố/sinh cảnh. Các quy tắc native US, lược dịch, hook 1–9 từ, không AI/#Underwater và không spam vẫn áp dụng. Helper hiện kiểm tổng tag và cấu trúc; AI phải kiểm bằng nghĩa đúng một tag địa điểm và khớp setting.

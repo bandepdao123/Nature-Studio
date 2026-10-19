@@ -5,7 +5,7 @@ description: Tạo hoặc sửa ảnh first frame Nature Studio khi gọi /taoan
 
 # /taoanh
 
-Version: 1.6 | Updated: 2026-10-18 | Kiểm màu tự nhiên, hạn chế ám vàng toàn cảnh
+Version: 1.7 | Updated: 2026-10-19 | Kiểm bối cảnh vùng đã khóa và màu tự nhiên
 
 Quy ước trong chat, không cam kết giao diện đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Tổng kết/QA tiếng Việt; prompt thực thi tiếng Anh một đoạn. Skill này tạo ảnh, không tạo video. Chỉ xây/sửa skill không phải yêu cầu chạy sinh ảnh.
 
@@ -61,3 +61,6 @@ Sau call, ghi `image_budget.py finish --production ... --call-id <id> --outcome 
 Trước tạo/sửa, tự đánh giá ảnh cần asset gì từ brief/t=0: identity, anatomy, assembly và nguồn scale khi liên quan; kế thừa reference_requirements từ /chayvideo rồi kiểm lại, brief ảnh trực tiếp tự lập nhu cầu. Khi cần ref, theo [quy trình asset chung](../../../00-Standards/first-frame-asset-references.md): lọc đúng Project/entity/variant/stage/view/role, mở ảnh đã chọn, pin/verify receipt, chỉ gửi ảnh cần và ghi input thực có thứ tự/hash/mục đích. Không mang nền trắng/chữ kích thước từ thư viện vào cảnh; không coi nhãn AI là số đo. Handoff mới schema3 kiểm actual input, schema2 cũ không tự nâng. Thiếu ref hỗ trợ có thể dùng Knowledge; thiếu ref thiết yếu xử lý trước call. Không tạo ảnh chỉ từ việc mở profile/cập nhật catalog; không đọc cả thư viện.
 
 Máy mới hoặc catalog thiếu bộ ref đi kèm: nếu có `08-Assets/reference-library.json`, chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json` trước khi báo thiếu, rồi query đúng Project. Không nạp cả manifest vào context hoặc tự ghi đè ID xung đột.
+
+
+Khi concept có địa điểm thực, đọc setting đã khóa trong INPUTS/frame_state.environment và hồ sơ vùng được dẫn theo [chuẩn địa điểm](../../../00-Standards/location-context.md). Kiểm sinh cảnh đúng vùng/mùa/giai đoạn và nhất quán với prompt video; không tự chọn vùng mới. Chỉ query ref môi trường khi cần, không gọi ảnh thư viện cá là bằng chứng sinh cảnh.

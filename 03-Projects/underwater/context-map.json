@@ -19,7 +19,8 @@
     "02-Models/model-profiles/omni-flash.md",
     "01-Knowledge/habitats/underwater-realism.md",
     "01-Knowledge/interactions/fish-prey-and-lure.md",
-    "00-Standards/video-identifiers.md"
+    "00-Standards/video-identifiers.md",
+    "00-Standards/location-context.md"
   ],
   "revision": [
     "00-Standards/research.md",
@@ -30,7 +31,8 @@
     "03-Projects/underwater/audience-and-caption.md",
     "02-Models/model-profiles/omni-flash.md",
     "01-Knowledge/habitats/underwater-realism.md",
-    "01-Knowledge/interactions/fish-prey-and-lure.md"
+    "01-Knowledge/interactions/fish-prey-and-lure.md",
+    "00-Standards/location-context.md"
   ],
   "caption": [
     "03-Projects/underwater/audience-and-caption.md"

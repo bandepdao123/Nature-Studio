@@ -3,7 +3,7 @@
 ID: K-SP-MUSKIE-001
 Scientific name: Esox masquinongy
 Status: researched-reference
-Version: 2.0 | Updated: 2026-10-18
+Version: 2.1 | Updated: 2026-10-19
 Tags: fish, US-angling, muskie, muskellunge
 
 ## 1. Nhìn đúng
@@ -45,3 +45,7 @@ Văn bản truy xuất 2026-10-18. Một số trang sản phẩm/direct-open b�
 - M3 [Indiana DNR Muskie Fishing](https://www.in.gov/dnr/fish-and-wildlife/fishing/muskie-fishing/): cỡ cá lớn có điều kiện, không là quy định toàn Mỹ.
 - M4 [Mepps Canada B5M](https://www.rapala.ca/ca_en/musky-killer): cấu hình được hãng mô tả; phải chọn đúng variant, không suy số móc của mọi Musky Killer.
 - [Dụng cụ](../equipment/us-angling-tackle.md), [tương tác](../interactions/fish-prey-and-lure.md). Catalog entity K-SP-MUSKIE-001; chọn identity/anatomy/scale và rig đúng nhu cầu; không tự dùng ref loài khác.
+
+## Vùng bối cảnh tại Mỹ
+
+Tra [descriptor vùng muskie](../locations/muskie/INDEX.md) khi chọn địa điểm; chỉ mở hồ sơ vùng được chọn. Áp dụng [chuẩn địa điểm](../../00-Standards/location-context.md): phân bố + sinh cảnh là bắt buộc; mức thích câu cá chỉ ưu tiên phụ. Không đọc các loài/vùng khác nếu không liên quan.

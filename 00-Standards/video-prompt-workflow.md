@@ -1,4 +1,4 @@
-# Lõi viết prompt và lưu hồ sơ video — v1.4
+# Lõi viết prompt và lưu hồ sơ video — v1.5
 
 Updated: 2026-10-17 | Một lõi cho chayvideo/clonevideo; nguồn nguyên văn theo giai đoạn.
 
@@ -84,3 +84,7 @@ Dùng [template](templates/caption-variants.json). Caption gốc là chuỗi EN 
 Check/save kiểm từng bản, hook 1–9 từ và trường chọn. Save caption-only hoặc revision chỉ caption có thể nhận patch một style + selected caption, merge với bundle gốc theo base_attempt/base_sha256; kiểm lại bundle đã merge, ghi snapshot mới và caption-variants.md đúng thứ tự trình bày. Không truyền lại toàn bộ prompts/frame/assets để sửa caption. Caption-only giữ nguyên binding ảnh/video; không cấp ID hay query asset. Đổi chuyện/prompt thì bundle cũ thành unverified trừ khi khai bundle mới sau rà soát. Ghi caption đơn lẻ không bundle sẽ bỏ chứng nhận bundle cũ, không giả ba bản còn khớp. Legacy chỉ có caption vẫn đọc và giữ unverified phần variants; không backfill lịch sử. Không đặt tiêu chí native là pass tự động từ helper.
 
 Nếu người dùng đã chọn một bản và chỉ sửa bản khác, giữ caption_variant/caption đang dùng, truyền bundle đầy đủ đã ghép để helper kiểm đồng bộ; không tự chuyển bản chọn sang bản đang sửa. Việc dùng standard mặc định chỉ là tương thích dữ liệu, không thay quyết định của người dùng.
+
+## Bối cảnh có địa điểm thực — v1.5
+
+Khi Project/yêu cầu dùng địa điểm thực, theo [location-context.md](location-context.md). Khóa một setting trong INPUTS, đưa đặc điểm thị giác vào frame_state.environment hiện có và hai prompt; caption dùng cùng vùng. Chỉ mở descriptor đúng loài và hồ sơ vùng chọn, ghi nguồn động path/version/hash riêng ngoài packet. Revision đổi vùng/mùa/sinh cảnh phải kiểm lại ảnh/prompt/caption/ref; caption-only giữ setting, không tự sửa môi trường hoặc tra toàn thư viện.

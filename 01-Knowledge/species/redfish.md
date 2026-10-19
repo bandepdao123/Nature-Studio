@@ -3,7 +3,7 @@
 ID: K-SP-REDFISH-001
 Scientific name: Sciaenops ocellatus
 Status: researched-reference
-Version: 2.0 | Updated: 2026-10-18
+Version: 2.1 | Updated: 2026-10-19
 Tags: fish, US-angling, redfish, red-drum
 
 ## 1. Nhìn đúng
@@ -43,3 +43,7 @@ Truy xuất văn bản 2026-10-18; ngày bài viết nếu không ghi thì unkno
 - R1 [TPWD Red Drum](https://tpwd.texas.gov/huntwild/wild/species/reddrum/): nhận dạng, biến thiên đốm, feeding và bait; không chứng minh timing/lực cắn của cá cụ thể.
 - R2 [TPWD Redfish, an angler’s delight](https://tpwd.texas.gov/fishboat/fish/didyouknow/coastal/reddrum.phtml): giai đoạn/cỡ lớn và thức ăn. Bài lịch sử không xác minh kỷ lục hoặc quy định hiện hành.
 - Ref cần chọn khi làm cảnh: body/identity đúng stage, anatomy vùng miệng, scale khi claim cỡ lớn; circle-hook/assembly chỉ khi rig cần. Tra catalog local bằng entity ID trên; thiếu ref thì nghiên cứu, không giả đã có asset QA.
+
+## Vùng bối cảnh tại Mỹ
+
+Tra [descriptor vùng redfish](../locations/redfish/INDEX.md) khi chọn địa điểm; chỉ mở hồ sơ vùng được chọn. Áp dụng [chuẩn địa điểm](../../00-Standards/location-context.md): phân bố + sinh cảnh là bắt buộc; mức thích câu cá chỉ ưu tiên phụ. Không đọc các loài/vùng khác nếu không liên quan.

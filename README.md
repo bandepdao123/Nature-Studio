@@ -1,10 +1,14 @@
-# Nature Studio v2.1.4
+# Nature Studio v2.1.5
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v2.1.4
+## Mới trong v2.1.5
+
+15 hồ sơ vùng Mỹ cho Redfish/Muskie/Walleye; chọn theo phân bố + sinh cảnh, đọc đúng vùng đã chọn. Một setting xuyên ảnh/video/caption; mỗi caption có một hashtag địa điểm trong tổng 3–5. Không thêm database/schema hoặc ảnh môi trường chưa QA. Xem [ghi chú v2.1.5](07-Releases/v2.1.5.md).
+
+## Kế thừa v2.1.4
 
 /chayvideo trả ba caption Chuẩn/Hài hước/Tò mò cho Underwater; mỗi bản theo thứ tự caption Anh Mỹ + hashtag → lược dịch Việt → hook Anh 1–9 từ → lược dịch Việt. Viết Anh trước, dịch ý sau; giữ giọng người câu cá Mỹ và quy tắc hashtag. Helper lưu/kiểm từng bản, tương thích caption cũ. Xem [v2.1.4](07-Releases/v2.1.4.md).
 
@@ -49,7 +53,7 @@ Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, 
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v2.1.4**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v2.1.5**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 

@@ -2,6 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.5 — 2026-10-19
+
+- Thêm 15 hồ sơ vùng Mỹ có nguồn và ba descriptor theo loài; phân bố + sinh cảnh là bắt buộc, độ phổ biến câu cá chỉ ưu tiên phụ. Năm vùng là khởi đầu, không giới hạn tối đa.
+- Luồng profile → descriptor → vùng chọn; nguồn động ghi path/version/hash trong INPUTS ngoài coverage packet. Setting dùng INPUTS và frame_state.environment hiện có, không database/schema mới.
+- Ảnh/video/caption giữ cùng setting; Underwater mỗi caption đúng một tag địa điểm trong tổng 3–5. Revision/legacy/caption-only giữ phạm vi; kiểm địa lý/tag là QA ngữ nghĩa, không nhận helper đã xác minh.
+- Không tạo ảnh môi trường/media trong đợt nâng cấp. Bảo toàn nguồn riêng và lịch sử; xuất bản theo phạm vi người dùng đã duyệt, ghi chú tại 07-Releases/v2.1.5.md.
+
 ## v2.1.4 — 2026-10-19
 
 - /chayvideo v2.11: Underwater mặc định ba caption Chuẩn/Hài hước/Tò mò, thứ tự caption Anh Mỹ + hashtag → lược dịch → hook Anh 1–9 từ → lược dịch. Viết Anh trước, tránh văn dịch/slang/đùa gượng; không hứa retention từ kiểm văn bản.

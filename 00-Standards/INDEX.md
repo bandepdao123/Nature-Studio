@@ -32,3 +32,5 @@ Không áp quy chuẩn câu cá/10s/key sau 5s cho toàn bộ các dự án thi�
 - [Mẫu profile loài](templates/species-profile.md), [asset record](templates/asset-record.json) và [hướng dẫn catalog](knowledge-routing.md#catalog-asset-local).
 
 - [Tham chiếu asset nội dung và ảnh](first-frame-asset-references.md): chỉ đọc khi chọn/dùng ref; requirements, scope và actual input.
+
+- [Bối cảnh địa lý–sinh thái](location-context.md) — phân bố, sinh cảnh, setting và truy xuất vùng chọn lọc.

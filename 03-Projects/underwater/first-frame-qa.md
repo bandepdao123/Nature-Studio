@@ -1,6 +1,6 @@
 # Underwater — QA first frame
 
-Version: 1.1 | Updated: 2026-10-17 | UF-D021
+Version: 1.2 | Updated: 2026-10-19 | UF-D021
 
 Đọc concept/brief và format hiện hành, dùng gate chung tại [first-frame.md](../../00-Standards/first-frame.md). Không cần cảnh nào cũng có cá/mồi trong khung nếu concept t=0 đã khóa chúng chưa xuất hiện.
 
@@ -13,3 +13,6 @@ Version: 1.1 | Updated: 2026-10-17 | UF-D021
 - File ảnh đo pixel thật; tỷ lệ đầu vào 9:16 theo dung sai ≤0.1% tại first-frame.md, export chính xác kiểm riêng. Không tự crop/căng ảnh hoặc cắt mất chủ thể để báo đúng tỷ lệ; sửa bằng image_gen trong budget hoặc nêu giới hạn. Không nhạc/audio trong ảnh, không chữ/caption/logo AI tự vẽ; dấu bắt buộc của nền tảng ghi giới hạn, không tự xóa trái công cụ.
 
 Các mục trên bắt buộc khi áp dụng. Ảnh đạt không chứng minh video giữ được giải phẫu, t_key_start >5s, chuyển động hay audio; các phần đó phải kiểm riêng trên video thật. QA không đổi brief/câu chuyện/caption, không tự duyệt bởi người dùng.
+
+
+- Khi có setting: kiểm vùng/mùa/giai đoạn, nước ngọt/lợ/mặn, nền đáy/cây/dòng nước và màu/độ trong theo hồ sơ vùng được chọn. Phân bố đúng chưa đủ chứng nhận nền ảnh; chưa kiểm nguồn hoặc ảnh thực thì ghi not_checked. Giữ màu tannin tự nhiên có căn cứ, không coi mọi màu vàng nước là ám màu lỗi. Không suy địa điểm thật từ ảnh AI.

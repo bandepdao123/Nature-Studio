@@ -1,6 +1,6 @@
-# Hợp đồng đầu ra — v2.2
+# Hợp đồng đầu ra — v2.3
 
-Updated: 2026-10-18 | UF-D021 — camera cầm tay nhẹ. Một hợp đồng hiện hành; baseline ba mục chỉ dùng truy vết.
+Updated: 2026-10-19 | UF-D021 — camera cầm tay nhẹ. Một hợp đồng hiện hành; baseline ba mục chỉ dùng truy vết.
 
 Các số mục kế thừa trong phần chi tiết trỏ về baseline v1.9: 2A tương ứng Knowledge/equipment/us-angling-tackle.md; môi trường/2–3 tương ứng Knowledge/habitats/underwater-realism.md; 4 tương ứng phần chuyển động trong format.md; chọn loài tại PROJECT.md. Không bỏ qua ràng buộc vì tên/số mục cũ.
 
@@ -37,3 +37,7 @@ Soạn theo model profile Omni Flash: ảnh mở đầu → thời lượng/tỷ
 ## CAPTION
 
 Theo [audience-and-caption.md](audience-and-caption.md): mặc định ba bản **Chuẩn → Hài hước → Tò mò**; mỗi bản đúng thứ tự **Caption EN + hashtag → Lược dịch caption VI → Hook text EN → Lược dịch hook VI**. Caption thường 1–8 từ trước hashtag nhưng không giới hạn cứng; hook text riêng bắt buộc 1–9 từ, không hashtag. Mỗi caption EN một đoạn, kèm 3–5 hashtag khác nhau đúng cảnh; không AI/công nghệ tạo nội dung hoặc #Underwater bất kể hoa/thường. Viết trực tiếp giọng người câu cá Mỹ trước, dịch ý sau; không câu đùa/slang gượng. Giữ đúng cảnh và mức chắc chắn; ba bản khác cách tiếp cận, hook bổ trợ caption. Hook là gợi ý nội dung, không tự đưa vào ảnh/video prompt hay tự render chữ. Chỉ sửa một bản thì trả bản đó theo yêu cầu.
+
+## Nhất quán địa điểm — UF-D023
+
+Theo PROJECT và audience-and-caption: bộ mới/reference khóa vùng Mỹ có phân bố + sinh cảnh xác nhận, nêu bối cảnh đủ dùng trong ý tưởng/hai prompt; thông tin nội bộ theo location-context.md. Mỗi caption có đúng một hashtag địa điểm từ setting trong tổng 3–5 tag, cùng vùng giữa ba bản. Giữ bốn mục đầu ra và schema/helper hiện có. Legacy thiếu setting không được gắn tag đoán; caption-only không tự sửa cảnh.
