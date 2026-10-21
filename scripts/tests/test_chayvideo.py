@@ -17,7 +17,7 @@ class ContextTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         for name in ['VERSION', 'START-HERE.md', 'SYSTEM.md', 'AGENTS.md',
                      '.agents/skills/chayvideo/SKILL.md',
                      '.agents/skills/chayvideo/references/workflow.md',

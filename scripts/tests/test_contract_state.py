@@ -10,7 +10,7 @@ import test_chayvideo as fixtures
 
 class ContractTests(unittest.TestCase):
     def setUp(self):
-        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name)
+        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name).resolve()
         self.base=self.root/'04-Productions/underwater/UF-0001';self.base.mkdir(parents=True)
         self.good=fixtures.OutputTests().good()
 
@@ -103,7 +103,7 @@ class ContractTests(unittest.TestCase):
 
 class StateTests(unittest.TestCase):
     def setUp(self):
-        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name)
+        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name).resolve()
         for file in ('text.md','render.bin','review.md','approval.md'):(self.root/file).write_text('Synthetic binding fixture, not media or approval')
         self.state=dict(schema=2,current_text=self.bind('text.md'),reviewed_render=self.bind('render.bin'),selected_render=None,approval='none',approval_evidence=None,
               qa=dict.fromkeys(state_tool.DOMAINS,'pass'),qa_evidence=self.bind('review.md'),qa_coverage={k:dict(status='complete',method='synthetic-test-only') for k in state_tool.DOMAINS})

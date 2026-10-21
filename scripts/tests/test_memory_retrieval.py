@@ -15,7 +15,7 @@ import chayvideo_context as ctx
 class RetrievalTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory(); self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         self.write('03-Projects/one/PROJECT.md', 'ID: one\n')
         self.write('03-Projects/two/PROJECT.md', 'ID: two\n')
         self.write('00-Standards/memory-taxonomy.json',

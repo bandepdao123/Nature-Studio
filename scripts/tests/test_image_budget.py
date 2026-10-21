@@ -13,7 +13,7 @@ class ImageBudgetTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         self.rel = '04-Productions/project/ABC-00001'
         self.folder = self.root / self.rel
         self.folder.mkdir(parents=True)

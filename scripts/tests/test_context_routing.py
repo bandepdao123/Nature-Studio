@@ -19,7 +19,7 @@ class RoutingTests(unittest.TestCase):
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        self.root = Path(tmp.name)
+        self.root = Path(tmp.name).resolve()
         for rel in ['VERSION', 'START-HERE.md', 'SYSTEM.md', 'AGENTS.md',
                     '.agents/skills/chayvideo/SKILL.md',
                     '.agents/skills/chayvideo/references/workflow.md',

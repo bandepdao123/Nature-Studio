@@ -15,7 +15,7 @@ class MemoryValidationTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
-        self.root = Path(self.tmp.name)
+        self.root = Path(self.tmp.name).resolve()
         self.projects = {'one-id': 'one', 'two-id': 'two'}
         for pid, slug in self.projects.items():
             self.write(f'03-Projects/{slug}/PROJECT.md', f'ID: {pid} | Status: configured\n')

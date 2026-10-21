@@ -30,7 +30,7 @@ def analysis():
 class ReferenceTests(unittest.TestCase):
     def setUp(self):
         temp=tempfile.TemporaryDirectory();self.addCleanup(temp.cleanup)
-        self.root=Path(temp.name)
+        self.root=Path(temp.name).resolve()
         self.media=self.root/'input.mp4'
         self.media.write_bytes(b'fixture bytes, not playable media')
         self.data=analysis();self.data['source']['sha256']=ref.file_hash(self.media)

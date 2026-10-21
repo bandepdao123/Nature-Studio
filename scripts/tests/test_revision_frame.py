@@ -15,7 +15,7 @@ class RevisionFrameTests(unittest.TestCase):
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        self.root = Path(tmp.name)
+        self.root = Path(tmp.name).resolve()
         self.base = self.root / '04-Productions/one/UF-0001'
         self.base.mkdir(parents=True)
         self.docs = {'INPUTS.md': 'Real fixture source bindings.',

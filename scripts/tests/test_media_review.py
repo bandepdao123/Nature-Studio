@@ -63,7 +63,7 @@ class SignalIntegrationTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.base = Path(temp.name)
+        self.base = Path(temp.name).resolve()
 
     def fixture(self, name, signal, duration=8, gain=None):
         path = self.base/name

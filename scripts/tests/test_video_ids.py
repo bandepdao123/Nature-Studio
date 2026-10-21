@@ -19,7 +19,7 @@ class VideoIdTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         for slug in ['one', 'two']:
             path = self.root / '03-Projects' / slug
             path.mkdir(parents=True)

@@ -19,7 +19,7 @@ import test_context_routing as routing_fixtures
 
 class AssetTests(unittest.TestCase):
     def setUp(self):
-        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name)
+        tmp=tempfile.TemporaryDirectory();self.addCleanup(tmp.cleanup);self.root=Path(tmp.name).resolve()
         self.file=self.root/'references/body.bin';self.file.parent.mkdir();self.file.write_bytes(b'not an image: synthetic reference bytes')
         self.evidence=self.root/'references/review.md';self.evidence.write_text('Synthetic declaration only; no actual animal was QAed.')
         self.record=dict(asset_id='REF-FISH-01',entity_id='K-SP-REDFISH-001',kind='organism',roles=['identity'],stage='adult',view='lateral',origin='photo',

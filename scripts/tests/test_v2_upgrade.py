@@ -17,7 +17,7 @@ class V2Tests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         (self.root / '03-Projects/one').mkdir(parents=True)
         (self.root / '03-Projects/one/PROJECT.md').write_text('ID: stable-one\n', encoding='utf-8')
 

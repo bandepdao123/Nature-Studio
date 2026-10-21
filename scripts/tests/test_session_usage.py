@@ -28,7 +28,7 @@ class SessionUsageTests(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory()
         self.addCleanup(temp.cleanup)
-        self.root = Path(temp.name)
+        self.root = Path(temp.name).resolve()
         self.codex = self.root / 'codex'
         self.claude = self.root / 'claude'
 
