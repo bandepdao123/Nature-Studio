@@ -5,7 +5,7 @@ description: Tạo hoặc sửa ảnh first frame Nature Studio khi gọi /taoan
 
 # /taoanh
 
-Version: 1.7 | Updated: 2026-10-19 | Kiểm bối cảnh vùng đã khóa và màu tự nhiên
+Version: 1.8 | Updated: 2026-10-22 | Lệnh handoff tự tính hash; feedback mỗi lượt sửa
 
 Quy ước trong chat, không cam kết giao diện đăng ký slash command. Dùng workspace chứa skill làm gốc (đi lên ba cấp từ thư mục skill). Tổng kết/QA tiếng Việt; prompt thực thi tiếng Anh một đoạn. Skill này tạo ảnh, không tạo video. Chỉ xây/sửa skill không phải yêu cầu chạy sinh ảnh.
 
@@ -42,7 +42,7 @@ Ghi requested_model=Sunburst, selection_mode=sunburst nếu chọn được ho�
 5. Copy output thực vào attempt local, giữ output gốc và hash; không ghi đè bản cũ. Mở ảnh output bằng view_image, kiểm toàn ảnh và chi tiết quan trọng. Không chấm ảnh từ prompt, thumbnail nhỏ hoặc tên file. Đo kích thước/tỷ lệ file, không coi “đã yêu cầu 9:16” là đã đúng. Công cụ đo/crop phục vụ quan sát; sửa pixel phải dùng image_gen trừ khi người dùng chỉ định khác.
 6. Chấm từng tiêu chí theo first-frame.md và Project: pass/fail/not_checked/not_applicable, quan sát cụ thể, severity, hướng sửa, kiểm hồi quy các phần đã đúng. Không lấy điểm đẹp tổng hợp bù lỗi giải phẫu/quan hệ/t=0. Kiểm bố cục hỗ trợ video, không đoán từ ảnh rằng chuyển động/audio sẽ đúng.
 7. Nếu lỗi chặn hoặc tiêu chí bắt buộc chưa kiểm đủ: chưa đạt/chưa kiểm đủ. Chọn một nhóm lỗi ưu tiên và sửa có mục tiêu, ghi đánh đổi; kiểm lại toàn ảnh ở lượt sau. Lỗi lặp thì đổi chiến lược sửa hoặc ảnh nguồn mà giữ ý định; không hạ chuẩn, thêm che khuất/độ đục để giấu lỗi. Nếu đầu vào bất khả thi cần người dùng quyết định thì dừng sớm và báo, không phải dùng hết 5.
-8. Nếu mọi tiêu chí bắt buộc pass, không còn lỗi chặn và ảnh đã được nhìn/đo thật: dừng ngay, ghi `qa_pass`, không cố dùng hết lượt. Lưu file/hash/nguồn tiêu chí/review của ảnh đạt trong FIRST-FRAME.json tại production; ghi model status và user_approved=false trừ khi có phản hồi duyệt rõ. Ảnh sửa mới chưa đạt không tự thay con trỏ ảnh cũ đã đạt. Cập nhật prompt để khớp ảnh đã chốt; thay đổi ý định concept phải có quyền, không âm thầm đổi video prompt trái brief.
+8. Nếu mọi tiêu chí bắt buộc pass, không còn lỗi chặn và ảnh đã được nhìn/đo thật: dừng ngay, ghi `qa_pass`, không cố dùng hết lượt. Ghi handoff bằng `python scripts/chayvideo_output.py handoff <source_attempt> --project <slug> --production <ID> --image-attempt <Axx> --image <Axx/file.png> --review <Axx/review.md> --qa-status qa_pass --width <px> --height <px> [--qa-source 03-Projects/<slug>/first-frame-qa.md] [--asset-inputs <file>] [--call-id <id> --cycle-id <id>] [--actual-model <tên công bố>] --promote`: helper tự tính mọi hash, ghi `<Axx>/FIRST-FRAME-HANDOFF.json`, chạy check-frame và chỉ chép sang FIRST-FRAME.json khi matched; không bao giờ ghi đè handoff cũ. user_approved=false trừ khi có phản hồi duyệt rõ. Ảnh sửa mới chưa đạt không tự thay con trỏ ảnh cũ đã đạt. Cập nhật prompt để khớp ảnh đã chốt; thay đổi ý định concept phải có quyền, không âm thầm đổi video prompt trái brief.
 
 ## Hạn mức và xin thêm lượt
 
@@ -56,7 +56,7 @@ Theo mẫu `00-Standards/templates/first-frame-review.md`, giữ mỗi attempt I
 
 Trả ảnh inline + đường dẫn tuyệt đối, QA status/ảnh đạt ở attempt nào, số lượt dùng/còn, model thực xác nhận được và hạn chế quan trọng. Nếu chưa đạt thì chỉ rõ, không đặt tên “final/approved” để gây hiểu nhầm. Không tự tạo video, chi tiền ngoài tuyến đã được giao, đăng bài, commit hoặc push. /dongvideo tổng kết và xét bài học hai cấp; mọi runtime/ảnh/feedback/registry giữ local, bài học theo memory-policy/publication. Không tự active từ vòng sửa ảnh.
 
-Sau call, ghi `image_budget.py finish --production ... --call-id <id> --outcome success|error|cancelled|unknown`; thao tác này không hoàn lượt. Handoff điền theo 00-Standards/templates/first-frame-handoff.json, không lưu template rỗng như ảnh đạt. Quota helper chỉ xác nhận file chấp thuận tồn tại, agent phải kiểm đó là lời đồng ý thật cho số lượt/phạm vi tương ứng.
+Sau call, ghi `image_budget.py finish --production ... --call-id <id> --outcome success|error|cancelled|unknown`; thao tác này không hoàn lượt. Handoff ghi bằng lệnh `handoff` ở bước 8 (trường theo 00-Standards/templates/first-frame-handoff.json); không lưu template rỗng như ảnh đạt. Mỗi lượt sửa ảnh theo yêu cầu người dùng ghi feedback.md như mục Phiên làm việc của /chayvideo; vòng ảnh nên chạy trong chat riêng, nối bằng mã video và attempt. Quota helper chỉ xác nhận file chấp thuận tồn tại, agent phải kiểm đó là lời đồng ý thật cho số lượt/phạm vi tương ứng.
 
 Trước tạo/sửa, tự đánh giá ảnh cần asset gì từ brief/t=0: identity, anatomy, assembly và nguồn scale khi liên quan; kế thừa reference_requirements từ /chayvideo rồi kiểm lại, brief ảnh trực tiếp tự lập nhu cầu. Khi cần ref, theo [quy trình asset chung](../../../00-Standards/first-frame-asset-references.md): lọc đúng Project/entity/variant/stage/view/role, mở ảnh đã chọn, pin/verify receipt, chỉ gửi ảnh cần và ghi input thực có thứ tự/hash/mục đích. Không mang nền trắng/chữ kích thước từ thư viện vào cảnh; không coi nhãn AI là số đo. Handoff mới schema3 kiểm actual input, schema2 cũ không tự nâng. Thiếu ref hỗ trợ có thể dùng Knowledge; thiếu ref thiết yếu xử lý trước call. Không tạo ảnh chỉ từ việc mở profile/cập nhật catalog; không đọc cả thư viện.
 

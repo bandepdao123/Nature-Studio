@@ -5,7 +5,7 @@ description: Tạo hoặc sửa bộ nội dung video Nature Studio khi gọi /c
 
 # /chayvideo
 
-Version: 2.12 | Updated: 2026-10-19 | Truy xuất vùng chọn lọc, giữ bối cảnh và tag địa điểm
+Version: 2.13 | Updated: 2026-10-22 | Preflight/ledger, ghi feedback mỗi lượt sửa, tách phiên theo pha
 
 Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; không ghi cứng ổ đĩa. Đọc START-HERE.md và SYSTEM.md trước công việc; trong cùng phiên không cần nạp lại nguồn nguyên vẹn đã đọc. Yêu cầu hiện hành của người dùng ưu tiên trong phạm vi được giao.
 
@@ -15,7 +15,7 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 
    Yêu cầu học cách quay/hành động/kịch bản từ video mẫu, kể cả đổi đối tượng, dùng [clonevideo](../clonevideo/SKILL.md) và nhánh **reference**. Không chạy đồng thời cả new và clone. Nhánh [reference](references/reference.md) dùng cùng lõi/output/Project, không ép đổi câu chuyện để đạt độ mới.
 2. Chạy `python scripts/chayvideo_context.py projects`. Catalog đọc metadata hiện hành mọi PROJECT.md; mở bản gốc khi metadata thiếu/mơ hồ. Ưu tiên tên/ID được chỉ định, rồi tổ hợp chủ đề/loài/môi trường/thị trường/format/ngữ cảnh. Không chọn chỉ bởi “cá/Mỹ/Omni”, không ép vào dự án duy nhất khi không phù hợp. Chỉ hỏi khi thật sự chưa phân biệt được.
-3. Đọc [workflow](references/workflow.md) và đúng một nhánh: [tạo mới](references/new.md), [revision](references/revision.md), [caption](references/caption.md). Dùng packet/view/coverage theo lệnh trong lõi chung; không nạp JSON rồi đọc lại từng file. Thiếu cấu hình hoặc ảnh hưởng chưa rõ thì mở nguồn toàn nhánh. [Hướng dẫn cấu hình](../../../00-Standards/context-routing.md) chỉ cần khi thêm nguồn/bảo trì hoặc dùng tuỳ chọn chưa rõ.
+3. Đọc [workflow](references/workflow.md) và đúng một nhánh: [tạo mới](references/new.md), [revision](references/revision.md), [caption](references/caption.md). Dùng `preflight` → `view --ledger` → coverage theo lệnh trong lõi chung; không nạp JSON rồi đọc lại từng file. Thiếu cấu hình hoặc ảnh hưởng chưa rõ thì mở nguồn toàn nhánh. [Hướng dẫn cấu hình](../../../00-Standards/context-routing.md) chỉ cần khi thêm nguồn/bảo trì hoặc dùng tuỳ chọn chưa rõ.
 
 ## Bất biến
 
@@ -26,6 +26,10 @@ Gốc workspace chứa START-HERE.md, đi lên ba cấp từ thư mục skill; k
 - Packet/index tạo lại được, không cao hơn nguồn gốc. Không cắt yêu cầu để đạt ngân sách token; thiếu/stale/coverage chưa đủ thì đọc thêm. Không bịa nguồn hoặc đã xem/nghe/đo/QA.
 - Chỉ áp active gốc đúng điều kiện, ghi ID/version/path/cách dùng; không tự active candidate. Bảo toàn registry/media/quota ảnh/FIRST-FRAME.json/lịch sử; không tự /dongvideo hoặc /taoanh.
 - Chỉ văn bản và hồ sơ local. Media/chi tiền/đăng/push cần yêu cầu tương ứng; sửa skill không là sản xuất. Thiếu brief không reserve mã/lưu ý tưởng giả.
+
+## Phiên làm việc
+
+Mỗi video đi theo pha, mỗi pha một chat: tạo bộ → ảnh (/taoanh) → loạt sửa. Mỗi lượt sửa ghi ngay một mục feedback.md theo [mẫu](../../../00-Standards/templates/feedback.md): lời người dùng nguyên văn, cách hiểu, phạm vi, phần đã chốt, phương án đã loại kèm lý do, việc còn mở. Sau khoảng 5 lượt sửa trong cùng chat, hoặc khi việc chuyển sang sửa hệ thống, đề nghị mở chat mới và in sẵn câu nối, ví dụ `/chayvideo sửa <ID> <attempt>: <việc còn mở>`. Chat mới đọc feedback.md, SUMMARY và CURRENT-STATE (nếu có), chạy resolve, rồi đọc lại nguồn theo lõi chung; không dựa vào trí nhớ chat cũ.
 
 Tự xác định nhu cầu asset từ brief, lưu reference_requirements trong OUTPUT/INPUTS theo [lõi chung](../../../00-Standards/video-prompt-workflow.md): đối tượng/biến thể, đặc điểm cần giữ, role và first_frame/video/both. Có thể ghi không cần với lý do. Query metadata đúng Project khi cần, chỉ mở ảnh để giải quyết chi tiết thị giác; ID gợi ý là planned, không giả đã truyền ảnh. /taoanh sẽ kiểm lại và chọn input thật. Revision ghi nhu cầu còn hiệu lực, caption-only giữ binding không tra asset. Thư viện không giới hạn ý tưởng; không đổi chuyện vì thiếu ảnh, không nạp cả catalog hoặc thêm mục vào bốn phần trả lời mặc định.
 

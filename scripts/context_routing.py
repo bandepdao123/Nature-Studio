@@ -6,6 +6,7 @@ at every stage until explicitly classified; unknown effects use the full mode.
 import hashlib
 import json
 from pathlib import Path, PureWindowsPath
+import re
 
 STAGES = ('orient', 'concept', 'write', 'review', 'save', 'all')
 
@@ -139,16 +140,51 @@ def dependency_digest(packet):
     return hashlib.sha256(json.dumps(dependencies, sort_keys=True).encode()).hexdigest()
 
 
-def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max_chars=None):
+def pages(text, limit):
+    """Split an oversized source at headings, then lines; joining the pages restores it exactly."""
+    if len(text) <= limit:
+        return [text]
+    pieces = []
+    for segment in re.split(r'(?m)^(?=#{1,6} )', text):
+        if len(segment) <= limit:
+            pieces.append(segment)
+            continue
+        buffer = ''
+        for line in segment.splitlines(keepends=True):
+            while len(line) > limit:
+                if buffer:
+                    pieces.append(buffer)
+                    buffer = ''
+                pieces.append(line[:limit])
+                line = line[limit:]
+            if buffer and len(buffer) + len(line) > limit:
+                pieces.append(buffer)
+                buffer = ''
+            buffer += line
+        pieces.append(buffer)
+    result, current = [], ''
+    for piece in filter(None, pieces):
+        if current and len(current) + len(piece) > limit:
+            result.append(current)
+            current = ''
+        current += piece
+    return result + [current] if current else result
+
+
+def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max_chars=None, page_large=False):
     """Plaintext view plus a local display receipt, not proof of model comprehension.
 
     Reuse is an explicit assertion that FULL untruncated text remains in this
     exact context epoch. Compaction/unknown context must not pass retained=True.
+    page_large splits a source longer than max_chars into pages; it counts as read
+    only after every page was displayed in the same context.
     """
     if seen and (not retained or not context_id):
         raise ValueError('Reuse requires --retained and the same explicit --context-id')
+    if page_large and not max_chars:
+        raise ValueError('Paging requires --max-chars')
     current_digest = dependency_digest(packet)
-    known = set()
+    known, parts_known = set(), {}
     metadata_packets = set()
     for receipt in seen:
         if not isinstance(receipt, dict) or receipt.get('schema') != 1:
@@ -159,6 +195,9 @@ def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max
                 if not isinstance(row, dict) or not isinstance(row.get('path'), str) or not isinstance(row.get('sha256'), str):
                     raise ValueError('Invalid receipt source')
                 known.add((row['path'], row['sha256']))
+            for row in receipt.get('partial_sources', []):
+                key = (row['path'], row['sha256'], row['page_chars'])
+                parts_known.setdefault(key, set()).update(row['pages_done'])
             metadata_packets.update(receipt.get('metadata_packets', []))
     offered = {s['path'] for s in packet['sources']}
     if set(paths) - offered:
@@ -167,14 +206,19 @@ def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max
     remaining = [s for s in sources if (s['path'], s['sha256']) not in known]
     if max_chars is not None and (type(max_chars) is not int or max_chars < 1):
         raise ValueError('max_chars must be a positive integer')
-    chosen, length = [], 0
+    units = []
     for row in remaining:
-        if max_chars and chosen and length + len(row['text']) > max_chars:
+        split = pages(row['text'], max_chars) if page_large else [row['text']]
+        done = parts_known.get((row['path'], row['sha256'], max_chars), set()) if len(split) > 1 else set()
+        units += [(row, index, len(split), text) for index, text in enumerate(split) if index not in done]
+    chosen, length = [], 0
+    for unit in units:
+        if max_chars and chosen and length + len(unit[3]) > max_chars:
             break
-        chosen.append(row)
-        length += len(row['text'])
-    # Never chop a source to fit a display target. An oversized source stands alone.
-    next_sources = [s['path'] for s in remaining[len(chosen):]]
+        chosen.append(unit)
+        length += len(unit[3])
+    # Never chop a source to fit a display target unless paging was requested.
+    next_sources = list(dict.fromkeys(unit[0]['path'] for unit in units[len(chosen):]))
     packet_digest = hashlib.sha256(json.dumps(packet, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     memory = {k: v for k, v in packet['memory'].items() if k != 'fingerprint'}
     for state in ('active', 'candidates', 'retired'):
@@ -200,18 +244,29 @@ def render(packet, root, context_id=None, seen=(), retained=False, paths=(), max
         if memory['next_cursor'] or memory['errors']:
             header.update(memory_next_cursor=memory['next_cursor'], memory_errors=memory['errors'])
     output = json.dumps(header, ensure_ascii=False, separators=(',', ':')) + '\n'
-    displayed, reused = [], []
+    displayed = set()
     reused = [row['path'] for row in sources if (row['path'], row['sha256']) in known]
-    for row in chosen:
-        output += '\nSOURCE ' + row['path'] + '\n' + row['text'] + '\nEND SOURCE\n'
-        displayed.append(dict(path=row['path'], sha256=row['sha256']))
+    for row, index, total, text in chosen:
+        if total == 1:
+            output += '\nSOURCE ' + row['path'] + '\n' + text + '\nEND SOURCE\n'
+            displayed.add((row['path'], row['sha256']))
+            continue
+        output += f"\nSOURCE {row['path']} PAGE {index + 1}/{total}\n" + text + '\nEND PAGE\n'
+        key = (row['path'], row['sha256'], max_chars)
+        parts_known.setdefault(key, set()).add(index)
+        if len(parts_known[key]) == total:
+            displayed.add((row['path'], row['sha256']))
+    complete = known | displayed
+    partial = [dict(path=p, sha256=h, page_chars=size, pages_done=sorted(done))
+               for (p, h, size), done in sorted(parts_known.items()) if (p, h) not in complete]
     output += '\nREUSED IN ASSERTED CURRENT CONTEXT: ' + str(len(reused)) + ' sources (paths in local manifest)'
     output += '\nNEXT SOURCES: ' + json.dumps(dict(count=len(next_sources), next=next_sources[:1]), ensure_ascii=False)
     output += '\nEND VIEW — if truncated, do not reuse receipt; read missing sources with --source.\n'
     receipt = dict(schema=1, root=str(root.resolve()), context_id=context_id,
         dependency_digest=current_digest,
         metadata_packets=sorted(metadata_packets | {packet_digest}), remaining_sources=next_sources,
-        sources=[dict(path=p, sha256=h) for p, h in sorted(known | {
-            (r['path'], r['sha256']) for r in displayed})],
+        sources=[dict(path=p, sha256=h) for p, h in sorted(complete)],
         note='Display receipt only. --retained asserts full text still present; not proof of reading or semantic QA.')
+    if partial:
+        receipt['partial_sources'] = partial
     return output, receipt

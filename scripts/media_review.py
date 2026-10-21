@@ -184,5 +184,7 @@ def main():
         parser.exit(1, str(error) + "\n")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     main()

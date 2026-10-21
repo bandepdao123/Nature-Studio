@@ -93,4 +93,7 @@ def main():
     raise SystemExit(0 if result['valid'] else 2)
 
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
+    main()

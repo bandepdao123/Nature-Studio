@@ -104,6 +104,8 @@ def run(root, production, action, *, extra=None, approval_file=None, operation='
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['init','status','reserve','finish','grant','new-cycle'])
     parser.add_argument('--production', required=True)

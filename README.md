@@ -1,10 +1,14 @@
-# Nature Studio v2.1.5
+# Nature Studio v2.1.6
 
 Workspace sản xuất nội dung thiên nhiên bằng AI, tổ chức theo **Project**. Tài liệu và lịch sử được lưu bằng file để tiếp tục công việc qua nhiều phiên làm việc.
 
 Đọc [START-HERE.md](START-HERE.md) và [SYSTEM.md](SYSTEM.md) trước khi bắt đầu. AI đọc [AGENTS.md](AGENTS.md) để nhận quy tắc workspace.
 
-## Mới trong v2.1.5
+## Mới trong v2.1.6
+
+Giảm lượt gọi tool và chi phí phiên dài mà không hạ gate: `preflight`, ledger đọc theo phiên, chia trang nguồn lớn, hash lấy từ output đã xem, lệnh `handoff` cho ảnh, ghi feedback mỗi lượt sửa và tách phiên theo pha. Script chạy đúng trên console Windows; CI thêm Windows. Xem [ghi chú v2.1.6](07-Releases/v2.1.6.md).
+
+## Kế thừa v2.1.5
 
 15 hồ sơ vùng Mỹ cho Redfish/Muskie/Walleye; chọn theo phân bố + sinh cảnh, đọc đúng vùng đã chọn. Một setting xuyên ảnh/video/caption; mỗi caption có một hashtag địa điểm trong tổng 3–5. Không thêm database/schema hoặc ảnh môi trường chưa QA. Xem [ghi chú v2.1.5](07-Releases/v2.1.5.md).
 
@@ -38,7 +42,7 @@ Helper lõi dùng Python 3.11+ và thư viện chuẩn; clone/tải ZIP không t
 
 Nếu host chạy `quick_validate.py` của skill-creator để kiểm skill, script **bên ngoài repo** đó import `yaml` từ package [PyYAML](https://pypi.org/project/PyYAML/6.0.3/). Bản vá khai báo trong [requirements-dev.txt](requirements-dev.txt); đây là dependency kiểm skill tùy chọn. Không có script quick_validate trên host thì ghi phép kiểm đó unavailable, không bắt cài cả skill-creator hoặc chặn các helper lõi.
 
-Tại thư mục Nature-Studio, dùng chính Python sẽ chạy validator:
+Tại thư mục gốc repo (tên thư mục có thể khác Nature-Studio), dùng chính Python sẽ chạy validator:
 
 ```text
 python -m pip install -r requirements-dev.txt
@@ -53,7 +57,7 @@ Có thể giữ dependency trong môi trường riêng: `python -m venv .venv`, 
 
 Đọc [VERSION](VERSION) và [CHANGELOG.md](CHANGELOG.md) để biết phiên bản toàn hệ thống, sau đó theo START-HERE/SYSTEM. Khi kiểm tra hoặc cập nhật từ GitHub, thực hiện [UPDATE.md](UPDATE.md): xác định commit đích, so với bản local và giữ chỉnh sửa riêng trước khi ghi. Chỉ có link repo chưa đủ để biết máy người dùng đã thay đổi gì; cần quyền đọc local hoặc gói workspace/manifest của họ.
 
-Phiên bản hiện hành là **Nature Studio v2.1.5**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
+Phiên bản hiện hành là **Nature Studio v2.1.6**. Skill/project có số phiên bản riêng. VERSION không tự tạo Git tag/GitHub Release; main có thể chứa thay đổi sau một release, nên luôn ghi kèm commit và trạng thái local. Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123/Nature-Studio).
 
 ## Dự án hiện tại
 

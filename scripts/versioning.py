@@ -35,6 +35,8 @@ def check(root=ROOT):
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['check', 'next'])
     parser.add_argument('--level', choices=['patch', 'minor', 'major'], default='patch')

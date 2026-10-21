@@ -481,7 +481,9 @@ def main():
     if result.get('status') in ('needs_review','stale'): raise SystemExit(2)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     try:main()
     except (ValueError, OSError, sqlite3.Error, TypeError) as exc:
         print(json.dumps({'errors':[str(exc)]},ensure_ascii=False));raise SystemExit(1)

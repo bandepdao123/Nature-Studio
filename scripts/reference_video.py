@@ -286,7 +286,9 @@ def main():
     sys.exit(1 if result['errors'] else 0 if result['complete'] and result['freshness']!='unverified' else 2)
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     try:
         main()
     except (ValueError, OSError) as exc:

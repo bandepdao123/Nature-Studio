@@ -26,7 +26,7 @@ class ContractTests(unittest.TestCase):
         file=self.base/'exception.json';file.write_text(json.dumps(grant),encoding='utf-8');data['contract_exception']=dict(path='exception.json',sha256=output.sha256(file))
 
     def nine(self):
-        data=copy.deepcopy(self.good);data['video_prompt']='; '.join(f'[{i}.0-{i+1 if i<8 else 10}.0s] fixture' for i in range(9));return data
+        data=copy.deepcopy(self.good);data['video_prompt']='Handheld underwater shot. '+'; '.join(f'[{i}.0-{i+1 if i<8 else 10}.0s] fixture' for i in range(9));return data
 
     def test_check_save_check_roundtrip(self):
         saved=output.save(self.root,'underwater','UF-0001',self.good);stored=json.loads((saved/'OUTPUT.json').read_text(encoding='utf-8'))

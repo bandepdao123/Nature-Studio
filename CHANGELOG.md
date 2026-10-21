@@ -2,8 +2,13 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
-## v2.1.6 — đang làm (nhánh release/v2.1.6)
+## v2.1.6 — 2026-10-22
 
+- Giảm lượt gọi tool, không hạ gate: `chayvideo_context.py preflight` (packet + history trong một lệnh, chỉ in đường dẫn/số lượng/ID), `context-id` + `view --ledger` (một sổ đọc theo chat, thay receipt mỗi lượt), `view --page-large` (chia trang nguồn lớn theo heading, chỉ tính đã đọc khi đủ mọi trang), output JSON gọn.
+- Hash không chép tay: `fingerprint --from-history`, `resolve --out` + `save --from-resolve`; lệnh `chayvideo_output.py handoff` tự tính hash, ghi handoff theo attempt, chạy check-frame và chỉ cập nhật FIRST-FRAME.json khi matched. context-map.json và asset_catalog.py luôn là dependency, không còn nguồn in ra hoặc làm đổi digest khi thêm asset selection.
+- Gate mới (UF-D024): video prompt new/reference phải có camera handheld; `checks.location_tag` đúng một lần trong mọi caption.
+- Vệ sinh phiên: ghi feedback.md mỗi lượt sửa; đề nghị chat mới sau khoảng 5 lượt sửa kèm câu nối. Template feedback thêm phần đã chốt/phương án đã loại.
+- Script đặt UTF-8 cho console (Windows cp1252 không còn lỗi); CI chạy cả Windows. Nội dung: camera cầm tay trong underwater-realism, tag địa điểm trong audience-and-caption, bỏ tham chiếu ổ E:, đánh dấu gói standalone v1.9 là lưu trữ, ghi chú nâng cấp v2.1.2→v2.1.5.
 - 2026-10-22: viết lại lịch sử Git, gỡ hồ sơ UF-0001 và idea-ledger cũ khỏi mọi commit; force-push main, codex/release-v2.0.0 và các tag; thêm tag v1.8. Nội dung từng bản không đổi. Bảng mã cũ → mới và cách đồng bộ máy khác ở UPDATE.md.
 - `scripts/session_usage.py`: đọc bộ đếm token từ log Codex/Claude local (request, tool call, input/cached/output, ngữ cảnh đỉnh, compaction, theo lượt); không đọc nội dung chat.
 

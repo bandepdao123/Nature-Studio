@@ -24,7 +24,9 @@ def add_request(turn, context, cached, output):
 
 def codex_session(path):
     cwd, model, turns, compactions = None, None, [], 0
-    for line in path.open(encoding='utf-8', errors='replace'):
+    with path.open(encoding='utf-8', errors='replace') as stream:
+        lines = list(stream)
+    for line in lines:
         try:
             item = json.loads(line)
         except json.JSONDecodeError:
@@ -53,7 +55,9 @@ def codex_session(path):
 
 def claude_session(path):
     cwd, model, turns, compactions, seen = None, None, [], 0, set()
-    for line in path.open(encoding='utf-8', errors='replace'):
+    with path.open(encoding='utf-8', errors='replace') as stream:
+        lines = list(stream)
+    for line in lines:
         try:
             item = json.loads(line)
         except json.JSONDecodeError:
@@ -98,6 +102,8 @@ def collect(codex_root=CODEX, claude_root=CLAUDE, match='nature studio', since='
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--match', default='nature studio', help='substring of the session working directory')
     parser.add_argument('--since', default='', help='YYYY-MM-DD, Codex sessions only')

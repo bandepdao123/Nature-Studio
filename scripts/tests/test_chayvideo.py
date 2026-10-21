@@ -188,10 +188,10 @@ class ContextTests(unittest.TestCase):
 class OutputTests(unittest.TestCase):
     def good(self):
         return dict(idea='Ý tưởng', first_frame_prompt='A real initial frame.',
-                    video_prompt='[0.0–1.2s] Setup; [1.2–3.1s] Track; [3.1–5.6s] React; '
-                                 '[5.6–6.3s] Key action; [6.3–10.0s] Aftermath.',
-                    caption='Not buying it. #Muskie #MuskyFishing #FreshwaterFishing',
-                    checks={'key_onset':5.6},
+                    video_prompt='One continuous handheld underwater shot. [0.0–1.2s] Setup; [1.2–3.1s] Track; '
+                                 '[3.1–5.6s] React; [5.6–6.3s] Key action; [6.3–10.0s] Aftermath.',
+                    caption='Not buying it. #Muskie #MuskyFishing #WisconsinFishing',
+                    checks={'key_onset':5.6,'location_tag':'#WisconsinFishing'},
                     files={'INPUTS.md':'Source paths and hashes; no media generated.',
                            'settings.md':'Not executed; settings unknown.',
                            'review.md':'Prompt-only; media QA pending.'})

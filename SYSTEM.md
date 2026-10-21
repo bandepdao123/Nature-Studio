@@ -2,7 +2,7 @@
 
 Version: 2.1 | Updated: 2026-10-18 | Scope: toàn kho
 
-Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v2.1.5; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
+Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio tại [VERSION](VERSION). Phiên bản workspace hiện hành là Nature Studio v2.1.6; xem [CHANGELOG.md](CHANGELOG.md) và [UPDATE.md](UPDATE.md) để xác định bản nguồn/cập nhật mà giữ dữ liệu riêng.
 
 ## Thẩm quyền và mâu thuẫn
 
@@ -33,7 +33,7 @@ Phiên bản tài liệu ở trên độc lập với phiên bản Nature Studio
 - Phân biệt quan sát, nguồn cung cấp, giả định dàn cảnh, lựa chọn biên tập và kết luận đã kiểm.
 - Không nhận đã đọc/xem/nghe/đo/render/QA nếu chưa làm. Không hứa model bảo đảm vật lý hoặc view.
 - File văn bản UTF-8; liên kết nội bộ tương đối. ID ổn định, không đổi khi di chuyển; không tái sử dụng ID đã cấp. Ghi ngày ISO YYYY-MM-DD, mốc giờ dùng Asia/Saigon khi cần.
-- Lưu local không đồng nghĩa xử lý offline: AI đám mây có thể nhận phần nội dung được đọc vào phiên. Không tự giả định mọi AI nhìn thấy ổ E:.
+- Lưu local không đồng nghĩa xử lý offline: AI đám mây có thể nhận phần nội dung được đọc vào phiên. Không tự giả định mọi AI nhìn thấy workspace local; đường dẫn workspace không cố định.
 - Sao lưu kho sang vị trí khác theo lịch do người dùng chọn; chưa có sao lưu tự động hay quản lý phiên bản được cài trong lần khởi tạo này.
 
 ## Cấu trúc Project — cập nhật 2026-10-16

@@ -228,6 +228,17 @@ def resolve(root, slug, production_id, attempt):
     return result
 
 
+def with_resolved_base(root, slug, production_id, resolved, data):
+    """Fill the base from the resolve output the AI reviewed; save still rejects a base changed since."""
+    if (resolved.get('project'), resolved.get('production_id')) != (slug, production_id):
+        raise ValueError('Resolve output belongs to another Project/production')
+    data = dict(data)
+    for key, value in (('base_attempt', resolved.get('attempt')), ('base_sha256', resolved.get('attempt_sha256'))):
+        if data.setdefault(key, value) != value:
+            raise ValueError(f'{key} differs from the reviewed resolve output')
+    return data
+
+
 def frame_snapshot(resolved):
     """Only opening-state inputs; caption and later motion do not invalidate an image."""
     state = resolved.get('frame_state')
@@ -343,6 +354,58 @@ def check_frame(root, slug, production_id, attempt, handoff='FIRST-FRAME.json'):
                 scope='Recorded file/input bindings only; image QA and user approval remain independent')
 
 
+def handoff(root, slug, production_id, source_attempt, image_attempt, image, review, qa_status,
+            width, height, qa_sources=(), asset_inputs=None, call_id=None, cycle_id=None,
+            limitations=(), actual_model='unknown', promote=False):
+    """Write a schema-3 handoff from files the AI already reviewed; every hash is computed, none copied."""
+    folder = production(root, slug, production_id)
+    if qa_status not in ('qa_pass', 'qa_incomplete', 'qa_fail'):
+        raise ValueError('qa_status must be qa_pass, qa_incomplete or qa_fail')
+    attempt_dir = (folder / image_attempt).resolve()
+    if not re.fullmatch(r'(?:attempts/)?A\d+', image_attempt) or not attempt_dir.is_dir():
+        raise ValueError('Existing image attempt required, e.g. A05')
+    current = resolve(root, slug, production_id, source_attempt)
+    opening = [r for r in (current.get('reference_requirements') or {}).get('items', [])
+               if r['applies_to'] in ('first_frame', 'both')]
+    criteria = ['00-Standards/first-frame.md', '00-Standards/quality-review.md',
+                f'03-Projects/{slug}/PROJECT.md', *qa_sources]
+    # Schema 3 adds actual asset-input evidence; without it the record is schema 2.
+    record = dict(schema=3 if asset_inputs else 2, production_id=production_id, project_id=project_id(root, slug),
+                  attempt_id=image_attempt, source_attempt=source_attempt,
+                  source_attempt_sha256=current['attempt_sha256'], cycle_id=cycle_id, qa_status=qa_status,
+                  image_path=image, sha256=sha256(local_file(folder, image)),
+                  measured_width=width, measured_height=height,
+                  review_path=review, review_sha256=sha256(local_file(folder, review)),
+                  frame_inputs=frame_snapshot(current), frame_inputs_sha256=None,
+                  qa_sources={rel: sha256(inside(root, rel)) for rel in dict.fromkeys(criteria)},
+                  requested_model='gpt-image-2.5-sunburst', actual_model=actual_model,
+                  model_verified=False, user_approved=False, user_approval_path=None,
+                  limitations=list(limitations), call_id=call_id,
+                  reference_requirements_sha256=snapshot_hash(opening))
+    record['frame_inputs_sha256'] = snapshot_hash(record['frame_inputs'])
+    if asset_inputs:
+        import asset_catalog
+        record['asset_inputs'] = dict(path=asset_inputs, sha256=asset_catalog.file_hash(asset_catalog.local(root, asset_inputs)))
+    else:
+        record['asset_inputs'] = None
+    target = attempt_dir / 'FIRST-FRAME-HANDOFF.json'
+    if target.exists():
+        raise ValueError('Handoff already written for this attempt; never overwrite QA history')
+    target.write_text(json.dumps(record, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    relative = target.relative_to(folder.resolve()).as_posix()
+    checked = check_frame(root, slug, production_id, source_attempt, relative)
+    promoted, main_record = False, folder / 'FIRST-FRAME.json'
+    if promote and qa_status == 'qa_pass' and checked['status'] == 'matched':
+        # Replace only a FIRST-FRAME.json that is preserved byte-for-byte in some attempt's handoff.
+        kept = not main_record.exists() or any(
+            p.read_bytes() == main_record.read_bytes() for p in folder.rglob('FIRST-FRAME-HANDOFF.json') if p != target)
+        if not kept:
+            raise ValueError('Existing FIRST-FRAME.json has no per-attempt copy; preserve it before promoting')
+        shutil.copyfile(target, main_record)
+        promoted = True
+    return dict(handoff=relative, promoted=promoted, check=checked)
+
+
 def effective_contract(root, slug, production_id, data, mode, for_save=False):
     """Verify scoped bindings, not the authorship of the saved user request."""
     contract = dict(version='underwater-2' if slug == 'underwater' else 'common-1', beat_count=None)
@@ -391,6 +454,24 @@ def effective_contract(root, slug, production_id, data, mode, for_save=False):
     return contract
 
 
+def location_tag_errors(data, required):
+    """UF-D023: one declared location hashtag, shared by every caption; choosing it stays semantic QA."""
+    checks = data.get('checks') if isinstance(data.get('checks'), dict) else {}
+    tag, reason = checks.get('location_tag'), checks.get('location_none_reason')
+    if tag is None:
+        if required and 'caption' in data and not (isinstance(reason, str) and reason.strip()):
+            return ['checks.location_tag: declare the location hashtag, or location_none_reason for legacy without a locked setting']
+        return []
+    if not isinstance(tag, str) or not re.fullmatch(r'#\w+', tag):
+        return ['checks.location_tag: one hashtag such as #LouisianaFishing']
+    captions = [data['caption']] if isinstance(data.get('caption'), str) else []
+    bundle = data.get('caption_variants')
+    if isinstance(bundle, dict) and isinstance(bundle.get('variants'), dict):
+        captions += [v['caption'] for v in bundle['variants'].values() if isinstance(v, dict) and isinstance(v.get('caption'), str)]
+    return [f'caption: location tag {tag} must appear exactly once in every caption' for caption in captions
+            if [t.casefold() for t in re.findall(r'#\w+', caption)].count(tag.casefold()) != 1][:1]
+
+
 def validate(data, mode='new', underwater=False, contract=None):
     if not isinstance(data, dict):
         return ['Output must be a JSON object']
@@ -431,6 +512,8 @@ def validate(data, mode='new', underwater=False, contract=None):
             errors.append('caption: AI mention/tag')
         if any(t.casefold() == '#underwater' for t in tags):
             errors.append('caption: #Underwater excluded')
+    if underwater and mode != 'caption':
+        errors.extend(location_tag_errors(data, required=mode in ('new', 'reference')))
     if underwater and mode != 'caption' and isinstance(data.get('video_prompt'), str):
         text = data['video_prompt']
         beats = re.findall(r'\[(\d+(?:\.\d+)?)\s*[–—-]\s*(\d+(?:\.\d+)?)s\]', text)
@@ -443,6 +526,8 @@ def validate(data, mode='new', underwater=False, contract=None):
                 or any(beats[i][1] != beats[i+1][0] for i in range(len(beats)-1))):
             errors.append('video_prompt: positive contiguous timeline from 0 to 10s required')
         checks = data.get('checks', {})
+        if mode in ('new', 'reference') and not re.search(r'\bhand-?held\b', text, re.I):
+            errors.append('video_prompt: handheld camera (UF-D021) required for new/reference sets')
         key = checks.get('key_onset') if isinstance(checks, dict) else None
         try:
             onset = Decimal(str(key))
@@ -533,27 +618,61 @@ def save(root, slug, production_id, data, mode='new'):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
-    parser.add_argument('command', choices=('check', 'save', 'resolve', 'check-frame'))
-    parser.add_argument('input', type=Path)
+    parser.add_argument('command', choices=('check', 'save', 'resolve', 'check-frame', 'handoff'))
+    parser.add_argument('input', type=Path, help='JSON output, or the source attempt for resolve/check-frame/handoff')
     parser.add_argument('--mode', choices=('new', 'revision', 'caption', 'reference'), default='new')
     parser.add_argument('--project', required=True)
     parser.add_argument('--production')
     parser.add_argument('--handoff', default='FIRST-FRAME.json')
     parser.add_argument('--frame-inputs', action='store_true', help='Include QA snapshot only when preparing a handoff')
+    parser.add_argument('--out', type=Path, help='resolve: also write the JSON shown, for save --from-resolve')
+    parser.add_argument('--from-resolve', type=Path, help='save: take base_attempt/base_sha256 from a resolve output already reviewed')
+    group = parser.add_argument_group('handoff (paths relative to production)')
+    group.add_argument('--image-attempt')
+    group.add_argument('--image')
+    group.add_argument('--review')
+    group.add_argument('--qa-status')
+    group.add_argument('--width', type=int)
+    group.add_argument('--height', type=int)
+    group.add_argument('--qa-source', action='append', default=[], help='Extra Project QA criteria, workspace-relative')
+    group.add_argument('--asset-inputs', help='Actual asset input record, workspace-relative')
+    group.add_argument('--call-id')
+    group.add_argument('--cycle-id')
+    group.add_argument('--limitation', action='append', default=[])
+    group.add_argument('--actual-model', default='unknown')
+    group.add_argument('--promote', action='store_true', help='Also copy a matched qa_pass handoff to FIRST-FRAME.json')
     args = parser.parse_args()
-    if args.command in {'resolve', 'check-frame'}:
+    root = args.root.resolve()
+    if args.command in {'resolve', 'check-frame', 'handoff'}:
         if not args.production:
             parser.error('--production required')
         if args.command == 'resolve':
-            result = resolve(args.root.resolve(), args.project, args.production, args.input.as_posix())
+            result = resolve(root, args.project, args.production, args.input.as_posix())
             if not args.frame_inputs:
                 result.pop('frame_inputs', None)
                 result.pop('frame_inputs_sha256', None)
+            if args.out:
+                out = inside(root, args.out.as_posix())
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
+        elif args.command == 'handoff':
+            missing = [k for k in ('image_attempt', 'image', 'review', 'qa_status', 'width', 'height') if getattr(args, k) is None]
+            if missing:
+                parser.error('handoff requires --' + ', --'.join(m.replace('_', '-') for m in missing))
+            result = handoff(root, args.project, args.production, args.input.as_posix(), args.image_attempt,
+                             args.image, args.review, args.qa_status, args.width, args.height, args.qa_source,
+                             args.asset_inputs, args.call_id, args.cycle_id, args.limitation, args.actual_model, args.promote)
+            print(json.dumps(result, ensure_ascii=False))
+            sys.exit(0 if result['check']['status'] == 'matched' else 2)
         else:
-            result = check_frame(args.root.resolve(), args.project, args.production, args.input.as_posix(), args.handoff)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+            result = check_frame(root, args.project, args.production, args.input.as_posix(), args.handoff)
+        # resolve stays complete: the AI must see the full inherited text it builds on.
+        print(json.dumps(result, ensure_ascii=False, indent=2 if args.command == 'resolve' else None))
         sys.exit(0 if args.command == 'resolve' or result['status'] == 'matched' else 2)
     data = json.loads(args.input.read_text(encoding='utf-8-sig'))
+    if args.from_resolve:
+        data = with_resolved_base(root, args.project, args.production,
+                                  json.loads(inside(root, args.from_resolve.as_posix()).read_text(encoding='utf-8-sig')), data)
     if args.command == 'check':
         contract = effective_contract(args.root.resolve(), args.project, args.production, data, args.mode)
         errors = validate(data, args.mode, args.project == 'underwater', contract=contract)
@@ -567,6 +686,8 @@ def main():
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     try:
         main()
     except (ValueError, OSError) as exc:

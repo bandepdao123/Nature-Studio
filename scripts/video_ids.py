@@ -156,6 +156,8 @@ def status(root, slug):
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action', choices=['init','reserve','status'])
     parser.add_argument('slug')

@@ -279,9 +279,12 @@ def main():
         if args.out:
             dest = local(root, args.out.as_posix()); dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(encoded(result))
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    # Compact: descriptors stay complete, indentation only costs tokens.
+    print(json.dumps(result, ensure_ascii=False))
     return 2 if isinstance(result, dict) and result.get('errors') else 0
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     raise SystemExit(main())

@@ -179,6 +179,8 @@ def validate(root):
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()

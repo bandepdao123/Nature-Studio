@@ -240,3 +240,18 @@ Nhận thư mục 08-Assets cùng helper sau khi so commit/hash và giữ backup
 Chạy `python scripts/asset_catalog.py import-bundle 08-Assets/reference-library.json`. Clone sạch nhập 64 ID mới; máy đã có bộ ảnh tương đương giữ metadata/file/provenance local. Cùng ID khác hình hoặc nội dung/scope thì dừng trước ghi, không tự ghi đè, đổi ID hay hạ review để hết conflict. Parent hash cho dẫn xuất được bind theo catalog trên máy nhận, không chép hash runtime từ máy xuất. Không cần chuyển ảnh sang ổ đĩa cố định.
 
 Không sinh lại ảnh hoặc tiêu quota. 4 mồi nguyên con vẫn chưa xác nhận stage. Public bundle chỉ gồm output đã chọn, không có full generation/edit inputs riêng. Những nguồn đó không được giả là đã phân phối; actual input của mỗi lần sản xuất tiếp theo vẫn ghi thật theo v2.1.1. Assets thêm sau phải được rà quyền, nội dung và publication trước xuất. Không thay tag v2.1.1 hoặc release cũ.
+
+## Nâng từ v2.1.2 lên v2.1.5
+
+Không cần migration dữ liệu; nhận nguồn sau khi so commit/hash và giữ backup runtime/registry/catalog/Memory như các bản trước. v2.1.3 chỉ thêm tiêu chí QA màu chân thực/ám vàng cho ảnh mới; không chấm lại hoặc sửa ảnh/QA lịch sử. v2.1.4 thêm ba caption Chuẩn/Hài hước/Tò mò kèm hook; bản ghi một caption cũ vẫn đọc được, không tự sinh caption_variants. v2.1.5 thêm hồ sơ vùng 01-Knowledge/locations và đúng một tag địa điểm mỗi caption cho bộ mới/reference đã khóa setting; không cần database/schema mới.
+
+Production hiện có không được backfill địa điểm, caption hay QA màu. Legacy chỉ bổ sung khi người dùng giao, theo nhánh caption-only/legacy của Project. Chạy suite/Memory/publication phù hợp; không tạo media hoặc tiêu quota để kiểm nâng cấp.
+
+## Nâng từ v2.1.5 lên v2.1.6
+
+Lịch sử Git đã viết lại trước bản này: làm theo mục "Lịch sử Git đã viết lại — 2026-10-22" ở đầu file, không pull/merge lên clone cũ. Không cần migration dữ liệu; production, registry, catalog, Memory và quota giữ nguyên.
+
+- Packet dựng trước v2.1.6 vẫn verify được nhưng thường stale vì dependency đổi (skill, lõi, script): dựng lại bằng `preflight` hoặc `packet`. Receipt `--seen/--receipt` cũ vẫn hợp lệ; chat mới nên dùng `context-id` + `--ledger`.
+- `check/save` bộ mới/reference Underwater cần `checks.location_tag` (hoặc `checks.location_none_reason` cho legacy chưa có setting) và camera handheld trong video prompt. Attempt cũ không bị kiểm lại; chỉ lần lưu mới áp dụng.
+- underwater-realism.md và audience-and-caption.md đổi nội dung nhưng không nằm trong tiêu chí QA ảnh (qa_sources) của hồ sơ hiện có, nên FIRST-FRAME.json cũ không chuyển needs_review vì bản này.
+- Hồ sơ đang làm dở: từ lượt sửa tiếp theo ghi feedback.md mỗi lượt theo template mới; không cần backfill.

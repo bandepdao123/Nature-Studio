@@ -2,7 +2,7 @@
 
 Kho sản xuất nội dung thiên nhiên, lưu trên máy; khởi tạo 15/10/2026 (Asia/Saigon).
 
-Phiên bản toàn hệ thống: **Nature Studio v2.1.5**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
+Phiên bản toàn hệ thống: **Nature Studio v2.1.6**, nguồn máy đọc là [VERSION](VERSION); xem [CHANGELOG.md](CHANGELOG.md). Khi người dùng đưa link GitHub và yêu cầu so sánh/cập nhật, đọc [UPDATE.md](UPDATE.md) trước khi ghi: cần cả bản đích và trạng thái local, giữ dữ liệu riêng và không đoán bản mới từ tên file.
 
 ## Lệnh tạo bộ nội dung
 
@@ -14,7 +14,7 @@ Gửi `/chayvideo` kèm tên dự án, loài hoặc brief nếu có. AI đọc [
 
 ## Cách dùng với bất kỳ AI nào
 
-Giao file này cùng yêu cầu và quyền đọc thư mục Nature-Studio. Nếu AI không truy cập ổ E:, gửi gói hướng dẫn độc lập ở 07-Releases/standalone-guides/. Không giả định AI nhớ lịch sử chat.
+Giao file này cùng yêu cầu và quyền đọc thư mục repo; đường dẫn workspace không cố định, thư mục có thể mang tên khác, ví dụ `C:\Nature Studio`. Nếu AI không truy cập được file local, gửi repo hiện hành hoặc gói ZIP tạo bằng `scripts/package_workspace.py`, không dùng hướng dẫn độc lập v1.9 trong 07-Releases/standalone-guides/ vì đó chỉ là lưu trữ lịch sử. Không giả định AI nhớ lịch sử chat.
 
 1. Đọc [SYSTEM.md](SYSTEM.md); xác định nhiệm vụ: nghiên cứu, ý tưởng, viết prompt, tạo media, review hay cập nhật hệ thống.
 2. Tra [danh mục dự án](03-Projects/INDEX.md), xác định dự án; đọc PROJECT.md của đúng dự án. Dự án đã cấu hình: [Underwater](03-Projects/underwater/PROJECT.md). Thiếu dự án và không suy được từ yêu cầu thì hỏi một câu ngắn.

@@ -43,3 +43,7 @@ Khi đổi, thêm dòng quyết định thay thế và cập nhật chính file 
 ## UF-D023 — 2026-10-19 — Vùng bối cảnh và hashtag địa điểm
 
 Người dùng duyệt triển khai local: phân bố + sinh cảnh là bắt buộc, mức người địa phương thích câu chỉ ưu tiên phụ. Khởi đầu năm vùng có nguồn cho mỗi Redfish/Muskie/Walleye, không giới hạn tối đa hoặc cố đủ khi thiếu căn cứ. Hồ sơ vùng chọn lọc, setting trong INPUTS/frame_state.environment hiện có, đồng nhất ảnh/video/caption; một tag địa điểm trong tổng 3–5 ở mỗi bản caption. Giữ legacy và lịch sử; không thêm database/schema. Phương án xuất GitHub được người dùng duyệt ngày 2026-10-19; giữ dữ liệu riêng ngoài tập xuất.
+
+## UF-D024 — 2026-10-22 — Nguồn kế thừa theo camera cầm tay; gate helper cho camera và tag địa điểm
+
+Người dùng duyệt phương án tối ưu bản 3: viết lại hai đoạn camera cố định trong `01-Knowledge/habitats/underwater-realism.md` theo UF-D021, giữ phần quang học còn đúng; câu UF-D016 về tag vùng trong audience-and-caption được cập nhật theo UF-D023. Từ v2.1.6, `chayvideo_output.py check/save` yêu cầu video prompt bộ mới/reference có camera handheld và `checks.location_tag` xuất hiện đúng một lần trong mọi caption (legacy chưa có setting dùng `checks.location_none_reason`). Đây là kiểm cú pháp; chọn vùng và mô tả camera đúng cảnh vẫn là QA nội dung. Không sửa media/attempt lịch sử.

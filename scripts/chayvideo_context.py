@@ -7,8 +7,10 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import secrets
 import sys
 import tempfile
+import time
 import memory_retrieval as memory
 import context_routing as routing
 
@@ -81,7 +83,8 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
     task_union = list(dict.fromkeys([*defaults, *tasks]))
     if plan:
         plan['tasks'] = task_union
-    files = [recipe_path] + recipe['common'] + chosen
+    # context-map is the coverage floor and a dependency; its JSON is not reading material.
+    files = recipe['common'] + chosen
     # Human-facing indexes can grow without bound; discovery returns paged descriptors.
     files = [p for p in files if not (p.startswith('05-Memory/') and p.endswith('/INDEX.md'))]
     missing = []
@@ -111,7 +114,7 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
     else:
         selected = []
     sources = [source(root, path) for path in dict.fromkeys(files)]
-    dependencies = []
+    dependencies = [{k: v for k, v in recipe_source.items() if k != 'text'}]
     for path in ['VERSION', 'START-HERE.md', 'SYSTEM.md', 'AGENTS.md',
                  '.agents/skills/chayvideo/SKILL.md',
                  '.agents/skills/chayvideo/references/workflow.md',
@@ -120,8 +123,9 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
         item = source(root, path)
         item.pop('text')
         dependencies.append(item)
+    # asset_catalog.py is always a dependency so adding --asset-selection keeps the digest.
     for path in ['scripts/chayvideo_context.py', 'scripts/context_routing.py',
-                 'scripts/memory_retrieval.py', '00-Standards/memory-taxonomy.json',
+                 'scripts/memory_retrieval.py', 'scripts/asset_catalog.py', '00-Standards/memory-taxonomy.json',
                  *[f'.agents/skills/chayvideo/references/{m}.md'
                    for m in ('new', 'revision', 'caption', 'reference')],
                  '00-Standards/context-routing.md', *([plan['config']] if plan and plan['config'] else [])]:
@@ -155,8 +159,6 @@ def packet(root, slug, mode, species=(), interaction='unspecified',
         if status['status'] == 'stale': raise ValueError('Stale asset selection; refresh references')
         result['asset_selection'] = asset_selection
         result['asset_review_pending'] = status['issues']
-        helper = inside(root, 'scripts/asset_catalog.py')
-        if helper.is_file(): dependencies.append({k:v for k,v in source(root,'scripts/asset_catalog.py').items() if k != 'text'})
     if plan:
         result.update(routing=plan, routing_request=dict(stage=stage, effects=list(effects), tasks=list(tasks)))
     return result
@@ -185,7 +187,7 @@ def verify(root, data):
             if (data['memory']['request'].get('tasks') != expected_tasks
                     or data['memory']['request'].get('mode') != data['mode']):
                 stale.append('routing_memory_tasks')
-            required = {recipe_path, *recipe['common'], *plan['files']}
+            required = {*recipe['common'], *plan['files']}
             if data['mode'] != 'caption':
                 if plan['include_species']:
                     required.update(recipe.get('species', {}).get(name.lower()) for name in data['species'])
@@ -304,19 +306,92 @@ def history(root, slug, query=''):
                   limits='All records listed; lexical matches only assist retrieval. Read uncovered '
                          'records and nearest originals before novelty verdict. Chat, examples, '
                          'rejected drafts and related other Projects still require inspection.')
-    cache.parent.mkdir(parents=True, exist_ok=True)
-    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=cache.parent,
-                                     suffix='.tmp', delete=False) as out:
-        json.dump(result, out, ensure_ascii=False, indent=2)
-        temp = Path(out.name)
-    temp.replace(cache)
+    write_json(cache, result)
     return result
 
 
-def fingerprint(root, slug, production_id, data):
+def compact_history(result):
+    """Default CLI view: production-relative paths, no per-file hashes or ledger body."""
+    rows = []
+    for row in result['records']:
+        prefix = f"04-Productions/{result['project']}/{row['production']}/"
+        trim = lambda paths: [p[len(prefix):] if p.startswith(prefix) else p for p in paths]
+        rows.append(dict(production=row['production'], fingerprint=row['fingerprint'],
+                         needs_read=trim(row['needs_read']), lexical_matches=trim(row['lexical_matches'])))
+    ledger = result['ledger']
+    return dict(schema=1, project=result['project'], inventory_count=len(result['inventory']),
+                refreshed=result['refreshed'], records=rows,
+                ledger={k: ledger[k] for k in ('path', 'sha256')} if ledger else None,
+                limits=result['limits'])
+
+
+def new_context_id():
+    return 'ctx-' + time.strftime('%Y%m%dT%H%M%S') + '-' + secrets.token_hex(2)
+
+
+def ledger_path(root, relative, context_id):
+    path = inside(root, relative)
+    if not path.relative_to(root.resolve()).as_posix().startswith('.nature-studio/context/'):
+        raise ValueError('Ledger must live under .nature-studio/context/')
+    if not context_id or path.name != context_id + '.json':
+        raise ValueError('Ledger file must be named <context-id>.json; run context-id for a new chat')
+    return path
+
+
+def write_json(path, data):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.NamedTemporaryFile(mode='w', encoding='utf-8', dir=path.parent,
+                                     suffix='.tmp', delete=False) as out:
+        json.dump(data, out, ensure_ascii=False, indent=2)
+        temp = Path(out.name)
+    temp.replace(path)
+
+
+def preflight(root, slug, mode, species=(), interaction='unspecified', stage='all',
+              effects=(), tasks=(), query_text='', out=None):
+    """One call: write the packet and history cache, return only IDs, counts and paths."""
+    data = packet(root, slug, mode, species, interaction, stage=stage, effects=effects,
+                  tasks=tasks, query_text=query_text)
+    context_id = new_context_id()
+    path = inside(root, out or f'.nature-studio/context/{slug}-{mode}-{context_id}.json')
+    write_json(path, data)
+    selection = data['memory']
+    result = dict(project=slug, mode=mode, context_id=context_id,
+                  packet=path.relative_to(root.resolve()).as_posix(),
+                  ledger=f'.nature-studio/context/{context_id}.json',
+                  source_count=len(data['sources']), source_chars=sum(len(s['text']) for s in data['sources']),
+                  pending=data['pending'],
+                  memory={state: [r['id'] for r in selection.get(state, [])] for state in ('active', 'candidates')}
+                  | dict(remaining=selection.get('remaining'), next_cursor=selection.get('next_cursor'),
+                         errors=selection.get('errors')))
+    if mode in ('new', 'reference'):
+        found = history(root, slug, query_text)
+        result['history'] = dict(productions=len(found['records']),
+                                 fingerprinted=[r['production'] for r in found['records'] if r['fingerprint']],
+                                 needs_read_files=sum(len(r['needs_read']) for r in found['records']),
+                                 lexical_match_productions=[r['production'] for r in found['records'] if r['lexical_matches']],
+                                 ledger=found['ledger']['path'] if found['ledger'] else None,
+                                 detail=f'python scripts/chayvideo_context.py history {slug}')
+    result['next'] = (f"python scripts/chayvideo_context.py view {result['packet']} --context-id {context_id} "
+                      f"--ledger {result['ledger']}")
+    return result
+
+
+def fingerprint(root, slug, production_id, data, from_history=False):
     """Store an AI-authored capsule only against the exact history it actually reviewed."""
     if not all(isinstance(data.get(k), str) and data[k].strip() for k in FINGERPRINT_FIELDS):
         raise ValueError('Supply all causal fingerprint fields')
+    if from_history and 'source_hashes' not in data:
+        # Hashes come from the history output the AI reviewed; later edits still fail the match below.
+        cache = inside(root, f'.nature-studio/history/{slug}.json')
+        if not cache.is_file():
+            raise ValueError('Run history first; no cached history to bind')
+        reviewed = next((r for r in json.loads(cache.read_text(encoding='utf-8'))['records']
+                         if r['production'] == production_id), None)
+        if reviewed is None:
+            raise ValueError('Production absent from reviewed history')
+        data = dict(data, source_hashes={k: v for k, v in reviewed['source_hashes'].items()
+                                         if not k.endswith('/HISTORY-FINGERPRINT.json')})
     records = history(root, slug)['records']
     record = next((r for r in records if r['production'] == production_id), None)
     if record is None:
@@ -329,7 +404,7 @@ def fingerprint(root, slug, production_id, data):
     payload['schema'] = 1
     path = inside(root, f'04-Productions/{slug}/{production_id}/HISTORY-FINGERPRINT.json')
     # Derived metadata only; never modifies a source record or its status.
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    write_json(path, payload)
     return dict(path=path.relative_to(root).as_posix(), note='AI-authored capsule; semantic review still required')
 
 
@@ -338,6 +413,17 @@ def main():
     parser.add_argument('--root', type=Path, default=ROOT)
     subs = parser.add_subparsers(dest='command', required=True)
     subs.add_parser('projects')
+    subs.add_parser('context-id', help='New context id and ledger path for a new chat or after compaction')
+    p = subs.add_parser('preflight', help='Packet + history cache in one call; prints IDs, counts and paths only')
+    p.add_argument('project')
+    p.add_argument('--mode', choices=('new', 'revision', 'caption', 'reference'), required=True)
+    p.add_argument('--species', action='append', default=[])
+    p.add_argument('--interaction', choices=('natural', 'angling', 'unspecified'), default='unspecified')
+    p.add_argument('--stage', choices=routing.STAGES, default='all')
+    p.add_argument('--effect', action='append', default=[])
+    p.add_argument('--task', action='append', default=[])
+    p.add_argument('--query', default='')
+    p.add_argument('--out', type=Path)
     p = subs.add_parser('packet')
     p.add_argument('project')
     p.add_argument('--mode', choices=('new', 'revision', 'caption', 'reference'), required=True)
@@ -359,12 +445,16 @@ def main():
     p.add_argument('--retained', action='store_true')
     p.add_argument('--source', action='append', default=[])
     p.add_argument('--receipt', type=Path)
+    p.add_argument('--ledger', type=Path, help='Per-context reading ledger, updated in place; replaces --seen/--receipt')
     p.add_argument('--max-chars', type=int, default=18000,
-                   help='Soft whole-source display batch target; never cuts a source')
+                   help='Display batch target; never cuts a source unless --page-large')
+    p.add_argument('--page-large', action='store_true',
+                   help='Split sources longer than --max-chars into pages; a source counts only when all pages shown')
     p.add_argument('--all-sources', action='store_true', help='Explicitly display all bodies; choose adequate tool output budget')
     p = subs.add_parser('coverage', help='Check full mode source coverage across staged packets')
     p.add_argument('packets', type=Path, nargs='+')
     p.add_argument('--receipt', type=Path, action='append', default=[])
+    p.add_argument('--ledger', type=Path, action='append', default=[])
     p.add_argument('--context-id')
     p.add_argument('--retained', action='store_true')
     p = subs.add_parser('verify')
@@ -377,10 +467,18 @@ def main():
     p.add_argument('project')
     p.add_argument('production')
     p.add_argument('input', type=Path)
+    p.add_argument('--from-history', action='store_true',
+                   help='Take source_hashes from the last history run instead of copying them')
     args = parser.parse_args()
     root = args.root.resolve()
     if args.command == 'projects':
         result = catalog(root)
+    elif args.command == 'context-id':
+        context_id = new_context_id()
+        result = dict(context_id=context_id, ledger=f'.nature-studio/context/{context_id}.json')
+    elif args.command == 'preflight':
+        result = preflight(root, args.project, args.mode, args.species, args.interaction, args.stage,
+                           args.effect, args.task, args.query, args.out.as_posix() if args.out else None)
     elif args.command == 'packet':
         selection = (json.loads(inside(root, args.memory_selection.as_posix()).read_text(encoding='utf-8-sig'))
                      if args.memory_selection else None)
@@ -400,9 +498,18 @@ def main():
         if stale:
             raise ValueError('Stale/incomplete packet; rebuild before view: ' + ', '.join(stale))
         seen = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.seen]
+        ledger = ledger_path(root, args.ledger.as_posix(), args.context_id) if args.ledger else None
+        if ledger and ledger.exists():
+            if not args.retained:
+                raise ValueError('Ledger exists: pass --retained only if its sources are still in this chat; '
+                                 'otherwise run context-id and start a new ledger')
+            seen.append(json.loads(ledger.read_text(encoding='utf-8-sig')))
         rendered, receipt = routing.render(data, root, args.context_id, seen,
                                            args.retained, args.source,
-                                           None if args.all_sources else args.max_chars)
+                                           None if args.all_sources else args.max_chars,
+                                           args.page_large and not args.all_sources)
+        if ledger:
+            write_json(ledger, receipt)
         if args.receipt:
             path = inside(root, args.receipt.as_posix())
             relative = path.relative_to(root).as_posix()
@@ -416,28 +523,29 @@ def main():
         return
     elif args.command == 'coverage':
         packets = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.packets]
-        receipts = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig')) for p in args.receipt]
+        receipts = [json.loads(inside(root, p.as_posix()).read_text(encoding='utf-8-sig'))
+                    for p in [*args.receipt, *[ledger_path(root, l.as_posix(), args.context_id) for l in args.ledger]]]
         result = coverage(root, packets, receipts, args.context_id, args.retained)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
+        print(json.dumps(result, ensure_ascii=False))
         sys.exit(0 if result['complete'] else 2)
     elif args.command == 'history':
         result = history(root, args.project, args.query)
         if not args.full:
-            result['inventory_count'] = len(result.pop('inventory'))
-            for row in result['records']:
-                row.pop('source_hashes')
+            result = compact_history(result)
     elif args.command == 'fingerprint':
         result = fingerprint(root, args.project, args.production,
-                             json.loads(args.input.read_text(encoding='utf-8-sig')))
+                             json.loads(args.input.read_text(encoding='utf-8-sig')), args.from_history)
     else:
         result = dict(stale=verify(root, json.loads(args.packet.read_text(encoding='utf-8-sig'))))
         if result['stale']:
             print(json.dumps(result, ensure_ascii=False))
             sys.exit(1)
-    print(json.dumps(result, ensure_ascii=False, indent=2))
+    print(json.dumps(result, ensure_ascii=False))
 
 
 if __name__ == '__main__':
+    import ns_console
+    ns_console.utf8()
     try:
         main()
     except (ValueError, OSError) as exc:
