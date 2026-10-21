@@ -2,6 +2,11 @@
 
 Phiên bản toàn workspace được đọc từ [VERSION](VERSION). Phiên bản của từng skill/tài liệu được quản lý riêng; không đổi tất cả thành 1.0. Commit và hash dùng để phân biệt các bản có cùng số phiên bản hoặc có chỉnh sửa local.
 
+## v2.1.6 — đang làm (nhánh release/v2.1.6)
+
+- 2026-10-22: viết lại lịch sử Git, gỡ hồ sơ UF-0001 và idea-ledger cũ khỏi mọi commit; force-push main, codex/release-v2.0.0 và các tag; thêm tag v1.8. Nội dung từng bản không đổi. Bảng mã cũ → mới và cách đồng bộ máy khác ở UPDATE.md.
+- `scripts/session_usage.py`: đọc bộ đếm token từ log Codex/Claude local (request, tool call, input/cached/output, ngữ cảnh đỉnh, compaction, theo lượt); không đọc nội dung chat.
+
 ## v2.1.5 — 2026-10-19
 
 - Thêm 15 hồ sơ vùng Mỹ có nguồn và ba descriptor theo loài; phân bố + sinh cảnh là bắt buộc, độ phổ biến câu cá chỉ ưu tiên phụ. Năm vùng là khởi đầu, không giới hạn tối đa.

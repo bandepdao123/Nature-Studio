@@ -10,6 +10,32 @@ Repository nguồn: [bandepdao123/Nature-Studio](https://github.com/bandepdao123
 
 Link repository chỉ cho biết dữ liệu trên GitHub. Muốn xác định máy người dùng cần cập nhật gì, phải đọc được workspace local hoặc gói ZIP/manifest của bản họ đang dùng. Nếu thiếu, vẫn giải thích được hệ thống và bản đích, nhưng phải ghi phần chênh lệch local là chưa xác định; không nhận đã đồng bộ hoặc bảo toàn dữ liệu chưa thấy.
 
+## Lịch sử Git đã viết lại — 2026-10-22
+
+GitHub đã force-push lịch sử mới: hồ sơ UF-0001 và idea-ledger cũ được gỡ khỏi mọi commit. Nội dung từng bản không đổi, chỉ mã commit đổi. Máy có clone tạo trước ngày này **không được pull/merge** lên lịch sử mới:
+
+1. Sao lưu `04-Productions/`, `.nature-studio/`, `03-Projects/*/idea-ledger.md` và mọi file chưa commit ra ngoài repo.
+2. `git fetch --force --prune --tags origin`, rồi `git reset --hard origin/main`. Các thư mục runtime ở bước 1 bị ignore nên được giữ; chỉnh sửa tracked chưa commit sẽ mất nếu chưa sao lưu.
+3. **Không chạy `git clean -x`** (xóa cả runtime bị ignore).
+4. Commit/nhánh local làm trên lịch sử cũ: `git rebase --onto <mã mới> <mã cũ> <nhánh>` theo bảng dưới.
+
+SHA 40 ký tự trong `06-Evaluation/results/` và `07-Releases/manifests/` là lịch sử cũ; dùng bảng sau để tra:
+
+| Tag | Mã cũ | Mã mới |
+|---|---|---|
+| v1.6 | 833fb68 | c1dc152 |
+| v1.7 | 4741114 | 516bb41 |
+| v1.7.1 | 5f42cea | 6090d49 |
+| v1.8 | (chưa có tag) | 9ee9434 |
+| v2.0.0 | f95d16b | 288f7eb |
+| v2.1.1 | 2f7cf46 | 5a0fa3b |
+| v2.1.2 | 302eb6f | 549d1ca |
+| v2.1.3 | 98961f4 | 1345ef3 |
+| v2.1.4 | 5621145 | 8feda9c |
+| v2.1.5 | d0193bc | 1b376dd |
+
+Bảng đầy đủ mọi commit được giữ local cùng bản sao lịch sử cũ, không đưa lên repo.
+
 ## 1. Xác định bản đang dùng và bản đích
 
 - Local: đọc VERSION; nếu có Git, ghi HEAD, branch, remote, trạng thái tracked/untracked và staged/unstaged. Nếu dùng ZIP, đọc PACKAGE-MANIFEST.json và đối chiếu hash file thực; manifest cũ không chứng minh file chưa bị sửa. Thiếu VERSION không suy ra v0.0: tra manifest/lịch sử hoặc ghi unknown.
